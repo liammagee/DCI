@@ -1,0 +1,9 @@
+.Rproj.user
+.Rhistory
+.RData
+
+# Ignore R project files
+*.Rproj
+
+# Ignore R output
+output/*
