@@ -6,4 +6,4 @@ gender = sample(g, 2000, replace=T, prob = c(49, 49, 1, 1))
 
 dci = data.frame(age, gender)
 
-write.csv(dci, "dci.csv")
+write.csv(dci, "./output/dci.csv")
