@@ -7,3 +7,6 @@
 
 # Ignore R output
 output/*
+
+# Ignore large files
+refs/att98dqt.pdf
