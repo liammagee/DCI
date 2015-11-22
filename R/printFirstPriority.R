@@ -154,7 +154,7 @@ indicatorsAsFrame = function(expandedIndicators) {
         }
       }
       else {
-        s <- sample(0, 2000, replace = TRUE)
+        s <- sample(-1, 2000, replace = TRUE)
         df <- cbind(df, rowName = s)
       }
     }
@@ -164,7 +164,7 @@ indicatorsAsFrame = function(expandedIndicators) {
       df <- cbind(df, rowName = s)
     }
     else {
-      s <- sample(1:5, 2000, replace = TRUE)
+      s <- sample(-1, 2000, replace = TRUE)
       df <- cbind(df, rowName = s)
     }
   }
@@ -191,4 +191,9 @@ print("Length of expanded variable set:")
 print(length(expandedIndicators[,1]))
 
 df <- indicatorsAsFrame(expandedIndicators)
-#print(names(df))
+print(names(df))
+
+# Some preliminary testing
+print(mean(df$"X.  9"))
+print(mean(df$X.289.6))
+
