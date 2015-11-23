@@ -45,31 +45,27 @@ generateExpandedVariableSet_Looped = function() {
 
   validIndicators <- validIndicators()
   
-  ViS <- strsplit(as.character(validIndicators$Options), "\n")
-  ViR <- strsplit(as.character(validIndicators$Responses), ";")
-  
   countViS <- str_count(as.character(validIndicators$Options), "\n") + 1
   countViR <- str_count(as.character(validIndicators$Responses), ";") + 1
   validIndicators <- cbind(validIndicators, countViS, countViR)
-
+  
   # New data set with both variables and subvariables
   extendedData <- as.matrix(validIndicators, stringsAsFactors=FALSE)
   
-  # For the extended variables only take indicators with both options and responses
   subIndicators <- validIndicators[which(!is.na(validIndicators$countViS) & validIndicators$countViS > 1 & !is.na(validIndicators$countViR) & validIndicators$countViR > 1) , ]
-  
-  L <- length(subIndicators[,1])
-  for (i in 1:L) {
-    row <- c(subIndicators[i,])
-    options <- data.frame(ViS[i])
-    responses <- data.frame(ViR[i])
+  lengthOfVariableSet <- length(subIndicators[,1])
 
+  
+  for (i in 1:lengthOfVariableSet) {
+    row <- c(subIndicators[i,])
+    options <- data.frame(strsplit(as.character(row$Options), "\n"))
+    
     # Use mapply
-    rows <- mapply( processOption, options[,1], 1:length(options[,1]),  MoreArgs = list(row = row) )
+    rows <- mapply( modifyRow, options[,1], 1:length(options[,1]),  MoreArgs = list(row = row) )
 
     # Transpose results
     rows <- t(rows)
-      
+    
     # Rbind results
     extendedData <- rbind(extendedData, rows)
   }
@@ -80,21 +76,9 @@ generateExpandedVariableSet_Looped = function() {
   return (extendedData)
 }
 
-processSubIndicators <- function() {
-  
-}
-
-# Processes a single option
-processOption <- function(option, id, row) {
-    if (!is.na(option) ) {
-      # Bind the new row to the extended data set
-      row <- modifyRow(row, option, id)
-    }
-    return (row)
-}
 
 # Add a new row to a matrix
-modifyRow <- function(row, option, id) {
+modifyRow <- function(option, id, row) {
     # Add a unique identifier
     newID <- paste(row$DCI.ID, as.character(id), sep = ".")
     row$DCI.ID <- newID
