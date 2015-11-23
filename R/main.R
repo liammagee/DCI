@@ -2,25 +2,22 @@
 source("R/installDeps.R", FALSE)
 source("R/utils.R", FALSE)
 
-source("R/printFirstPriority.R", FALSE)
+source("R/samplesForExpandedIndicators.R", FALSE)
 
 print("Generating sample data")
 
-# Obtain valid indicators
-validIndicators <- getValidIndicators()
-
 # Expand valid indicators to include options, as sub-indicators
-expandedIndicators <- generateExpandedVariableSet_Looped(validIndicators)
+expandedIndicators <- generateExpandedVariableSet_Looped()
 
 # For debugging only...
 print("Length of initial variable set:")
-print(length(validIndicators[,1]))
+print(length(validIndicators()[,1]))
 
 print("Length of expanded variable set:")
 print(length(expandedIndicators[,1]))
 
 # Generate sample data for the expanded list of indicators
-df <- samplesForExpandedIndicators(expandedIndicators)
+df <- samplesForExpandedIndicators()
 
 # Show the variable IDs
 print(names(df))
