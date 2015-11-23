@@ -1,3 +1,5 @@
+source("R/utils.R", FALSE)
+
 
 
 # Main columns used
@@ -22,9 +24,9 @@ validIndicators <- function() {
   rawCols <- rawCols()
   cleanCols <- cleanCols()
   d <- indicators[ which(indicators$Survey.Candidate.Question == "1"), rawCols]
-  names(d)[names(d)==cols[2]] <- cleanCols[2]
-  names(d)[names(d)==cols[3]] <- cleanCols[3]
-  names(d)[names(d)==cols[4]] <- cleanCols[4]
+  names(d)[names(d)==rawCols[2]] <- cleanCols[2]
+  names(d)[names(d)==rawCols[3]] <- cleanCols[3]
+  names(d)[names(d)==rawCols[4]] <- cleanCols[4]
   
   d$DCI.ID <- trim.leading(d$DCI.ID)
   
@@ -46,19 +48,21 @@ generateExpandedVariableSet_Looped = function() {
   extendedData <- as.matrix(validIndicators, stringsAsFactors=FALSE)
   
   for (i in 1:lengthOfVariableSet) {
-    
+    row <- c(validIndicators[i,])
     options <- data.frame(ViS[i])
     responses <- data.frame(ViR[i])
     lenOptions <- length(options[,1])
     lenResponses <- length(responses[,1])
-    row <- c(validIndicators[i,])
-    
-    if (!is.na(lenOptions)) {
 
-      for (j in 1:lenOptions) {
-        option <- options[j,1]
-        extendedData <- processOption(lenResponses, extendedData, row, option, j)
-      }
+    if (!is.na(lenOptions) && lenOptions > 1 && !is.na(lenResponses) && lenResponses > 1) {
+      # Use mapply
+      rows <- mapply( processOption, options[,1], 1:length(options[,1]),  MoreArgs = list(row = row) )
+
+      # Transpose results
+      rows <- t(rows)
+      
+      # Rbind results
+      extendedData <- rbind(extendedData, rows)
     }
   }
 
@@ -69,25 +73,24 @@ generateExpandedVariableSet_Looped = function() {
 }
 
 # Processes a single option
-processOption <- function(lenResponses, matrix, row, option, optionID) {
-    if (!is.na(option) && !is.na(lenResponses) && lenResponses > 1) {
+processOption <- function(option, id, row) {
+    if (!is.na(option) ) {
       # Bind the new row to the extended data set
-      matrix <- addRow(matrix, row, option, optionID)
+      row <- modifyRow(row, option, id)
     }
-    return (matrix)
+    return (row)
 }
 
 # Add a new row to a matrix
-addRow <- function(matrix, row, option, optionID) {
+modifyRow <- function(row, option, id) {
     # Add a unique identifier
-    newID <- paste(row$DCI.ID, as.character(optionID), sep = ".")
+    newID <- paste(row$DCI.ID, as.character(id), sep = ".")
     row$DCI.ID <- newID
           
     # Add the option to the variable name, for a new variable name
     row$Name <- paste(row$Name,  option, sep = " - ")
 
-    matrix <- rbind(matrix, row)
-    return (matrix) 
+    return (row) 
 }
 
 
