@@ -32,6 +32,7 @@ validIndicators <- function() {
 }
 
 
+# Unrolls the variables to include options with responses as subvariables
 generateExpandedVariableSet_Looped = function() {
 
   validIndicators <- validIndicators()
@@ -39,47 +40,54 @@ generateExpandedVariableSet_Looped = function() {
   ViS <- strsplit(as.character(validIndicators$Options), "\n")
   ViR <- strsplit(as.character(validIndicators$Responses), ";")
   
-  # 'j' is the number of substrings in ViS
-  lenViS <- str_count(as.character(validIndicators$Options), "\n") + 1
-  
-  # 'k' is the number of values in ViR
-  lenViR <- str_count(as.character(validIndicators$Responses), ";") + 1
-  
   lengthOfVariableSet <- length(validIndicators[,1])
+
+  # New data set with both variables and subvariables
   extendedData <- as.matrix(validIndicators, stringsAsFactors=FALSE)
   
   for (i in 1:lengthOfVariableSet) {
     
     options <- data.frame(ViS[i])
-    lenOptions <- lenViS[i]
-    lenResponses <- lenViR[i]
+    responses <- data.frame(ViR[i])
+    lenOptions <- length(options[,1])
+    lenResponses <- length(responses[,1])
+    row <- c(validIndicators[i,])
     
     if (!is.na(lenOptions)) {
-      
+
       for (j in 1:lenOptions) {
-        
-        currentRow <- c(validIndicators[i,])
         option <- options[j,1]
-        
-        if (!is.na(option) && !is.na(lenResponses) && lenResponses > 0) {
-          
-          # Add a unique identifier
-          newID <- paste(currentRow$DCI.ID, as.character(j), sep = ".")
-          currentRow$DCI.ID <- newID
-          
-          # Add the option to the variable name, for a new variable name
-          currentRow$Name <- paste(currentRow$Name,  option, sep = " - ")
-          
-          # Bind the new row to the extended data set
-          extendedData <- rbind(extendedData, currentRow)
-        }
+        extendedData <- processOption(lenResponses, extendedData, row, option, j)
       }
     }
   }
+
   extendedData <- as.data.frame(extendedData)
   row.names(extendedData) <- extendedData$DCI.ID
   
   return (extendedData)
+}
+
+# Processes a single option
+processOption <- function(lenResponses, matrix, row, option, optionID) {
+    if (!is.na(option) && !is.na(lenResponses) && lenResponses > 1) {
+      # Bind the new row to the extended data set
+      matrix <- addRow(matrix, row, option, optionID)
+    }
+    return (matrix)
+}
+
+# Add a new row to a matrix
+addRow <- function(matrix, row, option, optionID) {
+    # Add a unique identifier
+    newID <- paste(row$DCI.ID, as.character(optionID), sep = ".")
+    row$DCI.ID <- newID
+          
+    # Add the option to the variable name, for a new variable name
+    row$Name <- paste(row$Name,  option, sep = " - ")
+
+    matrix <- rbind(matrix, row)
+    return (matrix) 
 }
 
 
