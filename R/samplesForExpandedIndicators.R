@@ -33,6 +33,12 @@ validIndicators <- function() {
   return (d)
 }
 
+# Version of length which returns -1 instead of NA
+lengthNoNA <- function(v) {
+  l <- length(v)
+  return (if (is.na(l)) -1 else l)
+}
+
 
 # Unrolls the variables to include options with responses as subvariables
 generateExpandedVariableSet_Looped = function() {
@@ -42,34 +48,40 @@ generateExpandedVariableSet_Looped = function() {
   ViS <- strsplit(as.character(validIndicators$Options), "\n")
   ViR <- strsplit(as.character(validIndicators$Responses), ";")
   
-  lengthOfVariableSet <- length(validIndicators[,1])
+  countViS <- str_count(as.character(validIndicators$Options), "\n") + 1
+  countViR <- str_count(as.character(validIndicators$Responses), ";") + 1
+  validIndicators <- cbind(validIndicators, countViS, countViR)
 
   # New data set with both variables and subvariables
   extendedData <- as.matrix(validIndicators, stringsAsFactors=FALSE)
   
-  for (i in 1:lengthOfVariableSet) {
-    row <- c(validIndicators[i,])
+  # For the extended variables only take indicators with both options and responses
+  subIndicators <- validIndicators[which(!is.na(validIndicators$countViS) & validIndicators$countViS > 1 & !is.na(validIndicators$countViR) & validIndicators$countViR > 1) , ]
+  
+  L <- length(subIndicators[,1])
+  for (i in 1:L) {
+    row <- c(subIndicators[i,])
     options <- data.frame(ViS[i])
     responses <- data.frame(ViR[i])
-    lenOptions <- length(options[,1])
-    lenResponses <- length(responses[,1])
 
-    if (!is.na(lenOptions) && lenOptions > 1 && !is.na(lenResponses) && lenResponses > 1) {
-      # Use mapply
-      rows <- mapply( processOption, options[,1], 1:length(options[,1]),  MoreArgs = list(row = row) )
+    # Use mapply
+    rows <- mapply( processOption, options[,1], 1:length(options[,1]),  MoreArgs = list(row = row) )
 
-      # Transpose results
-      rows <- t(rows)
+    # Transpose results
+    rows <- t(rows)
       
-      # Rbind results
-      extendedData <- rbind(extendedData, rows)
-    }
+    # Rbind results
+    extendedData <- rbind(extendedData, rows)
   }
 
   extendedData <- as.data.frame(extendedData)
   row.names(extendedData) <- extendedData$DCI.ID
   
   return (extendedData)
+}
+
+processSubIndicators <- function() {
+  
 }
 
 # Processes a single option
