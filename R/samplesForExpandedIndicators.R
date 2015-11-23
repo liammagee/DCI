@@ -53,21 +53,17 @@ generateExpandedVariableSet_Looped = function() {
   extendedData <- as.matrix(validIndicators, stringsAsFactors=FALSE)
   
   subIndicators <- validIndicators[which(!is.na(validIndicators$countViS) & validIndicators$countViS > 1 & !is.na(validIndicators$countViR) & validIndicators$countViR > 1) , ]
-  lengthOfVariableSet <- length(subIndicators[,1])
 
-  
-  for (i in 1:lengthOfVariableSet) {
+  L <- length(subIndicators[,1])
+  for (i in 1:L) {
     row <- c(subIndicators[i,])
     options <- data.frame(strsplit(as.character(row$Options), "\n"))
     
     # Use mapply
     rows <- mapply( modifyRow, options[,1], 1:length(options[,1]),  MoreArgs = list(row = row) )
 
-    # Transpose results
-    rows <- t(rows)
-    
-    # Rbind results
-    extendedData <- rbind(extendedData, rows)
+    # Rbind transposed results
+    extendedData <- rbind(extendedData, t(rows))
   }
 
   extendedData <- as.data.frame(extendedData)
