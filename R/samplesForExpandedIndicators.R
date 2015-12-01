@@ -49,21 +49,26 @@ generateExpandedVariableSet_Looped = function() {
   countViR <- str_count(as.character(validIndicators$Responses), ";") + 1
   validIndicators <- cbind(validIndicators, countViS, countViR)
   
-  # New data set with both variables and subvariables
-  extendedData <- as.matrix(validIndicators, stringsAsFactors=FALSE)
-  
+  # Obtain indicators that have both options and responses, and therefore require subindicators
   subIndicators <- validIndicators[which(!is.na(validIndicators$countViS) & validIndicators$countViS > 1 & !is.na(validIndicators$countViR) & validIndicators$countViR > 1) , ]
-
+  
+  # Obtain standalone indicators (the inverse of those indicators that have subindicators)
+  standaloneIndicators <- validIndicators[!(validIndicators$DCI.ID %in% subIndicators$DCI.ID), ]
+  
+  # New data set with both variables and subvariables
+  extendedData <- as.matrix(standaloneIndicators)
+  
+  # Obtain the length of subindicators
   L <- length(subIndicators[,1])
   for (i in 1:L) {
-    row <- c(subIndicators[i,])
-    options <- data.frame(strsplit(as.character(row$Options), "\n"))
+    sourceRow <- subIndicators[i,]
+    options <- data.frame(strsplit(as.character(sourceRow$Options), "\n"))
     
     # Use mapply
-    rows <- mapply( modifyRow, options[,1], 1:length(options[,1]),  MoreArgs = list(row = row) )
+    newRows <- mapply( modifyRow, options[,1], 1:length(options[,1]),  MoreArgs = list(row = sourceRow) )
 
     # Rbind transposed results
-    extendedData <- rbind(extendedData, t(rows))
+    extendedData <- rbind(extendedData, t(newRows))
   }
 
   extendedData <- as.data.frame(extendedData)
@@ -81,7 +86,11 @@ modifyRow <- function(option, id, row) {
           
     # Add the option to the variable name, for a new variable name
     row$Name <- paste(row$Name,  option, sep = " - ")
-
+    
+    # Copy these values as strings not factors
+    row$Options <- paste(row$Options,  "", sep = "")
+    row$Responses <- paste(row$Responses,  "", sep = "")
+    
     return (row) 
 }
 
@@ -108,7 +117,7 @@ samplesForExpandedIndicators = function(N = 2000) {
     
     # Test if this is a grouping variable
     countPeriods <- str_count(rowName, fixed("."))
-    id <- lapply(strsplit(rowName, ".", fixed = TRUE), "[[", 1)
+    id <- rowName
     
     indicator <- expandedIndicators[which(expandedIndicators$DCI.ID == as.character(id)), cols]
     ViS <- strsplit(as.character(indicator$Options), "\n")
@@ -118,11 +127,9 @@ samplesForExpandedIndicators = function(N = 2000) {
     
     # Dealing with a sub indicator
     if (countPeriods == 1) {
-      if (length(indicator$Response) > 0 && !is.na(lenViR)) {
-        if ( lenViR > 0) {
-          s <- sample(1:lenViR, N, replace = TRUE)
-          df <- cbind(df, rowName = s)
-        }
+      if (length(indicator$Response) > 0 && !is.na(lenViR) && lenViR > 0) {
+        s <- sample(1:lenViR, N, replace = TRUE)
+        df <- cbind(df, rowName = s)
       }
       else {
         s <- sample(-1, N, replace = TRUE)
@@ -132,6 +139,10 @@ samplesForExpandedIndicators = function(N = 2000) {
     else if (length(indicator$Options) > 0 && !is.na(lenViS) && 
                ( length(indicator$Responses) == 0 || is.na(lenViR) )) {
       s <- sample(1:lenViS, N, replace = TRUE)
+      df <- cbind(df, rowName = s)
+    }
+    else if (length(indicator$Response) > 0 && !is.na(lenViR) ) {
+      s <- sample(1:lenViR, N, replace = TRUE)
       df <- cbind(df, rowName = s)
     }
     else {

@@ -3,6 +3,7 @@ source("R/installDeps.R", FALSE)
 source("R/utils.R", FALSE)
 
 source("R/samplesForExpandedIndicators.R", FALSE)
+source("R/labelDataToPlot.R", FALSE)
 
 print("Generating sample data")
 
@@ -25,13 +26,13 @@ print(names(df))
 
 # Some preliminary testing...
 
-# Should be -1
-print(mean(df$"X.9"))
-
 # Should be some positive value
 print(mean(df$X.289.6))
 
+# Print a graph
+labelDataToPlot(df, expandedIndicators)
 
 # Completed the work
 print("Done")
+
 
