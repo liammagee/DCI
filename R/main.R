@@ -17,9 +17,6 @@ print(length(validIndicators()[,1]))
 print("Length of expanded variable set:")
 print(length(expandedIndicators[,1]))
 
-# Generate sample data for the expanded list of indicators
-df <- samplesForExpandedIndicators()
-
 # Show the variable IDs
 print(names(df))
 
@@ -30,7 +27,7 @@ print(names(df))
 print(mean(df$X.289.6))
 
 # Print a graph
-labelDataToPlot(df, expandedIndicators)
+labelDataToPlot()
 
 # Completed the work
 print("Done")
