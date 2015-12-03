@@ -5,6 +5,14 @@ source("R/utils.R", FALSE)
 source("R/samplesForExpandedIndicators.R", FALSE)
 source("R/labelDataToPlot.R", FALSE)
 
+
+# Imports
+library(gdata)
+library(reshape2)
+
+installDeps()
+
+
 print("Generating sample data")
 
 # Expand valid indicators to include options, as sub-indicators
@@ -20,6 +28,12 @@ print(length(expandedIndicators[,1]))
 # Show the variable IDs
 print(names(df))
 
+# Test melt
+
+# Generate sample data for the expanded list of indicators
+df <- samplesForExpandedIndicators()
+
+
 
 # Some preliminary testing...
 
@@ -27,7 +41,7 @@ print(names(df))
 print(mean(df$X.289.6))
 
 # Print a graph
-labelDataToPlot()
+df <- labelDataToPlot()
 
 # Completed the work
 print("Done")

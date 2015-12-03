@@ -6,7 +6,7 @@ labelDataToPlot = function() {
   # Generate sample data for the expanded list of indicators
   df <- samplesForExpandedIndicators()
   
-  
+    
   
   # Strip X's from the sample data columns
   idsWithoutXs <- sub("X.", "", colnames(df))
@@ -35,11 +35,11 @@ labelDataToPlot = function() {
   }
     
   
-  
-  
   # Set the column names
   colnames(df) <- indicators$Name
   
   write.csv(df, "output/ttest.csv")
+  
+  return (df)
 }
 

@@ -85,7 +85,7 @@ modifyRow <- function(option, id, row) {
     row$DCI.ID <- newID
           
     # Add the option to the variable name, for a new variable name
-    row$Name <- paste(row$Name,  option, sep = " - ")
+    row$Name <- paste(row$DCI.ID, row$Name, option, sep = " - ")
     
     # Copy these values as strings not factors
     row$Options <- paste(row$Options,  "", sep = "")
@@ -96,7 +96,7 @@ modifyRow <- function(option, id, row) {
 
 
 # Generates a data frame with columns corresponding to the variable IDs, and rows containing sample data
-samplesForExpandedIndicators = function(N = 2000) {
+samplesForExpandedIndicators = function(N = 20) {
   
   # Obtain the expanded list of indicators
   expandedIndicators <- generateExpandedVariableSet_Looped()
@@ -124,8 +124,7 @@ samplesForExpandedIndicators = function(N = 2000) {
     ViR <- strsplit(as.character(indicator$Responses), ";")
     lenViS <- str_count(as.character(indicator$Options), "\n") + 1
     lenViR <- str_count(as.character(indicator$Responses), ";") + 1
-    
-    # Dealing with a sub indicator
+
     if (countPeriods == 1) {
       if (length(indicator$Response) > 0 && !is.na(lenViR) && lenViR > 0) {
         s <- sample(1:lenViR, N, replace = TRUE)
@@ -136,18 +135,27 @@ samplesForExpandedIndicators = function(N = 2000) {
         df <- cbind(df, rowName = s)
       }
     }
+    # Multiple options, zero responses
     else if (length(indicator$Options) > 0 && !is.na(lenViS) && 
                ( length(indicator$Responses) == 0 || is.na(lenViR) )) {
       s <- sample(1:lenViS, N, replace = TRUE)
       df <- cbind(df, rowName = s)
     }
+    # Multiple responses, zero options
     else if (length(indicator$Response) > 0 && !is.na(lenViR) ) {
       s <- sample(1:lenViR, N, replace = TRUE)
       df <- cbind(df, rowName = s)
     }
+    # For all other cases
     else {
-      s <- sample(-1, N, replace = TRUE)
-      df <- cbind(df, rowName = s)
+      if (id == "10") {
+        s <- sample(12:65, N, replace = TRUE)
+        df <- cbind(df, rowName = s)
+      }
+      else {
+        s <- sample(-1, N, replace = TRUE)
+        df <- cbind(df, rowName = s)
+      }
     }
   }
   
