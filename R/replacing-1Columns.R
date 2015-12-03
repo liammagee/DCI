@@ -1,7 +1,5 @@
 # Columns containing just -1
 
-test = ttestL
-
 test$Age
 test$Children.in.care
 test$Children.ages
@@ -28,21 +26,3 @@ test$Age = age
 test$Children.in.care = cic
 test$Children.ages = ca
 test$Type.of.Connection...Bandwidth...Speed = toc
-
-# Replace NA's in Gender and other columns
-## Where are "Male", "Female", "Other (specify)", "Refused"?
-
-
-
-# Stack questions, leave demographics
-attach(test)
-demographics = c("X", "Age", "Children.in.care", 
-                 "Children.ages", "Gender", "Location..Postcode.",
-                 "Language", "Language.2", "Education", 
-                 "Home.education.status")
-test.dem = data.frame(test[,demographics])
-questions = names(test)[-which(names(test) %in% demographics)]
-test.que = data.frame(test[,questions])
-fix(test.que)
-stack = stack(test.que)
-fix(stack)
