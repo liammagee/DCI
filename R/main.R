@@ -25,25 +25,29 @@ print(length(validIndicators()[,1]))
 print("Length of expanded variable set:")
 print(length(expandedIndicators[,1]))
 
-# Show the variable IDs
-print(names(df))
 
-# Test melt
-
-# Generate sample data for the expanded list of indicators
 df <- samplesForExpandedIndicators()
 
-
+# Show the variable IDs
+print(names(df))
 
 # Some preliminary testing...
 
 # Should be some positive value
 print(mean(df$X.289.6))
 
-# Print a graph
-df <- labelDataToPlot()
+
+# Write the sample to file
+write.csv(df, "output/sample_values_raw.csv", row.names = FALSE)
+
+# Write the labelled sample to file
+df.labelled <- addLabelsToSampleValues()
+write.csv(df.labelled, "output/sample_values_labelled.csv", row.names = FALSE)
+
+# Write the melted sample to file
+df.melted <- reshapeSample()
+write.csv(df.melted, "output/sample_values_melted.csv", row.names = FALSE)
 
 # Completed the work
 print("Done")
-
 
