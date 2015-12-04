@@ -1,13 +1,6 @@
-# Columns containing just -1
-
-test$Age
-test$Children.in.care
-test$Children.ages
-test$Type.of.Connection...Bandwidth...Speed
+data = sample_values_labelled <- read.csv("output/sample_values_labelled.csv")
 
 # Add data to columns
-
-set.seed(4)
 
 a = 12:65
 age = sample(a, 2000, replace=T)
@@ -15,14 +8,91 @@ age = sample(a, 2000, replace=T)
 b = 0:10
 cic = sample(b, 2000, replace=T)
 
-c = 0:18 #Counting months?
-ca = sample(c, 2000, replace=T)
-
 d = c("1: Mobile 3G", "2: Mobile 4G", "3: ADSL", "4: ADSL2", "5: Cable", 
       "6: National Broadband Network (NBN)", "7: Other (please specify)")
 toc = sample(d, 2000, replace=T)
 
-test$Age = age
-test$Children.in.care = cic
-test$Children.ages = ca
-test$Type.of.Connection...Bandwidth...Speed = toc
+data$Subject.ID = 1:2000
+data$Age = age
+data$Children.in.care = cic
+data$Type.of.Connection...Bandwidth...Speed = toc
+
+# Children ages depends on number of children in care
+
+c = 0:18
+ca = sample(c, 2000, replace=T)
+
+data$Children.ages
+
+# Replace the rest of the demographic variables
+
+dimensions
+
+g = c("Male", "Female", "Other (specify)", "Refused")
+gender = sample(g, 2000, replace=T, prob = c(49, 49, 1, 1))
+
+############
+# Postcode section
+all = sprintf("%04d", 1:9999) 
+
+AU = "(0[289][0-9]{2})|([1345689][0-9]{3})|(2[0-8][0-9]{2})|(290[0-9])|(291[0-4])|(7[0-4][0-9]{2})|(7[8-9][0-9]{2})"
+
+# Extract valid postcodes from all
+x = regexpr(AU, all)
+pc = substring(all, x, x + attr(x, "match.length") - 1)
+pc[pc == ""] <- NA
+pc = na.omit(pc)
+pcs = sample(pc, 2000, replace=TRUE)
+############
+
+lan = c("Mandarin", 
+        "Spanish", 
+        "English", 
+        "Hindi", 
+        "Arabic", 
+        "Portuguese", 
+        "Bengali", 
+        "Russian", 
+        "Japanese", 
+        "Punjabi")
+
+lan2 = lan
+
+edu = c("Less than High School", 
+        "High School / GED", 
+        "Some College", 
+        "2-year College Degree", 
+        "4-year College Degree", 
+        "Masters Degree", 
+        "Doctoral Degree", 
+        "Professional Degree (JD, MD)")
+
+hes = c("No formal education",
+        "Completed or partially completed primary school",
+        "Completed or partially completed junior high school",
+        "Completed or partially completed senior high school",
+        "Certificate or diploma",
+        "Degree",
+        "Post Graduate Diploma, Masters or PhD",
+        "Don't know",
+        "Refused")
+
+ma = c("Full-time work greater than or equal to 30 hours paid employment per week", 
+       "Part-time work less than 30 hours paid employment per week", 
+       "Unemployed/looking for work", 
+       "Home duties", 
+       "Have a job but not at work due to illness, vacation etc", 
+       "Not working and currently receiving sickness allowance/disability support pension.", 
+       "Volunteer work", 
+       "Student attending school", 
+       "Student attending university, TAFE or other tertiary education provider", 
+       "Don't know", 
+       "Refused")
+
+data$Gender = gender
+data$Location..Postcode. = pcs
+data$Language = sample(1:2000, lan, replace=TRUE)
+data$Language.2 = sample(1:2000, lan2, replace=TRUE)
+data$Education = sample(1:2000, edu, replace=TRUE)
+data$Home.education.status = sample(1:2000, hes, replace=TRUE)
+data$Main.Activities = sample(1:2000, ma, replace=TRUE)
