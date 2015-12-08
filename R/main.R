@@ -4,6 +4,7 @@ source("R/utils.R", FALSE)
 
 source("R/samplesForExpandedIndicators.R", FALSE)
 source("R/labelDataToPlot.R", FALSE)
+source("R/replacing-1Columns.R", FALSE)
 
 
 # Imports
@@ -42,6 +43,8 @@ write.csv(df, "output/sample_values_raw.csv", row.names = FALSE)
 
 # Write the labelled sample to file
 df.labelled <- addLabelsToSampleValues()
+df.labelled <- addDemographicData(df.labelled)
+
 write.csv(df.labelled, "output/sample_values_labelled.csv", row.names = FALSE)
 
 # Write the melted sample to file

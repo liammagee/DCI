@@ -1,35 +1,33 @@
-data = sample_values_labelled <- read.csv("output/sample_values_labelled.csv")
-
 # Add data to columns
+names(df.labelled)
 
+addDemographicData = function(data) {
+  
 a = 12:65
-age = sample(a, 2000, replace=T)
+age = sample(a, dim(data)[1], replace=T)
 
 b = 0:10
-cic = sample(b, 2000, replace=T)
+cic = sample(b, dim(data)[1], replace=T)
 
 d = c("1: Mobile 3G", "2: Mobile 4G", "3: ADSL", "4: ADSL2", "5: Cable", 
       "6: National Broadband Network (NBN)", "7: Other (please specify)")
-toc = sample(d, 2000, replace=T)
+toc = sample(d, dim(data)[1], replace=T)
 
-data$Subject.ID = 1:2000
+data$Subject.ID = 1:dim(data)[1]
 data$Age = age
-data$Children.in.care = cic
-data$Type.of.Connection...Bandwidth...Speed = toc
+data$"Children in care" = cic
+data$"Type of Connection / Bandwidth / Speed" = toc
 
 # Children ages depends on number of children in care
 
 c = 0:18
-ca = sample(c, 2000, replace=T)
-
-data$Children.ages
+ca = sample(c, dim(data)[1], replace=T)
 
 # Replace the rest of the demographic variables
 
-dimensions
 
 g = c("Male", "Female", "Other (specify)", "Refused")
-gender = sample(g, 2000, replace=T, prob = c(49, 49, 1, 1))
+gender = sample(g, dim(data)[1], replace=T, prob = c(49, 49, 1, 1))
 
 ############
 # Postcode section
@@ -42,7 +40,7 @@ x = regexpr(AU, all)
 pc = substring(all, x, x + attr(x, "match.length") - 1)
 pc[pc == ""] <- NA
 pc = na.omit(pc)
-pcs = sample(pc, 2000, replace=TRUE)
+pcs = sample(pc, dim(data)[1], replace=TRUE)
 ############
 
 lan = c("Mandarin", 
@@ -90,9 +88,13 @@ ma = c("Full-time work greater than or equal to 30 hours paid employment per wee
        "Refused")
 
 data$Gender = gender
-data$Location..Postcode. = pcs
-data$Language = sample(1:2000, lan, replace=TRUE)
-data$Language.2 = sample(1:2000, lan2, replace=TRUE)
-data$Education = sample(1:2000, edu, replace=TRUE)
-data$Home.education.status = sample(1:2000, hes, replace=TRUE)
-data$Main.Activities = sample(1:2000, ma, replace=TRUE)
+data$"Location (Postcode)" = pcs
+data$Language = sample(lan, dim(data)[1], replace=TRUE)
+data$"Language 2" = sample(lan2, dim(data)[1], replace=TRUE)
+data$Education = sample(edu, dim(data)[1], replace=TRUE)
+data$"Home education status" = sample(hes, dim(data)[1], replace=TRUE)
+data$"Main Activities" = sample(ma, dim(data)[1], replace=TRUE)
+
+return(data)
+
+}

@@ -44,6 +44,9 @@ addLabelsToSampleValues = function() {
     }
   }
   
+  source("R/replacing-1Columns.R")
+  addDemographicData(df)
+  
   return (df)
 }
 
@@ -60,4 +63,5 @@ reshapeSample <- function() {
   names(melted.df)[2 + length(dimensions)] <- "Response"
   
   return (melted.df)
+  
 }
