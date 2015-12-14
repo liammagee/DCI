@@ -1,5 +1,4 @@
 # Add data to columns
-names(df.labelled)
 
 addDemographicData = function(data) {
   
