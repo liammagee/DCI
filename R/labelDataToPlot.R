@@ -67,8 +67,8 @@ reshapeSample <- function() {
   df <- addLabelsToSampleValues()
   
   df$Subject.ID <- row.names(df)
-  # dimensions <- c("Subject.ID", "Age", "Children in care", "Children ages", "Gender", "Location (Postcode)", "Language", "Language 2", "Education", "Home education status", "Main Activities")
-  dimensions <- c("Subject.ID", "Age", "Children in care", "Gender", "Location (Postcode)", "Language", "Language 2", "Education", "Home education status", "Main Activities")
+  # dimensions <- c("Subject.ID", "Age", "Children in care", "Children ages", "Gender", "Location (Postcode)", "Latitude", "Longitude", "Language", "Language 2", "Education", "Home education status", "Main Activities")
+  dimensions <- c("Subject.ID", "Age", "Children in care", "Gender", "Location (Postcode)", "Latitude", "Longitude", "Language", "Language 2", "Education", "Home education status", "Main Activities")
   melted.df <- melt(df, dimensions)
   melted.df <- melted.df[order(melted.df$Subject.ID),]
   names(melted.df)[1 + length(dimensions)] <- "Question"
