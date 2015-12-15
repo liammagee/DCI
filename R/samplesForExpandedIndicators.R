@@ -4,7 +4,7 @@ source("R/utils.R", FALSE)
 
 # Main columns used
 rawCols <- function() {
-  d <- c("DCI.ID", "Question..Adult", "Indicator..Options...Constraints", "Indicator..Response.Type")
+  d <- c("DCI.ID", "Indicator...Variable", "Indicator..Options...Constraints", "Indicator..Response.Type")
   return (d)
 }
 cleanCols <- function() {
@@ -19,7 +19,7 @@ validIndicators <- function() {
   library(stringr)
   indicators = read.csv("data/Indicators.csv", header = TRUE, strip.white = TRUE, na.strings = c("", " "))
 
-  indicator = na.omit(indicators[,"Question..Adult"])
+  indicator = na.omit(indicators[,"Indicator...Variable"])
   
   rawCols <- rawCols()
   cleanCols <- cleanCols()

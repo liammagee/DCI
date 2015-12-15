@@ -35,7 +35,7 @@ print(names(df))
 # Some preliminary testing...
 
 # Should be some positive value
-print(mean(df$X.289.6))
+print(mean(df$X.289.4))
 
 
 # Write the sample to file
