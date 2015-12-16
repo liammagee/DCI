@@ -5,6 +5,7 @@ source("R/utils.R", FALSE)
 source("R/samplesForExpandedIndicators.R", FALSE)
 source("R/labelDataToPlot.R", FALSE)
 source("R/replacing-1Columns.R", FALSE)
+source("R/postcodeMapping.R", FALSE)
 
 
 # Imports
@@ -54,3 +55,9 @@ write.csv(df.melted, "output/sample_values_melted.csv", row.names = FALSE)
 # Completed the work
 print("Done")
 
+
+
+
+# Test postcode mapping
+loadPostcodeMappings()
+obtainSA4(822)
