@@ -60,4 +60,13 @@ print("Done")
 
 # Test postcode mapping
 loadPostcodeMappings()
-obtainSA4(822)
+obtainGeoArea("3000", "SA4")
+obtainGeoArea("3000", "SA3")
+obtainGeoArea("3000", "SA2")
+obtainGeoArea("3000", "SLA")
+obtainGeoArea("3000", "LGA")
+
+
+
+o <- obtainSA4("3000")
+o
