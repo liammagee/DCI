@@ -3,18 +3,37 @@
 <head>
 	<title></title>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-	<script src="/js/application.js" type="text/javascript" ></script>
+	<script src="/js/papaparse.min.js" type="text/javascript" ></script>
+	<script src="/js/processing.min.js"></script>
 
 	<script>
 
+	var data;
 	$(document).ready(function() {
-		console.log("got here")
-		// Parse CSV string
-		var data = Papa.parse(csv);
+		var csv = "/data/sample_values_melted.csv"
+
+		$('#submit').click(function(e) {
+			var pjs = Processing.getInstanceById("dv");
+			pjs.drawText("Hello world " + data[0][0])
+		});
+
+		// Parse local CSV file
+		Papa.parse(csv, {
+			download: true,
+			complete: function(results) {
+				data = results.data;
+				console.log("Finished:", results.data);
+			}
+		});
+
+
 	})
 	</script>
 </head>
 <body>
 	<p>test page</p>
+
+	<canvas id="dv" data-processing-sources="pde/test-1.pde"></canvas>
+	<input id="submit" name="submit" value="submit" type="button"></input>
 </body>
 </html>
