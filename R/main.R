@@ -49,8 +49,25 @@ df.labelled <- addDemographicData(df.labelled)
 write.csv(df.labelled, "output/sample_values_labelled.csv", row.names = FALSE)
 
 # Write the melted sample to file
-df.melted <- reshapeSample()
+df.melted <- reshapeSample(20)
+
+
+sa4 <- function(postcode) {  return (obtainGeoArea(postcode, "SA4")[1]) }
+sa3 <- function(postcode) {  return (obtainGeoArea(postcode, "SA3")[1]) }
+sa2 <- function(postcode) {  return (obtainGeoArea(postcode, "SA2")[1]) }
+sa1 <- function(postcode) {  return (obtainGeoArea(postcode, "SLA")[1]) }
+lga <- function(postcode) {  return (obtainGeoArea(postcode, "LGA")[1]) }
+
+df.melted$sa4 <- sapply(df.melted$"Location (Postcode)", sa4)
+df.melted$sa3 <- sapply(df.melted$"Location (Postcode)", sa3)
+df.melted$sa2 <- sapply(df.melted$"Location (Postcode)", sa2)
+df.melted$sla <- sapply(df.melted$"Location (Postcode)", sa1)
+df.melted$lga <- sapply(df.melted$"Location (Postcode)", lga)
+
+
 write.csv(df.melted, "output/sample_values_melted.csv", row.names = FALSE)
+
+
 
 # Completed the work
 print("Done")
@@ -60,13 +77,11 @@ print("Done")
 
 # Test postcode mapping
 loadPostcodeMappings()
-obtainGeoArea("3000", "SA4")
-obtainGeoArea("3000", "SA3")
-obtainGeoArea("3000", "SA2")
-obtainGeoArea("3000", "SLA")
-obtainGeoArea("3000", "LGA")
+obtainGeoArea("2148", "SA4")
+obtainGeoArea("2148", "SA3")
+obtainGeoArea("2148", "SA2")
+obtainGeoArea("2148", "SLA")
+obtainGeoArea("2148", "LGA")
 
 
 
-o <- obtainSA4("3000")
-o

@@ -6,13 +6,13 @@ getDimensions <- function() {
   return (dimensions)
 }
 
-addLabelsToSampleValues = function() {
+addLabelsToSampleValues = function(N = 20) {
   
   # Expand valid indicators to include options, as sub-indicators
   expandedIndicators <- generateExpandedVariableSet_Looped()
   
   # Generate sample data for the expanded list of indicators
-  df <- samplesForExpandedIndicators()
+  df <- samplesForExpandedIndicators(N)
   
   # Strip X's from the sample data columns
   idsWithoutXs <- sub("X.", "", colnames(df))
@@ -62,9 +62,9 @@ addLabelsToSampleValues = function() {
 }
 
 # Create tall & thin version of labelled sample data
-reshapeSample <- function() {
+reshapeSample <- function(N = 20) {
   
-  df <- addLabelsToSampleValues()
+  df <- addLabelsToSampleValues(N)
   
   df$Subject.ID <- row.names(df)
   # dimensions <- c("Subject.ID", "Age", "Children in care", "Children ages", "Gender", "Location (Postcode)", "Latitude", "Longitude", "Language", "Language 2", "Education", "Home education status", "Main Activities")
