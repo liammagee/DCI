@@ -49,9 +49,14 @@ df.labelled <- addDemographicData(df.labelled)
 write.csv(df.labelled, "output/sample_values_labelled.csv", row.names = FALSE)
 
 # Write the melted sample to file
-df.melted <- reshapeSample(20)
+df.melted <- reshapeSample(2000)
 
+# Write Subject.ID, Question and Response columns to separate file 
+# for graphing questions against each other
+df.extract = df.melted[,c("Subject.ID", "Question", "Response")]
+write.csv(df.extract, "output/sample_values_extract.csv", row.names = FALSE)
 
+loadPostcodeMappings()
 sa4 <- function(postcode) {  return (obtainGeoArea(postcode, "SA4")[1]) }
 sa3 <- function(postcode) {  return (obtainGeoArea(postcode, "SA3")[1]) }
 sa2 <- function(postcode) {  return (obtainGeoArea(postcode, "SA2")[1]) }
@@ -76,7 +81,7 @@ print("Done")
 
 
 # Test postcode mapping
-loadPostcodeMappings()
+
 obtainGeoArea("2148", "SA4")
 obtainGeoArea("2148", "SA3")
 obtainGeoArea("2148", "SA2")
