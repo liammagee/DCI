@@ -1,0 +1,2986 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gexf xmlns="http://www.gexf.net/1.3" version="1.3" xmlns:viz="http://www.gexf.net/1.3/viz" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.gexf.net/1.3 http://www.gexf.net/1.3/gexf.xsd">
+  <meta lastmodifieddate="2016-01-03">
+    <creator>Gephi 0.9</creator>
+    <description></description>
+  </meta>
+  <graph defaultedgetype="directed" mode="static">
+    <attributes class="node" mode="static">
+      <attribute id="category" title="Category" type="string"></attribute>
+    </attributes>
+    <attributes class="edge" mode="static">
+      <attribute id="dci.id" title="DCI.ID" type="string"></attribute>
+    </attributes>
+    <nodes>
+      <node id="Buying and Selling" label="Buying and Selling">
+        <attvalues>
+          <attvalue for="category" value="Buying and Selling"></attvalue>
+        </attvalues>
+        <viz:size value="80.0"></viz:size>
+        <viz:position x="1081.1321" y="-165.98686"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Look for information on the price of a product (e.g. books, holidays, clothes, cars)" label="Look for information on the price of a product (e.g. books, holidays, clothes, cars)">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="1009.1267" y="-256.79886"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Talk to others about the price of a product (e.g. on a forum or online chat)" label="Talk to others about the price of a product (e.g. on a forum or online chat)">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="1042.9373" y="-54.94723"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Make an offer on a product (e.g. on eBay, Amazon)" label="Make an offer on a product (e.g. on eBay, Amazon)">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="1125.1056" y="-65.1338"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Look for information on how to sell something you own" label="Look for information on how to sell something you own">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="1081.4877" y="-276.0147"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Respond to people's requests for information about a product or service you want to sell" label="Respond to people's requests for information about a product or service you want to sell">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="968.2307" y="-204.53697"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Put a product up for sale" label="Put a product up for sale">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="1165.019" y="-237.14732"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Look for information on insurance policies (e.g. car/health/life or other insurance)" label="Look for information on insurance policies (e.g. car/health/life or other insurance)">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="1184.66" y="-128.75682"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Compare reviews of insurance policies . car/health/life or other insurance)" label="Compare reviews of insurance policies . car/health/life or other insurance)">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="974.17377" y="-140.24734"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Purchase insurance online (e.g. car/he/life or other)" label="Purchase insurance online (e.g. car/he/life or other)">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="985.63947" y="-89.6073"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Information seeking" label="Information seeking">
+        <attvalues>
+          <attvalue for="category" value="Information seeking"></attvalue>
+        </attvalues>
+        <viz:size value="80.0"></viz:size>
+        <viz:position x="-201.74979" y="234.1557"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Look for something (e.g. software, devices, apps, instruments, kit etc) that would help you do your job better" label="Look for something (e.g. software, devices, apps, instruments, kit etc) that would help you do your job better">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-94.48967" y="209.58063"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Talk to others online about how to solve a job related problem (e.g. via email, social networking site, or forum)" label="Talk to others online about how to solve a job related problem (e.g. via email, social networking site, or forum)">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-248.13974" y="131.92232"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Integrate tools or apps you have downloaded into the way you work" label="Integrate tools or apps you have downloaded into the way you work">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-141.55905" y="142.01971"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Look for a different job online" label="Look for a different job online">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-309.8101" y="199.08492"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Talk to others online about jobortunities (e.g. email, social networking site, or forum)" label="Talk to others online about jobortunities (e.g. email, social networking site, or forum)">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-112.18578" y="298.05548"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Create or share a CV on a professional and work related site (e.g. Linkedin, Monsterboard)" label="Create or share a CV on a professional and work related site (e.g. Linkedin, Monsterboard)">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-275.12476" y="316.19376"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="News seeking" label="News seeking">
+        <attvalues>
+          <attvalue for="category" value="News seeking"></attvalue>
+        </attvalues>
+        <viz:size value="80.0"></viz:size>
+        <viz:position x="-726.77686" y="681.86365"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Look for the latest news on current affairs" label="Look for the latest news on current affairs">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-600.3175" y="663.138"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Look for the latest sports news" label="Look for the latest sports news">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-705.02563" y="789.7062"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Look for the latest celebrity news" label="Look for the latest celebrity news">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-831.10406" y="717.04315"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Chat about relationships and friendships (e.g. via email, a social networking site, whatsapp, etc)" label="Chat about relationships and friendships (e.g. via email, a social networking site, whatsapp, etc)">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-755.0321" y="575.473"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Entertainment" label="Entertainment">
+        <attvalues>
+          <attvalue for="category" value="Entertainment"></attvalue>
+        </attvalues>
+        <viz:size value="80.0"></viz:size>
+        <viz:position x="199.4756" y="183.05742"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Look up information on where to go out (e.g. exhibitions, cinema, parties)" label="Look up information on where to go out (e.g. exhibitions, cinema, parties)">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="312.93622" y="166.98105"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Read information about relationships (e.g. about managing relationships or dating)" label="Read information about relationships (e.g. about managing relationships or dating)">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="104.30969" y="126.99078"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Read information on parenting" label="Read information on parenting">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="90.11386" y="199.32181"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Look up information on transport (e.g. bus or train timetables)" label="Look up information on transport (e.g. bus or train timetables)">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="132.83667" y="271.48944"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Arrange with other people to go out" label="Arrange with other people to go out">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="227.58345" y="73.92686"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Upload pictures of yourself" label="Upload pictures of yourself">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="288.01196" y="248.45145"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Look for websites with religious or spiritual information" label="Look for websites with religious or spiritual information">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="282.76794" y="111.18333"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Contact people who share religious or spiritual beliefs" label="Contact people who share religious or spiritual beliefs">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="151.06148" y="84.23796"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Log in on a website with religious or spiritual content" label="Log in on a website with religious or spiritual content">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="215.88582" y="292.2543"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Difference seeking" label="Difference seeking">
+        <attvalues>
+          <attvalue for="category" value="Difference seeking"></attvalue>
+        </attvalues>
+        <viz:size value="80.0"></viz:size>
+        <viz:position x="-471.7269" y="-132.94424"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Through the internet I found people of a similar age that share my interests" label="Through the internet I found people of a similar age that share my interests">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-466.93985" y="-17.831823"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="The things I came across on the internet made me think about the differences between men and women" label="The things I came across on the internet made me think about the differences between men and women">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-439.40137" y="-238.74666"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Through the Internet I learned new things about my ethnic group" label="Through the Internet I learned new things about my ethnic group">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-555.74" y="-204.02661"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Due to the information I found and people I have met online I feel more connected with religion or spiritual beliefs" label="Due to the information I found and people I have met online I feel more connected with religion or spiritual beliefs">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-364.66815" y="-107.41075"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Through the Internet I learned new things about other ethnic groups" label="Through the Internet I learned new things about other ethnic groups">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-572.93396" y="-89.730804"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Health" label="Health">
+        <attvalues>
+          <attvalue for="category" value="Health"></attvalue>
+        </attvalues>
+        <viz:size value="80.0"></viz:size>
+        <viz:position x="1048.8347" y="218.77905"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Look up information on how to improve your health" label="Look up information on how to improve your health">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="973.2703" y="138.75427"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Ask others about a training program" label="Ask others about a training program">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="1050.0098" y="107.90147"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Use exercise or nutrition programs / apps" label="Use exercise or nutrition programs / apps">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="1134.8765" y="150.21672"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Look up information about health or medical care" label="Look up information about health or medical care">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="1145.4104" y="271.57642"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Ask for advice on a medical condition" label="Ask for advice on a medical condition">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="938.19037" y="212.61368"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Fill out a questionnaire related to your health" label="Fill out a questionnaire related to your health">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="983.86304" y="307.5677"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Health improvement" label="Health improvement">
+        <attvalues>
+          <attvalue for="category" value="Health improvement"></attvalue>
+        </attvalues>
+        <viz:size value="80.0"></viz:size>
+        <viz:position x="-925.5778" y="-25.894554"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="I am healthier as a result of the online information, advice or programs / apps I have used" label="I am healthier as a result of the online information, advice or programs / apps I have used">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-829.5949" y="-79.69958"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="I have made better decisions about my health or medical care as a result of the information / advice I found online" label="I have made better decisions about my health or medical care as a result of the information / advice I found online">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-867.28046" y="67.42904"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Leisure" label="Leisure">
+        <attvalues>
+          <attvalue for="category" value="Leisure"></attvalue>
+        </attvalues>
+        <viz:size value="80.0"></viz:size>
+        <viz:position x="-449.3708" y="-454.1927"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Come across online lifestyle magazines / features / articles" label="Come across online lifestyle magazines / features / articles">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-335.85" y="-437.75266"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Talk to others about your lifestyle" label="Talk to others about your lifestyle">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-408.0542" y="-562.5477"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Blog or maintain a website about your personal life" label="Blog or maintain a website about your personal life">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-499.40073" y="-356.1658"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Look for jokes, cartoons or other entertaining content" label="Look for jokes, cartoons or other entertaining content">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-420.4071" y="-346.01764"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Play games" label="Play games">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-550.55817" y="-498.4658"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Listen to music" label="Listen to music">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-357.1668" y="-514.2682"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Watch videos / tv programmes" label="Watch videos / tv programmes">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-366.29553" y="-381.97214"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Write a blog or maintain a website on issues or problems of interest to you" label="Write a blog or maintain a website on issues or problems of interest to you">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-550.9198" y="-411.14874"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Write comments about or rate videos, music, books, TV shows etc" label="Write comments about or rate videos, music, books, TV shows etc">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-498.26028" y="-552.7584"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Keeping in touch" label="Keeping in touch">
+        <attvalues>
+          <attvalue for="category" value="Keeping in touch"></attvalue>
+        </attvalues>
+        <viz:size value="80.0"></viz:size>
+        <viz:position x="-55.907806" y="553.44434"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Staying in touch with friends" label="Staying in touch with friends">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-16.535713" y="450.66647"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Making new friends" label="Making new friends">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-114.64231" y="460.4277"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Contacting family" label="Contacting family">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-159.69754" y="590.467"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Contacting support services" label="Contacting support services">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="20.619917" y="474.40555"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Calling about a job" label="Calling about a job">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="4.010447" y="645.94653"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Being contacted by employers" label="Being contacted by employers">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-97.63245" y="655.2905"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Paying bills" label="Paying bills">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-148.76408" y="494.45694"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Finding accommodation" label="Finding accommodation">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-170.32466" y="534.0367"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Learning new skills" label="Learning new skills">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-134.42705" y="631.0694"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Keeping safe" label="Keeping safe">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-73.88321" y="440.501"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Betting" label="Betting">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="53.7436" y="562.7808"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Contacting emergency services" label="Contacting emergency services">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="38.524952" y="610.0919"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Contacting a doctor or other medical service" label="Contacting a doctor or other medical service">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-37.09925" y="665.36176"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Other" label="Other">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="46.848278" y="514.1138"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Online activities" label="Online activities">
+        <attvalues>
+          <attvalue for="category" value="Online activities"></attvalue>
+        </attvalues>
+        <viz:size value="80.0"></viz:size>
+        <viz:position x="286.22464" y="681.3238"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Used the internet for school work" label="Used the internet for school work">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="229.17337" y="578.5731"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Watched video clips (e.g. on YouTube)" label="Watched video clips (e.g. on YouTube)">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="178.83044" y="656.5909"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Watched music or films available online" label="Watched music or films available online">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="179.25674" y="708.1258"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Read/watched the news on the internet" label="Read/watched the news on the internet">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="376.66367" y="618.6286"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Sent/received email" label="Sent/received email">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="306.37506" y="789.86926"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Used a social network site (e.g. Facebook, Twitter, Instagram, Tumblr, Tinder, Weibu)" label="Used a social network site (e.g. Facebook, Twitter, Instagram, Tumblr, Tinder, Weibu)">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="293.2701" y="568.8234"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Used instant messaging" label="Used instant messaging">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="389.21118" y="720.2185"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Played games with other people on the internet" label="Played games with other people on the internet">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="200.6605" y="612.1379"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Played internet games (on your own or against the computer)" label="Played internet games (on your own or against the computer)">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="202.81374" y="754.0372"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Used a camera for video communication (e.g. Skype, Facetime)" label="Used a camera for video communication (e.g. Skype, Facetime)">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="395.50626" y="663.8975"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Put (or posted) a message on a website" label="Put (or posted) a message on a website">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="356.81775" y="766.0508"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Written a blog or online diary" label="Written a blog or online diary">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="238.13983" y="780.35535"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Put (or posted) photos, videos or music to share with others" label="Put (or posted) photos, videos or music to share with others">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="344.85464" y="588.153"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Competencies with digital life" label="Competencies with digital life">
+        <attvalues>
+          <attvalue for="category" value="Competencies with digital life"></attvalue>
+        </attvalues>
+        <viz:size value="80.0"></viz:size>
+        <viz:position x="-45.361458" y="-88.17655"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Download apps" label="Download apps">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="0.24650669" y="12.5120535"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Deactivate the function showing your geographical position (on Facebook, Google Maps, etc?)" label="Deactivate the function showing your geographical position (on Facebook, Google Maps, etc?)">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="71.63551" y="-47.857784"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Connect to a wifi network from your smartphone/tablet" label="Connect to a wifi network from your smartphone/tablet">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-155.12456" y="-118.8372"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Block push notifications from different apps" label="Block push notifications from different apps">
+        <attvalues>
+          <attvalue for="category" value=""></attvalue>
+        </attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-169.45084" y="-68.572655"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Have the same documents, contacts, and apps on all devices that you use (smartphones, tablets, PCs)" label="Have the same documents, contacts, and apps on all devices that you use (smartphones, tablets, PCs)">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-202.67126" y="-192.92168"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Block pop ups which promote apps, games or services you have to pay for (unrequested windows that appear during web surfing)" label="Block pop ups which promote apps, games or services you have to pay for (unrequested windows that appear during web surfing)">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="39.383495" y="-17.902237"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Protect a smartphone with a PIN/with a screen pattern" label="Protect a smartphone with a PIN/with a screen pattern">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-67.4621" y="-221.18617"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Update your status on the social networking site used the most" label="Update your status on the social networking site used the most">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-221.77464" y="-7.762384"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Find information on how to use smartphones safely" label="Find information on how to use smartphones safely">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-48.482956" y="25.858118"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Compare different apps with similar functions in order to choose the one that is most reliable" label="Compare different apps with similar functions in order to choose the one that is most reliable">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="67.6474" y="-129.0341"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Take a picture or a short video with your smartphone and upload it onto social media" label="Take a picture or a short video with your smartphone and upload it onto social media">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-142.9443" y="52.023163"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Compare different websites to decide if information is true" label="Compare different websites to decide if information is true">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="38.59456" y="-211.12163"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Change filter preferences" label="Change filter preferences">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-119.79227" y="-179.17073"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Bookmark a website" label="Bookmark a website">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-91.28653" y="38.824398"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Block unwanted adverts or junk mail/spam" label="Block unwanted adverts or junk mail/spam">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="46.778263" y="-167.84511"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Delete the record of which sites you have visited" label="Delete the record of which sites you have visited">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="33.278267" y="41.682163"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Change privacy setting on a social networking profile" label="Change privacy setting on a social networking profile">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-47.19229" y="69.857285"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Use 'report abuse' buttons (e.g. the button you can use when you want to report an un-authorised usage of your picture)" label="Use 'report abuse' buttons (e.g. the button you can use when you want to report an un-authorised usage of your picture)">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-176.3207" y="-157.59001"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Block messages from someone you don't want to hear from" label="Block messages from someone you don't want to hear from">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="108.93434" y="-113.771545"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Block pop ups (unrequested windows that appear during web surfing)" label="Block pop ups (unrequested windows that appear during web surfing)">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="110.30612" y="-69.06358"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Find information on how to use the internet safely" label="Find information on how to use the internet safely">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="118.00447" y="15.845008"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Publish a comment on a blog, websites or forum" label="Publish a comment on a blog, websites or forum">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-12.02403" y="-238.92804"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Upload images videos or music onto social media" label="Upload images videos or music onto social media">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-116.334" y="2.5587635"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Create a blog" label="Create a blog">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-125.16286" y="-231.27411"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Other negative online experiences" label="Other negative online experiences">
+        <attvalues>
+          <attvalue for="category" value="Other negative online experiences"></attvalue>
+        </attvalues>
+        <viz:size value="80.0"></viz:size>
+        <viz:position x="-1005.68445" y="542.51825"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Somebody used my personal information in a way I didn't like" label="Somebody used my personal information in a way I didn't like">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-1123.7864" y="522.6334"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="The computer got a virus" label="The computer got a virus">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-896.42163" y="563.544"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="I lost money by being cheated on the internet (we mean real money, rather than money in a computer game)" label="I lost money by being cheated on the internet (we mean real money, rather than money in a computer game)">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-919.1151" y="474.52948"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Somebody used my password to access my information or to pretend to be me" label="Somebody used my password to access my information or to pretend to be me">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-985.2397" y="650.6884"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Somebody created a page or image about me that was hostile or hurtful" label="Somebody created a page or image about me that was hostile or hurtful">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-1011.79224" y="431.86725"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Treated in a hurtful or nasty way by others (bullied)" label="Treated in a hurtful or nasty way by others (bullied)">
+        <attvalues>
+          <attvalue for="category" value="Treated in a hurtful or nasty way by others (bullied)"></attvalue>
+        </attvalues>
+        <viz:size value="80.0"></viz:size>
+        <viz:position x="-1114.1716" y="-507.84283"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Nasty or hurtful messages were sent to me" label="Nasty or hurtful messages were sent to me">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-1003.90814" y="-526.9716"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Nasty or hurtful messages were passed around or posted where others could see" label="Nasty or hurtful messages were passed around or posted where others could see">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-1018.2028" y="-453.63947"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="I was left out or excluded from a group or activity on the internet" label="I was left out or excluded from a group or activity on the internet">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-1097.3602" y="-616.6277"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="I was threatened on the internet" label="I was threatened on the internet">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-1079.29" y="-403.46948"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Other nasty or hurtful things on the internet" label="Other nasty or hurtful things on the internet">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-1182.3317" y="-421.3324"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Something else" label="Something else">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-1176.24" y="-599.0385"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Don't know" label="Don't know">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-1034.4235" y="-583.68585"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Prefer not to say" label="Prefer not to say">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-1234.6646" y="-527.10474"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Engage with others online" label="Engage with others online">
+        <attvalues>
+          <attvalue for="category" value="Engage with others online"></attvalue>
+        </attvalues>
+        <viz:size value="80.0"></viz:size>
+        <viz:position x="-614.06256" y="402.2184"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="I find it easier to be myself when online than when I am with people face-to-face" label="I find it easier to be myself when online than when I am with people face-to-face">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-505.3167" y="435.5938"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="I talk about different things with people when online than I do when face-to-face" label="I talk about different things with people when online than I do when face-to-face">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-704.74786" y="464.5197"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="When I am online, I talk about private things that I do not share with people face-to-face" label="When I am online, I talk about private things that I do not share with people face-to-face">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-717.19415" y="363.87137"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="I go online much more on the weekends than I do on a regular school or work day [optional question]" label="I go online much more on the weekends than I do on a regular school or work day [optional question]">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-644.25946" y="291.98523"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="When I am going through a difficult time, I go online less often" label="When I am going through a difficult time, I go online less often">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-534.4833" y="326.2608"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="When I am going through a difficult time, going online makes me feel better" label="When I am going through a difficult time, going online makes me feel better">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-601.2526" y="511.51544"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Peer mediation" label="Peer mediation">
+        <attvalues>
+          <attvalue for="category" value="Peer mediation"></attvalue>
+        </attvalues>
+        <viz:size value="80.0"></viz:size>
+        <viz:position x="367.7888" y="-121.74122"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Helped you when you found something difficult to do or find on the internet" label="Helped you when you found something difficult to do or find on the internet">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="350.27094" y="-5.161517"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Suggested ways to use the internet safely" label="Suggested ways to use the internet safely">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="269.55707" y="-171.46045"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Encourage you to explore and learn things on the internet?" label="Encourage you to explore and learn things on the internet?">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="310.10367" y="-27.991896"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Explained why some websites are good or bad" label="Explained why some websites are good or bad">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="451.01346" y="-17.833746"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Suggested ways to behave towards other people on the internet" label="Suggested ways to behave towards other people on the internet">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="441.93988" y="-206.84541"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Helped you in the past when something has bothered you on the internet" label="Helped you in the past when something has bothered you on the internet">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="258.28558" y="-97.376656"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Other sources of information on internet safety" label="Other sources of information on internet safety">
+        <attvalues>
+          <attvalue for="category" value="Other sources of information on internet safety"></attvalue>
+        </attvalues>
+        <viz:size value="80.0"></viz:size>
+        <viz:position x="505.22568" y="381.1976"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Youth or church or social worker" label="Youth or church or social worker">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="407.22937" y="328.56412"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Teacher" label="Teacher">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="492.54916" y="491.1251"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Parent" label="Parent">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="615.4311" y="400.7707"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Close family friend" label="Close family friend">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="593.3929" y="447.04898"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Other relative" label="Other relative">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="608.5249" y="342.76642"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Librarian" label="Librarian">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="439.2198" y="291.28912"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Someone whose job it is to give advice over the internet" label="Someone whose job it is to give advice over the internet">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="540.09393" y="276.78378"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Websites" label="Websites">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="480.10583" y="267.18753"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Television, radio, newspapers or magazines" label="Television, radio, newspapers or magazines">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="405.72214" y="428.24384"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Internet service provider" label="Internet service provider">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="439.66092" y="469.74127"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Health care professional" label="Health care professional">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="378.3085" y="361.8028"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="I haven't received any advice from any of these people or places" label="I haven't received any advice from any of these people or places">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="550.8298" y="481.43314"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Support provision" label="Support provision">
+        <attvalues>
+          <attvalue for="category" value="Support provision"></attvalue>
+        </attvalues>
+        <viz:size value="80.0"></viz:size>
+        <viz:position x="612.12665" y="-566.79333"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Helped someone setup an email account" label="Helped someone setup an email account">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="590.7222" y="-683.1454"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Helped someone set up a social media account" label="Helped someone set up a social media account">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="520.92084" y="-629.1866"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Helped someone find information or other resources online" label="Helped someone find information or other resources online">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="600.88904" y="-451.70718"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Helped someone post content online (photos, video, text)" label="Helped someone post content online (photos, video, text)">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="504.1416" y="-588.171"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Helped someone complete school or work online" label="Helped someone complete school or work online">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="743.7802" y="-586.1197"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Helped someone submit a job application online" label="Helped someone submit a job application online">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="556.1966" y="-471.97525"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Provided training or support to someone on how to use the Internet" label="Provided training or support to someone on how to use the Internet">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="713.1232" y="-617.6952"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Provided training or support to someone on how to use a game, software, service or device" label="Provided training or support to someone on how to use a game, software, service or device">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="549.49115" y="-662.7078"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Gave consent for my child to participate in an online/social media community" label="Gave consent for my child to participate in an online/social media community">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="717.87115" y="-533.3335"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="loaned a device - Mobile phone" label="loaned a device - Mobile phone">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="696.47516" y="-494.83826"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="loaned a device - Smart phone" label="loaned a device - Smart phone">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="667.4028" y="-461.72876"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="loaned a device - Gaming console" label="loaned a device - Gaming console">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="504.9969" y="-541.407"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="loaned a device - Tablet" label="loaned a device - Tablet">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="523.2047" y="-501.2275"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="loaned a device - Laptop" label="loaned a device - Laptop">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="647.6947" y="-673.0672"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="loaned a device - Other" label="loaned a device - Other">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="686.9417" y="-653.1678"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Support use" label="Support use">
+        <attvalues>
+          <attvalue for="category" value="Support use"></attvalue>
+        </attvalues>
+        <viz:size value="80.0"></viz:size>
+        <viz:position x="235.89133" y="-431.00632"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Sought help from someone to setup an email account" label="Sought help from someone to setup an email account">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="101.63456" y="-450.09595"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Sought help from someone to set up a social media account" label="Sought help from someone to set up a social media account">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="146.4451" y="-362.1882"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Sought help from someone to find information or other resources online" label="Sought help from someone to find information or other resources online">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="285.83463" y="-531.3923"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Sought help from someone to post content online (photos, video, text)" label="Sought help from someone to post content online (photos, video, text)">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="181.41833" y="-335.40192"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Sought help from someone to complete school or work online" label="Sought help from someone to complete school or work online">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="310.29227" y="-349.96143"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Sought help from someone apply for a job online" label="Sought help from someone apply for a job online">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="336.17715" y="-385.59457"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Obtained training or support from someone to use the Internet on a regular basis" label="Obtained training or support from someone to use the Internet on a regular basis">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="157.06668" y="-517.21875"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Obtained training or support to someone on how to use a game, service or device" label="Obtained training or support to someone on how to use a game, service or device">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="247.52696" y="-553.05865"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Sought help to go online by a librarian or community hub staff member" label="Sought help to go online by a librarian or community hub staff member">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="340.49948" y="-465.23135"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Accessed the Internet through a community hub or local library" label="Accessed the Internet through a community hub or local library">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="219.5386" y="-313.40717"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="borrowed a device - Mobile phone" label="borrowed a device - Mobile phone">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="365.50903" y="-418.42706"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="borrowed a device - Smart phone" label="borrowed a device - Smart phone">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="320.7895" y="-504.6307"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="borrowed a device - Gaming console" label="borrowed a device - Gaming console">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="275.13528" y="-323.4424"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="borrowed a device - Tablet" label="borrowed a device - Tablet">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="127.54085" y="-402.00766"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="borrowed a device - Laptop" label="borrowed a device - Laptop">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="134.65285" y="-479.30637"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="borrowed a device - Other" label="borrowed a device - Other">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="192.52472" y="-543.29156"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Importance of online networks" label="Importance of online networks">
+        <attvalues>
+          <attvalue for="category" value="Importance of online networks"></attvalue>
+        </attvalues>
+        <viz:size value="80.0"></viz:size>
+        <viz:position x="-608.2708" y="86.50884"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Online family relationships" label="Online family relationships">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-593.2797" y="195.55273"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Online friend relationships" label="Online friend relationships">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-518.3625" y="149.92836"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Online support forums, groups and networks" label="Online support forums, groups and networks">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-685.4446" y="164.97487"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Online government or community services" label="Online government or community services">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-501.66296" y="59.352654"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Other online information resources" label="Other online information resources">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-663.781" y="-11.499531"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Location of online activity" label="Location of online activity">
+        <attvalues>
+          <attvalue for="category" value="Location of online activity"></attvalue>
+        </attvalues>
+        <viz:size value="80.0"></viz:size>
+        <viz:position x="-111.59844" y="-557.11127"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="At home (in a bedroom or private study)" label="At home (in a bedroom or private study)">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-35.551025" y="-636.62573"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="At home (in a family room or other common space)" label="At home (in a family room or other common space)">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-108.37608" y="-667.1066"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="At school or work" label="At school or work">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-206.9552" y="-502.1125"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="On public transport" label="On public transport">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-216.56686" y="-590.2086"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="In public spaces where WiFi is available" label="In public spaces where WiFi is available">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-64.44978" y="-457.7202"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="In public spaces generally" label="In public spaces generally">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-174.60356" y="-647.3159"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Maintenance of online networks" label="Maintenance of online networks">
+        <attvalues>
+          <attvalue for="category" value="Maintenance of online networks"></attvalue>
+        </attvalues>
+        <viz:size value="80.0"></viz:size>
+        <viz:position x="713.05615" y="700.195"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Family" label="Family">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="759.9656" y="799.6997"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Friends" label="Friends">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="647.2075" y="611.996"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Neighbours" label="Neighbours">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="817.59204" y="664.0957"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Work colleagues or school peers" label="Work colleagues or school peers">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="744.16327" y="594.6831"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Other networks of interest (e.g. sport, culture, or other interests)" label="Other networks of interest (e.g. sport, culture, or other interests)">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="605.3405" y="722.74786"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Approach to online communication" label="Approach to online communication">
+        <attvalues>
+          <attvalue for="category" value="Approach to online communication"></attvalue>
+        </attvalues>
+        <viz:size value="80.0"></viz:size>
+        <viz:position x="1050.1173" y="-539.45886"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="My online life would be impossible without the help of family, friends or neighbours" label="My online life would be impossible without the help of family, friends or neighbours">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="1048.3774" y="-429.31543"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="To go online, I rely upon help from people with technical skills at my library, community hub, school or local businesses" label="To go online, I rely upon help from people with technical skills at my library, community hub, school or local businesses">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="1157.1624" y="-513.59045"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="To go online, I rely upon help from other government or community services" label="To go online, I rely upon help from other government or community services">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="947.0464" y="-500.88885"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="I enjoy using the Internet in the company of others" label="I enjoy using the Internet in the company of others">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="947.93805" y="-580.26843"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="I enjoy providing help to other people in my family to go online" label="I enjoy providing help to other people in my family to go online">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="1130.6869" y="-614.4487"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="I enjoy providing help to other people in my community to go online" label="I enjoy providing help to other people in my community to go online">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="1120.9124" y="-455.23944"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="I prefer to go online when I am alone" label="I prefer to go online when I am alone">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="1018.71124" y="-644.9664"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="I find sharing screens with other people frustrating" label="I find sharing screens with other people frustrating">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="982.30005" y="-444.9927"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Convergence of online and offline social networks" label="Convergence of online and offline social networks">
+        <attvalues>
+          <attvalue for="category" value="Convergence of online and offline social networks"></attvalue>
+        </attvalues>
+        <viz:size value="80.0"></viz:size>
+        <viz:position x="-993.89514" y="254.40956"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="For work-related activities, I only communicate with people I know &quot;in real life&quot;." label="For work-related activities, I only communicate with people I know &quot;in real life&quot;.">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-879.0275" y="234.95613"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="For study or school-related activities, I only communicate with people I know &quot;in real life&quot;." label="For study or school-related activities, I only communicate with people I know &quot;in real life&quot;.">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-929.94196" y="343.95862"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="For hobby-related activities, I only communicate with people I know &quot;in real life&quot;." label="For hobby-related activities, I only communicate with people I know &quot;in real life&quot;.">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-1093.6533" y="300.79965"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="For other personal activities, I only communicate with people I know &quot;in real life&quot;." label="For other personal activities, I only communicate with people I know &quot;in real life&quot;.">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-985.378" y="144.69714"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Using the Internet to stay in touch" label="Using the Internet to stay in touch">
+        <attvalues>
+          <attvalue for="category" value="Using the Internet to stay in touch"></attvalue>
+        </attvalues>
+        <viz:size value="80.0"></viz:size>
+        <viz:position x="270.41327" y="-775.48016"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Look for updates from friends or family (e.g. email, status / photos on social networking sites)" label="Look for updates from friends or family (e.g. email, status / photos on social networking sites)">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="378.9045" y="-795.8768"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Comment on the updates friends or family put online (e.g. email, status / photos on social networking sites)" label="Comment on the updates friends or family put online (e.g. email, status / photos on social networking sites)">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="310.7537" y="-672.83374"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Talk to family or friends who live further away (e.g. via skype, whatsapp, or email)" label="Talk to family or friends who live further away (e.g. via skype, whatsapp, or email)">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="209.10234" y="-872.8262"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Share pictures of you with your family or friends (e.g. through a social networking site, photo sharing site)" label="Share pictures of you with your family or friends (e.g. through a social networking site, photo sharing site)">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="337.41287" y="-862.7365"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Look for websites online that help you to meet new people (e.g. online dating, social networking sites, hobby or crafts clubs)" label="Look for websites online that help you to meet new people (e.g. online dating, social networking sites, hobby or crafts clubs)">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="210.71469" y="-682.9944"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Make new friends /meet new people" label="Make new friends /meet new people">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="366.72513" y="-721.7189"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Like or promote content that other people post" label="Like or promote content that other people post">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="157.92014" y="-756.2009"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Improving relationships" label="Improving relationships">
+        <attvalues>
+          <attvalue for="category" value="Improving relationships"></attvalue>
+        </attvalues>
+        <viz:size value="80.0"></viz:size>
+        <viz:position x="-757.69165" y="-282.11545"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="I have a better relationship with my friends and family because I use the internet" label="I have a better relationship with my friends and family because I use the internet">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-671.28796" y="-214.0375"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="I am in touch with my close friends more because I use the internet" label="I am in touch with my close friends more because I use the internet">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-789.2478" y="-387.5623"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="I have more friends because I use the internet" label="I have more friends because I use the internet">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-671.5247" y="-351.14276"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="People I meet online are more interesting than the people I meet offline" label="People I meet online are more interesting than the people I meet offline">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-851.55133" y="-224.33932"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Engaging with Institutions" label="Engaging with Institutions">
+        <attvalues>
+          <attvalue for="category" value="Engaging with Institutions"></attvalue>
+        </attvalues>
+        <viz:size value="80.0"></viz:size>
+        <viz:position x="689.4052" y="106.15942"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Look for information about national government services (e.g. benefits, taxes, a driving licence or passport)" label="Look for information about national government services (e.g. benefits, taxes, a driving licence or passport)">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="611.85175" y="26.374096"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Ask a representative of a public institution for advice on public services (e.g. your local council / municipality)" label="Ask a representative of a public institution for advice on public services (e.g. your local council / municipality)">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="678.88135" y="-3.3383348"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Complete an online form for a national government service" label="Complete an online form for a national government service">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="797.1073" y="128.5994"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Look for information about an MP, local councillor, political party or candidate" label="Look for information about an MP, local councillor, political party or candidate">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="741.8782" y="7.6401124"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Follow or contact a politician (or political organization)" label="Follow or contact a politician (or political organization)">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="785.41943" y="47.875904"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Join or start a group that discusses politics or political issues" label="Join or start a group that discusses politics or political issues">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="574.181" y="84.7897"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Look for information about any other government, community or other organisational body" label="Look for information about any other government, community or other organisational body">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="688.2375" y="216.23341"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Household capacities" label="Household capacities">
+        <attvalues>
+          <attvalue for="category" value="Household capacities"></attvalue>
+        </attvalues>
+        <viz:size value="80.0"></viz:size>
+        <viz:position x="706.2943" y="-230.41063"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Someone in my household is usually able to fix Internet connection problems." label="Someone in my household is usually able to fix Internet connection problems.">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="796.5479" y="-294.3945"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Someone in my household is usually able to help others with common technical tasks, like installing apps, paying bills online, setup email and calendars, back up devices, and so on." label="Someone in my household is usually able to help others with common technical tasks, like installing apps, paying bills online, setup email and calendars, back up devices, and so on.">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="718.34186" y="-339.7959"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Someone in my household is usually willing to help and show others how to use new technologies and applications." label="Someone in my household is usually willing to help and show others how to use new technologies and applications.">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="639.65784" y="-317.9498"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="My household is able to use technology effectively to engage with local, national and international political issues." label="My household is able to use technology effectively to engage with local, national and international political issues.">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="650.45544" y="-130.07188"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="My household is able to use technology effectively to promote cultural activities." label="My household is able to use technology effectively to promote cultural activities.">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="600.39404" y="-260.1995"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="My household is able to use technology effectively to learn about and address environmental concerns." label="My household is able to use technology effectively to learn about and address environmental concerns.">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="781.748" y="-150.32033"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="My household is able to use technology effectively to undertake training, find work, advance their careers and pursue business opportunities." label="My household is able to use technology effectively to undertake training, find work, advance their careers and pursue business opportunities.">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="603.14355" y="-192.1475"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Neighbourhood capacities" label="Neighbourhood capacities">
+        <attvalues>
+          <attvalue for="category" value="Neighbourhood capacities"></attvalue>
+        </attvalues>
+        <viz:size value="80.0"></viz:size>
+        <viz:position x="-695.62854" y="-705.1278"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Someone in my neighbourhood is usually able to help others with common technical tasks, like installing apps, paying bills online, setup email and calendars, back up devices, and so on." label="Someone in my neighbourhood is usually able to help others with common technical tasks, like installing apps, paying bills online, setup email and calendars, back up devices, and so on.">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-735.81116" y="-602.6397"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="I am able to call on someone in my neighbourhood who is willing to help and show others how to use new technologies and applications." label="I am able to call on someone in my neighbourhood who is willing to help and show others how to use new technologies and applications.">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-608.7649" y="-637.49335"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="My neighbourhood is able to use technology effectively to engage with local, national and international political issues." label="My neighbourhood is able to use technology effectively to engage with local, national and international political issues.">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-810.9118" y="-685.8378"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="My neighbourhood is able to use technology effectively to promote cultural activities." label="My neighbourhood is able to use technology effectively to promote cultural activities.">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-780.01416" y="-627.2902"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="My neighbourhood is able to use technology effectively to learn about and address environmental concerns." label="My neighbourhood is able to use technology effectively to learn about and address environmental concerns.">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-653.32886" y="-806.7231"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="My neighbourhood is able to use technology effectively to undertake training, find work, advance their careers and pursue business opportunities." label="My neighbourhood is able to use technology effectively to undertake training, find work, advance their careers and pursue business opportunities.">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-665.36273" y="-592.5978"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Community capacities" label="Community capacities">
+        <attvalues>
+          <attvalue for="category" value="Community capacities"></attvalue>
+        </attvalues>
+        <viz:size value="80.0"></viz:size>
+        <viz:position x="-399.49377" y="660.75397"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="My community is generally highly &quot;digitally capable&quot; - many people are able to use technology effectively for work, social and personal reasons." label="My community is generally highly &quot;digitally capable&quot; - many people are able to use technology effectively for work, social and personal reasons.">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-276.80347" y="680.20105"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="My community is able to use technology effectively to engage with local, national and international political issues." label="My community is able to use technology effectively to engage with local, national and international political issues.">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-390.91345" y="550.02985"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="My community is able to use technology effectively to promote cultural activities." label="My community is able to use technology effectively to promote cultural activities.">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-480.0289" y="585.7006"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="My community is able to use technology effectively to learn about and address environmental concerns." label="My community is able to use technology effectively to learn about and address environmental concerns.">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-325.3773" y="575.5933"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="My community is able to use technology effectively to undertake training, find work, advance their careers and pursue business opportunities." label="My community is able to use technology effectively to undertake training, find work, advance their careers and pursue business opportunities.">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-414.47745" y="769.7352"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Other government or community services" label="Other government or community services">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="579.06934" y="299.58823"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Attitudes towards technology" label="Attitudes towards technology">
+        <attvalues>
+          <attvalue for="category" value="Attitudes towards technology"></attvalue>
+        </attvalues>
+        <viz:size value="80.0"></viz:size>
+        <viz:position x="1027.9425" y="541.6454"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="I am concerned about the impacts of e-waste on the environment." label="I am concerned about the impacts of e-waste on the environment.">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="1094.0657" y="453.6642"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Generally, I am optimistic about the future of technology." label="Generally, I am optimistic about the future of technology.">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="966.6074" y="443.5889"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="I am concerned about how companies, governements and others might use my online information." label="I am concerned about how companies, governements and others might use my online information.">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="930.2543" y="490.90958"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="I try to reduce the impacts of my own use of technology on the environment." label="I try to reduce the impacts of my own use of technology on the environment.">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="1027.2721" y="431.56512"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Technology companies need to do more to make sure their products do not damage the environment." label="Technology companies need to do more to make sure their products do not damage the environment.">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="1033.7589" y="651.4998"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="General demographics" label="General demographics">
+        <attvalues>
+          <attvalue for="category" value="General demographics"></attvalue>
+        </attvalues>
+        <viz:size value="80.0"></viz:size>
+        <viz:position x="-1095.2677" y="-188.04707"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="I live alone" label="I live alone">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-1145.4569" y="-286.02942"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Spouse or partner" label="Spouse or partner">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-1095.6383" y="-78.0017"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Father or stepfather or my father's partner" label="Father or stepfather or my father's partner">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-1176.0681" y="-113.31671"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Mother or stepmother or my mother's partner" label="Mother or stepmother or my mother's partner">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-1005.7225" y="-252.01828"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Older brother(s)" label="Older brother(s)">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-991.21387" y="-152.06102"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Older sister(s)" label="Older sister(s)">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-1212.924" y="-168.7277"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Younger brother(s)" label="Younger brother(s)">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-1072.9562" y="-295.88818"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+      <node id="Younger sister(s)" label="Younger sister(s)">
+        <attvalues></attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-1191.6802" y="-241.06462"></viz:position>
+        <viz:color r="255" g="218" b="171"></viz:color>
+      </node>
+    </nodes>
+    <edges>
+      <edge id="1" source="Buying and Selling" target="Look for information on the price of a product (e.g. books, holidays, clothes, cars)">
+        <attvalues>
+          <attvalue for="dci.id" value="328.1"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="2" source="Buying and Selling" target="Talk to others about the price of a product (e.g. on a forum or online chat)">
+        <attvalues>
+          <attvalue for="dci.id" value="328.2"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="3" source="Buying and Selling" target="Make an offer on a product (e.g. on eBay, Amazon)">
+        <attvalues>
+          <attvalue for="dci.id" value="328.3"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="4" source="Buying and Selling" target="Look for information on how to sell something you own">
+        <attvalues>
+          <attvalue for="dci.id" value="328.4"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="5" source="Buying and Selling" target="Respond to people's requests for information about a product or service you want to sell">
+        <attvalues>
+          <attvalue for="dci.id" value="328.5"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="6" source="Buying and Selling" target="Put a product up for sale">
+        <attvalues>
+          <attvalue for="dci.id" value="328.6"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="7" source="Buying and Selling" target="Look for information on insurance policies (e.g. car/health/life or other insurance)">
+        <attvalues>
+          <attvalue for="dci.id" value="328.7"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="8" source="Buying and Selling" target="Compare reviews of insurance policies . car/health/life or other insurance)">
+        <attvalues>
+          <attvalue for="dci.id" value="328.8"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="9" source="Buying and Selling" target="Purchase insurance online (e.g. car/he/life or other)">
+        <attvalues>
+          <attvalue for="dci.id" value="328.9"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="10" source="Information seeking" target="Look for something (e.g. software, devices, apps, instruments, kit etc) that would help you do your job better">
+        <attvalues>
+          <attvalue for="dci.id" value="332.1"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="11" source="Information seeking" target="Talk to others online about how to solve a job related problem (e.g. via email, social networking site, or forum)">
+        <attvalues>
+          <attvalue for="dci.id" value="332.2"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="12" source="Information seeking" target="Integrate tools or apps you have downloaded into the way you work">
+        <attvalues>
+          <attvalue for="dci.id" value="332.3"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="13" source="Information seeking" target="Look for a different job online">
+        <attvalues>
+          <attvalue for="dci.id" value="332.4"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="14" source="Information seeking" target="Talk to others online about jobortunities (e.g. email, social networking site, or forum)">
+        <attvalues>
+          <attvalue for="dci.id" value="332.5"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="15" source="Information seeking" target="Create or share a CV on a professional and work related site (e.g. Linkedin, Monsterboard)">
+        <attvalues>
+          <attvalue for="dci.id" value="332.6"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="16" source="News seeking" target="Look for the latest news on current affairs">
+        <attvalues>
+          <attvalue for="dci.id" value="338.1"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="17" source="News seeking" target="Look for the latest sports news">
+        <attvalues>
+          <attvalue for="dci.id" value="338.2"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="18" source="News seeking" target="Look for the latest celebrity news">
+        <attvalues>
+          <attvalue for="dci.id" value="338.3"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="19" source="News seeking" target="Chat about relationships and friendships (e.g. via email, a social networking site, whatsapp, etc)">
+        <attvalues>
+          <attvalue for="dci.id" value="338.4"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="20" source="Entertainment" target="Look up information on where to go out (e.g. exhibitions, cinema, parties)">
+        <attvalues>
+          <attvalue for="dci.id" value="340.1"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="21" source="Entertainment" target="Read information about relationships (e.g. about managing relationships or dating)">
+        <attvalues>
+          <attvalue for="dci.id" value="340.2"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="22" source="Entertainment" target="Read information on parenting">
+        <attvalues>
+          <attvalue for="dci.id" value="340.3"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="23" source="Entertainment" target="Look up information on transport (e.g. bus or train timetables)">
+        <attvalues>
+          <attvalue for="dci.id" value="340.4"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="24" source="Entertainment" target="Arrange with other people to go out">
+        <attvalues>
+          <attvalue for="dci.id" value="340.5"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="25" source="Entertainment" target="Upload pictures of yourself">
+        <attvalues>
+          <attvalue for="dci.id" value="340.6"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="26" source="Entertainment" target="Look for websites with religious or spiritual information">
+        <attvalues>
+          <attvalue for="dci.id" value="340.7"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="27" source="Entertainment" target="Contact people who share religious or spiritual beliefs">
+        <attvalues>
+          <attvalue for="dci.id" value="340.8"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="28" source="Entertainment" target="Log in on a website with religious or spiritual content">
+        <attvalues>
+          <attvalue for="dci.id" value="340.9"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="29" source="Difference seeking" target="Through the internet I found people of a similar age that share my interests">
+        <attvalues>
+          <attvalue for="dci.id" value="341.1"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="30" source="Difference seeking" target="The things I came across on the internet made me think about the differences between men and women">
+        <attvalues>
+          <attvalue for="dci.id" value="341.2"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="31" source="Difference seeking" target="Through the Internet I learned new things about my ethnic group">
+        <attvalues>
+          <attvalue for="dci.id" value="341.3"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="32" source="Difference seeking" target="Due to the information I found and people I have met online I feel more connected with religion or spiritual beliefs">
+        <attvalues>
+          <attvalue for="dci.id" value="341.4"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="33" source="Difference seeking" target="Through the Internet I learned new things about other ethnic groups">
+        <attvalues>
+          <attvalue for="dci.id" value="341.5"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="34" source="Health" target="Look up information on how to improve your health">
+        <attvalues>
+          <attvalue for="dci.id" value="352.1"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="35" source="Health" target="Ask others about a training program">
+        <attvalues>
+          <attvalue for="dci.id" value="352.2"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="36" source="Health" target="Use exercise or nutrition programs / apps">
+        <attvalues>
+          <attvalue for="dci.id" value="352.3"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="37" source="Health" target="Look up information about health or medical care">
+        <attvalues>
+          <attvalue for="dci.id" value="352.4"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="38" source="Health" target="Ask for advice on a medical condition">
+        <attvalues>
+          <attvalue for="dci.id" value="352.5"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="39" source="Health" target="Fill out a questionnaire related to your health">
+        <attvalues>
+          <attvalue for="dci.id" value="352.6"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="40" source="Health improvement" target="I am healthier as a result of the online information, advice or programs / apps I have used">
+        <attvalues>
+          <attvalue for="dci.id" value="353.1"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="41" source="Health improvement" target="I have made better decisions about my health or medical care as a result of the information / advice I found online">
+        <attvalues>
+          <attvalue for="dci.id" value="353.2"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="42" source="Leisure" target="Come across online lifestyle magazines / features / articles">
+        <attvalues>
+          <attvalue for="dci.id" value="355.1"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="43" source="Leisure" target="Talk to others about your lifestyle">
+        <attvalues>
+          <attvalue for="dci.id" value="355.2"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="44" source="Leisure" target="Blog or maintain a website about your personal life">
+        <attvalues>
+          <attvalue for="dci.id" value="355.3"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="45" source="Leisure" target="Look for jokes, cartoons or other entertaining content">
+        <attvalues>
+          <attvalue for="dci.id" value="355.4"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="46" source="Leisure" target="Play games">
+        <attvalues>
+          <attvalue for="dci.id" value="355.5"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="47" source="Leisure" target="Listen to music">
+        <attvalues>
+          <attvalue for="dci.id" value="355.6"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="48" source="Leisure" target="Watch videos / tv programmes">
+        <attvalues>
+          <attvalue for="dci.id" value="355.7"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="49" source="Leisure" target="Write a blog or maintain a website on issues or problems of interest to you">
+        <attvalues>
+          <attvalue for="dci.id" value="355.8"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="50" source="Leisure" target="Write comments about or rate videos, music, books, TV shows etc">
+        <attvalues>
+          <attvalue for="dci.id" value="355.9"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="51" source="Keeping in touch" target="Staying in touch with friends">
+        <attvalues>
+          <attvalue for="dci.id" value="430.1"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="52" source="Keeping in touch" target="Making new friends">
+        <attvalues>
+          <attvalue for="dci.id" value="430.2"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="53" source="Keeping in touch" target="Contacting family">
+        <attvalues>
+          <attvalue for="dci.id" value="430.3"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="54" source="Keeping in touch" target="Contacting support services">
+        <attvalues>
+          <attvalue for="dci.id" value="430.4"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="55" source="Keeping in touch" target="Calling about a job">
+        <attvalues>
+          <attvalue for="dci.id" value="430.5"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="56" source="Keeping in touch" target="Being contacted by employers">
+        <attvalues>
+          <attvalue for="dci.id" value="430.6"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="57" source="Keeping in touch" target="Paying bills">
+        <attvalues>
+          <attvalue for="dci.id" value="430.7"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="58" source="Keeping in touch" target="Finding accommodation">
+        <attvalues>
+          <attvalue for="dci.id" value="430.8"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="59" source="Keeping in touch" target="Learning new skills">
+        <attvalues>
+          <attvalue for="dci.id" value="430.9"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="60" source="Keeping in touch" target="Keeping safe">
+        <attvalues>
+          <attvalue for="dci.id" value="430.10"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="61" source="Keeping in touch" target="Betting">
+        <attvalues>
+          <attvalue for="dci.id" value="430.11"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="62" source="Keeping in touch" target="Contacting emergency services">
+        <attvalues>
+          <attvalue for="dci.id" value="430.12"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="63" source="Keeping in touch" target="Contacting a doctor or other medical service">
+        <attvalues>
+          <attvalue for="dci.id" value="430.13"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="64" source="Keeping in touch" target="Other">
+        <attvalues>
+          <attvalue for="dci.id" value="430.14"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="65" source="Online activities" target="Used the internet for school work">
+        <attvalues>
+          <attvalue for="dci.id" value="74.1"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="66" source="Online activities" target="Watched video clips (e.g. on YouTube)">
+        <attvalues>
+          <attvalue for="dci.id" value="74.2"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="67" source="Online activities" target="Watched music or films available online">
+        <attvalues>
+          <attvalue for="dci.id" value="74.3"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="68" source="Online activities" target="Read/watched the news on the internet">
+        <attvalues>
+          <attvalue for="dci.id" value="74.4"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="69" source="Online activities" target="Sent/received email">
+        <attvalues>
+          <attvalue for="dci.id" value="74.5"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="70" source="Online activities" target="Used a social network site (e.g. Facebook, Twitter, Instagram, Tumblr, Tinder, Weibu)">
+        <attvalues>
+          <attvalue for="dci.id" value="74.6"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="71" source="Online activities" target="Used instant messaging">
+        <attvalues>
+          <attvalue for="dci.id" value="74.7"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="72" source="Online activities" target="Played games with other people on the internet">
+        <attvalues>
+          <attvalue for="dci.id" value="74.8"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="73" source="Online activities" target="Played internet games (on your own or against the computer)">
+        <attvalues>
+          <attvalue for="dci.id" value="74.9"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="74" source="Online activities" target="Used a camera for video communication (e.g. Skype, Facetime)">
+        <attvalues>
+          <attvalue for="dci.id" value="74.10"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="75" source="Online activities" target="Put (or posted) a message on a website">
+        <attvalues>
+          <attvalue for="dci.id" value="74.11"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="76" source="Online activities" target="Written a blog or online diary">
+        <attvalues>
+          <attvalue for="dci.id" value="74.12"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="77" source="Online activities" target="Put (or posted) photos, videos or music to share with others">
+        <attvalues>
+          <attvalue for="dci.id" value="74.13"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="78" source="Competencies with digital life" target="Download apps">
+        <attvalues>
+          <attvalue for="dci.id" value="431.1"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="79" source="Competencies with digital life" target="Deactivate the function showing your geographical position (on Facebook, Google Maps, etc?)">
+        <attvalues>
+          <attvalue for="dci.id" value="431.2"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="80" source="Competencies with digital life" target="Connect to a wifi network from your smartphone/tablet">
+        <attvalues>
+          <attvalue for="dci.id" value="431.3"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="81" source="Competencies with digital life" target="Block push notifications from different apps">
+        <attvalues>
+          <attvalue for="dci.id" value="431.4"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="82" source="Competencies with digital life" target="Have the same documents, contacts, and apps on all devices that you use (smartphones, tablets, PCs)">
+        <attvalues>
+          <attvalue for="dci.id" value="431.5"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="83" source="Competencies with digital life" target="Block pop ups which promote apps, games or services you have to pay for (unrequested windows that appear during web surfing)">
+        <attvalues>
+          <attvalue for="dci.id" value="431.6"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="84" source="Competencies with digital life" target="Protect a smartphone with a PIN/with a screen pattern">
+        <attvalues>
+          <attvalue for="dci.id" value="431.7"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="85" source="Competencies with digital life" target="Update your status on the social networking site used the most">
+        <attvalues>
+          <attvalue for="dci.id" value="431.8"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="86" source="Competencies with digital life" target="Find information on how to use smartphones safely">
+        <attvalues>
+          <attvalue for="dci.id" value="431.9"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="87" source="Competencies with digital life" target="Compare different apps with similar functions in order to choose the one that is most reliable">
+        <attvalues>
+          <attvalue for="dci.id" value="431.10"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="88" source="Competencies with digital life" target="Take a picture or a short video with your smartphone and upload it onto social media">
+        <attvalues>
+          <attvalue for="dci.id" value="431.11"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="89" source="Competencies with digital life" target="Compare different websites to decide if information is true">
+        <attvalues>
+          <attvalue for="dci.id" value="431.12"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="90" source="Competencies with digital life" target="Change filter preferences">
+        <attvalues>
+          <attvalue for="dci.id" value="431.13"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="91" source="Competencies with digital life" target="Bookmark a website">
+        <attvalues>
+          <attvalue for="dci.id" value="431.14"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="92" source="Competencies with digital life" target="Block unwanted adverts or junk mail/spam">
+        <attvalues>
+          <attvalue for="dci.id" value="431.15"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="93" source="Competencies with digital life" target="Delete the record of which sites you have visited">
+        <attvalues>
+          <attvalue for="dci.id" value="431.16"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="94" source="Competencies with digital life" target="Change privacy setting on a social networking profile">
+        <attvalues>
+          <attvalue for="dci.id" value="431.17"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="95" source="Competencies with digital life" target="Use 'report abuse' buttons (e.g. the button you can use when you want to report an un-authorised usage of your picture)">
+        <attvalues>
+          <attvalue for="dci.id" value="431.18"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="96" source="Competencies with digital life" target="Block messages from someone you don't want to hear from">
+        <attvalues>
+          <attvalue for="dci.id" value="431.19"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="97" source="Competencies with digital life" target="Block pop ups (unrequested windows that appear during web surfing)">
+        <attvalues>
+          <attvalue for="dci.id" value="431.20"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="98" source="Competencies with digital life" target="Find information on how to use the internet safely">
+        <attvalues>
+          <attvalue for="dci.id" value="431.21"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="99" source="Competencies with digital life" target="Publish a comment on a blog, websites or forum">
+        <attvalues>
+          <attvalue for="dci.id" value="431.22"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="100" source="Competencies with digital life" target="Upload images videos or music onto social media">
+        <attvalues>
+          <attvalue for="dci.id" value="431.23"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="101" source="Competencies with digital life" target="Create a blog">
+        <attvalues>
+          <attvalue for="dci.id" value="431.24"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="102" source="Other negative online experiences" target="Somebody used my personal information in a way I didn't like">
+        <attvalues>
+          <attvalue for="dci.id" value="143.1"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="103" source="Other negative online experiences" target="The computer got a virus">
+        <attvalues>
+          <attvalue for="dci.id" value="143.2"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="104" source="Other negative online experiences" target="I lost money by being cheated on the internet (we mean real money, rather than money in a computer game)">
+        <attvalues>
+          <attvalue for="dci.id" value="143.3"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="105" source="Other negative online experiences" target="Somebody used my password to access my information or to pretend to be me">
+        <attvalues>
+          <attvalue for="dci.id" value="143.4"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="106" source="Other negative online experiences" target="Somebody created a page or image about me that was hostile or hurtful">
+        <attvalues>
+          <attvalue for="dci.id" value="143.5"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="107" source="Treated in a hurtful or nasty way by others (bullied)" target="Nasty or hurtful messages were sent to me">
+        <attvalues>
+          <attvalue for="dci.id" value="135.1"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="108" source="Treated in a hurtful or nasty way by others (bullied)" target="Nasty or hurtful messages were passed around or posted where others could see">
+        <attvalues>
+          <attvalue for="dci.id" value="135.2"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="109" source="Treated in a hurtful or nasty way by others (bullied)" target="I was left out or excluded from a group or activity on the internet">
+        <attvalues>
+          <attvalue for="dci.id" value="135.3"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="110" source="Treated in a hurtful or nasty way by others (bullied)" target="I was threatened on the internet">
+        <attvalues>
+          <attvalue for="dci.id" value="135.4"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="111" source="Treated in a hurtful or nasty way by others (bullied)" target="Other nasty or hurtful things on the internet">
+        <attvalues>
+          <attvalue for="dci.id" value="135.5"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="112" source="Treated in a hurtful or nasty way by others (bullied)" target="Something else">
+        <attvalues>
+          <attvalue for="dci.id" value="135.6"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="113" source="Treated in a hurtful or nasty way by others (bullied)" target="Don't know">
+        <attvalues>
+          <attvalue for="dci.id" value="135.7"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="114" source="Treated in a hurtful or nasty way by others (bullied)" target="Prefer not to say">
+        <attvalues>
+          <attvalue for="dci.id" value="135.8"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="115" source="Engage with others online" target="I find it easier to be myself when online than when I am with people face-to-face">
+        <attvalues>
+          <attvalue for="dci.id" value="428.1"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="116" source="Engage with others online" target="I talk about different things with people when online than I do when face-to-face">
+        <attvalues>
+          <attvalue for="dci.id" value="428.2"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="117" source="Engage with others online" target="When I am online, I talk about private things that I do not share with people face-to-face">
+        <attvalues>
+          <attvalue for="dci.id" value="428.3"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="118" source="Engage with others online" target="I go online much more on the weekends than I do on a regular school or work day [optional question]">
+        <attvalues>
+          <attvalue for="dci.id" value="428.4"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="119" source="Engage with others online" target="When I am going through a difficult time, I go online less often">
+        <attvalues>
+          <attvalue for="dci.id" value="428.5"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="120" source="Engage with others online" target="When I am going through a difficult time, going online makes me feel better">
+        <attvalues>
+          <attvalue for="dci.id" value="428.6"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="121" source="Peer mediation" target="Helped you when you found something difficult to do or find on the internet">
+        <attvalues>
+          <attvalue for="dci.id" value="432.1"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="122" source="Peer mediation" target="Suggested ways to use the internet safely">
+        <attvalues>
+          <attvalue for="dci.id" value="432.2"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="123" source="Peer mediation" target="Encourage you to explore and learn things on the internet?">
+        <attvalues>
+          <attvalue for="dci.id" value="432.3"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="124" source="Peer mediation" target="Explained why some websites are good or bad">
+        <attvalues>
+          <attvalue for="dci.id" value="432.4"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="125" source="Peer mediation" target="Suggested ways to behave towards other people on the internet">
+        <attvalues>
+          <attvalue for="dci.id" value="432.5"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="126" source="Peer mediation" target="Helped you in the past when something has bothered you on the internet">
+        <attvalues>
+          <attvalue for="dci.id" value="432.6"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="127" source="Other sources of information on internet safety" target="Youth or church or social worker">
+        <attvalues>
+          <attvalue for="dci.id" value="433.1"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="128" source="Other sources of information on internet safety" target="Teacher">
+        <attvalues>
+          <attvalue for="dci.id" value="433.2"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="129" source="Other sources of information on internet safety" target="Parent">
+        <attvalues>
+          <attvalue for="dci.id" value="433.3"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="130" source="Other sources of information on internet safety" target="Close family friend">
+        <attvalues>
+          <attvalue for="dci.id" value="433.4"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="131" source="Other sources of information on internet safety" target="Other relative">
+        <attvalues>
+          <attvalue for="dci.id" value="433.5"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="132" source="Other sources of information on internet safety" target="Librarian">
+        <attvalues>
+          <attvalue for="dci.id" value="433.6"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="133" source="Other sources of information on internet safety" target="Someone whose job it is to give advice over the internet">
+        <attvalues>
+          <attvalue for="dci.id" value="433.7"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="134" source="Other sources of information on internet safety" target="Websites">
+        <attvalues>
+          <attvalue for="dci.id" value="433.8"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="135" source="Other sources of information on internet safety" target="Television, radio, newspapers or magazines">
+        <attvalues>
+          <attvalue for="dci.id" value="433.9"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="136" source="Other sources of information on internet safety" target="Internet service provider">
+        <attvalues>
+          <attvalue for="dci.id" value="433.10"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="137" source="Other sources of information on internet safety" target="Health care professional">
+        <attvalues>
+          <attvalue for="dci.id" value="433.11"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="138" source="Other sources of information on internet safety" target="I haven't received any advice from any of these people or places">
+        <attvalues>
+          <attvalue for="dci.id" value="433.13"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="139" source="Support provision" target="Helped someone setup an email account">
+        <attvalues>
+          <attvalue for="dci.id" value="277.1"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="140" source="Support provision" target="Helped someone set up a social media account">
+        <attvalues>
+          <attvalue for="dci.id" value="277.2"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="141" source="Support provision" target="Helped someone find information or other resources online">
+        <attvalues>
+          <attvalue for="dci.id" value="277.3"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="142" source="Support provision" target="Helped someone post content online (photos, video, text)">
+        <attvalues>
+          <attvalue for="dci.id" value="277.4"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="143" source="Support provision" target="Helped someone complete school or work online">
+        <attvalues>
+          <attvalue for="dci.id" value="277.5"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="144" source="Support provision" target="Helped someone submit a job application online">
+        <attvalues>
+          <attvalue for="dci.id" value="277.6"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="145" source="Support provision" target="Provided training or support to someone on how to use the Internet">
+        <attvalues>
+          <attvalue for="dci.id" value="277.7"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="146" source="Support provision" target="Provided training or support to someone on how to use a game, software, service or device">
+        <attvalues>
+          <attvalue for="dci.id" value="277.8"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="147" source="Support provision" target="Gave consent for my child to participate in an online/social media community">
+        <attvalues>
+          <attvalue for="dci.id" value="277.9"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="148" source="Support provision" target="loaned a device - Mobile phone">
+        <attvalues>
+          <attvalue for="dci.id" value="278.1"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="149" source="Support provision" target="loaned a device - Smart phone">
+        <attvalues>
+          <attvalue for="dci.id" value="278.2"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="150" source="Support provision" target="loaned a device - Gaming console">
+        <attvalues>
+          <attvalue for="dci.id" value="278.3"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="151" source="Support provision" target="loaned a device - Tablet">
+        <attvalues>
+          <attvalue for="dci.id" value="278.4"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="152" source="Support provision" target="loaned a device - Laptop">
+        <attvalues>
+          <attvalue for="dci.id" value="278.5"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="153" source="Support provision" target="loaned a device - Other">
+        <attvalues>
+          <attvalue for="dci.id" value="278.6"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="154" source="Support use" target="Sought help from someone to setup an email account">
+        <attvalues>
+          <attvalue for="dci.id" value="280.1"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="155" source="Support use" target="Sought help from someone to set up a social media account">
+        <attvalues>
+          <attvalue for="dci.id" value="280.2"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="156" source="Support use" target="Sought help from someone to find information or other resources online">
+        <attvalues>
+          <attvalue for="dci.id" value="280.3"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="157" source="Support use" target="Sought help from someone to post content online (photos, video, text)">
+        <attvalues>
+          <attvalue for="dci.id" value="280.4"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="158" source="Support use" target="Sought help from someone to complete school or work online">
+        <attvalues>
+          <attvalue for="dci.id" value="280.5"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="159" source="Support use" target="Sought help from someone apply for a job online">
+        <attvalues>
+          <attvalue for="dci.id" value="280.6"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="160" source="Support use" target="Obtained training or support from someone to use the Internet on a regular basis">
+        <attvalues>
+          <attvalue for="dci.id" value="280.7"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="161" source="Support use" target="Obtained training or support to someone on how to use a game, service or device">
+        <attvalues>
+          <attvalue for="dci.id" value="280.8"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="162" source="Support use" target="Sought help to go online by a librarian or community hub staff member">
+        <attvalues>
+          <attvalue for="dci.id" value="280.9"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="163" source="Support use" target="Accessed the Internet through a community hub or local library">
+        <attvalues>
+          <attvalue for="dci.id" value="280.10"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="164" source="Support use" target="borrowed a device - Mobile phone">
+        <attvalues>
+          <attvalue for="dci.id" value="281.1"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="165" source="Support use" target="borrowed a device - Smart phone">
+        <attvalues>
+          <attvalue for="dci.id" value="281.2"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="166" source="Support use" target="borrowed a device - Gaming console">
+        <attvalues>
+          <attvalue for="dci.id" value="281.3"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="167" source="Support use" target="borrowed a device - Tablet">
+        <attvalues>
+          <attvalue for="dci.id" value="281.4"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="168" source="Support use" target="borrowed a device - Laptop">
+        <attvalues>
+          <attvalue for="dci.id" value="281.5"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="169" source="Support use" target="borrowed a device - Other">
+        <attvalues>
+          <attvalue for="dci.id" value="281.6"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="170" source="Importance of online networks" target="Online family relationships">
+        <attvalues>
+          <attvalue for="dci.id" value="284.1"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="171" source="Importance of online networks" target="Online friend relationships">
+        <attvalues>
+          <attvalue for="dci.id" value="284.2"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="172" source="Importance of online networks" target="Online support forums, groups and networks">
+        <attvalues>
+          <attvalue for="dci.id" value="284.3"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="173" source="Importance of online networks" target="Online government or community services">
+        <attvalues>
+          <attvalue for="dci.id" value="284.4"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="174" source="Importance of online networks" target="Other online information resources">
+        <attvalues>
+          <attvalue for="dci.id" value="284.5"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="175" source="Location of online activity" target="At home (in a bedroom or private study)">
+        <attvalues>
+          <attvalue for="dci.id" value="285.1"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="176" source="Location of online activity" target="At home (in a family room or other common space)">
+        <attvalues>
+          <attvalue for="dci.id" value="285.2"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="177" source="Location of online activity" target="At school or work">
+        <attvalues>
+          <attvalue for="dci.id" value="285.3"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="178" source="Location of online activity" target="On public transport">
+        <attvalues>
+          <attvalue for="dci.id" value="285.4"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="179" source="Location of online activity" target="In public spaces where WiFi is available">
+        <attvalues>
+          <attvalue for="dci.id" value="285.5"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="180" source="Location of online activity" target="In public spaces generally">
+        <attvalues>
+          <attvalue for="dci.id" value="285.6"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="181" source="Maintenance of online networks" target="Family">
+        <attvalues>
+          <attvalue for="dci.id" value="287.1"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="182" source="Maintenance of online networks" target="Friends">
+        <attvalues>
+          <attvalue for="dci.id" value="287.2"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="183" source="Maintenance of online networks" target="Neighbours">
+        <attvalues>
+          <attvalue for="dci.id" value="287.3"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="184" source="Maintenance of online networks" target="Work colleagues or school peers">
+        <attvalues>
+          <attvalue for="dci.id" value="287.4"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="185" source="Maintenance of online networks" target="Other networks of interest (e.g. sport, culture, or other interests)">
+        <attvalues>
+          <attvalue for="dci.id" value="287.5"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="186" source="Approach to online communication" target="My online life would be impossible without the help of family, friends or neighbours">
+        <attvalues>
+          <attvalue for="dci.id" value="288.1"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="187" source="Approach to online communication" target="To go online, I rely upon help from people with technical skills at my library, community hub, school or local businesses">
+        <attvalues>
+          <attvalue for="dci.id" value="288.2"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="188" source="Approach to online communication" target="To go online, I rely upon help from other government or community services">
+        <attvalues>
+          <attvalue for="dci.id" value="288.3"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="189" source="Approach to online communication" target="I enjoy using the Internet in the company of others">
+        <attvalues>
+          <attvalue for="dci.id" value="288.4"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="190" source="Approach to online communication" target="I enjoy providing help to other people in my family to go online">
+        <attvalues>
+          <attvalue for="dci.id" value="288.5"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="191" source="Approach to online communication" target="I enjoy providing help to other people in my community to go online">
+        <attvalues>
+          <attvalue for="dci.id" value="288.6"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="192" source="Approach to online communication" target="I prefer to go online when I am alone">
+        <attvalues>
+          <attvalue for="dci.id" value="288.7"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="193" source="Approach to online communication" target="I find sharing screens with other people frustrating">
+        <attvalues>
+          <attvalue for="dci.id" value="288.8"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="194" source="Convergence of online and offline social networks" target="For work-related activities, I only communicate with people I know &quot;in real life&quot;.">
+        <attvalues>
+          <attvalue for="dci.id" value="289.1"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="195" source="Convergence of online and offline social networks" target="For study or school-related activities, I only communicate with people I know &quot;in real life&quot;.">
+        <attvalues>
+          <attvalue for="dci.id" value="289.2"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="196" source="Convergence of online and offline social networks" target="For hobby-related activities, I only communicate with people I know &quot;in real life&quot;.">
+        <attvalues>
+          <attvalue for="dci.id" value="289.3"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="197" source="Convergence of online and offline social networks" target="For other personal activities, I only communicate with people I know &quot;in real life&quot;.">
+        <attvalues>
+          <attvalue for="dci.id" value="289.4"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="198" source="Using the Internet to stay in touch" target="Look for updates from friends or family (e.g. email, status / photos on social networking sites)">
+        <attvalues>
+          <attvalue for="dci.id" value="343.1"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="199" source="Using the Internet to stay in touch" target="Comment on the updates friends or family put online (e.g. email, status / photos on social networking sites)">
+        <attvalues>
+          <attvalue for="dci.id" value="343.2"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="200" source="Using the Internet to stay in touch" target="Talk to family or friends who live further away (e.g. via skype, whatsapp, or email)">
+        <attvalues>
+          <attvalue for="dci.id" value="343.3"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="201" source="Using the Internet to stay in touch" target="Share pictures of you with your family or friends (e.g. through a social networking site, photo sharing site)">
+        <attvalues>
+          <attvalue for="dci.id" value="343.4"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="202" source="Using the Internet to stay in touch" target="Look for websites online that help you to meet new people (e.g. online dating, social networking sites, hobby or crafts clubs)">
+        <attvalues>
+          <attvalue for="dci.id" value="343.5"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="203" source="Using the Internet to stay in touch" target="Make new friends /meet new people">
+        <attvalues>
+          <attvalue for="dci.id" value="343.6"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="204" source="Using the Internet to stay in touch" target="Like or promote content that other people post">
+        <attvalues>
+          <attvalue for="dci.id" value="343.7"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="205" source="Improving relationships" target="I have a better relationship with my friends and family because I use the internet">
+        <attvalues>
+          <attvalue for="dci.id" value="344.1"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="206" source="Improving relationships" target="I am in touch with my close friends more because I use the internet">
+        <attvalues>
+          <attvalue for="dci.id" value="344.2"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="207" source="Improving relationships" target="I have more friends because I use the internet">
+        <attvalues>
+          <attvalue for="dci.id" value="344.3"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="208" source="Improving relationships" target="People I meet online are more interesting than the people I meet offline">
+        <attvalues>
+          <attvalue for="dci.id" value="344.4"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="209" source="Engaging with Institutions" target="Look for information about national government services (e.g. benefits, taxes, a driving licence or passport)">
+        <attvalues>
+          <attvalue for="dci.id" value="349.1"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="210" source="Engaging with Institutions" target="Ask a representative of a public institution for advice on public services (e.g. your local council / municipality)">
+        <attvalues>
+          <attvalue for="dci.id" value="349.2"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="211" source="Engaging with Institutions" target="Complete an online form for a national government service">
+        <attvalues>
+          <attvalue for="dci.id" value="349.3"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="212" source="Engaging with Institutions" target="Look for information about an MP, local councillor, political party or candidate">
+        <attvalues>
+          <attvalue for="dci.id" value="349.4"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="213" source="Engaging with Institutions" target="Follow or contact a politician (or political organization)">
+        <attvalues>
+          <attvalue for="dci.id" value="349.5"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="214" source="Engaging with Institutions" target="Join or start a group that discusses politics or political issues">
+        <attvalues>
+          <attvalue for="dci.id" value="349.6"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="215" source="Engaging with Institutions" target="Look for information about any other government, community or other organisational body">
+        <attvalues>
+          <attvalue for="dci.id" value="349.7"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="216" source="Household capacities" target="Someone in my household is usually able to fix Internet connection problems.">
+        <attvalues>
+          <attvalue for="dci.id" value="400.1"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="217" source="Household capacities" target="Someone in my household is usually able to help others with common technical tasks, like installing apps, paying bills online, setup email and calendars, back up devices, and so on.">
+        <attvalues>
+          <attvalue for="dci.id" value="400.2"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="218" source="Household capacities" target="Someone in my household is usually willing to help and show others how to use new technologies and applications.">
+        <attvalues>
+          <attvalue for="dci.id" value="400.3"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="219" source="Household capacities" target="My household is able to use technology effectively to engage with local, national and international political issues.">
+        <attvalues>
+          <attvalue for="dci.id" value="400.4"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="220" source="Household capacities" target="My household is able to use technology effectively to promote cultural activities.">
+        <attvalues>
+          <attvalue for="dci.id" value="400.5"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="221" source="Household capacities" target="My household is able to use technology effectively to learn about and address environmental concerns.">
+        <attvalues>
+          <attvalue for="dci.id" value="400.6"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="222" source="Household capacities" target="My household is able to use technology effectively to undertake training, find work, advance their careers and pursue business opportunities.">
+        <attvalues>
+          <attvalue for="dci.id" value="400.7"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="223" source="Neighbourhood capacities" target="Someone in my neighbourhood is usually able to help others with common technical tasks, like installing apps, paying bills online, setup email and calendars, back up devices, and so on.">
+        <attvalues>
+          <attvalue for="dci.id" value="401.1"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="224" source="Neighbourhood capacities" target="I am able to call on someone in my neighbourhood who is willing to help and show others how to use new technologies and applications.">
+        <attvalues>
+          <attvalue for="dci.id" value="401.2"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="225" source="Neighbourhood capacities" target="My neighbourhood is able to use technology effectively to engage with local, national and international political issues.">
+        <attvalues>
+          <attvalue for="dci.id" value="401.3"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="226" source="Neighbourhood capacities" target="My neighbourhood is able to use technology effectively to promote cultural activities.">
+        <attvalues>
+          <attvalue for="dci.id" value="401.4"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="227" source="Neighbourhood capacities" target="My neighbourhood is able to use technology effectively to learn about and address environmental concerns.">
+        <attvalues>
+          <attvalue for="dci.id" value="401.5"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="228" source="Neighbourhood capacities" target="My neighbourhood is able to use technology effectively to undertake training, find work, advance their careers and pursue business opportunities.">
+        <attvalues>
+          <attvalue for="dci.id" value="401.6"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="229" source="Community capacities" target="My community is generally highly &quot;digitally capable&quot; - many people are able to use technology effectively for work, social and personal reasons.">
+        <attvalues>
+          <attvalue for="dci.id" value="402.1"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="230" source="Community capacities" target="My community is able to use technology effectively to engage with local, national and international political issues.">
+        <attvalues>
+          <attvalue for="dci.id" value="402.2"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="231" source="Community capacities" target="My community is able to use technology effectively to promote cultural activities.">
+        <attvalues>
+          <attvalue for="dci.id" value="402.3"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="232" source="Community capacities" target="My community is able to use technology effectively to learn about and address environmental concerns.">
+        <attvalues>
+          <attvalue for="dci.id" value="402.4"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="233" source="Community capacities" target="My community is able to use technology effectively to undertake training, find work, advance their careers and pursue business opportunities.">
+        <attvalues>
+          <attvalue for="dci.id" value="402.5"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="251" source="Other sources of information on internet safety" target="Other government or community services">
+        <attvalues>
+          <attvalue for="dci.id" value="433.12"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="253" source="Attitudes towards technology" target="I am concerned about the impacts of e-waste on the environment.">
+        <attvalues>
+          <attvalue for="dci.id" value="429.1"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="254" source="Attitudes towards technology" target="Generally, I am optimistic about the future of technology.">
+        <attvalues>
+          <attvalue for="dci.id" value="429.2"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="255" source="Attitudes towards technology" target="I am concerned about how companies, governements and others might use my online information.">
+        <attvalues>
+          <attvalue for="dci.id" value="429.3"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="256" source="Attitudes towards technology" target="I try to reduce the impacts of my own use of technology on the environment.">
+        <attvalues>
+          <attvalue for="dci.id" value="429.4"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="257" source="Attitudes towards technology" target="Technology companies need to do more to make sure their products do not damage the environment.">
+        <attvalues>
+          <attvalue for="dci.id" value="429.5"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="258" source="General demographics" target="I live alone">
+        <attvalues>
+          <attvalue for="dci.id" value="24.1"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="259" source="General demographics" target="Spouse or partner">
+        <attvalues>
+          <attvalue for="dci.id" value="24.2"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="260" source="General demographics" target="Father or stepfather or my father's partner">
+        <attvalues>
+          <attvalue for="dci.id" value="24.3"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="261" source="General demographics" target="Mother or stepmother or my mother's partner">
+        <attvalues>
+          <attvalue for="dci.id" value="24.4"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="262" source="General demographics" target="Older brother(s)">
+        <attvalues>
+          <attvalue for="dci.id" value="24.5"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="263" source="General demographics" target="Older sister(s)">
+        <attvalues>
+          <attvalue for="dci.id" value="24.6"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="264" source="General demographics" target="Younger brother(s)">
+        <attvalues>
+          <attvalue for="dci.id" value="24.7"></attvalue>
+        </attvalues>
+      </edge>
+      <edge id="265" source="General demographics" target="Younger sister(s)">
+        <attvalues>
+          <attvalue for="dci.id" value="24.8"></attvalue>
+        </attvalues>
+      </edge>
+    </edges>
+  </graph>
+</gexf>
