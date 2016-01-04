@@ -6,7 +6,7 @@ int delay = 16;
 
 // Setup the Processing Canvas
 void setup(){
-  size( 200, 200 );
+  size( 800, 600 );
   strokeWeight( 10 );
   frameRate( 15 );
   X = width / 2;
@@ -18,25 +18,6 @@ void setup(){
 // Main draw loop
 void draw(){
   
-  /*
-  radius = radius + sin( frameCount / 4 );
-  
-  // Track circle to new destination
-  X+=(nX-X)/delay;
-  Y+=(nY-Y)/delay;
-  
-  // Fill canvas grey
-  background( 100 );
-  
-  // Set fill-color to blue
-  fill( 0, 121, 184 );
-  
-  // Set stroke-color white
-  stroke(255); 
-  
-  // Draw circle
-  ellipse( X, Y, radius, radius );                  
-  */
 }
 
 
@@ -46,11 +27,19 @@ void mouseMoved(){
   nY = mouseY;  
 }
 
-void drawText(String t)
-{
+void drawText(String t) {
  background(#000033);
+ 
  // get the width for the text
  float twidth = textWidth(t);
+
  // place the text centered on the drawing area
- text(t, (width - twidth)/2, height/2);
+ text(t, (width - twidth) / 2, 50);
+}
+
+
+void mouseClicked() {
+  background(#000033);
+
+  text(join(ages, "\n"), 50, 50);
 }
