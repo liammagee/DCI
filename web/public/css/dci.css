@@ -2,3 +2,23 @@ canvas {
 	width: 800px;
 	height: 600px;
 }
+
+
+#container {
+	margin: auto;
+}
+
+#keys {
+	float: left;
+	width: 25%;
+}
+
+
+#plot-container {
+	margin-left: 25%;
+	width: 75%;
+	height: 250px;
+}
+#plot {
+	
+}

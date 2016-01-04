@@ -22,9 +22,11 @@
 			complete: function(results) {
 				data = results.data;
 				keys = Object.keys( results.data[ 0 ] );
+
+				drawKeys();
+				addHandlers();
 				ages = obtainIntProperty("Age");
-				console.log(ages);
-				drawPlot();
+				drawHistogram( ages );
 			}
 		});
 
@@ -36,22 +38,45 @@
 
 	};
 
-	var drawPlot = function() {
-		TESTER = document.getElementById('tester');
-		Plotly.plot( TESTER, [ {
-				x: ages,
+
+	var drawKeys = function() {
+		
+		keys.forEach( (key, index) => { 
+			$( "#keys" ).append('<div class="keyDivs" id="key' + index + '">' + key + '</div>');
+		});
+
+	};
+
+
+	var drawHistogram = function( series ) {
+		Plotly.newPlot( $( "#plot" )[ 0 ], [ {
+				x: series,
 				type: 'histogram'
 			}]
 		);
 	};
 
+	var addHandlers = function() {
+		$( ".keyDivs" ).click( function() {
+			console.log( $( this )[ 0 ].id );
+			console.log( $( this )[ 0 ].innerText );
+			drawHistogram( obtainIntProperty( $( this )[ 0 ].innerText ) );
+		} );
+	};
 
 	</script>
 	<link rel="stylesheet" type="text/css" href="css/dci.css"/>
 </head>
 <body>
 
-	<div id="tester" style="width:600px;height:250px;"></div>
+	<div id="container">
+		<div id="keys">
+			<h3>Keys</h3>		
+		</div>
+		<div id="plot-container">
+			<div id="plot"></div>
+		</div>
+	</div>
 
 </body>
 </html>
