@@ -1,4 +1,5 @@
 body {
+	height: 600px;
 	font-family: 'Arial Narrow';
 	font-size: 10pt;
 }
@@ -35,3 +36,10 @@ canvas {
 #plot {
 
 }
+
+#sigma-container {
+	position: absolute;
+	width: 800px;
+	height: 600px;
+}
+
