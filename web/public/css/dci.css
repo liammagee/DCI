@@ -1,3 +1,8 @@
+body {
+	font-family: 'Arial Narrow';
+	font-size: 10pt;
+}
+
 canvas {
 	width: 800px;
 	height: 600px;
@@ -11,6 +16,14 @@ canvas {
 #keys {
 	float: left;
 	width: 25%;
+	height: 600px;
+	overflow:auto;
+	position:absolute;
+
+}
+
+.keyDivs {
+	padding-bottom: 0.2em;
 }
 
 
@@ -20,5 +33,5 @@ canvas {
 	height: 250px;
 }
 #plot {
-	
+
 }
