@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gexf xmlns="http://www.gexf.net/1.3" version="1.3" xmlns:viz="http://www.gexf.net/1.3/viz" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.gexf.net/1.3 http://www.gexf.net/1.3/gexf.xsd">
-  <meta lastmodifieddate="2016-01-03">
+  <meta lastmodifieddate="2016-01-07">
     <creator>Gephi 0.9</creator>
     <description></description>
   </meta>
@@ -14,1735 +14,1733 @@
     <nodes>
       <node id="Buying and Selling" label="Buying and Selling">
         <attvalues>
-          <attvalue for="category" value="Buying and Selling"></attvalue>
+          <attvalue for="category" value="."></attvalue>
         </attvalues>
-        <viz:size value="80.0"></viz:size>
-        <viz:position x="1081.1321" y="-165.98686"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Look for information on the price of a product (e.g. books, holidays, clothes, cars)" label="Look for information on the price of a product (e.g. books, holidays, clothes, cars)">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="1009.1267" y="-256.79886"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Talk to others about the price of a product (e.g. on a forum or online chat)" label="Talk to others about the price of a product (e.g. on a forum or online chat)">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="1042.9373" y="-54.94723"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Make an offer on a product (e.g. on eBay, Amazon)" label="Make an offer on a product (e.g. on eBay, Amazon)">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="1125.1056" y="-65.1338"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Look for information on how to sell something you own" label="Look for information on how to sell something you own">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="1081.4877" y="-276.0147"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Respond to people's requests for information about a product or service you want to sell" label="Respond to people's requests for information about a product or service you want to sell">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="968.2307" y="-204.53697"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Put a product up for sale" label="Put a product up for sale">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="1165.019" y="-237.14732"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Look for information on insurance policies (e.g. car/health/life or other insurance)" label="Look for information on insurance policies (e.g. car/health/life or other insurance)">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="1184.66" y="-128.75682"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Compare reviews of insurance policies . car/health/life or other insurance)" label="Compare reviews of insurance policies . car/health/life or other insurance)">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="974.17377" y="-140.24734"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Purchase insurance online (e.g. car/he/life or other)" label="Purchase insurance online (e.g. car/he/life or other)">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="985.63947" y="-89.6073"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
+        <viz:size value="100.0"></viz:size>
+        <viz:position x="-67.71231" y="707.1439"></viz:position>
+        <viz:color r="0" g="168" b="53"></viz:color>
       </node>
       <node id="Information seeking" label="Information seeking">
         <attvalues>
-          <attvalue for="category" value="Information seeking"></attvalue>
+          <attvalue for="category" value="."></attvalue>
         </attvalues>
-        <viz:size value="80.0"></viz:size>
-        <viz:position x="-201.74979" y="234.1557"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Look for something (e.g. software, devices, apps, instruments, kit etc) that would help you do your job better" label="Look for something (e.g. software, devices, apps, instruments, kit etc) that would help you do your job better">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-94.48967" y="209.58063"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Talk to others online about how to solve a job related problem (e.g. via email, social networking site, or forum)" label="Talk to others online about how to solve a job related problem (e.g. via email, social networking site, or forum)">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-248.13974" y="131.92232"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Integrate tools or apps you have downloaded into the way you work" label="Integrate tools or apps you have downloaded into the way you work">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-141.55905" y="142.01971"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Look for a different job online" label="Look for a different job online">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-309.8101" y="199.08492"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Talk to others online about jobortunities (e.g. email, social networking site, or forum)" label="Talk to others online about jobortunities (e.g. email, social networking site, or forum)">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-112.18578" y="298.05548"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Create or share a CV on a professional and work related site (e.g. Linkedin, Monsterboard)" label="Create or share a CV on a professional and work related site (e.g. Linkedin, Monsterboard)">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-275.12476" y="316.19376"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
+        <viz:size value="100.0"></viz:size>
+        <viz:position x="283.5634" y="80.80396"></viz:position>
+        <viz:color r="127" g="107" b="176"></viz:color>
       </node>
       <node id="News seeking" label="News seeking">
         <attvalues>
-          <attvalue for="category" value="News seeking"></attvalue>
+          <attvalue for="category" value="."></attvalue>
         </attvalues>
-        <viz:size value="80.0"></viz:size>
-        <viz:position x="-726.77686" y="681.86365"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Look for the latest news on current affairs" label="Look for the latest news on current affairs">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-600.3175" y="663.138"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Look for the latest sports news" label="Look for the latest sports news">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-705.02563" y="789.7062"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Look for the latest celebrity news" label="Look for the latest celebrity news">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-831.10406" y="717.04315"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Chat about relationships and friendships (e.g. via email, a social networking site, whatsapp, etc)" label="Chat about relationships and friendships (e.g. via email, a social networking site, whatsapp, etc)">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-755.0321" y="575.473"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
+        <viz:size value="100.0"></viz:size>
+        <viz:position x="791.2765" y="-668.2735"></viz:position>
+        <viz:color r="0" g="158" b="255"></viz:color>
       </node>
       <node id="Entertainment" label="Entertainment">
         <attvalues>
-          <attvalue for="category" value="Entertainment"></attvalue>
+          <attvalue for="category" value="."></attvalue>
         </attvalues>
-        <viz:size value="80.0"></viz:size>
-        <viz:position x="199.4756" y="183.05742"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Look up information on where to go out (e.g. exhibitions, cinema, parties)" label="Look up information on where to go out (e.g. exhibitions, cinema, parties)">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="312.93622" y="166.98105"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Read information about relationships (e.g. about managing relationships or dating)" label="Read information about relationships (e.g. about managing relationships or dating)">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="104.30969" y="126.99078"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Read information on parenting" label="Read information on parenting">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="90.11386" y="199.32181"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Look up information on transport (e.g. bus or train timetables)" label="Look up information on transport (e.g. bus or train timetables)">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="132.83667" y="271.48944"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Arrange with other people to go out" label="Arrange with other people to go out">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="227.58345" y="73.92686"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Upload pictures of yourself" label="Upload pictures of yourself">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="288.01196" y="248.45145"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Look for websites with religious or spiritual information" label="Look for websites with religious or spiritual information">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="282.76794" y="111.18333"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Contact people who share religious or spiritual beliefs" label="Contact people who share religious or spiritual beliefs">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="151.06148" y="84.23796"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Log in on a website with religious or spiritual content" label="Log in on a website with religious or spiritual content">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="215.88582" y="292.2543"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
+        <viz:size value="100.0"></viz:size>
+        <viz:position x="-408.85062" y="-341.92514"></viz:position>
+        <viz:color r="0" g="147" b="200"></viz:color>
       </node>
       <node id="Difference seeking" label="Difference seeking">
         <attvalues>
-          <attvalue for="category" value="Difference seeking"></attvalue>
+          <attvalue for="category" value="."></attvalue>
         </attvalues>
-        <viz:size value="80.0"></viz:size>
-        <viz:position x="-471.7269" y="-132.94424"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Through the internet I found people of a similar age that share my interests" label="Through the internet I found people of a similar age that share my interests">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-466.93985" y="-17.831823"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="The things I came across on the internet made me think about the differences between men and women" label="The things I came across on the internet made me think about the differences between men and women">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-439.40137" y="-238.74666"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Through the Internet I learned new things about my ethnic group" label="Through the Internet I learned new things about my ethnic group">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-555.74" y="-204.02661"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Due to the information I found and people I have met online I feel more connected with religion or spiritual beliefs" label="Due to the information I found and people I have met online I feel more connected with religion or spiritual beliefs">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-364.66815" y="-107.41075"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Through the Internet I learned new things about other ethnic groups" label="Through the Internet I learned new things about other ethnic groups">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-572.93396" y="-89.730804"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
+        <viz:size value="100.0"></viz:size>
+        <viz:position x="1105.6785" y="376.04758"></viz:position>
+        <viz:color r="174" g="101" b="0"></viz:color>
       </node>
       <node id="Health" label="Health">
         <attvalues>
-          <attvalue for="category" value="Health"></attvalue>
+          <attvalue for="category" value="."></attvalue>
         </attvalues>
-        <viz:size value="80.0"></viz:size>
-        <viz:position x="1048.8347" y="218.77905"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Look up information on how to improve your health" label="Look up information on how to improve your health">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="973.2703" y="138.75427"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Ask others about a training program" label="Ask others about a training program">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="1050.0098" y="107.90147"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Use exercise or nutrition programs / apps" label="Use exercise or nutrition programs / apps">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="1134.8765" y="150.21672"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Look up information about health or medical care" label="Look up information about health or medical care">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="1145.4104" y="271.57642"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Ask for advice on a medical condition" label="Ask for advice on a medical condition">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="938.19037" y="212.61368"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Fill out a questionnaire related to your health" label="Fill out a questionnaire related to your health">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="983.86304" y="307.5677"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
+        <viz:size value="100.0"></viz:size>
+        <viz:position x="-864.5861" y="-428.11163"></viz:position>
+        <viz:color r="86" g="127" b="40"></viz:color>
       </node>
       <node id="Health improvement" label="Health improvement">
         <attvalues>
-          <attvalue for="category" value="Health improvement"></attvalue>
+          <attvalue for="category" value="."></attvalue>
         </attvalues>
-        <viz:size value="80.0"></viz:size>
-        <viz:position x="-925.5778" y="-25.894554"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="I am healthier as a result of the online information, advice or programs / apps I have used" label="I am healthier as a result of the online information, advice or programs / apps I have used">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-829.5949" y="-79.69958"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="I have made better decisions about my health or medical care as a result of the information / advice I found online" label="I have made better decisions about my health or medical care as a result of the information / advice I found online">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-867.28046" y="67.42904"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
+        <viz:size value="100.0"></viz:size>
+        <viz:position x="821.3154" y="-392.2976"></viz:position>
+        <viz:color r="0" g="142" b="42"></viz:color>
       </node>
       <node id="Leisure" label="Leisure">
         <attvalues>
-          <attvalue for="category" value="Leisure"></attvalue>
+          <attvalue for="category" value="."></attvalue>
         </attvalues>
-        <viz:size value="80.0"></viz:size>
-        <viz:position x="-449.3708" y="-454.1927"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Come across online lifestyle magazines / features / articles" label="Come across online lifestyle magazines / features / articles">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-335.85" y="-437.75266"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Talk to others about your lifestyle" label="Talk to others about your lifestyle">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-408.0542" y="-562.5477"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Blog or maintain a website about your personal life" label="Blog or maintain a website about your personal life">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-499.40073" y="-356.1658"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Look for jokes, cartoons or other entertaining content" label="Look for jokes, cartoons or other entertaining content">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-420.4071" y="-346.01764"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Play games" label="Play games">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-550.55817" y="-498.4658"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Listen to music" label="Listen to music">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-357.1668" y="-514.2682"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Watch videos / tv programmes" label="Watch videos / tv programmes">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-366.29553" y="-381.97214"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Write a blog or maintain a website on issues or problems of interest to you" label="Write a blog or maintain a website on issues or problems of interest to you">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-550.9198" y="-411.14874"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Write comments about or rate videos, music, books, TV shows etc" label="Write comments about or rate videos, music, books, TV shows etc">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-498.26028" y="-552.7584"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
+        <viz:size value="100.0"></viz:size>
+        <viz:position x="-924.213" y="580.2149"></viz:position>
+        <viz:color r="0" g="134" b="98"></viz:color>
       </node>
       <node id="Keeping in touch" label="Keeping in touch">
         <attvalues>
-          <attvalue for="category" value="Keeping in touch"></attvalue>
+          <attvalue for="category" value="."></attvalue>
         </attvalues>
-        <viz:size value="80.0"></viz:size>
-        <viz:position x="-55.907806" y="553.44434"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Staying in touch with friends" label="Staying in touch with friends">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-16.535713" y="450.66647"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Making new friends" label="Making new friends">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-114.64231" y="460.4277"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Contacting family" label="Contacting family">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-159.69754" y="590.467"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Contacting support services" label="Contacting support services">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="20.619917" y="474.40555"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Calling about a job" label="Calling about a job">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="4.010447" y="645.94653"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Being contacted by employers" label="Being contacted by employers">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-97.63245" y="655.2905"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Paying bills" label="Paying bills">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-148.76408" y="494.45694"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Finding accommodation" label="Finding accommodation">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-170.32466" y="534.0367"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Learning new skills" label="Learning new skills">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-134.42705" y="631.0694"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Keeping safe" label="Keeping safe">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-73.88321" y="440.501"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Betting" label="Betting">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="53.7436" y="562.7808"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Contacting emergency services" label="Contacting emergency services">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="38.524952" y="610.0919"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Contacting a doctor or other medical service" label="Contacting a doctor or other medical service">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-37.09925" y="665.36176"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Other" label="Other">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="46.848278" y="514.1138"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
+        <viz:size value="100.0"></viz:size>
+        <viz:position x="231.11276" y="-292.21796"></viz:position>
+        <viz:color r="197" g="81" b="38"></viz:color>
       </node>
       <node id="Online activities" label="Online activities">
         <attvalues>
-          <attvalue for="category" value="Online activities"></attvalue>
+          <attvalue for="category" value="."></attvalue>
         </attvalues>
-        <viz:size value="80.0"></viz:size>
-        <viz:position x="286.22464" y="681.3238"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Used the internet for school work" label="Used the internet for school work">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="229.17337" y="578.5731"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Watched video clips (e.g. on YouTube)" label="Watched video clips (e.g. on YouTube)">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="178.83044" y="656.5909"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Watched music or films available online" label="Watched music or films available online">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="179.25674" y="708.1258"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Read/watched the news on the internet" label="Read/watched the news on the internet">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="376.66367" y="618.6286"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Sent/received email" label="Sent/received email">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="306.37506" y="789.86926"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Used a social network site (e.g. Facebook, Twitter, Instagram, Tumblr, Tinder, Weibu)" label="Used a social network site (e.g. Facebook, Twitter, Instagram, Tumblr, Tinder, Weibu)">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="293.2701" y="568.8234"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Used instant messaging" label="Used instant messaging">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="389.21118" y="720.2185"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Played games with other people on the internet" label="Played games with other people on the internet">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="200.6605" y="612.1379"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Played internet games (on your own or against the computer)" label="Played internet games (on your own or against the computer)">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="202.81374" y="754.0372"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Used a camera for video communication (e.g. Skype, Facetime)" label="Used a camera for video communication (e.g. Skype, Facetime)">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="395.50626" y="663.8975"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Put (or posted) a message on a website" label="Put (or posted) a message on a website">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="356.81775" y="766.0508"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Written a blog or online diary" label="Written a blog or online diary">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="238.13983" y="780.35535"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Put (or posted) photos, videos or music to share with others" label="Put (or posted) photos, videos or music to share with others">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="344.85464" y="588.153"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
+        <viz:size value="100.0"></viz:size>
+        <viz:position x="93.87227" y="368.0497"></viz:position>
+        <viz:color r="0" g="156" b="115"></viz:color>
       </node>
       <node id="Competencies with digital life" label="Competencies with digital life">
         <attvalues>
-          <attvalue for="category" value="Competencies with digital life"></attvalue>
+          <attvalue for="category" value="."></attvalue>
         </attvalues>
-        <viz:size value="80.0"></viz:size>
-        <viz:position x="-45.361458" y="-88.17655"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Download apps" label="Download apps">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="0.24650669" y="12.5120535"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Deactivate the function showing your geographical position (on Facebook, Google Maps, etc?)" label="Deactivate the function showing your geographical position (on Facebook, Google Maps, etc?)">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="71.63551" y="-47.857784"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Connect to a wifi network from your smartphone/tablet" label="Connect to a wifi network from your smartphone/tablet">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-155.12456" y="-118.8372"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Block push notifications from different apps" label="Block push notifications from different apps">
-        <attvalues>
-          <attvalue for="category" value=""></attvalue>
-        </attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-169.45084" y="-68.572655"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Have the same documents, contacts, and apps on all devices that you use (smartphones, tablets, PCs)" label="Have the same documents, contacts, and apps on all devices that you use (smartphones, tablets, PCs)">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-202.67126" y="-192.92168"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Block pop ups which promote apps, games or services you have to pay for (unrequested windows that appear during web surfing)" label="Block pop ups which promote apps, games or services you have to pay for (unrequested windows that appear during web surfing)">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="39.383495" y="-17.902237"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Protect a smartphone with a PIN/with a screen pattern" label="Protect a smartphone with a PIN/with a screen pattern">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-67.4621" y="-221.18617"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Update your status on the social networking site used the most" label="Update your status on the social networking site used the most">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-221.77464" y="-7.762384"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Find information on how to use smartphones safely" label="Find information on how to use smartphones safely">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-48.482956" y="25.858118"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Compare different apps with similar functions in order to choose the one that is most reliable" label="Compare different apps with similar functions in order to choose the one that is most reliable">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="67.6474" y="-129.0341"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Take a picture or a short video with your smartphone and upload it onto social media" label="Take a picture or a short video with your smartphone and upload it onto social media">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-142.9443" y="52.023163"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Compare different websites to decide if information is true" label="Compare different websites to decide if information is true">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="38.59456" y="-211.12163"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Change filter preferences" label="Change filter preferences">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-119.79227" y="-179.17073"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Bookmark a website" label="Bookmark a website">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-91.28653" y="38.824398"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Block unwanted adverts or junk mail/spam" label="Block unwanted adverts or junk mail/spam">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="46.778263" y="-167.84511"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Delete the record of which sites you have visited" label="Delete the record of which sites you have visited">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="33.278267" y="41.682163"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Change privacy setting on a social networking profile" label="Change privacy setting on a social networking profile">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-47.19229" y="69.857285"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Use 'report abuse' buttons (e.g. the button you can use when you want to report an un-authorised usage of your picture)" label="Use 'report abuse' buttons (e.g. the button you can use when you want to report an un-authorised usage of your picture)">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-176.3207" y="-157.59001"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Block messages from someone you don't want to hear from" label="Block messages from someone you don't want to hear from">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="108.93434" y="-113.771545"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Block pop ups (unrequested windows that appear during web surfing)" label="Block pop ups (unrequested windows that appear during web surfing)">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="110.30612" y="-69.06358"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Find information on how to use the internet safely" label="Find information on how to use the internet safely">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="118.00447" y="15.845008"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Publish a comment on a blog, websites or forum" label="Publish a comment on a blog, websites or forum">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-12.02403" y="-238.92804"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Upload images videos or music onto social media" label="Upload images videos or music onto social media">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-116.334" y="2.5587635"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Create a blog" label="Create a blog">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-125.16286" y="-231.27411"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
+        <viz:size value="100.0"></viz:size>
+        <viz:position x="-280.8301" y="165.51395"></viz:position>
+        <viz:color r="0" g="114" b="185"></viz:color>
       </node>
       <node id="Other negative online experiences" label="Other negative online experiences">
         <attvalues>
-          <attvalue for="category" value="Other negative online experiences"></attvalue>
+          <attvalue for="category" value="."></attvalue>
         </attvalues>
-        <viz:size value="80.0"></viz:size>
-        <viz:position x="-1005.68445" y="542.51825"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Somebody used my personal information in a way I didn't like" label="Somebody used my personal information in a way I didn't like">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-1123.7864" y="522.6334"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="The computer got a virus" label="The computer got a virus">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-896.42163" y="563.544"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="I lost money by being cheated on the internet (we mean real money, rather than money in a computer game)" label="I lost money by being cheated on the internet (we mean real money, rather than money in a computer game)">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-919.1151" y="474.52948"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Somebody used my password to access my information or to pretend to be me" label="Somebody used my password to access my information or to pretend to be me">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-985.2397" y="650.6884"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Somebody created a page or image about me that was hostile or hurtful" label="Somebody created a page or image about me that was hostile or hurtful">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-1011.79224" y="431.86725"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
+        <viz:size value="100.0"></viz:size>
+        <viz:position x="782.4067" y="410.993"></viz:position>
+        <viz:color r="107" g="138" b="0"></viz:color>
       </node>
       <node id="Treated in a hurtful or nasty way by others (bullied)" label="Treated in a hurtful or nasty way by others (bullied)">
         <attvalues>
-          <attvalue for="category" value="Treated in a hurtful or nasty way by others (bullied)"></attvalue>
+          <attvalue for="category" value="."></attvalue>
         </attvalues>
-        <viz:size value="80.0"></viz:size>
-        <viz:position x="-1114.1716" y="-507.84283"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Nasty or hurtful messages were sent to me" label="Nasty or hurtful messages were sent to me">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-1003.90814" y="-526.9716"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Nasty or hurtful messages were passed around or posted where others could see" label="Nasty or hurtful messages were passed around or posted where others could see">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-1018.2028" y="-453.63947"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="I was left out or excluded from a group or activity on the internet" label="I was left out or excluded from a group or activity on the internet">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-1097.3602" y="-616.6277"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="I was threatened on the internet" label="I was threatened on the internet">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-1079.29" y="-403.46948"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Other nasty or hurtful things on the internet" label="Other nasty or hurtful things on the internet">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-1182.3317" y="-421.3324"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Something else" label="Something else">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-1176.24" y="-599.0385"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Don't know" label="Don't know">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-1034.4235" y="-583.68585"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Prefer not to say" label="Prefer not to say">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-1234.6646" y="-527.10474"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
+        <viz:size value="100.0"></viz:size>
+        <viz:position x="-427.27542" y="682.99304"></viz:position>
+        <viz:color r="156" g="105" b="33"></viz:color>
       </node>
       <node id="Engage with others online" label="Engage with others online">
         <attvalues>
-          <attvalue for="category" value="Engage with others online"></attvalue>
+          <attvalue for="category" value="."></attvalue>
         </attvalues>
-        <viz:size value="80.0"></viz:size>
-        <viz:position x="-614.06256" y="402.2184"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="I find it easier to be myself when online than when I am with people face-to-face" label="I find it easier to be myself when online than when I am with people face-to-face">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-505.3167" y="435.5938"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="I talk about different things with people when online than I do when face-to-face" label="I talk about different things with people when online than I do when face-to-face">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-704.74786" y="464.5197"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="When I am online, I talk about private things that I do not share with people face-to-face" label="When I am online, I talk about private things that I do not share with people face-to-face">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-717.19415" y="363.87137"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="I go online much more on the weekends than I do on a regular school or work day [optional question]" label="I go online much more on the weekends than I do on a regular school or work day [optional question]">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-644.25946" y="291.98523"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="When I am going through a difficult time, I go online less often" label="When I am going through a difficult time, I go online less often">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-534.4833" y="326.2608"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="When I am going through a difficult time, going online makes me feel better" label="When I am going through a difficult time, going online makes me feel better">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-601.2526" y="511.51544"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
+        <viz:size value="100.0"></viz:size>
+        <viz:position x="-717.5931" y="-745.04376"></viz:position>
+        <viz:color r="241" g="67" b="21"></viz:color>
       </node>
       <node id="Peer mediation" label="Peer mediation">
         <attvalues>
-          <attvalue for="category" value="Peer mediation"></attvalue>
+          <attvalue for="category" value="."></attvalue>
         </attvalues>
-        <viz:size value="80.0"></viz:size>
-        <viz:position x="367.7888" y="-121.74122"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Helped you when you found something difficult to do or find on the internet" label="Helped you when you found something difficult to do or find on the internet">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="350.27094" y="-5.161517"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Suggested ways to use the internet safely" label="Suggested ways to use the internet safely">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="269.55707" y="-171.46045"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Encourage you to explore and learn things on the internet?" label="Encourage you to explore and learn things on the internet?">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="310.10367" y="-27.991896"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Explained why some websites are good or bad" label="Explained why some websites are good or bad">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="451.01346" y="-17.833746"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Suggested ways to behave towards other people on the internet" label="Suggested ways to behave towards other people on the internet">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="441.93988" y="-206.84541"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Helped you in the past when something has bothered you on the internet" label="Helped you in the past when something has bothered you on the internet">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="258.28558" y="-97.376656"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
+        <viz:size value="100.0"></viz:size>
+        <viz:position x="-48.230564" y="-973.06635"></viz:position>
+        <viz:color r="143" g="110" b="237"></viz:color>
       </node>
       <node id="Other sources of information on internet safety" label="Other sources of information on internet safety">
         <attvalues>
-          <attvalue for="category" value="Other sources of information on internet safety"></attvalue>
+          <attvalue for="category" value="."></attvalue>
         </attvalues>
-        <viz:size value="80.0"></viz:size>
-        <viz:position x="505.22568" y="381.1976"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Youth or church or social worker" label="Youth or church or social worker">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="407.22937" y="328.56412"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Teacher" label="Teacher">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="492.54916" y="491.1251"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Parent" label="Parent">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="615.4311" y="400.7707"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Close family friend" label="Close family friend">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="593.3929" y="447.04898"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Other relative" label="Other relative">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="608.5249" y="342.76642"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Librarian" label="Librarian">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="439.2198" y="291.28912"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Someone whose job it is to give advice over the internet" label="Someone whose job it is to give advice over the internet">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="540.09393" y="276.78378"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Websites" label="Websites">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="480.10583" y="267.18753"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Television, radio, newspapers or magazines" label="Television, radio, newspapers or magazines">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="405.72214" y="428.24384"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Internet service provider" label="Internet service provider">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="439.66092" y="469.74127"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Health care professional" label="Health care professional">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="378.3085" y="361.8028"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="I haven't received any advice from any of these people or places" label="I haven't received any advice from any of these people or places">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="550.8298" y="481.43314"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
+        <viz:size value="100.0"></viz:size>
+        <viz:position x="-1002.58276" y="-19.247017"></viz:position>
+        <viz:color r="56" g="112" b="147"></viz:color>
       </node>
       <node id="Support provision" label="Support provision">
         <attvalues>
-          <attvalue for="category" value="Support provision"></attvalue>
+          <attvalue for="category" value="."></attvalue>
         </attvalues>
-        <viz:size value="80.0"></viz:size>
-        <viz:position x="612.12665" y="-566.79333"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Helped someone setup an email account" label="Helped someone setup an email account">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="590.7222" y="-683.1454"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Helped someone set up a social media account" label="Helped someone set up a social media account">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="520.92084" y="-629.1866"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Helped someone find information or other resources online" label="Helped someone find information or other resources online">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="600.88904" y="-451.70718"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Helped someone post content online (photos, video, text)" label="Helped someone post content online (photos, video, text)">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="504.1416" y="-588.171"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Helped someone complete school or work online" label="Helped someone complete school or work online">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="743.7802" y="-586.1197"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Helped someone submit a job application online" label="Helped someone submit a job application online">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="556.1966" y="-471.97525"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Provided training or support to someone on how to use the Internet" label="Provided training or support to someone on how to use the Internet">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="713.1232" y="-617.6952"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Provided training or support to someone on how to use a game, software, service or device" label="Provided training or support to someone on how to use a game, software, service or device">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="549.49115" y="-662.7078"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Gave consent for my child to participate in an online/social media community" label="Gave consent for my child to participate in an online/social media community">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="717.87115" y="-533.3335"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="loaned a device - Mobile phone" label="loaned a device - Mobile phone">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="696.47516" y="-494.83826"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="loaned a device - Smart phone" label="loaned a device - Smart phone">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="667.4028" y="-461.72876"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="loaned a device - Gaming console" label="loaned a device - Gaming console">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="504.9969" y="-541.407"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="loaned a device - Tablet" label="loaned a device - Tablet">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="523.2047" y="-501.2275"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="loaned a device - Laptop" label="loaned a device - Laptop">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="647.6947" y="-673.0672"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="loaned a device - Other" label="loaned a device - Other">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="686.9417" y="-653.1678"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
+        <viz:size value="100.0"></viz:size>
+        <viz:position x="634.1074" y="790.7589"></viz:position>
+        <viz:color r="168" g="130" b="0"></viz:color>
       </node>
       <node id="Support use" label="Support use">
         <attvalues>
-          <attvalue for="category" value="Support use"></attvalue>
+          <attvalue for="category" value="."></attvalue>
         </attvalues>
-        <viz:size value="80.0"></viz:size>
-        <viz:position x="235.89133" y="-431.00632"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Sought help from someone to setup an email account" label="Sought help from someone to setup an email account">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="101.63456" y="-450.09595"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Sought help from someone to set up a social media account" label="Sought help from someone to set up a social media account">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="146.4451" y="-362.1882"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Sought help from someone to find information or other resources online" label="Sought help from someone to find information or other resources online">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="285.83463" y="-531.3923"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Sought help from someone to post content online (photos, video, text)" label="Sought help from someone to post content online (photos, video, text)">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="181.41833" y="-335.40192"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Sought help from someone to complete school or work online" label="Sought help from someone to complete school or work online">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="310.29227" y="-349.96143"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Sought help from someone apply for a job online" label="Sought help from someone apply for a job online">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="336.17715" y="-385.59457"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Obtained training or support from someone to use the Internet on a regular basis" label="Obtained training or support from someone to use the Internet on a regular basis">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="157.06668" y="-517.21875"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Obtained training or support to someone on how to use a game, service or device" label="Obtained training or support to someone on how to use a game, service or device">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="247.52696" y="-553.05865"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Sought help to go online by a librarian or community hub staff member" label="Sought help to go online by a librarian or community hub staff member">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="340.49948" y="-465.23135"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Accessed the Internet through a community hub or local library" label="Accessed the Internet through a community hub or local library">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="219.5386" y="-313.40717"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="borrowed a device - Mobile phone" label="borrowed a device - Mobile phone">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="365.50903" y="-418.42706"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="borrowed a device - Smart phone" label="borrowed a device - Smart phone">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="320.7895" y="-504.6307"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="borrowed a device - Gaming console" label="borrowed a device - Gaming console">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="275.13528" y="-323.4424"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="borrowed a device - Tablet" label="borrowed a device - Tablet">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="127.54085" y="-402.00766"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="borrowed a device - Laptop" label="borrowed a device - Laptop">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="134.65285" y="-479.30637"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="borrowed a device - Other" label="borrowed a device - Other">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="192.52472" y="-543.29156"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
+        <viz:size value="100.0"></viz:size>
+        <viz:position x="-18.043736" y="-52.031452"></viz:position>
+        <viz:color r="252" g="0" b="151"></viz:color>
       </node>
       <node id="Importance of online networks" label="Importance of online networks">
         <attvalues>
-          <attvalue for="category" value="Importance of online networks"></attvalue>
+          <attvalue for="category" value="."></attvalue>
         </attvalues>
-        <viz:size value="80.0"></viz:size>
-        <viz:position x="-608.2708" y="86.50884"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Online family relationships" label="Online family relationships">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-593.2797" y="195.55273"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Online friend relationships" label="Online friend relationships">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-518.3625" y="149.92836"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Online support forums, groups and networks" label="Online support forums, groups and networks">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-685.4446" y="164.97487"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Online government or community services" label="Online government or community services">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-501.66296" y="59.352654"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Other online information resources" label="Other online information resources">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-663.781" y="-11.499531"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
+        <viz:size value="100.0"></viz:size>
+        <viz:position x="1098.3768" y="-304.65344"></viz:position>
+        <viz:color r="0" g="138" b="146"></viz:color>
       </node>
       <node id="Location of online activity" label="Location of online activity">
         <attvalues>
-          <attvalue for="category" value="Location of online activity"></attvalue>
+          <attvalue for="category" value="."></attvalue>
         </attvalues>
-        <viz:size value="80.0"></viz:size>
-        <viz:position x="-111.59844" y="-557.11127"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="At home (in a bedroom or private study)" label="At home (in a bedroom or private study)">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-35.551025" y="-636.62573"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="At home (in a family room or other common space)" label="At home (in a family room or other common space)">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-108.37608" y="-667.1066"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="At school or work" label="At school or work">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-206.9552" y="-502.1125"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="On public transport" label="On public transport">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-216.56686" y="-590.2086"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="In public spaces where WiFi is available" label="In public spaces where WiFi is available">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-64.44978" y="-457.7202"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="In public spaces generally" label="In public spaces generally">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-174.60356" y="-647.3159"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
+        <viz:size value="100.0"></viz:size>
+        <viz:position x="1020.25214" y="35.85912"></viz:position>
+        <viz:color r="183" g="82" b="80"></viz:color>
       </node>
       <node id="Maintenance of online networks" label="Maintenance of online networks">
         <attvalues>
-          <attvalue for="category" value="Maintenance of online networks"></attvalue>
+          <attvalue for="category" value="."></attvalue>
         </attvalues>
-        <viz:size value="80.0"></viz:size>
-        <viz:position x="713.05615" y="700.195"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Family" label="Family">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="759.9656" y="799.6997"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Friends" label="Friends">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="647.2075" y="611.996"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Neighbours" label="Neighbours">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="817.59204" y="664.0957"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Work colleagues or school peers" label="Work colleagues or school peers">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="744.16327" y="594.6831"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Other networks of interest (e.g. sport, culture, or other interests)" label="Other networks of interest (e.g. sport, culture, or other interests)">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="605.3405" y="722.74786"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
+        <viz:size value="100.0"></viz:size>
+        <viz:position x="253.30103" y="756.63885"></viz:position>
+        <viz:color r="132" g="121" b="0"></viz:color>
       </node>
       <node id="Approach to online communication" label="Approach to online communication">
         <attvalues>
-          <attvalue for="category" value="Approach to online communication"></attvalue>
+          <attvalue for="category" value="."></attvalue>
         </attvalues>
-        <viz:size value="80.0"></viz:size>
-        <viz:position x="1050.1173" y="-539.45886"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="My online life would be impossible without the help of family, friends or neighbours" label="My online life would be impossible without the help of family, friends or neighbours">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="1048.3774" y="-429.31543"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="To go online, I rely upon help from people with technical skills at my library, community hub, school or local businesses" label="To go online, I rely upon help from people with technical skills at my library, community hub, school or local businesses">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="1157.1624" y="-513.59045"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="To go online, I rely upon help from other government or community services" label="To go online, I rely upon help from other government or community services">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="947.0464" y="-500.88885"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="I enjoy using the Internet in the company of others" label="I enjoy using the Internet in the company of others">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="947.93805" y="-580.26843"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="I enjoy providing help to other people in my family to go online" label="I enjoy providing help to other people in my family to go online">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="1130.6869" y="-614.4487"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="I enjoy providing help to other people in my community to go online" label="I enjoy providing help to other people in my community to go online">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="1120.9124" y="-455.23944"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="I prefer to go online when I am alone" label="I prefer to go online when I am alone">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="1018.71124" y="-644.9664"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="I find sharing screens with other people frustrating" label="I find sharing screens with other people frustrating">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="982.30005" y="-444.9927"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
+        <viz:size value="100.0"></viz:size>
+        <viz:position x="-593.6026" y="-55.31542"></viz:position>
+        <viz:color r="20" g="161" b="0"></viz:color>
       </node>
       <node id="Convergence of online and offline social networks" label="Convergence of online and offline social networks">
         <attvalues>
-          <attvalue for="category" value="Convergence of online and offline social networks"></attvalue>
+          <attvalue for="category" value="."></attvalue>
         </attvalues>
-        <viz:size value="80.0"></viz:size>
-        <viz:position x="-993.89514" y="254.40956"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="For work-related activities, I only communicate with people I know &quot;in real life&quot;." label="For work-related activities, I only communicate with people I know &quot;in real life&quot;.">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-879.0275" y="234.95613"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="For study or school-related activities, I only communicate with people I know &quot;in real life&quot;." label="For study or school-related activities, I only communicate with people I know &quot;in real life&quot;.">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-929.94196" y="343.95862"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="For hobby-related activities, I only communicate with people I know &quot;in real life&quot;." label="For hobby-related activities, I only communicate with people I know &quot;in real life&quot;.">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-1093.6533" y="300.79965"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="For other personal activities, I only communicate with people I know &quot;in real life&quot;." label="For other personal activities, I only communicate with people I know &quot;in real life&quot;.">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-985.378" y="144.69714"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
+        <viz:size value="100.0"></viz:size>
+        <viz:position x="555.7829" y="-332.06552"></viz:position>
+        <viz:color r="255" g="0" b="92"></viz:color>
       </node>
       <node id="Using the Internet to stay in touch" label="Using the Internet to stay in touch">
         <attvalues>
-          <attvalue for="category" value="Using the Internet to stay in touch"></attvalue>
+          <attvalue for="category" value="."></attvalue>
         </attvalues>
-        <viz:size value="80.0"></viz:size>
-        <viz:position x="270.41327" y="-775.48016"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Look for updates from friends or family (e.g. email, status / photos on social networking sites)" label="Look for updates from friends or family (e.g. email, status / photos on social networking sites)">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="378.9045" y="-795.8768"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Comment on the updates friends or family put online (e.g. email, status / photos on social networking sites)" label="Comment on the updates friends or family put online (e.g. email, status / photos on social networking sites)">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="310.7537" y="-672.83374"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Talk to family or friends who live further away (e.g. via skype, whatsapp, or email)" label="Talk to family or friends who live further away (e.g. via skype, whatsapp, or email)">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="209.10234" y="-872.8262"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Share pictures of you with your family or friends (e.g. through a social networking site, photo sharing site)" label="Share pictures of you with your family or friends (e.g. through a social networking site, photo sharing site)">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="337.41287" y="-862.7365"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Look for websites online that help you to meet new people (e.g. online dating, social networking sites, hobby or crafts clubs)" label="Look for websites online that help you to meet new people (e.g. online dating, social networking sites, hobby or crafts clubs)">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="210.71469" y="-682.9944"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Make new friends /meet new people" label="Make new friends /meet new people">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="366.72513" y="-721.7189"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Like or promote content that other people post" label="Like or promote content that other people post">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="157.92014" y="-756.2009"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
+        <viz:size value="100.0"></viz:size>
+        <viz:position x="-110.52567" y="-517.3085"></viz:position>
+        <viz:color r="179" g="84" b="139"></viz:color>
       </node>
       <node id="Improving relationships" label="Improving relationships">
         <attvalues>
-          <attvalue for="category" value="Improving relationships"></attvalue>
+          <attvalue for="category" value="."></attvalue>
         </attvalues>
-        <viz:size value="80.0"></viz:size>
-        <viz:position x="-757.69165" y="-282.11545"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="I have a better relationship with my friends and family because I use the internet" label="I have a better relationship with my friends and family because I use the internet">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-671.28796" y="-214.0375"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="I am in touch with my close friends more because I use the internet" label="I am in touch with my close friends more because I use the internet">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-789.2478" y="-387.5623"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="I have more friends because I use the internet" label="I have more friends because I use the internet">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-671.5247" y="-351.14276"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="People I meet online are more interesting than the people I meet offline" label="People I meet online are more interesting than the people I meet offline">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-851.55133" y="-224.33932"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
+        <viz:size value="100.0"></viz:size>
+        <viz:position x="520.777" y="-780.7583"></viz:position>
+        <viz:color r="0" g="165" b="176"></viz:color>
       </node>
       <node id="Engaging with Institutions" label="Engaging with Institutions">
         <attvalues>
-          <attvalue for="category" value="Engaging with Institutions"></attvalue>
+          <attvalue for="category" value="."></attvalue>
         </attvalues>
-        <viz:size value="80.0"></viz:size>
-        <viz:position x="689.4052" y="106.15942"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Look for information about national government services (e.g. benefits, taxes, a driving licence or passport)" label="Look for information about national government services (e.g. benefits, taxes, a driving licence or passport)">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="611.85175" y="26.374096"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Ask a representative of a public institution for advice on public services (e.g. your local council / municipality)" label="Ask a representative of a public institution for advice on public services (e.g. your local council / municipality)">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="678.88135" y="-3.3383348"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Complete an online form for a national government service" label="Complete an online form for a national government service">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="797.1073" y="128.5994"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Look for information about an MP, local councillor, political party or candidate" label="Look for information about an MP, local councillor, political party or candidate">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="741.8782" y="7.6401124"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Follow or contact a politician (or political organization)" label="Follow or contact a politician (or political organization)">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="785.41943" y="47.875904"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Join or start a group that discusses politics or political issues" label="Join or start a group that discusses politics or political issues">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="574.181" y="84.7897"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Look for information about any other government, community or other organisational body" label="Look for information about any other government, community or other organisational body">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="688.2375" y="216.23341"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
+        <viz:size value="100.0"></viz:size>
+        <viz:position x="642.5972" y="5.949003"></viz:position>
+        <viz:color r="217" g="65" b="192"></viz:color>
       </node>
       <node id="Household capacities" label="Household capacities">
         <attvalues>
-          <attvalue for="category" value="Household capacities"></attvalue>
+          <attvalue for="category" value="."></attvalue>
         </attvalues>
-        <viz:size value="80.0"></viz:size>
-        <viz:position x="706.2943" y="-230.41063"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Someone in my household is usually able to fix Internet connection problems." label="Someone in my household is usually able to fix Internet connection problems.">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="796.5479" y="-294.3945"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Someone in my household is usually able to help others with common technical tasks, like installing apps, paying bills online, setup email and calendars, back up devices, and so on." label="Someone in my household is usually able to help others with common technical tasks, like installing apps, paying bills online, setup email and calendars, back up devices, and so on.">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="718.34186" y="-339.7959"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Someone in my household is usually willing to help and show others how to use new technologies and applications." label="Someone in my household is usually willing to help and show others how to use new technologies and applications.">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="639.65784" y="-317.9498"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="My household is able to use technology effectively to engage with local, national and international political issues." label="My household is able to use technology effectively to engage with local, national and international political issues.">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="650.45544" y="-130.07188"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="My household is able to use technology effectively to promote cultural activities." label="My household is able to use technology effectively to promote cultural activities.">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="600.39404" y="-260.1995"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="My household is able to use technology effectively to learn about and address environmental concerns." label="My household is able to use technology effectively to learn about and address environmental concerns.">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="781.748" y="-150.32033"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="My household is able to use technology effectively to undertake training, find work, advance their careers and pursue business opportunities." label="My household is able to use technology effectively to undertake training, find work, advance their careers and pursue business opportunities.">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="603.14355" y="-192.1475"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
+        <viz:size value="100.0"></viz:size>
+        <viz:position x="-752.2112" y="304.37006"></viz:position>
+        <viz:color r="217" g="52" b="100"></viz:color>
       </node>
       <node id="Neighbourhood capacities" label="Neighbourhood capacities">
         <attvalues>
-          <attvalue for="category" value="Neighbourhood capacities"></attvalue>
+          <attvalue for="category" value="."></attvalue>
         </attvalues>
-        <viz:size value="80.0"></viz:size>
-        <viz:position x="-695.62854" y="-705.1278"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Someone in my neighbourhood is usually able to help others with common technical tasks, like installing apps, paying bills online, setup email and calendars, back up devices, and so on." label="Someone in my neighbourhood is usually able to help others with common technical tasks, like installing apps, paying bills online, setup email and calendars, back up devices, and so on.">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-735.81116" y="-602.6397"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="I am able to call on someone in my neighbourhood who is willing to help and show others how to use new technologies and applications." label="I am able to call on someone in my neighbourhood who is willing to help and show others how to use new technologies and applications.">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-608.7649" y="-637.49335"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="My neighbourhood is able to use technology effectively to engage with local, national and international political issues." label="My neighbourhood is able to use technology effectively to engage with local, national and international political issues.">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-810.9118" y="-685.8378"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="My neighbourhood is able to use technology effectively to promote cultural activities." label="My neighbourhood is able to use technology effectively to promote cultural activities.">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-780.01416" y="-627.2902"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="My neighbourhood is able to use technology effectively to learn about and address environmental concerns." label="My neighbourhood is able to use technology effectively to learn about and address environmental concerns.">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-653.32886" y="-806.7231"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="My neighbourhood is able to use technology effectively to undertake training, find work, advance their careers and pursue business opportunities." label="My neighbourhood is able to use technology effectively to undertake training, find work, advance their careers and pursue business opportunities.">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-665.36273" y="-592.5978"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
+        <viz:size value="100.0"></viz:size>
+        <viz:position x="306.09393" y="-1030.206"></viz:position>
+        <viz:color r="0" g="177" b="242"></viz:color>
       </node>
       <node id="Community capacities" label="Community capacities">
         <attvalues>
-          <attvalue for="category" value="Community capacities"></attvalue>
+          <attvalue for="category" value="."></attvalue>
         </attvalues>
-        <viz:size value="80.0"></viz:size>
-        <viz:position x="-399.49377" y="660.75397"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="My community is generally highly &quot;digitally capable&quot; - many people are able to use technology effectively for work, social and personal reasons." label="My community is generally highly &quot;digitally capable&quot; - many people are able to use technology effectively for work, social and personal reasons.">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-276.80347" y="680.20105"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="My community is able to use technology effectively to engage with local, national and international political issues." label="My community is able to use technology effectively to engage with local, national and international political issues.">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-390.91345" y="550.02985"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="My community is able to use technology effectively to promote cultural activities." label="My community is able to use technology effectively to promote cultural activities.">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-480.0289" y="585.7006"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="My community is able to use technology effectively to learn about and address environmental concerns." label="My community is able to use technology effectively to learn about and address environmental concerns.">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-325.3773" y="575.5933"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="My community is able to use technology effectively to undertake training, find work, advance their careers and pursue business opportunities." label="My community is able to use technology effectively to undertake training, find work, advance their careers and pursue business opportunities.">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-414.47745" y="769.7352"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Other government or community services" label="Other government or community services">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="579.06934" y="299.58823"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
+        <viz:size value="100.0"></viz:size>
+        <viz:position x="462.21445" y="355.2723"></viz:position>
+        <viz:color r="239" g="99" b="0"></viz:color>
       </node>
       <node id="Attitudes towards technology" label="Attitudes towards technology">
         <attvalues>
-          <attvalue for="category" value="Attitudes towards technology"></attvalue>
+          <attvalue for="category" value="."></attvalue>
         </attvalues>
-        <viz:size value="80.0"></viz:size>
-        <viz:position x="1027.9425" y="541.6454"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="I am concerned about the impacts of e-waste on the environment." label="I am concerned about the impacts of e-waste on the environment.">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="1094.0657" y="453.6642"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Generally, I am optimistic about the future of technology." label="Generally, I am optimistic about the future of technology.">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="966.6074" y="443.5889"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="I am concerned about how companies, governements and others might use my online information." label="I am concerned about how companies, governements and others might use my online information.">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="930.2543" y="490.90958"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="I try to reduce the impacts of my own use of technology on the environment." label="I try to reduce the impacts of my own use of technology on the environment.">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="1027.2721" y="431.56512"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
-      </node>
-      <node id="Technology companies need to do more to make sure their products do not damage the environment." label="Technology companies need to do more to make sure their products do not damage the environment.">
-        <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="1033.7589" y="651.4998"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
+        <viz:size value="100.0"></viz:size>
+        <viz:position x="209.37245" y="-673.2173"></viz:position>
+        <viz:color r="215" g="86" b="251"></viz:color>
       </node>
       <node id="General demographics" label="General demographics">
         <attvalues>
-          <attvalue for="category" value="General demographics"></attvalue>
+          <attvalue for="category" value="."></attvalue>
         </attvalues>
-        <viz:size value="80.0"></viz:size>
-        <viz:position x="-1095.2677" y="-188.04707"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
+        <viz:size value="100.0"></viz:size>
+        <viz:position x="-381.52408" y="-867.9383"></viz:position>
+        <viz:color r="255" g="0" b="40"></viz:color>
+      </node>
+      <node id="Look for information on the price of a product (e.g. books, holidays, clothes, cars)" label="Look for information on the price of a product (e.g. books, holidays, clothes, cars)">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-148.74109" y="632.2704"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Talk to others about the price of a product (e.g. on a forum or online chat)" label="Talk to others about the price of a product (e.g. on a forum or online chat)">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-13.763621" y="610.89703"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Make an offer on a product (e.g. on eBay, Amazon)" label="Make an offer on a product (e.g. on eBay, Amazon)">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="20.952929" y="641.48517"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Look for information on how to sell something you own" label="Look for information on how to sell something you own">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-169.77664" y="665.4766"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Respond to people's requests for information about a product or service you want to sell" label="Respond to people's requests for information about a product or service you want to sell">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-121.356636" y="610.73303"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Put a product up for sale" label="Put a product up for sale">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-177.68843" y="715.7316"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Look for information on insurance policies (e.g. car/health/life or other insurance)" label="Look for information on insurance policies (e.g. car/health/life or other insurance)">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="41.68837" y="692.8879"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Compare reviews of insurance policies . car/health/life or other insurance)" label="Compare reviews of insurance policies . car/health/life or other insurance)">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-89.37345" y="598.9534"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Purchase insurance online (e.g. car/he/life or other)" label="Purchase insurance online (e.g. car/he/life or other)">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-52.92731" y="597.8015"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Look for something (e.g. software, devices, apps, instruments, kit etc) that would help you do your job better" label="Look for something (e.g. software, devices, apps, instruments, kit etc) that would help you do your job better">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="176.19359" y="60.365097"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Talk to others online about how to solve a job related problem (e.g. via email, social networking site, or forum)" label="Talk to others online about how to solve a job related problem (e.g. via email, social networking site, or forum)">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="211.8918" y="-1.7183584"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Integrate tools or apps you have downloaded into the way you work" label="Integrate tools or apps you have downloaded into the way you work">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="174.43533" y="87.27681"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Look for a different job online" label="Look for a different job online">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="179.16666" y="113.246956"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Talk to others online about jobortunities (e.g. email, social networking site, or forum)" label="Talk to others online about jobortunities (e.g. email, social networking site, or forum)">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="186.5147" y="30.491488"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Create or share a CV on a professional and work related site (e.g. Linkedin, Monsterboard)" label="Create or share a CV on a professional and work related site (e.g. Linkedin, Monsterboard)">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="192.19563" y="140.80803"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Look for the latest news on current affairs" label="Look for the latest news on current affairs">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="696.5237" y="-615.4749"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Look for the latest sports news" label="Look for the latest sports news">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="751.8388" y="-567.2064"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Look for the latest celebrity news" label="Look for the latest celebrity news">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="684.38727" y="-649.65106"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Chat about relationships and friendships (e.g. via email, a social networking site, whatsapp, etc)" label="Chat about relationships and friendships (e.g. via email, a social networking site, whatsapp, etc)">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="717.39905" y="-588.80963"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Look up information on where to go out (e.g. exhibitions, cinema, parties)" label="Look up information on where to go out (e.g. exhibitions, cinema, parties)">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-392.8681" y="-232.74832"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Read information about relationships (e.g. about managing relationships or dating)" label="Read information about relationships (e.g. about managing relationships or dating)">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-319.61792" y="-277.00793"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Read information on parenting" label="Read information on parenting">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-338.4607" y="-256.9424"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Look up information on transport (e.g. bus or train timetables)" label="Look up information on transport (e.g. bus or train timetables)">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-301.8702" y="-368.85397"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Arrange with other people to go out" label="Arrange with other people to go out">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-430.5918" y="-233.75555"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Upload pictures of yourself" label="Upload pictures of yourself">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-299.09332" y="-330.66693"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Look for websites with religious or spiritual information" label="Look for websites with religious or spiritual information">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-362.58795" y="-241.74438"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Contact people who share religious or spiritual beliefs" label="Contact people who share religious or spiritual beliefs">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-306.2691" y="-301.27292"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Log in on a website with religious or spiritual content" label="Log in on a website with religious or spiritual content">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-475.72452" y="-254.17856"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Through the internet I found people of a similar age that share my interests" label="Through the internet I found people of a similar age that share my interests">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="1015.8187" y="314.7074"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="The things I came across on the internet made me think about the differences between men and women" label="The things I came across on the internet made me think about the differences between men and women">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="1004.5312" y="416.2463"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Through the Internet I learned new things about my ethnic group" label="Through the Internet I learned new things about my ethnic group">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="1002.11273" y="342.46167"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Due to the information I found and people I have met online I feel more connected with religion or spiritual beliefs" label="Due to the information I found and people I have met online I feel more connected with religion or spiritual beliefs">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="1039.2559" y="289.76233"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Through the Internet I learned new things about other ethnic groups" label="Through the Internet I learned new things about other ethnic groups">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="996.82513" y="375.42703"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Look up information on how to improve your health" label="Look up information on how to improve your health">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-755.2852" y="-426.58542"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Ask others about a training program" label="Ask others about a training program">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-790.961" y="-347.31265"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Use exercise or nutrition programs / apps" label="Use exercise or nutrition programs / apps">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-771.52435" y="-370.76053"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Look up information about health or medical care" label="Look up information about health or medical care">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-760.50903" y="-461.49786"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Ask for advice on a medical condition" label="Ask for advice on a medical condition">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-821.70465" y="-327.56726"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Fill out a questionnaire related to your health" label="Fill out a questionnaire related to your health">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-759.6685" y="-397.4241"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="I am healthier as a result of the online information, advice or programs / apps I have used" label="I am healthier as a result of the online information, advice or programs / apps I have used">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="713.96" y="-387.35117"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="I have made better decisions about my health or medical care as a result of the information / advice I found online" label="I have made better decisions about my health or medical care as a result of the information / advice I found online">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="723.4975" y="-436.8116"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Come across online lifestyle magazines / features / articles" label="Come across online lifestyle magazines / features / articles">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-831.6205" y="640.2048"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Talk to others about your lifestyle" label="Talk to others about your lifestyle">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-867.16534" y="485.74005"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Blog or maintain a website about your personal life" label="Blog or maintain a website about your personal life">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-814.0231" y="576.29865"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Look for jokes, cartoons or other entertaining content" label="Look for jokes, cartoons or other entertaining content">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-828.86993" y="524.77106"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Play games" label="Play games">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-818.29865" y="549.1934"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Listen to music" label="Listen to music">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-817.0283" y="606.4234"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Watch videos / tv programmes" label="Watch videos / tv programmes">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-845.08417" y="503.27817"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Write a blog or maintain a website on issues or problems of interest to you" label="Write a blog or maintain a website on issues or problems of interest to you">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-895.43774" y="473.66724"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Write comments about or rate videos, music, books, TV shows etc" label="Write comments about or rate videos, music, books, TV shows etc">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-929.4906" y="469.97662"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Staying in touch with friends" label="Staying in touch with friends">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="180.16544" y="-192.73328"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Making new friends" label="Making new friends">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="338.79984" y="-262.45053"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Contacting family" label="Contacting family">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="311.15155" y="-370.1625"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Contacting support services" label="Contacting support services">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="159.18042" y="-206.6651"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Calling about a job" label="Calling about a job">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="119.834885" y="-281.67273"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Being contacted by employers" label="Being contacted by employers">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="127.52778" y="-250.21411"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Paying bills" label="Paying bills">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="322.66776" y="-228.16989"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Finding accommodation" label="Finding accommodation">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="252.23837" y="-182.46872"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Learning new skills" label="Learning new skills">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="340.8897" y="-312.94324"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Keeping safe" label="Keeping safe">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="203.00443" y="-184.03754"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Betting" label="Betting">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="141.18452" y="-225.83643"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Contacting emergency services" label="Contacting emergency services">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="301.38605" y="-205.32996"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Contacting a doctor or other medical service" label="Contacting a doctor or other medical service">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="277.25235" y="-190.42973"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Other" label="Other">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="227.01653" y="-180.52367"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Used the internet for school work" label="Used the internet for school work">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="8.791363" y="295.9716"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Watched video clips (e.g. on YouTube)" label="Watched video clips (e.g. on YouTube)">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="194.7013" y="320.49777"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Watched music or films available online" label="Watched music or films available online">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="101.8625" y="256.81857"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Read/watched the news on the internet" label="Read/watched the news on the internet">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="61.650204" y="261.3051"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Sent/received email" label="Sent/received email">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-5.532514" y="317.54355"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Used a social network site (e.g. Facebook, Twitter, Instagram, Tumblr, Tinder, Weibu)" label="Used a social network site (e.g. Facebook, Twitter, Instagram, Tumblr, Tinder, Weibu)">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="42.68842" y="268.96616"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Used instant messaging" label="Used instant messaging">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="172.29185" y="288.7998"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Played games with other people on the internet" label="Played games with other people on the internet">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="81.24498" y="257.24246"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Played internet games (on your own or against the computer)" label="Played internet games (on your own or against the computer)">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-15.45613" y="346.18658"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Used a camera for video communication (e.g. Skype, Facetime)" label="Used a camera for video communication (e.g. Skype, Facetime)">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="124.34253" y="260.78195"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Put (or posted) a message on a website" label="Put (or posted) a message on a website">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-16.575504" y="383.22296"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Written a blog or online diary" label="Written a blog or online diary">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="25.018908" y="280.32712"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Put (or posted) photos, videos or music to share with others" label="Put (or posted) photos, videos or music to share with others">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="147.99605" y="270.56485"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Download apps" label="Download apps">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-338.4473" y="67.11355"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Deactivate the function showing your geographical position (on Facebook, Google Maps, etc?)" label="Deactivate the function showing your geographical position (on Facebook, Google Maps, etc?)">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-167.7171" y="150.8656"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Connect to a wifi network from your smartphone/tablet" label="Connect to a wifi network from your smartphone/tablet">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-390.67752" y="135.14975"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Block push notifications from different apps" label="Block push notifications from different apps">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-363.49628" y="243.96721"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Have the same documents, contacts, and apps on all devices that you use (smartphones, tablets, PCs)" label="Have the same documents, contacts, and apps on all devices that you use (smartphones, tablets, PCs)">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-244.05972" y="273.41925"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Block pop ups which promote apps, games or services you have to pay for (unrequested windows that appear during web surfing)" label="Block pop ups which promote apps, games or services you have to pay for (unrequested windows that appear during web surfing)">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-273.00378" y="279.23563"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Protect a smartphone with a PIN/with a screen pattern" label="Protect a smartphone with a PIN/with a screen pattern">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-370.43243" y="95.03778"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Update your status on the social networking site used the most" label="Update your status on the social networking site used the most">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-250.42093" y="55.62918"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Find information on how to use smartphones safely" label="Find information on how to use smartphones safely">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-394.67438" y="160.05092"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Compare different apps with similar functions in order to choose the one that is most reliable" label="Compare different apps with similar functions in order to choose the one that is most reliable">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-297.39536" y="52.670017"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Take a picture or a short video with your smartphone and upload it onto social media" label="Take a picture or a short video with your smartphone and upload it onto social media">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-355.537" y="79.38816"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Compare different websites to decide if information is true" label="Compare different websites to decide if information is true">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-274.54166" y="51.624607"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Change filter preferences" label="Change filter preferences">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-318.74127" y="57.956036"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Bookmark a website" label="Bookmark a website">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-169.85728" y="191.81729"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Block unwanted adverts or junk mail/spam" label="Block unwanted adverts or junk mail/spam">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-323.17084" y="271.3355"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Delete the record of which sites you have visited" label="Delete the record of which sites you have visited">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-344.59277" y="259.98462"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Change privacy setting on a social networking profile" label="Change privacy setting on a social networking profile">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-379.5439" y="222.47456"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Use 'report abuse' buttons (e.g. the button you can use when you want to report an un-authorised usage of your picture)" label="Use 'report abuse' buttons (e.g. the button you can use when you want to report an un-authorised usage of your picture)">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-177.9418" y="116.269936"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Block messages from someone you don't want to hear from" label="Block messages from someone you don't want to hear from">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-225.00798" y="66.0386"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Block pop ups (unrequested windows that appear during web surfing)" label="Block pop ups (unrequested windows that appear during web surfing)">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-382.3607" y="113.69835"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Find information on how to use the internet safely" label="Find information on how to use the internet safely">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-211.22325" y="255.80971"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Publish a comment on a blog, websites or forum" label="Publish a comment on a blog, websites or forum">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-199.56947" y="85.466866"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Upload images videos or music onto social media" label="Upload images videos or music onto social media">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-299.32175" y="277.97305"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Create a blog" label="Create a blog">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-392.33063" y="189.10242"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Somebody used my personal information in a way I didn't like" label="Somebody used my personal information in a way I didn't like">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="742.0909" y="309.82498"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="The computer got a virus" label="The computer got a virus">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="679.18097" y="445.56638"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="I lost money by being cheated on the internet (we mean real money, rather than money in a computer game)" label="I lost money by being cheated on the internet (we mean real money, rather than money in a computer game)">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="674.0093" y="401.03714"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Somebody used my password to access my information or to pretend to be me" label="Somebody used my password to access my information or to pretend to be me">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="684.94507" y="362.45587"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Somebody created a page or image about me that was hostile or hurtful" label="Somebody created a page or image about me that was hostile or hurtful">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="707.5467" y="331.91428"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Nasty or hurtful messages were sent to me" label="Nasty or hurtful messages were sent to me">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-373.82288" y="779.1231"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Nasty or hurtful messages were passed around or posted where others could see" label="Nasty or hurtful messages were passed around or posted where others could see">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-452.31793" y="575.8544"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="I was left out or excluded from a group or activity on the internet" label="I was left out or excluded from a group or activity on the internet">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-374.18378" y="586.6042"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="I was threatened on the internet" label="I was threatened on the internet">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-321.82498" y="714.3376"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Other nasty or hurtful things on the internet" label="Other nasty or hurtful things on the internet">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-340.13974" y="615.79004"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Something else" label="Something else">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-488.82034" y="591.80914"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Don't know" label="Don't know">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-451.0503" y="790.3647"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Prefer not to say" label="Prefer not to say">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-514.33795" y="750.1712"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="I find it easier to be myself when online than when I am with people face-to-face" label="I find it easier to be myself when online than when I am with people face-to-face">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-679.0817" y="-642.7384"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="I talk about different things with people when online than I do when face-to-face" label="I talk about different things with people when online than I do when face-to-face">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-632.0822" y="-676.9418"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="When I am online, I talk about private things that I do not share with people face-to-face" label="When I am online, I talk about private things that I do not share with people face-to-face">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-652.6724" y="-657.0933"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="I go online much more on the weekends than I do on a regular school or work day [optional question]" label="I go online much more on the weekends than I do on a regular school or work day [optional question]">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-616.7933" y="-702.7517"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="When I am going through a difficult time, I go online less often" label="When I am going through a difficult time, I go online less often">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-608.5318" y="-737.789"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="When I am going through a difficult time, going online makes me feel better" label="When I am going through a difficult time, going online makes me feel better">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-713.4384" y="-635.8172"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Helped you when you found something difficult to do or find on the internet" label="Helped you when you found something difficult to do or find on the internet">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-28.478998" y="-865.54956"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Suggested ways to use the internet safely" label="Suggested ways to use the internet safely">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-57.84265" y="-864.1727"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Encourage you to explore and learn things on the internet?" label="Encourage you to explore and learn things on the internet?">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="0.9763687" y="-875.45795"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Explained why some websites are good or bad" label="Explained why some websites are good or bad">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-119.07513" y="-889.83466"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Suggested ways to behave towards other people on the internet" label="Suggested ways to behave towards other people on the internet">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-87.75064" y="-871.1448"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Helped you in the past when something has bothered you on the internet" label="Helped you in the past when something has bothered you on the internet">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="31.056673" y="-897.8308"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Youth or church or social worker" label="Youth or church or social worker">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-891.1621" y="-24.144836"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Teacher" label="Teacher">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-1000.3992" y="-130.7173"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Parent" label="Parent">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-909.47656" y="42.14589"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Close family friend" label="Close family friend">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-987.68286" y="91.25687"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Other relative" label="Other relative">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-926.7579" y="62.528343"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Librarian" label="Librarian">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-902.5679" y="-68.59112"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Someone whose job it is to give advice over the internet" label="Someone whose job it is to give advice over the internet">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-894.4701" y="-46.644558"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Websites" label="Websites">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-951.42554" y="79.84013"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Television, radio, newspapers or magazines" label="Television, radio, newspapers or magazines">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-898.469" y="20.746368"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Internet service provider" label="Internet service provider">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-892.47034" y="-1.5269865"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Health care professional" label="Health care professional">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-935.1142" y="-108.03406"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="I haven't received any advice from any of these people or places" label="I haven't received any advice from any of these people or places">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-915.7357" y="-89.20732"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Helped someone setup an email account" label="Helped someone setup an email account">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="535.0146" y="738.48425"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Helped someone set up a social media account" label="Helped someone set up a social media account">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="522.20337" y="785.55133"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Helped someone find information or other resources online" label="Helped someone find information or other resources online">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="526.2951" y="760.3072"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Helped someone post content online (photos, video, text)" label="Helped someone post content online (photos, video, text)">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="692.95496" y="695.4301"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Helped someone complete school or work online" label="Helped someone complete school or work online">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="579.1438" y="693.12384"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Helped someone submit a job application online" label="Helped someone submit a job application online">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="546.9737" y="720.3289"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Provided training or support to someone on how to use the Internet" label="Provided training or support to someone on how to use the Internet">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="534.96265" y="842.88965"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Provided training or support to someone on how to use a game, software, service or device" label="Provided training or support to someone on how to use a game, software, service or device">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="667.15625" y="683.70966"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Gave consent for my child to participate in an online/social media community" label="Gave consent for my child to participate in an online/social media community">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="598.4868" y="684.5294"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="loaned a device - Mobile phone" label="loaned a device - Mobile phone">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="642.73804" y="679.0535"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="loaned a device - Smart phone" label="loaned a device - Smart phone">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="524.4506" y="813.65063"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="loaned a device - Gaming console" label="loaned a device - Gaming console">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="619.75946" y="679.6414"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="loaned a device - Tablet" label="loaned a device - Tablet">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="561.82745" y="705.15094"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="loaned a device - Laptop" label="loaned a device - Laptop">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="719.51935" y="718.2781"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="loaned a device - Other" label="loaned a device - Other">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="557.95685" y="872.8971"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Sought help from someone to setup an email account" label="Sought help from someone to setup an email account">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="20.571861" y="53.375484"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Sought help from someone to set up a social media account" label="Sought help from someone to set up a social media account">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-81.3982" y="40.57408"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Sought help from someone to find information or other resources online" label="Sought help from someone to find information or other resources online">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="76.15011" y="8.953276"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Sought help from someone to post content online (photos, video, text)" label="Sought help from someone to post content online (photos, video, text)">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="9.354407" y="56.797695"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Sought help from someone to complete school or work online" label="Sought help from someone to complete school or work online">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-43.930943" y="57.17647"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Sought help from someone apply for a job online" label="Sought help from someone apply for a job online">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="54.028606" y="34.00542"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Obtained training or support from someone to use the Internet on a regular basis" label="Obtained training or support from someone to use the Internet on a regular basis">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="91.96511" y="-74.035"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Obtained training or support to someone on how to use a game, service or device" label="Obtained training or support to someone on how to use a game, service or device">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="42.863197" y="42.244"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Sought help to go online by a librarian or community hub staff member" label="Sought help to go online by a librarian or community hub staff member">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-2.4601924" y="59.14086"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Accessed the Internet through a community hub or local library" label="Accessed the Internet through a community hub or local library">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="65.15148" y="23.288769"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="borrowed a device - Mobile phone" label="borrowed a device - Mobile phone">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="31.686054" y="48.60842"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="borrowed a device - Smart phone" label="borrowed a device - Smart phone">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-28.906675" y="59.68676"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="borrowed a device - Gaming console" label="borrowed a device - Gaming console">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="86.074265" y="-10.203613"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="borrowed a device - Tablet" label="borrowed a device - Tablet">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="93.13094" y="-36.910984"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="borrowed a device - Laptop" label="borrowed a device - Laptop">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-15.17698" y="60.185017"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="borrowed a device - Other" label="borrowed a device - Other">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-60.797516" y="51.71323"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Online family relationships" label="Online family relationships">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="989.98486" y="-293.95975"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Online friend relationships" label="Online friend relationships">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="1012.9666" y="-237.06467"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Online support forums, groups and networks" label="Online support forums, groups and networks">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="1039.8395" y="-212.81"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Online government or community services" label="Online government or community services">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="997.40936" y="-263.7949"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Other online information resources" label="Other online information resources">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="992.3703" y="-329.64847"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="At home (in a bedroom or private study)" label="At home (in a bedroom or private study)">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="920.2869" y="-8.370125"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="At home (in a family room or other common space)" label="At home (in a family room or other common space)">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="911.48755" y="24.91372"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="At school or work" label="At school or work">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="925.02515" y="89.53344"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="On public transport" label="On public transport">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="913.1817" y="57.781223"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="In public spaces where WiFi is available" label="In public spaces where WiFi is available">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="942.324" y="-40.79098"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="In public spaces generally" label="In public spaces generally">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="949.86414" y="119.48499"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Family" label="Family">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="288.00357" y="653.3909"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Friends" label="Friends">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="192.42738" y="666.3241"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Neighbours" label="Neighbours">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="162.16014" y="697.0324"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Work colleagues or school peers" label="Work colleagues or school peers">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="223.34895" y="651.91547"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Other networks of interest (e.g. sport, culture, or other interests)" label="Other networks of interest (e.g. sport, culture, or other interests)">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="255.00455" y="647.72723"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="My online life would be impossible without the help of family, friends or neighbours" label="My online life would be impossible without the help of family, friends or neighbours">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-610.90564" y="53.306164"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="To go online, I rely upon help from people with technical skills at my library, community hub, school or local businesses" label="To go online, I rely upon help from people with technical skills at my library, community hub, school or local businesses">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-638.8629" y="44.917343"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="To go online, I rely upon help from other government or community services" label="To go online, I rely upon help from other government or community services">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-562.03845" y="50.07383"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="I enjoy using the Internet in the company of others" label="I enjoy using the Internet in the company of others">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-539.5472" y="40.50793"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="I enjoy providing help to other people in my family to go online" label="I enjoy providing help to other people in my family to go online">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-489.21408" y="-20.498611"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="I enjoy providing help to other people in my community to go online" label="I enjoy providing help to other people in my community to go online">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-586.1673" y="54.436646"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="I prefer to go online when I am alone" label="I prefer to go online when I am alone">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-519.16144" y="25.70153"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="I find sharing screens with other people frustrating" label="I find sharing screens with other people frustrating">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-501.94434" y="5.5630436"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="For work-related activities, I only communicate with people I know &quot;in real life&quot;." label="For work-related activities, I only communicate with people I know &quot;in real life&quot;.">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="661.0546" y="-305.99225"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="For study or school-related activities, I only communicate with people I know &quot;in real life&quot;." label="For study or school-related activities, I only communicate with people I know &quot;in real life&quot;.">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="599.65643" y="-431.24756"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="For hobby-related activities, I only communicate with people I know &quot;in real life&quot;." label="For hobby-related activities, I only communicate with people I know &quot;in real life&quot;.">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="626.10913" y="-249.48593"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="For other personal activities, I only communicate with people I know &quot;in real life&quot;." label="For other personal activities, I only communicate with people I know &quot;in real life&quot;.">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="573.4794" y="-225.04202"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Look for updates from friends or family (e.g. email, status / photos on social networking sites)" label="Look for updates from friends or family (e.g. email, status / photos on social networking sites)">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-88.051476" y="-409.9606"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Comment on the updates friends or family put online (e.g. email, status / photos on social networking sites)" label="Comment on the updates friends or family put online (e.g. email, status / photos on social networking sites)">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-114.89877" y="-407.72058"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Talk to family or friends who live further away (e.g. via skype, whatsapp, or email)" label="Talk to family or friends who live further away (e.g. via skype, whatsapp, or email)">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-35.865635" y="-436.98184"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Share pictures of you with your family or friends (e.g. through a social networking site, photo sharing site)" label="Share pictures of you with your family or friends (e.g. through a social networking site, photo sharing site)">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-61.497116" y="-419.2062"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Look for websites online that help you to meet new people (e.g. online dating, social networking sites, hobby or crafts clubs)" label="Look for websites online that help you to meet new people (e.g. online dating, social networking sites, hobby or crafts clubs)">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-143.15616" y="-412.6036"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Make new friends /meet new people" label="Make new friends /meet new people">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-173.78046" y="-427.72656"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Like or promote content that other people post" label="Like or promote content that other people post">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-12.650184" y="-467.8601"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="I have a better relationship with my friends and family because I use the internet" label="I have a better relationship with my friends and family because I use the internet">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="458.0991" y="-692.2045"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="I am in touch with my close friends more because I use the internet" label="I am in touch with my close friends more because I use the internet">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="623.8608" y="-747.0477"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="I have more friends because I use the internet" label="I have more friends because I use the internet">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="494.63394" y="-675.46436"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="People I meet online are more interesting than the people I meet offline" label="People I meet online are more interesting than the people I meet offline">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="537.3118" y="-673.54083"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Look for information about national government services (e.g. benefits, taxes, a driving licence or passport)" label="Look for information about national government services (e.g. benefits, taxes, a driving licence or passport)">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="534.9178" y="-14.856087"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Ask a representative of a public institution for advice on public services (e.g. your local council / municipality)" label="Ask a representative of a public institution for advice on public services (e.g. your local council / municipality)">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="545.8721" y="-45.74046"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Complete an online form for a national government service" label="Complete an online form for a national government service">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="569.6402" y="-75.92746"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Look for information about an MP, local councillor, political party or candidate" label="Look for information about an MP, local councillor, political party or candidate">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="541.26025" y="47.874924"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Follow or contact a politician (or political organization)" label="Follow or contact a politician (or political organization)">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="595.7004" y="105.07293"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Join or start a group that discusses politics or political issues" label="Join or start a group that discusses politics or political issues">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="533.4314" y="16.463139"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Look for information about any other government, community or other organisational body" label="Look for information about any other government, community or other organisational body">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="560.04584" y="78.139435"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Someone in my household is usually able to fix Internet connection problems." label="Someone in my household is usually able to fix Internet connection problems.">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-670.2918" y="377.26913"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Someone in my household is usually able to help others with common technical tasks, like installing apps, paying bills online, setup email and calendars, back up devices, and so on." label="Someone in my household is usually able to help others with common technical tasks, like installing apps, paying bills online, setup email and calendars, back up devices, and so on.">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-643.6329" y="319.80856"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Someone in my household is usually willing to help and show others how to use new technologies and applications." label="Someone in my household is usually willing to help and show others how to use new technologies and applications.">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-648.8916" y="341.14072"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="My household is able to use technology effectively to engage with local, national and international political issues." label="My household is able to use technology effectively to engage with local, national and international political issues.">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-642.96216" y="294.7288"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="My household is able to use technology effectively to promote cultural activities." label="My household is able to use technology effectively to promote cultural activities.">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-687.55005" y="392.9265"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="My household is able to use technology effectively to learn about and address environmental concerns." label="My household is able to use technology effectively to learn about and address environmental concerns.">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-657.8501" y="360.246"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="My household is able to use technology effectively to undertake training, find work, advance their careers and pursue business opportunities." label="My household is able to use technology effectively to undertake training, find work, advance their careers and pursue business opportunities.">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-710.9422" y="405.94812"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Someone in my neighbourhood is usually able to help others with common technical tasks, like installing apps, paying bills online, setup email and calendars, back up devices, and so on." label="Someone in my neighbourhood is usually able to help others with common technical tasks, like installing apps, paying bills online, setup email and calendars, back up devices, and so on.">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="320.37448" y="-921.82526"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="I am able to call on someone in my neighbourhood who is willing to help and show others how to use new technologies and applications." label="I am able to call on someone in my neighbourhood who is willing to help and show others how to use new technologies and applications.">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="236.99886" y="-945.492"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="My neighbourhood is able to use technology effectively to engage with local, national and international political issues." label="My neighbourhood is able to use technology effectively to engage with local, national and international political issues.">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="214.18268" y="-971.0202"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="My neighbourhood is able to use technology effectively to promote cultural activities." label="My neighbourhood is able to use technology effectively to promote cultural activities.">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="356.18698" y="-933.05286"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="My neighbourhood is able to use technology effectively to learn about and address environmental concerns." label="My neighbourhood is able to use technology effectively to learn about and address environmental concerns.">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="290.39102" y="-922.0173"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="My neighbourhood is able to use technology effectively to undertake training, find work, advance their careers and pursue business opportunities." label="My neighbourhood is able to use technology effectively to undertake training, find work, advance their careers and pursue business opportunities.">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="262.5185" y="-929.97845"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="My community is generally highly &quot;digitally capable&quot; - many people are able to use technology effectively for work, social and personal reasons." label="My community is generally highly &quot;digitally capable&quot; - many people are able to use technology effectively for work, social and personal reasons.">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="354.3138" y="340.5299"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="My community is able to use technology effectively to engage with local, national and international political issues." label="My community is able to use technology effectively to engage with local, national and international political issues.">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="470.48306" y="246.6802"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="My community is able to use technology effectively to promote cultural activities." label="My community is able to use technology effectively to promote cultural activities.">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="394.0773" y="270.3107"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="My community is able to use technology effectively to learn about and address environmental concerns." label="My community is able to use technology effectively to learn about and address environmental concerns.">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="428.24286" y="251.7973"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="My community is able to use technology effectively to undertake training, find work, advance their careers and pursue business opportunities." label="My community is able to use technology effectively to undertake training, find work, advance their careers and pursue business opportunities.">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="368.78375" y="299.3117"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Other government or community services" label="Other government or community services">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-962.2825" y="-123.213486"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="I am concerned about the impacts of e-waste on the environment." label="I am concerned about the impacts of e-waste on the environment.">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="122.5244" y="-607.5027"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Generally, I am optimistic about the future of technology." label="Generally, I am optimistic about the future of technology.">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="283.06326" y="-593.0346"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="I am concerned about how companies, governements and others might use my online information." label="I am concerned about how companies, governements and others might use my online information.">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="241.69775" y="-569.221"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="I try to reduce the impacts of my own use of technology on the environment." label="I try to reduce the impacts of my own use of technology on the environment.">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="156.36137" y="-578.08026"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
+      </node>
+      <node id="Technology companies need to do more to make sure their products do not damage the environment." label="Technology companies need to do more to make sure their products do not damage the environment.">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="196.8309" y="-565.0349"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
       </node>
       <node id="I live alone" label="I live alone">
         <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-1145.4569" y="-286.02942"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-273.5014" y="-847.1268"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
       </node>
       <node id="Spouse or partner" label="Spouse or partner">
         <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-1095.6383" y="-78.0017"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-347.81833" y="-763.2002"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
       </node>
       <node id="Father or stepfather or my father's partner" label="Father or stepfather or my father's partner">
         <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-1176.0681" y="-113.31671"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-375.62332" y="-758.0702"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
       </node>
       <node id="Mother or stepmother or my mother's partner" label="Mother or stepmother or my mother's partner">
         <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-1005.7225" y="-252.01828"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-302.52594" y="-791.3592"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
       </node>
       <node id="Older brother(s)" label="Older brother(s)">
         <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-991.21387" y="-152.06102"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-438.9399" y="-774.0979"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
       </node>
       <node id="Older sister(s)" label="Older sister(s)">
         <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-1212.924" y="-168.7277"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-285.0617" y="-815.03357"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
       </node>
       <node id="Younger brother(s)" label="Younger brother(s)">
         <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-1072.9562" y="-295.88818"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-323.7925" y="-774.2754"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
       </node>
       <node id="Younger sister(s)" label="Younger sister(s)">
         <attvalues></attvalues>
-        <viz:size value="20.0"></viz:size>
-        <viz:position x="-1191.6802" y="-241.06462"></viz:position>
-        <viz:color r="255" g="218" b="171"></viz:color>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-405.3464" y="-760.528"></viz:position>
+        <viz:color r="0" g="129" b="242"></viz:color>
       </node>
     </nodes>
     <edges>
