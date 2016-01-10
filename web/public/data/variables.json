@@ -1,0 +1,43 @@
+{ 
+	"nodes": [ {
+		"attributes": { 
+			"Joined Twitter Date (UTC)":"07\/12\/2010 13:11:14",
+			"Tweets":93,
+			"Description":"Philosopher & historian of science at Humboldt University Berlin",
+			"Followed":78,
+			"Followers":85,
+			"Image File":"http:\/\/a1.twimg.com\/profile_images\/1185729030\/Photo-Davidkl_normal.jpg"
+			},
+		"label":"Information seeking",
+		"id":"n01",
+		"color":"rgb(139,185,208)",
+		"size":15.717465,
+		"x":-110.0839,
+		"y":1466.0,
+		"z":0.0
+		},
+		{
+		"attributes": { 
+			"Joined Twitter Date (UTC)":"07\/12\/2010 13:11:14",
+			"Tweets":93,
+			"Description":"Philosopher & historian of science at Humboldt University Berlin",
+			"Followed":78,
+			"Followers":85,
+			"Image File":"http:\/\/a1.twimg.com\/profile_images\/1185729030\/Photo-Davidkl_normal.jpg"
+			},
+		"label":"News seeking",
+		"id":"n02",
+		"color":"rgb(139,185,208)",
+		"size":15.717465,
+		"x":-110.0839,
+		"y":1466.2357,
+		"z":0.0
+		}
+
+
+	],
+	"edges":
+		[
+			{"source":"n01","attributes":{"weight":10.0,"Edge Id":27639,"Relationship":"Follower"},"target":"n02","id": "e1"}
+			]
+}
