@@ -11,4 +11,8 @@ output/*
 # Ignore large files
 refs/att98dqt.pdf
 
+# Ignore node modules
 **/node_modules/*
+
+# Ignore temporary files
+~*
