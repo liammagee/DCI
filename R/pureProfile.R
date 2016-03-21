@@ -27,23 +27,23 @@ png.height = 6
 # text.color <- '#888888'
 
 # Experiment 1
-background.color <- '#F6FFC7'
-foreground.color <- '#668E39'
-title.color <- '#667566'
-text.color <- '#202020'
+# background.color <- '#F6FFC7'
+# foreground.color <- '#668E39'
+# title.color <- '#667566'
+# text.color <- '#202020'
 
 # Experiment 2
-# background.color <- '#FFFBE3'
-# foreground.color <- '#FF7260'
-# title.color <- '#129793'
-# text.color <- '#202020'
+background.color <- '#FFFBE3'
+foreground.color <- '#FF7260'
+title.color <- '#129793'
+text.color <- '#202020'
 
 # Colour-friendly palette from http://www.cookbook-r.com/Graphs/Colors_(ggplot2)/#a-colorblind-friendly-palette
 # The palette with grey:
-cbPalette <- c("#999999", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
+# cbPalette <- c("#999999", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
 # The palette with black:
-cbbPalette <- c("#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
-blackPalette <- c("#000000")
+# cbbPalette <- c("#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
+# blackPalette <- c("#000000")
 
 
 
@@ -133,37 +133,50 @@ standardBarChart <- function(data, file.name, title, x.label, y.label, func, use
   p <- ggplot(data, aes(x=Group.1, y = x)) +
           geom_bar(width=0.75, stat="identity")
 
+
   p +
       theme_tufte() +    # FOR CONSISTENT LOOK AND FEEL
-      scale_fill_manual(values = cbPalette) + # Customise
+	  scale_fill_manual(values = cbPalette) +
       ggtitle(title) + 
       x.scale +
       y.scale +
       
       theme(
-        # plot.title = element_text(colour = title.color, lineheight=1.0, face="bold", size=graph.title.size),
+        # GRID
         panel.grid.minor.y = element_blank(),
         # panel.grid.major.y = element_blank(),
-        # panel.grid.major.y = element_line(colour = foreground.color),
+        panel.grid.major.y = element_line(colour = foreground.color),
         panel.grid.minor.x = element_blank(),
         panel.grid.major.x = element_blank(),
-        # panel.background = element_rect(fill = background.color, colour = foreground.color),
-        # axis.title = element_text(color=title.color, lineheight=1.0, size = axis.title.size),
-        axis.title = element_text(lineheight=1.0, size = axis.title.size),
+
+        # BACKGROUND
+        panel.background = element_rect(fill = background.color, colour = foreground.color),
+        
+        # TITLE
+        # plot.title = element_text(colour = title.color, lineheight=1.0, face="bold", size=graph.title.size),
+        axis.title = element_text(color=title.color, lineheight=1.0, size = axis.title.size),
+        # axis.title = element_text(lineheight=1.0, size = axis.title.size),
         axis.title.x = element_text(size = axis.title.size, vjust = x.axis.vjust),
         axis.title.y = element_text(size = axis.title.size, vjust = y.axis.vjust),
+        
+        # LINE
         axis.line = element_line(colour = "black"),
-        # axis.text.x = element_text(color=text.color, angle=45, vjust=1.0, hjust=1.0, size = axis.text.size),
-        # axis.text.y = element_text(color=text.color, size = axis.text.size)
-        axis.text.x = element_text(angle=45, vjust=1.0, hjust=1.0, size = axis.text.size),
-        axis.text.y = element_text(angle=45, size = axis.text.size)
+
+        # TEXT
+        axis.text.x = element_text(color=text.color, angle=45, vjust=1.0, hjust=1.0, size = axis.text.size),
+        axis.text.y = element_text(color=text.color, angle=45, size = axis.text.size)
+        # axis.text.x = element_text(angle=45, vjust=1.0, hjust=1.0, size = axis.text.size),
+        # axis.text.y = element_text(angle=45, size = axis.text.size)
     )
+
 
   # Save the plot
   ggsave(file=paste("./figs/", file.name, ".png", sep=""),
       width = png.width,
       height = png.height
     )
+
+  return (p)
 
 }
 
