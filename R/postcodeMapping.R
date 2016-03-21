@@ -12,11 +12,11 @@ fixGeoData <- function(data) {
 loadPostcodeMappings <- function() {
 
 	# To use, convert ABS Excel files to CSV first
-sa4s = read.csv("data/1270055006_CG_POSTCODE_2011_SA4_2011.csv", header = TRUE, strip.white = TRUE, na.strings = c("", " "))
-sa3s = read.csv("data/1270055006_CG_POSTCODE_2011_SA3_2011.csv", header = TRUE, strip.white = TRUE, na.strings = c("", " "))
-sa2s = read.csv("data/1270055006_CG_POSTCODE_2011_SA2_2011.csv", header = TRUE, strip.white = TRUE, na.strings = c("", " "))
-sas = read.csv("data/1270055006_CG_POSTCODE_2011_SLA_2011.csv", header = TRUE, strip.white = TRUE, na.strings = c("", " "))
-lgas = read.csv("data/1270055006_CG_POSTCODE_2011_LGA_2011.csv", header = TRUE, strip.white = TRUE, na.strings = c("", " "))
+sa4s <<- read.csv("data/1270055006_CG_POSTCODE_2011_SA4_2011.csv", header = TRUE, strip.white = TRUE, na.strings = c("", " "))
+sa3s <<- read.csv("data/1270055006_CG_POSTCODE_2011_SA3_2011.csv", header = TRUE, strip.white = TRUE, na.strings = c("", " "))
+sa2s <<- read.csv("data/1270055006_CG_POSTCODE_2011_SA2_2011.csv", header = TRUE, strip.white = TRUE, na.strings = c("", " "))
+sas <<- read.csv("data/1270055006_CG_POSTCODE_2011_SLA_2011.csv", header = TRUE, strip.white = TRUE, na.strings = c("", " "))
+lgas <<- read.csv("data/1270055006_CG_POSTCODE_2011_LGA_2011.csv", header = TRUE, strip.white = TRUE, na.strings = c("", " "))
 
 #   	Update on Windows to use Strawberry perl - http://strawberryperl.com/
 #   	e.g. something like: 'D:/strawberry/perl/bin/perl.exe'
