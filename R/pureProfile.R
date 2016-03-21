@@ -135,7 +135,8 @@ standardBarChart <- function(data, file.name, title, x.label, y.label, func, use
 
   p +
       theme_tufte() +    # FOR CONSISTENT LOOK AND FEEL
-      # ggtitle(title) + # NO TITLE FOR NOW
+      scale_fill_manual(values = cbPalette) + # Customise
+      ggtitle(title) + 
       x.scale +
       y.scale +
       
