@@ -49,5 +49,5 @@ p <- chartVariableByAge(watchedVideoClipsAgeMean,
 							"watchedVideoClipsAgeMean", 
 							watchedVideoClipsMetadata, 
 							frequencyLabels)
+print(p)
 
-p
