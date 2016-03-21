@@ -51,3 +51,15 @@ p <- chartVariableByAge(watchedVideoClipsAgeMean,
 							frequencyLabels)
 print(p)
 
+factorx <- factor(cut(x, breaks=nclass.Sturges(x)))
+
+
+# Playing around with ages
+# http://www.r-bloggers.com/r-function-of-the-day-cut/
+age.dist <- cut(watchedVideoClipsAge$Q10_159, breaks=seq(10, 90, by = 10))
+table(age.dist)
+watched.vid.age.freq <- table(watchedVideoClipsAge$Q74_2, watchedVideoClipsAge$decades)
+watched.vid.age.prop.freq <- prop.table(watched.vid.age.freq, 1)
+m <- melt(watched.vid.age.prop.freq)
+ggplot(data = m, aes(x = Var2, y = value, fill = Var1)) + 
+    geom_bar(stat="identity") + coord_flip()
