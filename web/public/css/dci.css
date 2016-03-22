@@ -1,0 +1,47 @@
+body {
+	height: 600px;
+	font-family: 'Arial Narrow';
+	font-size: 10pt;
+}
+
+canvas {
+	width: 800px;
+	height: 600px;
+}
+
+
+#container {
+	margin: auto;
+}
+
+#keys {
+	float: left;
+	width: 25%;
+	height: 600px;
+	overflow:auto;
+	position:absolute;
+
+}
+
+.keyDivs {
+	padding-bottom: 0.2em;
+}
+
+
+#plot-container {
+	margin-left: 25%;
+	width: 75%;
+	height: 250px;
+}
+#plot {
+
+}
+
+#sigma-container {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+}
+

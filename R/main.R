@@ -3,35 +3,63 @@ source("R/installDeps.R", FALSE)
 source("R/utils.R", FALSE)
 
 source("R/samplesForExpandedIndicators.R", FALSE)
+source("R/pureProfile.R", FALSE)
 
-print("Generating sample data")
+# Install dependencies, if they are not available
+installDeps()
 
+# Imports
+library(gdata)
+library(reshape2)
+
+print("Loading DCI data")
+
+indicators <- loadIndicators()
 # Expand valid indicators to include options, as sub-indicators
 expandedIndicators <- generateExpandedVariableSet_Looped()
 
-# For debugging only...
-print("Length of initial variable set:")
-print(length(validIndicators()[,1]))
+results <- loadSurveyResults()
 
-print("Length of expanded variable set:")
-print(length(expandedIndicators[,1]))
+# Show column names
+# print(colnames(results))
 
-# Generate sample data for the expanded list of indicators
-df <- samplesForExpandedIndicators()
+# Q74_2 = Watched video clips (e.g. on YouTube)
+watchedVideoClipsAge <- results[,c("Q10_159", "Q74_2")]
+watchedVideoClipsAge$decades <- floor(watchedVideoClipsAge$Q10_159 / 10.0)
+watchedVideoClipsAgeMean <- with(watchedVideoClipsAge, aggregate(Q74_2, by = list(decades), FUN=mean))
 
-# Show the variable IDs
-print(names(df))
+watchedVideoClipsMetadata <- expandedIndicators[which(expandedIndicators$DCI.ID == "74.2"),]
+
+chartVariableByAge <- function(data, filename, metadata, labelsY) {
+	p <- standardBarChart(data, 
+					filename, 
+					paste(metadata$Name, " by Age"), 
+					"Age by Decade", 
+					metadata$Name,
+					labelsY
+					)
+	comment <- paste("Printed graph of ", metadata$Name, " to ./figs/", filename, ".png", sep="")
+	print(comment)
+	comment <- paste("Type 'open ./figs/", filename, ".png' from the terminal to view the file.", sep="")
+	print(comment)
+	return (p)
+}
+
+p <- chartVariableByAge(watchedVideoClipsAgeMean, 
+							"watchedVideoClipsAgeMean", 
+							watchedVideoClipsMetadata, 
+							frequencyLabels)
+print(p)
+
+factorx <- factor(cut(x, breaks=nclass.Sturges(x)))
 
 
-# Some preliminary testing...
-
-# Should be -1
-print(mean(df$"X.9"))
-
-# Should be some positive value
-print(mean(df$X.289.6))
-
-
-# Completed the work
-print("Done")
-
+# Playing around with ages
+# http://www.r-bloggers.com/r-function-of-the-day-cut/
+age.dist <- cut(watchedVideoClipsAge$Q10_159, breaks=seq(10, 90, by = 10))
+table(age.dist)
+watched.vid.age.freq <- table(watchedVideoClipsAge$Q74_2, watchedVideoClipsAge$decades)
+watched.vid.age.prop.freq <- prop.table(watched.vid.age.freq, 1)
+m <- melt(watched.vid.age.prop.freq)
+ggplot(data = m, aes(x = Var2, y = value, fill = Var1)) + 
+    geom_bar(stat="identity") + coord_flip()

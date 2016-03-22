@@ -1,5 +1,5 @@
 
-Digital Capacities Index
+Digital Capacity Index
 ========================
 
 This project contains code for analysing and visualising
