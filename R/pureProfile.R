@@ -33,17 +33,23 @@ png.height = 6
 # text.color <- '#202020'
 
 # Experiment 2
-background.color <- '#FFFBE3'
-foreground.color <- '#FF7260'
-title.color <- '#129793'
-text.color <- '#202020'
+# background.color <- '#FFFBE3'
+# foreground.color <- '#FF7260'
+# title.color <- '#129793'
+# text.color <- '#202020'
+
+background.color <- '#FFFFFF'
+foreground.color <- '#FFFFFF'
+title.color <- '#000000'
+text.color <- '#000000'
 
 # Colour-friendly palette from http://www.cookbook-r.com/Graphs/Colors_(ggplot2)/#a-colorblind-friendly-palette
 # The palette with grey:
-# cbPalette <- c("#999999", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
+cbPalette <- c("#999999", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
 # The palette with black:
 # cbbPalette <- c("#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
 # blackPalette <- c("#000000")
+yawcrcPalette <- c("#139DEA", "#56CDFF", "#949494", "#F07899", "#EA3568", "#FFFFFF")
 
 
 
@@ -136,7 +142,7 @@ standardBarChart <- function(data, file.name, title, x.label, y.label, func, use
 
   p +
       theme_tufte() +    # FOR CONSISTENT LOOK AND FEEL
-	  scale_fill_manual(values = cbPalette) +
+	  scale_fill_manual(values = yawcrcPalette) +
       ggtitle(title) + 
       x.scale +
       y.scale +
@@ -177,6 +183,92 @@ standardBarChart <- function(data, file.name, title, x.label, y.label, func, use
     )
 
   return (p)
+
+}
+
+
+
+## Provides a single function for generating frequency distribution bar charts
+freqDistChart <- function(freq.table, file.name, title, x.label, y.label, func, use.years = TRUE) {
+
+	# Assume the columns contain decade breaks
+	prop.freq.table <- prop.table(freq.table, 2)
+
+	# Melt data for graphing
+	prop.freq.melted <- melt(prop.freq.table)
+
+	# Change the X axis for time series
+	if (use.years==TRUE) {
+		years <- yearBreaks(unique(prop.freq.melted$Var2))
+		x.scale <- scale_x_continuous(name = x.label,
+	                              breaks = years,
+	                              labels = yearLabels(years))
+	} else {
+		x.scale <- xlab(x.label)
+	}
+
+	y.scale <- scale_y_continuous(name = y.label,
+									breaks = seq(0.0, 1.0, by = 0.2), 
+									labels = paste(seq(0, 100, by = 20), "%", sep = ""))
+
+	# Graph so that x = 2nd variable (decades), y = data, fill = responses
+	p <- ggplot(data = prop.freq.melted, 
+		aes(x = Var2, y = value, fill = factor(Var1))) + 
+	    geom_bar(width=0.75, stat="identity") + 
+	    coord_flip() 
+
+	p +
+	  # theme_tufte() +    # FOR CONSISTENT LOOK AND FEEL
+	  ggtitle(title) + 
+	  x.scale +
+	  y.scale +
+		scale_fill_manual(name="Frequency",
+						 values=yawcrcPalette,
+                         breaks=unique(prop.freq.melted$Var1),
+                         labels=frequencyLabels()) +
+	  theme(
+	    # GRID
+	    panel.grid.minor.y = element_blank(),
+	    # panel.grid.major.y = element_blank(),
+	    # panel.grid.major.y = element_line(colour = foreground.color),
+	    panel.grid.minor.x = element_blank(),
+	    panel.grid.major.x = element_blank(),
+
+	    # BACKGROUND
+	    # panel.background = element_rect(fill = background.color, colour = foreground.color),
+	    
+	    # TITLE
+	    # plot.title = element_text(colour = title.color, lineheight=1.0, face="bold", size=graph.title.size),
+	    axis.title = element_text(color=title.color, lineheight=1.0, size = axis.title.size),
+	    # axis.title = element_text(lineheight=1.0, size = axis.title.size),
+	    axis.title.x = element_text(size = axis.title.size, vjust = x.axis.vjust),
+	    axis.title.y = element_text(size = axis.title.size, vjust = y.axis.vjust),
+	    
+	    # LINE
+	    axis.line = element_line(colour = "black"),
+
+	    # TEXT
+	    axis.text.x = element_text(color=text.color, angle=45, vjust=1.0, hjust=1.0, size = axis.text.size * 0.8),
+	    axis.text.y = element_text(color=text.color, angle=0, vjust=1.0, hjust=1.0, size = axis.text.size * 0.8)
+	    # axis.text.x = element_text(angle=45, vjust=1.0, hjust=1.0, size = axis.text.size),
+	    # axis.text.y = element_text(angle=45, size = axis.text.size)
+
+	)
+
+	full.file <- paste("./figs/", file.name, ".png", sep="") 
+
+	# Save the plot
+	ggsave(file = full.file,
+	  width = png.width,
+	  height = png.height
+	)
+
+	# Open the file if on Mac - TODO: check other OS'es
+	if (Sys.info()['sysname'] == "Darwin") {
+		#system2("open", full.file)
+	}
+
+	return (p)
 
 }
 

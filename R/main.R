@@ -14,6 +14,10 @@ library(reshape2)
 
 print("Loading DCI data")
 
+# Name variables
+vars <- c("Q74_1", "Q74_2", "Q74_3", "Q74_4", "Q74_5", "Q74_6", "Q74_7", "Q74_8", "Q74_9", "Q74_10", "Q74_11", "Q74_12", "Q74_13", "Q74_14", "Q74_15", "Q431_16", "Q431_17", "Q431_18", "Q431_19", "Q431_20", "Q431_21", "Q431_22", "Q431_23", "Q431_24", "Q431_25", "Q431_26", "Q431_27", "Q431_28", "Q431_29", "Q431_30", "Q431_31", "Q431_32", "Q431_33", "Q431_34", "Q431_35", "Q431_36", "Q431_37", "Q431_38", "Q431_39", "Q431_40", "Q431_41", "Q431_42", "Q437_43", "Q437_44", "Q437_45", "Q437_46", "Q437_47", "Q437_49", "Q437_50", "Q437_51", "Q437_52", "Q437_53", "Q437_54", "Q341_55", "Q341_56", "Q341_57", "Q341_58", "Q341_59", "Q341_60", "Q341_61", "Q352_62", "Q352_63", "Q352_64", "Q352_65", "Q352_66", "Q352_67", "Q352_68", "Q352_69", "Q352_70", "Q352_71", "Q353_72", "Q353_73", "Q430_74", "Q430_75", "Q430_76", "Q430_77", "Q430_78", "Q430_79", "Q430_80", "Q430_81", "Q430_82", "Q430_83", "Q430_84", "Q430_85", "Q430_86", "Q430_87", "Q434_88", "Q434_89", "Q434_90", "Q434_91", "Q434_92", "Q434_93", "Q434_94", "Q434_95", "Q434_96", "Q434_97", "Q434_98", "Q435_99", "Q435_100", "Q435_101", "Q435_102", "Q435_103", "Q435_104", "Q435_105", "Q428_106", "Q428_107", "Q428_108", "Q428_109", "Q428_110", "Q428_111", "Q277_112", "Q277_113", "Q277_114", "Q277_115", "Q277_116", "Q277_117", "Q277_118", "Q277_119", "Q277_120", "Q277_121", "Q277_122", "Q277_123", "Q280_124", "Q280_125", "Q280_126", "Q280_127", "Q280_128", "Q280_129", "Q280_130", "Q280_131", "Q280_132", "Q280_133", "Q280_134", "Q280_135", "Q280_136", "Q287_137", "Q287_138", "Q287_139", "Q287_140", "Q287_141", "Q287_142", "Q343_143", "Q343_144", "Q343_145", "Q343_146", "Q343_147", "Q343_148", "Q343_149", "Q343_150", "Q429_151", "Q429_152", "Q429_153", "Q429_154", "Q429_155", "Q429_156", "Q429_157", "Q429_158", "Q429_159", "Q24_160", "Q24_161", "Q24_162", "Q24_163", "Q24_164", "Q24_165", "Q24_166", "Q24_167", "Q24_168", "Q24_169", "Q24_170", "Q30_170", "Q30_171", "Q30DK", "Q45", "Q425", "Q427", "Q436", "Q15A_1", "Q15A_2", "Q15A_3", "Q15A_4", "Q15A_5", "Q15A_6", "Q15A_7", "Q15A_8", "Q15Y_1", "Q15Y_2", "Q15Y_3", "Q15Y_4", "Q15Y_5", "Q15Y_6", "Q15Y_7", "Q15Y_8", "Q15Y_9", "Q15Y_10", "Q15Y_11", "Q15Y_12", "Q15Y_13", "Q15Y_14", "Q15Y_15", "Q15Y_16", "Q8", "Q9_212", "Q9_213", "Q9_214", "Q9_215", "Q9_216", "Q9_217", "Q9_218", "Q9_219", "Q9_220")
+
+
 indicators <- loadIndicators()
 # Expand valid indicators to include options, as sub-indicators
 expandedIndicators <- generateExpandedVariableSet_Looped()
@@ -23,12 +27,12 @@ results <- loadSurveyResults()
 # Show column names
 # print(colnames(results))
 
-# Q74_2 = Watched video clips (e.g. on YouTube)
-watchedVideoClipsAge <- results[,c("Q10_159", "Q74_2")]
-watchedVideoClipsAge$decades <- floor(watchedVideoClipsAge$Q10_159 / 10.0)
-watchedVideoClipsAgeMean <- with(watchedVideoClipsAge, aggregate(Q74_2, by = list(decades), FUN=mean))
+age <- "Q10_159"
+age.data <- results[,c("Q10_159", vars)]
+age.data$decades <- floor(age.data$Q10_159 / 10.0)
+watchedVideoClipsAgeMean <- with(age.data, aggregate(Q74_2, by = list(decades), FUN=mean))
 
-watchedVideoClipsMetadata <- expandedIndicators[which(expandedIndicators$DCI.ID == "74.2"),]
+metadata <- expandedIndicators[which(expandedIndicators$DCI.ID == "74.2"),]
 
 chartVariableByAge <- function(data, filename, metadata, labelsY) {
 	p <- standardBarChart(data, 
@@ -45,21 +49,98 @@ chartVariableByAge <- function(data, filename, metadata, labelsY) {
 	return (p)
 }
 
+chartFrequenciesByAge <- function(data, filename, metadata, labelsY) {
+	p <- freqDistChart(data, 
+					filename, 
+					paste(metadata$Name, " by Age"), 
+					"Age by Decade", 
+					metadata$Name,
+					labelsY
+					)
+	comment <- paste("Printed graph of ", metadata$Name, " to ./figs/", filename, ".png", sep="")
+	print(comment)
+	comment <- paste("Type 'open ./figs/", filename, ".png' from the terminal to view the file.", sep="")
+	print(comment)
+	return (p)
+}
+
 p <- chartVariableByAge(watchedVideoClipsAgeMean, 
 							"watchedVideoClipsAgeMean", 
-							watchedVideoClipsMetadata, 
+							metadata, 
 							frequencyLabels)
-print(p)
 
-factorx <- factor(cut(x, breaks=nclass.Sturges(x)))
 
 
 # Playing around with ages
 # http://www.r-bloggers.com/r-function-of-the-day-cut/
-age.dist <- cut(watchedVideoClipsAge$Q10_159, breaks=seq(10, 90, by = 10))
-table(age.dist)
-watched.vid.age.freq <- table(watchedVideoClipsAge$Q74_2, watchedVideoClipsAge$decades)
-watched.vid.age.prop.freq <- prop.table(watched.vid.age.freq, 1)
-m <- melt(watched.vid.age.prop.freq)
-ggplot(data = m, aes(x = Var2, y = value, fill = Var1)) + 
-    geom_bar(stat="identity") + coord_flip()
+# age.dist <- cut(watchedVideoClipsAge$Q10_159, breaks=seq(10, 90, by = 10))
+# table(age.dist)
+
+watched.vid.age.freq <- table(age.data$Q74_2, age.data$decades)
+# watched.vid.age.prop.freq <- prop.table(watched.vid.age.freq, 2)
+# m <- melt(watched.vid.age.prop.freq)
+# ggplot(data = m, aes(x = Var2, y = value, fill = Var1)) + 
+#     geom_bar(stat="identity") + coord_flip()
+
+# Obtain indicator names
+vars.names <- gsub("Q([[:digit:]]*)_([[:digit:]]*)", "\\1.\\2", vars)
+
+generateChartsForVariable <- function(var) {
+	var.name <- gsub("Q", "", var)
+	var.parts <- unlist(strsplit(c(var.name), "_"))
+	v1 <- var.parts[1]
+	v2 <- var.parts[2]
+	var.name <- gsub("Q([[:digit:]]*)_([[:digit:]]*)", "\\1.\\2", var)
+	print(var.name)
+}
+
+apply(as.array(vars), 1, generateChartsForVariable)
+
+obtainIndicatorNames <- function(vars) {
+	v1.last <- 0
+	v.counter <- 0
+	ind.names <- c()
+	for (i in 1:length(vars)) {
+		var <- vars[i]
+		var.name <- gsub("Q", "", var)
+		var.parts <- unlist(strsplit(c(var.name), "_"))
+		v1 <- as.integer(var.parts[1])
+		v2 <- as.integer(var.parts[2])
+		if (!is.na(v1)) {
+			if (v1 != v1.last) {
+				v.counter <- 1
+			}
+			v2 <- v.counter
+			ind.name <- paste(v1, ".", v2, sep = "")
+			v1.last <- v1
+		}
+		else {
+			v.counter <- 1
+			ind.name <- var.name
+		}
+		ind.names <- c(ind.names, ind.name)
+		v.counter <- v.counter + 1
+	}
+	return(ind.names)
+}
+ind.names <- obtainIndicatorNames(vars)
+print(obtainIndicatorNames(vars))
+sapply(seq(1:length(vars)), function(x) { 
+	var.name <- vars[x]
+	ind.name <- ind.names[x]
+	print(vars[x])
+	# print(ind.names[x])
+	freqs <- table(age.data[,var.name], age.data$decades)
+	metadata <- expandedIndicators[which(ind.name == expandedIndicators$DCI.ID),]
+	p <- chartFrequenciesByAge(freqs, 
+							paste(var.name, "Freqs", sep = ""), 
+							metadata, 
+							frequencyLabels)
+} )
+
+p <- chartFrequenciesByAge(watched.vid.age.freq, 
+							"watchedVideoClipsAgeFreqs", 
+							metadata, 
+							frequencyLabels)
+
+print(p)
