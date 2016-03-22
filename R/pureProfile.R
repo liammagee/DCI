@@ -49,7 +49,7 @@ cbPalette <- c("#999999", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2",
 # The palette with black:
 # cbbPalette <- c("#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
 # blackPalette <- c("#000000")
-yawcrcPalette <- c("#139DEA", "#56CDFF", "#949494", "#F07899", "#EA3568", "#FFFFFF")
+yawcrcPalette <- c("#139DEA", "#56CDFF", "#949494", "#F07899", "#EA3568", "#FFFFFF", "#000000")
 
 
 
@@ -86,6 +86,22 @@ frequencyLabels <- function() {
 		"Daily or almost daily",
 		"At least every week",
 		"Less often",
+		"Never",
+		"Don't know"
+	)
+
+	return (labels)
+
+}
+# Frequency labels (with months)
+frequencyMonthLabels <- function() {
+
+	labels <- c(
+		"Several times per day",
+		"Daily",
+		"Weekly",
+		"Monthly",
+		"Less than Once a Month",
 		"Never",
 		"Don't know"
 	)
@@ -225,7 +241,7 @@ freqDistChart <- function(freq.table, file.name, title, x.label, y.label, func, 
 		scale_fill_manual(name="Frequency",
 						 values=yawcrcPalette,
                          breaks=unique(prop.freq.melted$Var1),
-                         labels=frequencyLabels()) +
+                         labels=func()) +
 	  theme(
 	    # GRID
 	    panel.grid.minor.y = element_blank(),
