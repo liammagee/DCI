@@ -91,6 +91,14 @@ augmented.data$gender[augmented.data$Q1 == 196] <- "Refused"
 # Test
 # watchedVideoClipsAgeMean <- with(augmented.data, aggregate(Q74_2, by = list(decades), FUN=mean))
 # metadata <- expandedIndicators[which(expandedIndicators$DCI.ID == "74.2"),]
+# apply(as.array(vars), 1, generateChartsForVariable)
+# ind.names <- obtainIndicatorNames(vars)
+# print(obtainIndicatorNames(vars))
+# Playing around with ages
+# http://www.r-bloggers.com/r-function-of-the-day-cut/
+# age.dist <- cut(watchedVideoClipsAge$Q10_159, breaks=seq(10, 90, by = 10))
+# table(age.dist)
+
 
 chartVariableByAge <- function(data, filename, metadata, labelsY) {
 	p <- standardBarChart(data, 
@@ -107,13 +115,14 @@ chartVariableByAge <- function(data, filename, metadata, labelsY) {
 	return (p)
 }
 
-chartFrequenciesByAge <- function(data, filename, metadata, labelsY, desc1, desc2) {
+chartFrequencies <- function(data, filename, metadata, labelsY, desc1, desc2, use.years = TRUE) {
 	p <- freqDistChart(data, 
 					filename, 
 					paste(metadata$Name, desc1), 
 					desc2, 
 					metadata$Name,
-					labelsY
+					labelsY,
+					use.years
 					)
 	comment <- paste("Printed graph of ", metadata$Name, " to ./figs/", filename, ".png", sep="")
 	print(comment)
@@ -122,23 +131,8 @@ chartFrequenciesByAge <- function(data, filename, metadata, labelsY, desc1, desc
 	return (p)
 }
 
-p <- chartVariableByAge(watchedVideoClipsAgeMean, 
-							"watchedVideoClipsAgeMean", 
-							metadata, 
-							frequencyLabels)
 
 
-
-# Playing around with ages
-# http://www.r-bloggers.com/r-function-of-the-day-cut/
-# age.dist <- cut(watchedVideoClipsAge$Q10_159, breaks=seq(10, 90, by = 10))
-# table(age.dist)
-
-watched.vid.age.freq <- table(augmented.data$Q74_2, augmented.data$decades)
-# watched.vid.age.prop.freq <- prop.table(watched.vid.age.freq, 2)
-# m <- melt(watched.vid.age.prop.freq)
-# ggplot(data = m, aes(x = Var2, y = value, fill = Var1)) + 
-#     geom_bar(stat="identity") + coord_flip()
 
 # Obtain indicator names
 vars.names <- gsub("Q([[:digit:]]*)_([[:digit:]]*)", "\\1.\\2", vars)
@@ -152,7 +146,6 @@ generateChartsForVariable <- function(var) {
 	print(var.name)
 }
 
-# apply(as.array(vars), 1, generateChartsForVariable)
 
 obtainIndicatorNames <- function(vars) {
 	v1.last <- 0
@@ -181,8 +174,6 @@ obtainIndicatorNames <- function(vars) {
 	}
 	return(ind.names)
 }
-# ind.names <- obtainIndicatorNames(vars)
-# print(obtainIndicatorNames(vars))
 
 generateAgeFrequencies <- function(vars, func) {
 	ind.names <- obtainIndicatorNames(vars)
@@ -198,14 +189,10 @@ generateAgeFrequencies <- function(vars, func) {
 								metadata, 
 								func,
 								"by Age",
-								"Age by Decade")
+								"Age by Decade",
+								TRUE)
 	} )
 }
-generateAgeFrequencies(vars.frequency, frequencyLabels)
-generateAgeFrequencies(vars.frequency.months, frequencyMonthLabels)
-generateAgeFrequencies(vars.ease, easeLabels)
-generateAgeFrequencies(vars.agreement, agreementLabels)
-generateAgeFrequencies(vars.importance, importanceLabels)
 
 generateGenderFrequencies <- function(vars, func) {
 	ind.names <- obtainIndicatorNames(vars)
@@ -216,23 +203,26 @@ generateGenderFrequencies <- function(vars, func) {
 		# print(ind.names[x])
 		freqs <- table(augmented.data[,var.name], augmented.data$gender)
 		metadata <- expandedIndicators[which(ind.name == expandedIndicators$DCI.ID),]
-		p <- chartFrequenciesByAge(freqs, 
+		p <- chartFrequencies(freqs, 
 								paste("gender/", var.name, "_freqs", sep = ""), 
 								metadata, 
 								func,
-								FALSE,
 								"by Gender",
-								"Gender by Gender")
+								"Gender by Gender",
+								FALSE)
 	} )
 }
+
+generateAgeFrequencies(vars.frequency, frequencyLabels)
+generateAgeFrequencies(vars.frequency.months, frequencyMonthLabels)
+generateAgeFrequencies(vars.ease, easeLabels)
+generateAgeFrequencies(vars.agreement, agreementLabels)
+generateAgeFrequencies(vars.importance, importanceLabels)
+
+
 generateGenderFrequencies(vars.frequency, frequencyLabels)
 generateGenderFrequencies(vars.frequency.months, frequencyMonthLabels)
 generateGenderFrequencies(vars.ease, easeLabels)
 generateGenderFrequencies(vars.agreement, agreementLabels)
 generateGenderFrequencies(vars.importance, importanceLabels)
 
-# p <- chartFrequenciesByAge(watched.vid.age.freq, 
-# 							"watchedVideoClipsAgeFreqs", 
-# 							metadata, 
-# 							frequencyLabels)
-# print(p)
