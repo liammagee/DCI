@@ -110,6 +110,57 @@ frequencyMonthLabels <- function() {
 
 }
 
+# Ease labels
+easeLabels <- function() {
+
+	labels <- c(
+		"Very easy",
+		"Easy",
+		"Neither easy nor difficult",
+		"Difficult",
+		"Very difficult",
+		"Don't know",
+		"Not Applicable"
+	)
+
+	return (labels)
+
+}
+
+
+# Agreement labels
+agreementLabels <- function() {
+
+	labels <- c(
+		"Strongly agree",
+		"Agree",
+		"Neither agree nor disagree",
+		"Disagree",
+		"Strongly disagree",
+		"Not applicable (NA)",
+		"Don't know"
+	)
+
+	return (labels)
+
+}
+
+# Importance labels
+importanceLabels <- function() {
+
+	labels <- c(
+		"Extremely important",
+		"Fairly important",
+		"A little important",
+		"Not important at all"
+	)
+
+	return (labels)
+
+}
+
+
+
 
 # Load indicator list, for mapping DCI.IDs to variable names
 loadIndicators <- function() {

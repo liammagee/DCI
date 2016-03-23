@@ -191,6 +191,9 @@ generateChartsForFrequencyVariables <- function(vars, func) {
 }
 generateChartsForFrequencyVariables(vars.frequency, frequencyLabels)
 generateChartsForFrequencyVariables(vars.frequency.months, frequencyMonthLabels)
+generateChartsForFrequencyVariables(vars.ease, easeLabels)
+generateChartsForFrequencyVariables(vars.agreement, agreementLabels)
+generateChartsForFrequencyVariables(vars.importance, importanceLabels)
 
 # p <- chartFrequenciesByAge(watched.vid.age.freq, 
 # 							"watchedVideoClipsAgeFreqs", 
