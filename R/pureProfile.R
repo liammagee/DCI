@@ -284,7 +284,7 @@ freqDistChart <- function(freq.table, file.name, title, x.label, y.label, func, 
 	    geom_bar(width=0.75, stat="identity") + 
 	    coord_flip() 
 
-	p +
+	p <- p +
 	  # theme_tufte() +    # FOR CONSISTENT LOOK AND FEEL
 	  ggtitle(title) + 
 	  x.scale +
