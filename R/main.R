@@ -108,23 +108,14 @@ gender <- "Q1" # 193 = "Male", 194 = "Female"
 augmented.data <- results[,c(age, gender, vars)]
 
 # Recode variables
-augmented.data$decades <- floor(augmented.data$Q10_159 / 10.0)
+augmented.data$decades <- floor(augmented.data$Q10_159 / 5.0)
 augmented.data$gender <- NA
 augmented.data$gender[augmented.data$Q1 == 193] <- "Male"
 augmented.data$gender[augmented.data$Q1 == 194] <- "Female"
 augmented.data$gender[augmented.data$Q1 == 195] <- "Other"
 augmented.data$gender[augmented.data$Q1 == 196] <- "Refused"
 
-# Test
-# watchedVideoClipsAgeMean <- with(augmented.data, aggregate(Q74_2, by = list(decades), FUN=mean))
-# metadata <- expandedIndicators[which(expandedIndicators$DCI.ID == "74.2"),]
-# apply(as.array(vars), 1, generateChartsForVariable)
-# ind.names <- obtainIndicatorNames(vars)
-# print(obtainIndicatorNames(vars))
-# Playing around with ages
-# http://www.r-bloggers.com/r-function-of-the-day-cut/
-# age.dist <- cut(watchedVideoClipsAge$Q10_159, breaks=seq(10, 90, by = 10))
-# table(age.dist)
+
 
 
 chartVariableByAge <- function(data, filename, metadata, labelsY) {
@@ -271,6 +262,16 @@ sumVariable <- function() {
 	print(mean(means))
 }
 
+## Demographcs
+
+sampleSize <- function() {
+	return (length(augmented.data[,1]))
+}
+
+
+ageBreakdown <- function() {
+	return (length(augmented.data[,1]))
+}
 
 
 # generateSingleAgeFrequency(1, vars.ease, easeLabels)

@@ -206,6 +206,12 @@ standardBarChart <- function(data, file.name, title, x.label, y.label, func, use
   p <- ggplot(data, aes(x=Group.1, y = x)) +
           geom_bar(width=0.75, stat="identity")
 
+	p <- p +
+	  ggtitle(title) + 
+	  x.scale +
+	  y.scale
+
+	p <- augmentChart(p, prop.freq.melted$Var1, func())
 
   p +
       theme_tufte() +    # FOR CONSISTENT LOOK AND FEEL
@@ -253,7 +259,46 @@ standardBarChart <- function(data, file.name, title, x.label, y.label, func, use
 
 }
 
+## Augment chart with standard look and feel 
+augmentChart <- function(p, breaks, labels) {
+	p <- p +
+		scale_fill_manual(name="Frequency",
+				 values=yawcrcPalette,
+                 breaks=unique(breaks),
+                 labels=labels) +
+	  theme(
+	    # GRID
+	    panel.grid.minor.y = element_blank(),
+	    # panel.grid.major.y = element_blank(),
+	    # panel.grid.major.y = element_line(colour = foreground.color),
+	    panel.grid.minor.x = element_blank(),
+	    panel.grid.major.x = element_blank(),
 
+	    # BACKGROUND
+	    # panel.background = element_rect(fill = background.color, colour = foreground.color),
+	    
+	    # TITLE
+	    # plot.title = element_text(colour = title.color, lineheight=1.0, face="bold", size=graph.title.size),
+	    axis.title = element_text(color=title.color, lineheight=1.0, size = axis.title.size),
+	    # axis.title = element_text(lineheight=1.0, size = axis.title.size),
+	    axis.title.x = element_text(size = axis.title.size, vjust = x.axis.vjust),
+	    axis.title.y = element_text(size = axis.title.size, vjust = y.axis.vjust),
+	    
+	    # LINE
+	    axis.line = element_line(colour = "black"),
+
+	    # TEXT
+	    axis.text.x = element_text(color=text.color, angle=45, vjust=1.0, hjust=1.0, size = axis.text.size * 0.8),
+	    axis.text.y = element_text(color=text.color, angle=0, vjust=1.0, hjust=1.0, size = axis.text.size * 0.8)
+	    # axis.text.x = element_text(angle=45, vjust=1.0, hjust=1.0, size = axis.text.size),
+	    # axis.text.y = element_text(angle=45, size = axis.text.size)
+
+	)
+
+
+
+	return (p)
+}
 
 ## Provides a single function for generating frequency distribution bar charts
 freqDistChart <- function(freq.table, file.name, title, x.label, y.label, func, use.years = TRUE) {
@@ -285,42 +330,11 @@ freqDistChart <- function(freq.table, file.name, title, x.label, y.label, func, 
 	    coord_flip() 
 
 	p <- p +
-	  # theme_tufte() +    # FOR CONSISTENT LOOK AND FEEL
 	  ggtitle(title) + 
 	  x.scale +
-	  y.scale +
-		scale_fill_manual(name="Frequency",
-						 values=yawcrcPalette,
-                         breaks=unique(prop.freq.melted$Var1),
-                         labels=func()) +
-	  theme(
-	    # GRID
-	    panel.grid.minor.y = element_blank(),
-	    # panel.grid.major.y = element_blank(),
-	    # panel.grid.major.y = element_line(colour = foreground.color),
-	    panel.grid.minor.x = element_blank(),
-	    panel.grid.major.x = element_blank(),
+	  y.scale
 
-	    # BACKGROUND
-	    # panel.background = element_rect(fill = background.color, colour = foreground.color),
-	    
-	    # TITLE
-	    # plot.title = element_text(colour = title.color, lineheight=1.0, face="bold", size=graph.title.size),
-	    axis.title = element_text(color=title.color, lineheight=1.0, size = axis.title.size),
-	    # axis.title = element_text(lineheight=1.0, size = axis.title.size),
-	    axis.title.x = element_text(size = axis.title.size, vjust = x.axis.vjust),
-	    axis.title.y = element_text(size = axis.title.size, vjust = y.axis.vjust),
-	    
-	    # LINE
-	    axis.line = element_line(colour = "black"),
-
-	    # TEXT
-	    axis.text.x = element_text(color=text.color, angle=45, vjust=1.0, hjust=1.0, size = axis.text.size * 0.8),
-	    axis.text.y = element_text(color=text.color, angle=0, vjust=1.0, hjust=1.0, size = axis.text.size * 0.8)
-	    # axis.text.x = element_text(angle=45, vjust=1.0, hjust=1.0, size = axis.text.size),
-	    # axis.text.y = element_text(angle=45, size = axis.text.size)
-
-	)
+	p <- augmentChart(p, prop.freq.melted$Var1, func())
 
 	full.file <- paste("./figs/", file.name, ".png", sep="") 
 
@@ -339,3 +353,58 @@ freqDistChart <- function(freq.table, file.name, title, x.label, y.label, func, 
 
 }
 
+
+
+ageChart <- function(augmented.data) {
+
+	decades <- sort(unique(augmented.data$decades))
+	decade.labels <- sort(unique(augmented.data$decades * 5))
+
+	x.scale <- scale_x_continuous(name = "Decades",
+									breaks = decades, 
+									labels = decade.labels)
+
+	p <- ggplot(augmented.data, aes(x=decades)) +
+				geom_histogram(binwidth=.5) + 
+				x.scale + 
+	    		coord_flip() 
+
+	p <- augmentChart(p, augmented.data$decades, unique(augmented.data$decades * 5))
+
+	return (p)
+}
+
+
+genderChart <- function(augmented.data) {
+
+	p <- ggplot(augmented.data, aes(x=gender)) +
+				geom_bar(width=0.5) + 
+				# x.scale + 
+	    		coord_flip() 
+
+	p <- augmentChart(p, augmented.data$gender, unique(augmented.data$gender))
+
+	return (p)
+}
+
+
+genderAndAgeChart <- function(augmented.data) {
+
+	decades <- sort(unique(augmented.data$decades))
+	decade.labels <- sort(unique(augmented.data$decades * 5))
+	x.scale <- scale_x_continuous(name = "Decades",
+									breaks = decades, 
+									labels = decade.labels)
+
+	ad <- table(augmented.data$gender, augmented.data$decades)
+	ad <- melt(ad)
+
+	p <- ggplot(ad, aes(x=Var2, y=value, group=Var1, fill=Var1)) +
+				geom_bar(width=0.5, stat="identity", position="dodge") + 
+				x.scale + 
+	    		coord_flip() 
+
+	p <- augmentChart(p, augmented.data$gender, unique(augmented.data$gender))
+
+	return (p)
+}

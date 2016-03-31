@@ -2,32 +2,72 @@
 title: "Digital Capacities Index - Quantitative Findings"
 author: "Liam Magee, Delphine Bellarose, Anjali Sharma"
 date: "31 March 2016"
-output: html_document
+output: word_document
 ---
 
 <!-- output: word_document -->
 
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+```{r setup, include=FALSE, echo=FALSE}
+knitr::opts_knit$set(root.dir="..")
+knitr::opts_chunk$set(echo = FALSE)
+setwd("..")
+
+source("R/main.R", FALSE)
+
 ```
+
 
 
 
 ## Digital Capacities Index - Quantitative Findings
 
-The  Digital Capacities Index
+The *Digital Capacities Index* is a pilot survey instrument developed by researchers at Western Sydney University and Google Australia. 
+The survey was administered by Pure Profile in Febuary 2016.
 
 
 ### Demographics
 
-```{r indicators, echo=FALSE}
-setwd("..")
-source("R/main.R", FALSE)
+The survey included a total of `r sampleSize()` participants.
 
-generateSingleAgeFrequency(1, vars.ease, easeLabels)
+Age demographics are distributed as per Graph 1:
+
+```{r ageFreq, echo=FALSE}
+
+ageChart(augmented.data)
 
 ```
+
+
+Gender demographics are distributed as per Graph 2:
+
+```{r genderFreq, echo=FALSE}
+
+genderChart(augmented.data)
+
+```
+
+
+Combined age and gender demographics are distributed as per Graph 3:
+
+```{r genderAndAgeFreq, echo=FALSE}
+
+genderAndAgeChart(augmented.data)
+
+```
+
+These figures approximates to Australia's adult age distribution, as reported by the ABS in 2014 in Graph 4 below, though with a considerably higher skew towards younger women and older men.
+
+
+![Population Structure, Age and sex - Australia - 1994 and 2014](http://www.abs.gov.au/ausstats/abs@.nsf/0/1cd2b1952afc5e7aca257298000f2e76/Body/0.2A9C!OpenElement&FieldElemFormat=gif)
+
+
+```{r ageFreqForEase, echo=FALSE}
+
+generateSingleAgeFrequency(1, vars.ease, easeLabels)
+```
+
+
 
 This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
