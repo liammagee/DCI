@@ -263,5 +263,15 @@ generateAll <- function() {
 	generateGenderFrequencies(vars.importance, importanceLabels)
 }
 
+sumVariable <- function() {
+	vars.of.interest = vars.interests.online.activities.74
+	means <- sapply(vars.of.interest, function(x) { 
+		mean(augmented.data[,x])
+	} )
+	print(mean(means))
+}
+
+
+
 # generateSingleAgeFrequency(1, vars.ease, easeLabels)
 # generateAll()
