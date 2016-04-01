@@ -369,35 +369,24 @@ generateGenderFrequenciesForAggregate <- function() {
 	return (p)
 }
 
-generateAggBarChart <- function(cols, name) {
-	aggMeans <- data.frame(round(rowSums(augmented.data[,cols])))
-	colnames(aggMeans)[1] <- name
-	x.scale <- scale_x_continuous(name = name)
-	p <- ggplot(data = aggMeans, aes(x = aggMeans[1])) + 
-		geom_histogram(binwidth = 0.5) +
-		geom_density(aes(y=1.0*..count..), colour="red", adjust=4) +
-		x.scale
-	return (p)
-}
-
 generateInterests <- function() {
-	generateAggBarChart(vars.interest, 'interests')
+	generateAggBarChart(vars.interest, 'interests', 'gen/interests')
 }
 
 generateCompetencies <- function() {
-	generateAggBarChart(vars.competencies, 'competencies')
+	generateAggBarChart(vars.competencies, 'competencies', 'gen/competencies')
 }
 
 generateResilience <- function() {
-	generateAggBarChart(vars.resilience, 'resilience')
+	generateAggBarChart(vars.resilience, 'resilience', 'gen/resilience')
 }
 
 generateConnectedness <- function() {
-	generateAggBarChart(vars.connectedness, 'connectedness')
+	generateAggBarChart(vars.connectedness, 'connectedness', 'gen/connectedness')
 }
 
 generateIndex <- function() {
-	generateAggBarChart(vars.index, 'index')
+	generateAggBarChart(vars.index, 'index', 'gen/index')
 }
 
 
