@@ -146,6 +146,8 @@ gender <- "Q1" # 193 = "Male", 194 = "Female"
 augmented.data <- results[,c(age, gender, vars)]
 
 # Recode variables
+augmented.data$age <- augmented.data$Q10_159
+# Find a better way, e.g. http://www.kkuniyuk.com/RTutorial1.pdf
 augmented.data$age.breaks <- floor(augmented.data$Q10_159 / 5.0)
 augmented.data$gender <- NA
 augmented.data$gender[augmented.data$Q1 == 193] <- "Male"
@@ -168,6 +170,8 @@ augmented.data$Q434 <- round(rowMeans(augmented.data[,vars.resilience.harm.event
 augmented.data$Q435 <- round(rowMeans(augmented.data[,vars.resilience.harms.agreement.435]))
 augmented.data$Q437 <- round(rowMeans(augmented.data[,vars.interests.general.437]))
 
+# Shorthand
+data <- augmented.data
 
 chartVariableByAge <- function(data, filename, metadata, labelsY) {
 	p <- standardBarChart(data,

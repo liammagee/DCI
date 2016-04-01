@@ -29,9 +29,7 @@ The *Digital Capacities Index* is a pilot survey instrument developed by researc
 The survey was administered by [Pure Profile](https://www.pureprofile.com/us/) in Febuary 2016.
 
 
-### Demographics
-
-The survey included a total of `r sampleSize()` participants. 
+### Introduction
 
 We included a total of `r length(vars.all)` items measuring (a) frequency of various online behaviour, (b) levels of agreement with statements about digital capacities, (c) perceived importance of online activities and (d) ease of use of digital technologies.
 
@@ -44,38 +42,60 @@ We further distinguished questions into the following key thematic areas, or wha
 
 These four issues were distilled from a list of nine issues that also included *Engagement*, *Inclusion*, *Policy Environment*, *Infrastructure* and *Consequences*. 
 
-We also selected items and scales from existing sources in the literature where possible. In particular we drew from 'Kids Online'
-[@livingstone2010risks], Helsper's [-@helsper2012corresponding] 'Corresponding fields model', a study by Humphry [-@humphry2014importance] of mobile use among homeless populations, and indicators compiled by the [Young and Well CRC](http://www.youngandwellcrc.org.au/). Other indicators were developed by the *Digital Capacities Index* team.
+Against these four issues, we selected items and scales from existing sources in the literature where possible. In particular we drew from 'Kids Online'
+[@livingstone2010risks], Helsper's [-@helsper2012corresponding] 'Corresponding fields model', a study by Humphry [-@humphry2014importance] of mobile use among homeless populations, and indicators compiled by the [Young and Well CRC](http://www.youngandwellcrc.org.au/). Other indicators were developed by the *Digital Capacities Index* team. 
+
+A large number of candidate scales were distilled down to the list after two day-long workshops, and testing of the survey.
 
 
 
-Age demographics are distributed as per Graph 1:
+### Demographics
+
+
+The survey included a total of `r format(sampleSize(), big.mark   = ",")` participants. We requested the survey provider provide a panel in terms of age groups, gender and geographic regions. As the panel provider recruited participants online, our pilot sample is expected to be skewed towards Australian citizens and families with comparatively high digital capacities. This caveat is signficant to the interpretation of our results below.
+
+[Need something on family composition]
+
+
+#### Age
+
+Participant ages ranged from `r min(data$age)` to `r max(data$age)`, with a median value of `r median(data$age)`. 
+
+*Graph 1* provides more detailed age demographics:
 
 ```{r ageFreq, echo=FALSE}
 
-ageChart(augmented.data)
+ageChart(data)
 
 ```
 
 
-Gender demographics are distributed as per Graph 2:
+#### Gender
+
+Participant gender is roughly evenly distributed. The survey included `r format(length(which(data$gender == "Female")), big.mark   = ",")` (`r format(100 * length(which(data$gender == "Female")) / length(data$gender), digits = 2)`%) women; `r format(length(which(data$gender == "Male")), big.mark   = ",")` (`r format(100 * length(which(data$gender == "Male")) / length(data$gender), digits = 2)`%) men; and `r format(length(which(data$gender == "Other")), big.mark   = ",")` (`r format(100 * length(which(data$gender == "Other")) / length(data$gender), digits = 2)`%) identifying as 'Other'.
+
+Gender demographics are distributed as per *Graph 2*:
 
 ```{r genderFreq, echo=FALSE}
 
-genderChart(augmented.data)
+genderChart(data)
 
 ```
 
 
-Combined age and gender demographics are distributed as per Graph 3:
+
+#### Combined Age and Gender
+
+
+Combined age and gender demographics are distributed as per *Graph 3*:
 
 ```{r genderAndAgeFreq, echo=FALSE}
 
-genderAndAgeChart(augmented.data)
+genderAndAgeChart(data)
 
 ```
 
-These figures approximates to Australia's adult age distribution, as reported by the ABS in 2014 in Graph 4 below, though with a considerably higher skew towards younger women and older men.
+These figures approximate to Australia's adult age distribution, as reported by the ABS in 2014 in *Graph 4* below, though with a considerably higher skew towards younger women and older men.
 
 
 ![Population Structure, Age and sex - Australia - 1994 and 2014](http://www.abs.gov.au/ausstats/abs@.nsf/0/1cd2b1952afc5e7aca257298000f2e76/Body/0.2A9C!OpenElement&FieldElemFormat=gif)
@@ -86,7 +106,15 @@ These figures approximates to Australia's adult age distribution, as reported by
 generateSingleAgeFrequency(1, vars.ease, easeLabels)
 ```
 
-## Aggregate
+[Other breakdowns - by urban/rural]
+
+
+
+## Results by Critical Issue
+
+
+### Interests
+
 
 Q74:
 
@@ -95,8 +123,28 @@ Q74:
 generateAgeFrequenciesForAggregate()
 ```
 
+
+
+### Competencies
+
+**TBD**
+
+
+### Resilience
+
+**TBD**
+
+
+### Social Connectedness
+
+**TBD**
+
+
+
 ## Overall results
 
+
+<!--
 ```{r generateInterests, echo=FALSE}
 generateInterests()
 ```
@@ -117,7 +165,13 @@ generateConnectedness()
 generateIndex()
 ```
 
+-->
 
+
+
+## Appendex 1 - Digital Capacities Index Survey
+
+[Include Full Survey Here]
 
 
 
