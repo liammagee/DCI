@@ -3,6 +3,7 @@ title: "Digital Capacities Index - Quantitative Findings"
 author: "Liam Magee, Delphine Bellarose, Anjali Sharma"
 date: "31 March 2016"
 output: html_document
+bibliography: DCI.bib
 ---
 
 <!-- output: word_document -->
@@ -25,12 +26,28 @@ PRINTING <- FALSE
 ## Digital Capacities Index - Quantitative Findings
 
 The *Digital Capacities Index* is a pilot survey instrument developed by researchers at Western Sydney University and Google Australia. 
-The survey was administered by Pure Profile in Febuary 2016.
+The survey was administered by [Pure Profile](https://www.pureprofile.com/us/) in Febuary 2016.
 
 
 ### Demographics
 
-The survey included a total of `r sampleSize()` participants.
+The survey included a total of `r sampleSize()` participants. 
+
+We included a total of `r length(vars.all)` items measuring (a) frequency of various online behaviour, (b) levels of agreement with statements about digital capacities, (c) perceived importance of online activities and (d) ease of use of digital technologies.
+
+We further distinguished questions into the following key thematic areas, or what we have termed, following @james2014urban, 'critical issues'. These issues are:
+
+ - Interests
+ - Competencies
+ - Resilience
+ - Social Connectedness
+
+These four issues were distilled from a list of nine issues that also included *Engagement*, *Inclusion*, *Policy Environment*, *Infrastructure* and *Consequences*. 
+
+We also selected items and scales from existing sources in the literature where possible. In particular we drew from 'Kids Online'
+[@livingstone2010risks], Helsper's [-@helsper2012corresponding] 'Corresponding fields model', a study by Humphry [-@humphry2014importance] of mobile use among homeless populations, and indicators compiled by the [Young and Well CRC](http://www.youngandwellcrc.org.au/). Other indicators were developed by the *Digital Capacities Index* team.
+
+
 
 Age demographics are distributed as per Graph 1:
 
@@ -77,5 +94,33 @@ Q74:
 
 generateAgeFrequenciesForAggregate()
 ```
+
+## Overall results
+
+```{r generateInterests, echo=FALSE}
+generateInterests()
+```
+
+```{r generateCompetencies, echo=FALSE}
+generateCompetencies()
+```
+
+```{r generateResilience, echo=FALSE}
+generateResilience()
+```
+
+```{r generateConnectedness, echo=FALSE}
+generateConnectedness()
+```
+
+```{r generateIndex, echo=FALSE}
+generateIndex()
+```
+
+
+
+
+
+## References
 
 

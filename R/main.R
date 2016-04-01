@@ -49,7 +49,7 @@ vars <- c(
 			"Q9_212", "Q9_213", "Q9_214", "Q9_215", "Q9_216", "Q9_217", "Q9_218", "Q9_219", "Q9_220"
 )
 
-vars.interests.online.activities.74 <- c("Q74_1", "Q74_2", "Q74_3", "Q74_4", "Q74_5", "Q74_6", "Q74_7", "Q74_8", "Q74_9", "Q74_10", "Q74_11", "Q74_12", "Q74_13", "Q74_14", "Q74_15")
+vars.competencies.online.activities.74 <- c("Q74_1", "Q74_2", "Q74_3", "Q74_4", "Q74_5", "Q74_6", "Q74_7", "Q74_8", "Q74_9", "Q74_10", "Q74_11", "Q74_12", "Q74_13", "Q74_14", "Q74_15")
 vars.connectedness.maintenance.287 <- c("Q287_137", "Q287_138", "Q287_139", "Q287_140", "Q287_141", "Q287_142")
 vars.interests.difference.seeking.341 <- c("Q341_55", "Q341_56", "Q341_57", "Q341_58", "Q341_59", "Q341_60", "Q341_61")
 vars.connectedness.events.343 <- c("Q343_143", "Q343_144", "Q343_145", "Q343_146", "Q343_147", "Q343_148", "Q343_149", "Q343_150")
@@ -65,7 +65,6 @@ vars.interests.general.437 <- c("Q437_43", "Q437_44", "Q437_45", "Q437_46", "Q43
 
 
 vars.interest <- c(
-	vars.interests.online.activities.74,
 	vars.interests.difference.seeking.341,
 	vars.interests.fitness.352,
 	vars.interests.health.improvement.353,
@@ -73,6 +72,7 @@ vars.interest <- c(
 	vars.interests.general.437
 )
 vars.competencies <- c(
+	vars.competencies.online.activities.74,
 	vars.competencies.431
 )
 vars.resilience <- c(
@@ -96,7 +96,7 @@ vars.index <- c(
 
 # Group variables by type
 vars.frequency <- c(
-	vars.interests.online.activities.74
+	vars.competencies.online.activities.74
 )
 
 vars.frequency.months <- c(
@@ -121,7 +121,13 @@ vars.importance <- c(
 	vars.interests.keeping.in.touch.430,
 	vars.connectedness.maintenance.287	
 )
-
+vars.all <- c(
+	vars.frequency,
+	vars.frequency.months,
+	vars.ease,
+	vars.agreement,
+	vars.importance
+)
 
 
 
@@ -148,7 +154,7 @@ augmented.data$gender[augmented.data$Q1 == 195] <- "Other"
 augmented.data$gender[augmented.data$Q1 == 196] <- "Refused"
 
 # Create sums
-augmented.data$Q74 <- round(rowMeans(augmented.data[,vars.interests.online.activities.74])	)
+augmented.data$Q74 <- round(rowMeans(augmented.data[,vars.competencies.online.activities.74])	)
 augmented.data$Q287 <- round(rowMeans(augmented.data[,vars.connectedness.maintenance.287]))
 augmented.data$Q341 <- round(rowMeans(augmented.data[,vars.interests.difference.seeking.341]))
 augmented.data$Q343 <- round(rowMeans(augmented.data[,vars.connectedness.events.343]))
@@ -317,7 +323,7 @@ generateGenderFrequencies <- function(vars, func) {
 
 
 sumVariable <- function() {
-	vars.of.interest = vars.interests.online.activities.74
+	vars.of.interest = vars.competencies.online.activities.74
 	means <- sapply(vars.of.interest, function(x) { 
 		mean(augmented.data[,x])
 	} )
@@ -405,6 +411,14 @@ generateAll <- function() {
 
 	generateAgeFrequenciesForAggregate()
 	generateGenderFrequenciesForAggregate()
+
+	# Aggregate functions
+	generateInterests()
+	generateCompetencies()
+	generateResilience()
+	generateConnectedness()
+	generateIndex()
+
 }
 
 
