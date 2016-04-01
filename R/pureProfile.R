@@ -70,9 +70,9 @@ yearLabels <- function(years) {
   years <- yearBreaks(years)
   
   # Formats the year into financial year form, e.g. "66/67"
-  output <- paste(formatC((years) * 10, width = 2, format = "d", flag = "0"),
+  output <- paste(formatC((years) * 5, width = 2, format = "d", flag = "0"),
                   " - ",
-                  formatC((years + 1) * 10 - 1, width = 2, format = "d", flag = "0"), sep = "")
+                  formatC((years + 1) * 5 - 1, width = 2, format = "d", flag = "0"), sep = "")
   
   return (output)
 
@@ -323,7 +323,7 @@ freqDistChart <- function(freq.table, file.name, title, x.label, y.label, func, 
 									breaks = seq(0.0, 1.0, by = 0.2), 
 									labels = paste(seq(0, 100, by = 20), "%", sep = ""))
 
-	# Graph so that x = 2nd variable (decades), y = data, fill = responses
+	# Graph so that x = 2nd variable (age.breaks), y = data, fill = responses
 	p <- ggplot(data = prop.freq.melted, 
 		aes(x = Var2, y = value, fill = factor(Var1))) + 
 	    geom_bar(width=0.75, stat="identity") + 
@@ -357,19 +357,19 @@ freqDistChart <- function(freq.table, file.name, title, x.label, y.label, func, 
 
 ageChart <- function(augmented.data) {
 
-	decades <- sort(unique(augmented.data$decades))
-	decade.labels <- sort(unique(augmented.data$decades * 5))
+	age.breaks <- sort(unique(augmented.data$age.breaks))
+	age.breaks.labels <- sort(unique(augmented.data$age.breaks * 5))
 
-	x.scale <- scale_x_continuous(name = "Decades",
-									breaks = decades, 
-									labels = decade.labels)
+	x.scale <- scale_x_continuous(name = "Ages",
+									breaks = age.breaks, 
+									labels = age.breaks.labels)
 
-	p <- ggplot(augmented.data, aes(x=decades)) +
+	p <- ggplot(augmented.data, aes(x=age.breaks)) +
 				geom_histogram(binwidth=.5) + 
 				x.scale + 
 	    		coord_flip() 
 
-	p <- augmentChart(p, augmented.data$decades, unique(augmented.data$decades * 5))
+	p <- augmentChart(p, augmented.data$age.breaks, unique(augmented.data$age.breaks * 5))
 
 	return (p)
 }
@@ -390,13 +390,13 @@ genderChart <- function(augmented.data) {
 
 genderAndAgeChart <- function(augmented.data) {
 
-	decades <- sort(unique(augmented.data$decades))
-	decade.labels <- sort(unique(augmented.data$decades * 5))
-	x.scale <- scale_x_continuous(name = "Decades",
-									breaks = decades, 
-									labels = decade.labels)
+	age.breaks <- sort(unique(augmented.data$age.breaks))
+	age.breaks.labels <- sort(unique(augmented.data$age.breaks * 5))
+	x.scale <- scale_x_continuous(name = "age.breaks",
+									breaks = age.breaks, 
+									labels = age.breaks.labels)
 
-	ad <- table(augmented.data$gender, augmented.data$decades)
+	ad <- table(augmented.data$gender, augmented.data$age.breaks)
 	ad <- melt(ad)
 
 	p <- ggplot(ad, aes(x=Var2, y=value, group=Var1, fill=Var1)) +
