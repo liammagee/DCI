@@ -64,6 +64,34 @@ vars.resilience.harms.agreement.435 <- c("Q435_99", "Q435_100", "Q435_101", "Q43
 vars.interests.general.437 <- c("Q437_43", "Q437_44", "Q437_45", "Q437_46", "Q437_47", "Q437_49", "Q437_50", "Q437_51", "Q437_52", "Q437_53", "Q437_54")
 
 
+vars.interest <- c(
+	vars.interests.online.activities.74,
+	vars.interests.difference.seeking.341,
+	vars.interests.fitness.352,
+	vars.interests.health.improvement.353,
+	vars.interests.keeping.in.touch.430,
+	vars.interests.general.437
+)
+vars.competencies <- c(
+	vars.competencies.431
+)
+vars.resilience <- c(
+	vars.resilience.engage.with.others.428,
+	vars.resilience.harm.events.434,
+	vars.resilience.harms.agreement.435
+)
+vars.connectedness <- c(
+	vars.connectedness.maintenance.287,
+	vars.connectedness.events.343,
+	vars.connectedness.tech.attitudes.429
+)
+
+vars.index <- c(
+	vars.interest,
+	vars.competencies,
+	vars.resilience,
+	vars.connectedness
+)
 
 
 # Group variables by type
@@ -144,9 +172,13 @@ chartVariableByAge <- function(data, filename, metadata, labelsY) {
 					labelsY
 					)
 	comment <- paste("Printed graph of ", metadata$Name, " to ./figs/", filename, ".png", sep="")
-	print(comment)
+	if (PRINTING) {
+		print(comment)
+	}
 	comment <- paste("Type 'open ./figs/", filename, ".png' from the terminal to view the file.", sep="")
-	print(comment)
+	if (PRINTING) {
+		print(comment)
+	}
 	return (p)
 }
 
@@ -180,7 +212,9 @@ generateChartsForVariable <- function(var) {
 	v1 <- var.parts[1]
 	v2 <- var.parts[2]
 	var.name <- gsub("Q([[:digit:]]*)_([[:digit:]]*)", "\\1.\\2", var)
-	print(var.name)
+	if (PRINTING) {
+		print(var.name)
+	}
 }
 
 
@@ -333,6 +367,37 @@ generateGenderFrequenciesForAggregate <- function() {
 	p <- generateSingleGenderFrequency(0, c("Q435"), agreementLabels)
 	p <- generateSingleGenderFrequency(0, c("Q437"), frequencyMonthLabels)
 	return (p)
+}
+
+generateAggBarChart <- function(cols, name) {
+	aggMeans <- data.frame(round(rowSums(augmented.data[,cols])))
+	colnames(aggMeans)[1] <- name
+	x.scale <- scale_x_continuous(name = name)
+	p <- ggplot(data = aggMeans, aes(x = aggMeans[1])) + 
+		geom_histogram(binwidth = 0.5) +
+		geom_density(aes(y=1.0*..count..), colour="red", adjust=4) +
+		x.scale
+	return (p)
+}
+
+generateInterests <- function() {
+	generateAggBarChart(vars.interest, 'interests')
+}
+
+generateCompetencies <- function() {
+	generateAggBarChart(vars.competencies, 'competencies')
+}
+
+generateResilience <- function() {
+	generateAggBarChart(vars.resilience, 'resilience')
+}
+
+generateConnectedness <- function() {
+	generateAggBarChart(vars.connectedness, 'connectedness')
+}
+
+generateIndex <- function() {
+	generateAggBarChart(vars.index, 'index')
 }
 
 

@@ -2,7 +2,7 @@
 title: "Digital Capacities Index - Quantitative Findings"
 author: "Liam Magee, Delphine Bellarose, Anjali Sharma"
 date: "31 March 2016"
-output: pdf_document
+output: html_document
 ---
 
 <!-- output: word_document -->
