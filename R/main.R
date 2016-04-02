@@ -64,16 +64,16 @@ vars.resilience.harms.agreement.435 <- c("Q435_99", "Q435_100", "Q435_101", "Q43
 vars.interests.general.437 <- c("Q437_43", "Q437_44", "Q437_45", "Q437_46", "Q437_47", "Q437_49", "Q437_50", "Q437_51", "Q437_52", "Q437_53", "Q437_54")
 
 
+vars.competencies <- c(
+	vars.competencies.online.activities.74,
+	vars.competencies.431
+)
 vars.interest <- c(
 	vars.interests.difference.seeking.341,
 	vars.interests.fitness.352,
 	vars.interests.health.improvement.353,
 	vars.interests.keeping.in.touch.430,
 	vars.interests.general.437
-)
-vars.competencies <- c(
-	vars.competencies.online.activities.74,
-	vars.competencies.431
 )
 vars.resilience <- c(
 	vars.resilience.engage.with.others.428,
@@ -87,8 +87,8 @@ vars.connectedness <- c(
 )
 
 vars.index <- c(
-	vars.interest,
 	vars.competencies,
+	vars.interest,
 	vars.resilience,
 	vars.connectedness
 )
@@ -379,24 +379,59 @@ generateGenderFrequenciesForAggregate <- function() {
 	return (p)
 }
 
+test  <- function() {
+	m <- melt(data[,vars.competencies.online.activities.74])
+	cm <- count(m, c("variable", "value"))
+	cm$rel.freq <- cm$freq / length(data$Q10_159)
+	ind.names <- obtainIndicatorNames(unique(cm$variable))
+	var.names <- expandedIndicators[which(expandedIndicators$DCI.ID %in% ind.names),]$Name
+	x.scale <- scale_x_discrete(name = "Questions",
+									breaks = unique(cm$variable), 
+									labels = var.names)
+	y.scale <- scale_y_continuous(name = "Percentage",
+									breaks = seq(0.0, 1.0, by = 0.2), 
+									labels = paste(seq(0, 100, by = 20), "%", sep = ""))
+	fill.scale <- scale_fill_manual(name="Frequency",
+				 values=yawcrcPalette,
+                 breaks=seq(1:6),
+                 labels=frequencyLabels())
+	p <- ggplot(data = cm, 
+		aes(x = variable, y = rel.freq, fill = factor(value))) + 
+	    geom_bar(width = 0.5, stat = "identity") + 
+	    coord_flip() +
+	    x.scale +
+	    y.scale +
+	    fill.scale
+	p
+
+	freqDistChart(
+		data[,vars.competencies.online.activities.74], 
+		"gen/Q74_agg", 
+		indicators[which("74" == indicators$DCI.ID),], 
+		frequencyLabels,
+		"Compentencies", 
+		"Frequency", 
+		FALSE)
+}
+
 generateInterests <- function() {
-	generateAggBarChart(vars.interest, 'interests', 'gen/interests')
+	histogram(vars.interest, 'interests', 'gen/interests')
 }
 
 generateCompetencies <- function() {
-	generateAggBarChart(vars.competencies, 'competencies', 'gen/competencies')
+	histogram(vars.competencies, 'competencies', 'gen/competencies')
 }
 
 generateResilience <- function() {
-	generateAggBarChart(vars.resilience, 'resilience', 'gen/resilience')
+	histogram(vars.resilience, 'resilience', 'gen/resilience')
 }
 
 generateConnectedness <- function() {
-	generateAggBarChart(vars.connectedness, 'connectedness', 'gen/connectedness')
+	histogram(vars.connectedness, 'connectedness', 'gen/connectedness')
 }
 
 generateIndex <- function() {
-	generateAggBarChart(vars.index, 'index', 'gen/index')
+	histogram(vars.index, 'index', 'gen/index')
 }
 
 

@@ -410,7 +410,7 @@ genderAndAgeChart <- function(augmented.data) {
 }
 
 
-generateAggBarChart <- function(cols, name, file.name) {
+histogram <- function(cols, name, file.name) {
 	aggMeans <- data.frame(round(rowSums(augmented.data[,cols])))
 	colnames(aggMeans)[1] <- name
 	x.scale <- scale_x_continuous(name = name)
@@ -429,3 +429,24 @@ generateAggBarChart <- function(cols, name, file.name) {
 
 	return (p)
 }
+
+histogram <- function(cols, name, file.name) {
+	aggMeans <- data.frame(round(rowSums(augmented.data[,cols])))
+	colnames(aggMeans)[1] <- name
+	x.scale <- scale_x_continuous(name = name)
+	p <- ggplot(data = aggMeans, aes(x = aggMeans[1])) + 
+		geom_histogram(binwidth = 0.5) +
+		geom_density(aes(y=1.0*..count..), colour="red", adjust=4) +
+		x.scale
+
+	full.file <- paste("./figs/", file.name, ".png", sep="") 
+
+	# Save the plot
+	ggsave(file = full.file,
+	  width = png.width,
+	  height = png.height
+	)
+
+	return (p)
+}
+

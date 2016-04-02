@@ -35,17 +35,17 @@ We included a total of `r length(vars.all)` items measuring (a) frequency of var
 
 We further distinguished questions into the following key thematic areas, or what we have termed, following @james2014urban, 'critical issues'. These issues are:
 
- - Interests
- - Competencies
- - Resilience
- - Social Connectedness
+ - **Competencies** (`r length(vars.competencies)` indicators). 
+ - **Interests** (`r length(vars.interest)` indicators).
+ - **Resilience** (`r length(vars.resilience)` indicators).
+ - **Social Connectedness** (`r length(vars.connectedness)` indicators).
 
 These four issues were distilled from a list of nine issues that also included *Engagement*, *Inclusion*, *Policy Environment*, *Infrastructure* and *Consequences*. 
 
 Against these four issues, we selected items and scales from existing sources in the literature where possible. In particular we drew from 'Kids Online'
 [@livingstone2010risks], Helsper's [-@helsper2012corresponding] 'Corresponding fields model', a study by Humphry [-@humphry2014importance] of mobile use among homeless populations, and indicators compiled by the [Young and Well CRC](http://www.youngandwellcrc.org.au/). Other indicators were developed by the *Digital Capacities Index* team. 
 
-A large number of candidate scales were distilled down to the list after two day-long workshops, and testing of the survey.
+A large number of candidate scales were distilled down to the current list after two day-long workshops, and testing of the survey.
 
 
 
@@ -113,10 +113,31 @@ generateSingleAgeFrequency(1, vars.ease, easeLabels)
 ## Results by Critical Issue
 
 
-### Interests
+
+### Competencies
+
+Our survey asked participants to respond to two questions about competencies:
+
+ - Frequency of online activity
+ - Perceived ease of conducting online activity
 
 
-Q74:
+#### Frequency of online activity
+
+
+##### Aggregated online activity
+
+
+
+##### Aggregated online activity
+
+```{r onlineActivities, echo=FALSE}
+histogram(vars.competencies.online.activities.74, 'Online Activities', 'gen/Q74')
+```
+
+
+
+#### Aggregated by age
 
 ```{r ageFreqForAggregate, echo=FALSE}
 
@@ -125,9 +146,10 @@ generateAgeFrequenciesForAggregate()
 
 
 
-### Competencies
+### Interests
 
-**TBD**
+
+
 
 
 ### Resilience
