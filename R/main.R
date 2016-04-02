@@ -228,6 +228,21 @@ generateChartsForVariable <- function(var) {
 }
 
 
+
+obtainIndicatorName <- function(var) {
+	var.name <- gsub("Q", "", var)
+	var.parts <- unlist(strsplit(c(var.name), "_"))
+	v1 <- as.integer(var.parts[1])
+	v2 <- as.integer(var.parts[2])
+	if (!is.na(v1)) {
+		ind.name <- paste(v1, ".", v2, sep = "")
+	}
+	else {
+		ind.name <- v1
+	}
+	return (ind.name)		
+}
+
 obtainIndicatorNames <- function(vars) {
 	v1.last <- 0
 	v.counter <- 0
@@ -379,39 +394,22 @@ generateGenderFrequenciesForAggregate <- function() {
 	return (p)
 }
 
-test  <- function() {
-	m <- melt(data[,vars.competencies.online.activities.74])
-	cm <- count(m, c("variable", "value"))
-	cm$rel.freq <- cm$freq / length(data$Q10_159)
-	ind.names <- obtainIndicatorNames(unique(cm$variable))
-	var.names <- expandedIndicators[which(expandedIndicators$DCI.ID %in% ind.names),]$Name
-	x.scale <- scale_x_discrete(name = "Questions",
-									breaks = unique(cm$variable), 
-									labels = var.names)
-	y.scale <- scale_y_continuous(name = "Percentage",
-									breaks = seq(0.0, 1.0, by = 0.2), 
-									labels = paste(seq(0, 100, by = 20), "%", sep = ""))
-	fill.scale <- scale_fill_manual(name="Frequency",
-				 values=yawcrcPalette,
-                 breaks=seq(1:6),
-                 labels=frequencyLabels())
-	p <- ggplot(data = cm, 
-		aes(x = variable, y = rel.freq, fill = factor(value))) + 
-	    geom_bar(width = 0.5, stat = "identity") + 
-	    coord_flip() +
-	    x.scale +
-	    y.scale +
-	    fill.scale
-	p
 
-	freqDistChart(
-		data[,vars.competencies.online.activities.74], 
-		"gen/Q74_agg", 
-		indicators[which("74" == indicators$DCI.ID),], 
-		frequencyLabels,
-		"Compentencies", 
-		"Frequency", 
-		FALSE)
+# Generate all subquestion charts
+generateSubQuestionCharts <- function() {
+	graphSubQuestionFrequencies(vars.competencies.online.activities.74, "Frequency", frequencyLabels, "online-activities-74")
+	graphSubQuestionFrequencies(vars.connectedness.maintenance.287, "Importance", importanceLabels, "maintaining-connections-287")
+	graphSubQuestionFrequencies(vars.interests.difference.seeking.341, "Agreement", agreementLabels, "interests-difference-seeking-341")
+	graphSubQuestionFrequencies(vars.connectedness.events.343, "Frequency", frequencyMonthLabels, "connectedness-events-343")
+	graphSubQuestionFrequencies(vars.interests.fitness.352, "Frequency", frequencyMonthLabels, "interests-fitness-352")
+	graphSubQuestionFrequencies(vars.interests.health.improvement.353, "Agreement", agreementLabels, "interests-health-improvement-353")
+	graphSubQuestionFrequencies(vars.resilience.engage.with.others.428, "Agreement", agreementLabels, "resilience-engage-with-others-428")
+	graphSubQuestionFrequencies(vars.connectedness.tech.attitudes.429, "Agreement", agreementLabels, "connectedness-tech-attitudes-429")
+	graphSubQuestionFrequencies(vars.interests.keeping.in.touch.430, "Importance", importanceLabels, "keeping-in-touch-430")
+	graphSubQuestionFrequencies(vars.competencies.431, "Ease", easeLabels, "competencies-ease-of-tasks-431")
+	graphSubQuestionFrequencies(vars.resilience.harm.events.434, "Frequency", frequencyMonthLabels, "resilience-harm-events-434")
+	graphSubQuestionFrequencies(vars.resilience.harms.agreement.435, "Agreement", agreementLabels, "resilience-harms-agreement-435")
+	graphSubQuestionFrequencies(vars.interests.general.437, "Frequency", frequencyMonthLabels, "interests-general-437")
 }
 
 generateInterests <- function() {
@@ -451,6 +449,9 @@ generateAll <- function() {
 	generateAgeFrequenciesForAggregate()
 	generateGenderFrequenciesForAggregate()
 
+	# Sub question frequences
+	generateSubQuestionCharts()
+
 	# Aggregate functions
 	generateInterests()
 	generateCompetencies()
@@ -462,4 +463,4 @@ generateAll <- function() {
 
 
 # generateSingleAgeFrequency(1, vars.ease, easeLabels)
-# generateAll()
+# generateAll()s

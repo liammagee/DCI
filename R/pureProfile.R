@@ -450,3 +450,53 @@ histogram <- function(cols, name, file.name) {
 	return (p)
 }
 
+# vars.connectedness.maintenance.287, "Importance", importanceLabels, "maintaining-connections-287"
+# Generic function that returns relative frequencies of sub questions (items) as a graph
+graphSubQuestionFrequencies  <- function(vars, legend.name, legendBreakFunc, file.name) {
+	# Obtain a melted, long version of the column data
+	m <- melt(data[,vars], id.vars = c())
+	# Generate counts of the item data
+	cm <- count(m, c("variable", "value"))
+	# Relative frequencies (Q10_159 is age)
+	cm$rel.freq <- cm$freq / length(data$Q10_159)
+	# Rename for simplicity - TODO: push up to the global variable
+	ex <- expandedIndicators
+	# Complicated code that loads truncated item names into the melted data
+	var.names = as.character(unlist(sapply(obtainIndicatorNames(unique(cm$variable)), function(lbl) {
+		v <- ex[which(ex$DCI.ID == lbl),2]
+		v <- unlist(strsplit(as.character(v), "-"))[3]
+		return (v)
+	})))
+	# Construct scales
+	x.scale <- scale_x_discrete(name = "Questions",
+									breaks = unique(cm$variable), 
+									labels = var.names)
+	y.scale <- scale_y_continuous(name = "Percentage",
+									breaks = seq(0.0, 1.0, by = 0.2), 
+									labels = paste(seq(0, 100, by = 20), "%", sep = ""))
+	fill.scale <- scale_fill_manual(name=legend.name,
+				 values=yawcrcPalette,
+                 breaks=seq(1:length(legendBreakFunc())),
+                 labels=legendBreakFunc())
+	# Generate plot
+	p <- ggplot(data = cm, 
+		aes(x = variable, y = rel.freq, fill = factor(value))) + 
+	    geom_bar(width = 0.5, stat = "identity") + 
+	    coord_flip() +
+	    x.scale +
+	    y.scale +
+	    fill.scale
+	# p <- p + theme(
+	# 	axis.text.y = element_text(color=text.color, angle=45, vjust=1.0, hjust=1.0, size = axis.text.size * 0.8)
+	# )
+
+	full.file <- paste("./figs/gen/", file.name, ".png", sep="") 
+
+	# Save the plot
+	ggsave(file = full.file,
+	  width = png.width,
+	  height = png.height
+	)
+
+	return (p)
+}
