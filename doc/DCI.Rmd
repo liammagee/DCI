@@ -4,7 +4,7 @@ author: "Liam Magee, Delphine Bellarose, Anjali Sharma"
 date: "31 March 2016"
 bibliography: DCI.bib
 output:
-  pdf_document:
+  html_document:
     toc: true
     toc_depth: 4
 ---
@@ -22,7 +22,7 @@ source("R/main.R", FALSE)
 PRINTING <- FALSE
 
 # Set to false for non-HTML (e.g. word, pdf) outputs
-PLOTLY <- FALSE
+PLOTLY <- TRUE
 
 ```
 
