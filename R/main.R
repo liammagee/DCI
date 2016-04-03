@@ -64,17 +64,21 @@ vars.resilience.harm.events.434 <- c("Q434_88", "Q434_89", "Q434_90", "Q434_91",
 vars.resilience.harms.agreement.435 <- c("Q435_99", "Q435_100", "Q435_101", "Q435_102", "Q435_103", "Q435_104", "Q435_105")
 vars.interests.general.437 <- c("Q437_43", "Q437_44", "Q437_45", "Q437_46", "Q437_47", "Q437_49", "Q437_50", "Q437_51", "Q437_52", "Q437_53", "Q437_54")
 
+# Binary 
+vars.connectedness.helping.others.277 <- c("Q277_112", "Q277_113", "Q277_114", "Q277_115", "Q277_116", "Q277_117", "Q277_118", "Q277_119", "Q277_120", "Q277_121", "Q277_122", "Q277_123")
+vars.connectedness.sought.help.from.others.280 <- c("Q280_124", "Q280_125", "Q280_126", "Q280_127", "Q280_128", "Q280_129", "Q280_130", "Q280_131", "Q280_132", "Q280_133", "Q280_134", "Q280_135", "Q280_136")
+
 
 vars.competencies <- c(
 	vars.competencies.online.activities.74,
 	vars.competencies.431
 )
 vars.interest <- c(
+	vars.interests.general.437,
 	vars.interests.difference.seeking.341,
 	vars.interests.fitness.352,
 	vars.interests.health.improvement.353,
-	vars.interests.keeping.in.touch.430,
-	vars.interests.general.437
+	vars.interests.keeping.in.touch.430
 )
 vars.resilience <- c(
 	vars.resilience.engage.with.others.428,
@@ -82,6 +86,8 @@ vars.resilience <- c(
 	vars.resilience.harms.agreement.435
 )
 vars.connectedness <- c(
+	vars.connectedness.helping.others.277,
+	vars.connectedness.sought.help.from.others.280,
 	vars.connectedness.maintenance.287,
 	vars.connectedness.events.343,
 	vars.connectedness.tech.attitudes.429
@@ -122,12 +128,18 @@ vars.importance <- c(
 	vars.interests.keeping.in.touch.430,
 	vars.connectedness.maintenance.287	
 )
+vars.yes_no <- c(
+	vars.connectedness.helping.others.277,
+	vars.connectedness.sought.help.from.others.280	
+)
+
 vars.all <- c(
 	vars.frequency,
 	vars.frequency.months,
 	vars.ease,
 	vars.agreement,
-	vars.importance
+	vars.importance,
+	vars.yes_no
 )
 
 
@@ -199,6 +211,38 @@ ageBreakdown <- function() {
 	return (length(augmented.data[,1]))
 }
 
+generateFrequencies <- function() {
+	generateAgeFrequencies(vars.frequency, frequencyLabels)
+	generateAgeFrequencies(vars.frequency.months, frequencyMonthLabels)
+	generateAgeFrequencies(vars.ease, easeLabels)
+	generateAgeFrequencies(vars.agreement, agreementLabels)
+	generateAgeFrequencies(vars.importance, importanceLabels)
+	generateAgeFrequencies(vars.yes_no, yesNoLabels)
+
+	generateGenderFrequencies(vars.frequency, frequencyLabels)
+	generateGenderFrequencies(vars.frequency.months, frequencyMonthLabels)
+	generateGenderFrequencies(vars.ease, easeLabels)
+	generateGenderFrequencies(vars.agreement, agreementLabels)
+	generateGenderFrequencies(vars.importance, importanceLabels)
+	generateGenderFrequencies(vars.yes_no, yesNoLabels)
+
+	generateStateFrequencies(vars.frequency, frequencyLabels)
+	generateStateFrequencies(vars.frequency.months, frequencyMonthLabels)
+	generateStateFrequencies(vars.ease, easeLabels)
+	generateStateFrequencies(vars.agreement, agreementLabels)
+	generateStateFrequencies(vars.importance, importanceLabels)
+	generateStateFrequencies(vars.yes_no, yesNoLabels)
+
+	generateLocationFrequencies(vars.frequency, frequencyLabels)
+	generateLocationFrequencies(vars.frequency.months, frequencyMonthLabels)
+	generateLocationFrequencies(vars.ease, easeLabels)
+	generateLocationFrequencies(vars.agreement, agreementLabels)
+	generateLocationFrequencies(vars.importance, importanceLabels)
+	generateLocationFrequencies(vars.yes_no, yesNoLabels)
+
+}
+
+
 generateAgeFrequenciesForAggregate <- function() {
 	p <- generateSingleAgeFrequency(0, c("Q74"), frequencyLabels)
 	p <- generateSingleAgeFrequency(0, c("Q287"), importanceLabels)
@@ -267,6 +311,13 @@ generateLocationFrequenciesForAggregate <- function() {
 	return (p)
 }
 
+generateAggregateFrequences <- function() {
+	generateAgeFrequenciesForAggregate()
+	generateGenderFrequenciesForAggregate()
+	generateStateFrequenciesForAggregate()
+	generateLocationFrequenciesForAggregate()
+}
+
 
 # Generate all subquestion charts
 generateSubQuestionCharts <- function() {
@@ -288,66 +339,82 @@ generateSubQuestionCharts <- function() {
 	graphSubQuestionFrequencies(vars.connectedness.events.343, "Frequency", frequencyMonthLabels, "connectedness-events-343")
 }
 
-generateInterests <- function() {
-	histogram(vars.interest, 'interests', 'gen/interests')
+generateIndexForCompetencies <- function() {
+	# Competencies are correctly coded: low values mean higher competencies
+	vars.competencies.for.index <- vars.competencies
+	histogram(vars.competencies.for.index, 'Competencies', 'gen/index-competencies')
 }
 
-generateCompetencies <- function() {
-	histogram(vars.competencies, 'competencies', 'gen/competencies')
+generateIndexForInterests <- function() {
+	# Interests are correctly coded: low values mean higher competencies
+	vars.interest.for.index <- vars.interest
+	histogram(vars.interest.for.index, 'Interests', 'gen/index-interests')
 }
 
-generateResilience <- function() {
-	histogram(vars.resilience, 'resilience', 'gen/resilience')
+generateIndexForResilience <- function() {
+	# Resilience is more complex; high scores on some responses can be 
+	# interpreted as more resilient, others as less resilient
+
+	# Reverse harm  results - these are interpreted as meaning *less* resilient
+	vars.resilience.harm.events.434.for.index <- c()
+	for (i in 1:length(vars.resilience.harm.events.434)) {
+		var.name <- vars.resilience.harm.events.434[i]
+		new.var <- paste(var.name, ".for.index", sep = "")
+		c <- augmented.data[,var.name]
+		d <- 6 - c
+		d <- replace(d, d == -1, 0)
+		vars.resilience.harm.events.434.for.index <- c(vars.resilience.harm.events.434.for.index, var.name)
+		augmented.data[new.var] <- d
+	}
+
+	vars.resilience.for.index <- c(
+		vars.resilience.harm.events.434.for.index,
+		vars.resilience.harms.agreement.435
+		# TODO: Determine what this means in terms of resilience
+		# vars.resilience.engage.with.others.428
+	)
+	histogram(vars.resilience.for.index, 'Resilience', 'gen/index-resilience')
 }
 
-generateConnectedness <- function() {
-	histogram(vars.connectedness, 'connectedness', 'gen/connectedness')
+generateIndexForConnectedness <- function() {
+
+	# Similar to vars.connectedness
+	# TODO: remove or reverse responses to 'tech attitudes'
+	vars.connectedness.for.index <- c(
+		vars.connectedness.helping.others.277,
+		vars.connectedness.sought.help.from.others.280,
+		vars.connectedness.maintenance.287,
+		vars.connectedness.events.343,
+		vars.connectedness.tech.attitudes.429
+	)
+	histogram(vars.connectedness.for.index, 'Connectedness', 'gen/index-connectedness')
 }
 
-generateIndex <- function() {
-	histogram(vars.index, 'index', 'gen/index')
+generateIndexForAll <- function() {
+	vars.all.for.index <- vars.index
+	histogram(vars.all.for.index, 'All Measures', 'gen/index-all')
 }
 
+generateIndexes <- function() {
+	generateIndexForInterests()
+	generateIndexForCompetencies()
+	generateIndexForResilience()
+	generateIndexForConnectedness()
+	generateIndexForAll()
+}
 
 generateAll <- function() {
-	generateAgeFrequencies(vars.frequency, frequencyLabels)
-	generateAgeFrequencies(vars.frequency.months, frequencyMonthLabels)
-	generateAgeFrequencies(vars.ease, easeLabels)
-	generateAgeFrequencies(vars.agreement, agreementLabels)
-	generateAgeFrequencies(vars.importance, importanceLabels)
 
-	generateGenderFrequencies(vars.frequency, frequencyLabels)
-	generateGenderFrequencies(vars.frequency.months, frequencyMonthLabels)
-	generateGenderFrequencies(vars.ease, easeLabels)
-	generateGenderFrequencies(vars.agreement, agreementLabels)
-	generateGenderFrequencies(vars.importance, importanceLabels)
-
-	generateStateFrequencies(vars.frequency, frequencyLabels)
-	generateStateFrequencies(vars.frequency.months, frequencyMonthLabels)
-	generateStateFrequencies(vars.ease, easeLabels)
-	generateStateFrequencies(vars.agreement, agreementLabels)
-	generateStateFrequencies(vars.importance, importanceLabels)
-
-	generateLocationFrequencies(vars.frequency, frequencyLabels)
-	generateLocationFrequencies(vars.frequency.months, frequencyMonthLabels)
-	generateLocationFrequencies(vars.ease, easeLabels)
-	generateLocationFrequencies(vars.agreement, agreementLabels)
-	generateLocationFrequencies(vars.importance, importanceLabels)
-
-	generateAgeFrequenciesForAggregate()
-	generateGenderFrequenciesForAggregate()
-	generateStateFrequenciesForAggregate()
-	generateLocationFrequenciesForAggregate()
+	# Specific question frequences by age, gender, state, location
+	generateFrequencies()
+	# Aggregate frequences by age, gender, state, location
+	generateAggregateFrequences()
 
 	# Sub question frequences
 	generateSubQuestionCharts()
 
-	# Aggregate functions
-	generateInterests()
-	generateCompetencies()
-	generateResilience()
-	generateConnectedness()
-	generateIndex()
+	# Index functions
+	generateIndexes()
 
 }
 

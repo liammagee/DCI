@@ -159,6 +159,18 @@ importanceLabels <- function() {
 
 }
 
+# Yes/No labels
+yesNoLabels <- function() {
+
+	labels <- c(
+		"Yes",
+		"No"
+	)
+
+	return (labels)
+
+}
+
 
 
 
