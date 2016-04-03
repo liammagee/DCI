@@ -158,7 +158,21 @@ age <- "Q10_159"
 gender <- "Q1" # 193 = "Male", 194 = "Female", 195 = "Other", 196 = "Refused"
 state <- "STATE1"
 location <- "LOCATION1"
-augmented.data <- results[,c(age, gender, state, location, vars)]
+pressure.fin <- "Q45"
+pressure.digital.access <- "Q425"
+current.neighbourhood <- "Q427"
+level.education <- "Q436"
+main.activities <- "Q8"
+augmented.data <- results[,c(age, 
+								gender, 
+								state, 
+								location, 
+								pressure.fin, 
+								pressure.digital.access, 
+								current.neighbourhood, 
+								level.education, 
+								main.activities,
+								vars)]
 
 # Recode variables
 augmented.data$age <- augmented.data$Q10_159
@@ -179,6 +193,45 @@ augmented.data$state[augmented.data$STATE1 == 7] <- "NT"
 augmented.data$state[augmented.data$STATE1 == 8] <- "TAS"
 augmented.data$location[augmented.data$LOCATION1 == 1] <- "Urban"
 augmented.data$location[augmented.data$LOCATION1 == 2] <- "Regional/Rural"
+augmented.data$pressure.financial <- NA
+augmented.data$pressure.financial[augmented.data$Q45 == 171] <- "No pressure - my household rarely or never considers the costs of basic necessities."
+augmented.data$pressure.financial[augmented.data$Q45 == 172] <- "Some pressure - my household monitors its budget closely, though is generally able to afford the costs of basic necessit"
+augmented.data$pressure.financial[augmented.data$Q45 == 173] <- "Considerable pressure - my household monitors its budget closely and sometimes struggles to cover the costs of basic nec"
+augmented.data$pressure.financial[augmented.data$Q45 == 174] <- "Extreme pressure - my household regularly struggles to cover the costs of basic necessities."
+augmented.data$pressure.digital.access <- NA
+augmented.data$pressure.digital.access[augmented.data$Q425 == 175] <- "No pressure at all."
+augmented.data$pressure.digital.access[augmented.data$Q425 == 176] <- "Some pressure - my household notices the financial costs of our digital life."
+augmented.data$pressure.digital.access[augmented.data$Q425 == 177] <- "Considerable pressure - my household monitor mobile phone usage, download limits and electricity use closely."
+augmented.data$pressure.digital.access[augmented.data$Q425 == 178] <- "Extreme pressure - my household sometimes sacrifices other necessities to pay mobile phone or broadband expenses."
+augmented.data$current.neighbourhood <- NA
+augmented.data$current.neighbourhood[augmented.data$Q427 == 179] <- "Less than one week."
+augmented.data$current.neighbourhood[augmented.data$Q427 == 180] <- "Less than one month."
+augmented.data$current.neighbourhood[augmented.data$Q427 == 181] <- "Less than six months."
+augmented.data$current.neighbourhood[augmented.data$Q427 == 182] <- "Less than three years."
+augmented.data$current.neighbourhood[augmented.data$Q427 == 183] <- "More than three years."
+augmented.data$level.education <- NA
+augmented.data$level.education[augmented.data$Q427 == 179] <- "No school."
+augmented.data$level.education[augmented.data$Q427 == 180] <- "Primary school."
+augmented.data$level.education[augmented.data$Q427 == 181] <- "Some secondary school."
+augmented.data$level.education[augmented.data$Q427 == 182] <- "Finished secondary school."
+augmented.data$level.education[augmented.data$Q427 == 183] <- "Trade training."
+augmented.data$level.education[augmented.data$Q427 == 184] <- "University or college (undergraduate)."
+augmented.data$level.education[augmented.data$Q427 == 185] <- "University or college (postgraduate)."
+augmented.data$level.education[augmented.data$Q427 == 186] <- "Don't know."
+augmented.data$level.education[augmented.data$Q427 == 187] <- "Refused."
+augmented.data$main.activities <- NA
+augmented.data$main.activities[augmented.data$Q427 == 200] <- "Full-time work greater than or equal to 30 hours paid employment per week"
+augmented.data$main.activities[augmented.data$Q427 == 201] <- "Part-time work less than 30 hours paid employment per week"
+augmented.data$main.activities[augmented.data$Q427 == 202] <- "Unemployed/looking for work"
+augmented.data$main.activities[augmented.data$Q427 == 203] <- "Home duties"
+augmented.data$main.activities[augmented.data$Q427 == 204] <- "Have a job but not at work due to illness, vacation etc"
+augmented.data$main.activities[augmented.data$Q427 == 205] <- "Not working and currently receiving sickness allowance/disability support pension."
+augmented.data$main.activities[augmented.data$Q427 == 206] <- "Volunteer work"
+augmented.data$main.activities[augmented.data$Q427 == 207] <- "Student attending school"
+augmented.data$main.activities[augmented.data$Q427 == 208] <- "Student attending university, TAFE or other tertiary education provider"
+augmented.data$main.activities[augmented.data$Q427 == 209] <- "Other"
+augmented.data$main.activities[augmented.data$Q427 == 210] <- "Don't know"
+augmented.data$main.activities[augmented.data$Q427 == 211] <- "Refused"
 
 
 # Create sums
