@@ -4,7 +4,7 @@ author: "Liam Magee, Delphine Bellarose, Anjali Sharma"
 date: "31 March 2016"
 bibliography: DCI.bib
 output:
-  word_document:
+  pdf_document:
     toc: true
     toc_depth: 4
 ---
@@ -20,6 +20,9 @@ setwd("..")
 
 source("R/main.R", FALSE)
 PRINTING <- FALSE
+
+# Set to false for non-HTML (e.g. word, pdf) outputs
+PLOTLY <- FALSE
 
 ```
 
@@ -68,7 +71,7 @@ Participant ages ranged from `r min(data$age)` to `r max(data$age)`, with a medi
 
 ```{r ageFreq, echo=FALSE}
 
-ageChart(data)
+(gg <- chartWrap(ageChart(data)))
 
 ```
 
@@ -81,7 +84,7 @@ Gender demographics are distributed as per *Graph 2*:
 
 ```{r genderFreq, echo=FALSE}
 
-genderChart(data)
+(gg <- chartWrap(genderChart(data)))
 
 ```
 
@@ -94,7 +97,7 @@ Combined age and gender demographics are distributed as per *Graph 3*:
 
 ```{r genderAndAgeFreq, echo=FALSE}
 
-genderAndAgeChart(data)
+(gg <- chartWrap(genderAndAgeChart(data)))
 
 ```
 
@@ -104,13 +107,26 @@ These figures approximate to Australia's adult age distribution, as reported by 
 ![Population Structure, Age and sex - Australia - 1994 and 2014](http://www.abs.gov.au/ausstats/abs@.nsf/0/1cd2b1952afc5e7aca257298000f2e76/Body/0.2A9C!OpenElement&FieldElemFormat=gif)
 
 
-```{r ageFreqForEase, echo=FALSE}
 
-generateSingleAgeFrequency(1, vars.ease, easeLabels)
+
+
+#### State and Location
+
+Participants are distributed by state as follows:
+
+```{r stateFreq, echo=FALSE}
+
+(gg <- chartWrap(stateChart(data)))
+
 ```
 
-[Other breakdowns - by urban/rural]
+The split of participants between urban and regional/rural is as follows:
 
+```{r locationFreq, echo=FALSE}
+
+(gg <- chartWrap(locationChart(data)))
+
+```
 
 
 ## Results by Critical Issue
@@ -134,26 +150,38 @@ Our survey asked participants to respond to two questions about competencies:
 The graph below shows the relative frequencies of each activity. Using the Internet generally (for work, study, and for personal use), sending email and social networking are the most common activities. Streaming music, playing games with others, sharing media and writing blogs or diaries are comparatively uncommon activities.
 
 ```{r graphSubQuestion74, echo=FALSE}
-graphSubQuestionFrequencies(
+
+(gg <- chartWrap(graphSubQuestionFrequencies(
 	vars.competencies.online.activities.74, 
 	"Frequency", 
 	frequencyLabels, 
-	"online-activities-74")
+	"online-activities-74")))
+
 ```
 
 
 ##### Aggregated online activity
 
 ```{r onlineActivities, echo=FALSE}
-histogram(vars.competencies.online.activities.74, 'Online Activities', 'gen/Q74')
+
+(gg <- chartWrap(histogram(vars.competencies.online.activities.74, 'Online Activities', 'gen/Q74')))
+
 ```
 
 #### Perceived ease of conducting online activity
 
 ```{r echo=FALSE}
-    graphSubQuestionFrequencies(vars.competencies.431, "Ease", easeLabels, "competencies-ease-of-tasks-431")
+
+(gg <- chartWrap(graphSubQuestionFrequencies(vars.competencies.431, "Ease", easeLabels, "competencies-ease-of-tasks-431")))
+
 ```
 
+
+```{r ageFreqForEase, echo=FALSE}
+
+generateSingleAgeFrequency(1, vars.ease, easeLabels)
+
+```
 
 
 
@@ -164,7 +192,9 @@ histogram(vars.competencies.online.activities.74, 'Online Activities', 'gen/Q74'
 #### General Interests
 
 ```{r echo=FALSE}
-    graphSubQuestionFrequencies(vars.interests.general.437, "Frequency", frequencyMonthLabels, "interests-general-437")
+
+(gg <- chartWrap(graphSubQuestionFrequencies(vars.interests.general.437, "Frequency", frequencyMonthLabels, "interests-general-437")))
+
 ```
 
 
@@ -172,26 +202,34 @@ histogram(vars.competencies.online.activities.74, 'Online Activities', 'gen/Q74'
 
 
 ```{r echo=FALSE}
-    graphSubQuestionFrequencies(vars.interests.difference.seeking.341, "Agreement", agreementLabels, "interests-difference-seeking-341")
+
+(gg <- chartWrap(graphSubQuestionFrequencies(vars.interests.difference.seeking.341, "Agreement", agreementLabels, "interests-difference-seeking-341")))
+
 ```
 
 
 #### Interest in fitness and health improvement
 
 ```{r echo=FALSE}
-    graphSubQuestionFrequencies(vars.interests.fitness.352, "Frequency", frequencyMonthLabels, "interests-fitness-352")
+
+(gg <- chartWrap(graphSubQuestionFrequencies(vars.interests.fitness.352, "Frequency", frequencyMonthLabels, "interests-fitness-352")))
+
 ```
 
 
 ```{r echo=FALSE}
-    graphSubQuestionFrequencies(vars.interests.health.improvement.353, "Agreement", agreementLabels, "interests-health-improvement-353")
+
+(gg <- chartWrap(graphSubQuestionFrequencies(vars.interests.health.improvement.353, "Agreement", agreementLabels, "interests-health-improvement-353")))
+
 ```
 
 
 #### Interest in keeping in touch
 
 ```{r echo=FALSE}
-    graphSubQuestionFrequencies(vars.interests.keeping.in.touch.430, "Importance", importanceLabels, "keeping-in-touch-430")
+
+(gg <- chartWrap(graphSubQuestionFrequencies(vars.interests.keeping.in.touch.430, "Importance", importanceLabels, "keeping-in-touch-430")))
+
 ```
 
 
@@ -205,21 +243,27 @@ histogram(vars.competencies.online.activities.74, 'Online Activities', 'gen/Q74'
 #### Frequency of harmful events
 
 ```{r echo=FALSE}
-    graphSubQuestionFrequencies(vars.resilience.harm.events.434, "Frequency", frequencyMonthLabels, "resilience-harm-events-434")
+
+(gg <- chartWrap(graphSubQuestionFrequencies(vars.resilience.harm.events.434, "Frequency", frequencyMonthLabels, "resilience-harm-events-434")))
+
 ```
 
 
 #### Responses to statements about online harms
 
 ```{r echo=FALSE}
-    graphSubQuestionFrequencies(vars.resilience.harms.agreement.435, "Agreement", agreementLabels, "resilience-harms-agreement-435")
+
+(gg <- chartWrap(graphSubQuestionFrequencies(vars.resilience.harms.agreement.435, "Agreement", agreementLabels, "resilience-harms-agreement-435")))
+
 ```
 
 
 #### Willingness to engage with others
 
 ```{r echo=FALSE}
-    graphSubQuestionFrequencies(vars.resilience.engage.with.others.428, "Agreement", agreementLabels, "resilience-engage-with-others-428")
+
+(gg <- chartWrap(graphSubQuestionFrequencies(vars.resilience.engage.with.others.428, "Agreement", agreementLabels, "resilience-engage-with-others-428")))
+
 ```
 
 
@@ -228,12 +272,16 @@ histogram(vars.competencies.online.activities.74, 'Online Activities', 'gen/Q74'
 #### Maintaining connections
 
 ```{r echo=FALSE}
-    graphSubQuestionFrequencies(vars.connectedness.events.343, "Frequency", frequencyMonthLabels, "connectedness-events-343")
+
+(gg <- chartWrap(graphSubQuestionFrequencies(vars.connectedness.events.343, "Frequency", frequencyMonthLabels, "connectedness-events-343")))
+
 ```
 
 
 ```{r echo=FALSE}
-    graphSubQuestionFrequencies(vars.connectedness.maintenance.287, "Importance", importanceLabels, "maintaining-connections-287")
+
+(gg <- chartWrap(graphSubQuestionFrequencies(vars.connectedness.maintenance.287, "Importance", importanceLabels, "maintaining-connections-287")))
+
 ```
 
 
@@ -242,7 +290,9 @@ histogram(vars.competencies.online.activities.74, 'Online Activities', 'gen/Q74'
 
 
 ```{r echo=FALSE}
-    graphSubQuestionFrequencies(vars.connectedness.tech.attitudes.429, "Agreement", agreementLabels, "connectedness-tech-attitudes-429")
+
+(gg <- chartWrap(graphSubQuestionFrequencies(vars.connectedness.tech.attitudes.429, "Agreement", agreementLabels, "connectedness-tech-attitudes-429")))
+
 ```
 
 
@@ -256,7 +306,8 @@ histogram(vars.competencies.online.activities.74, 'Online Activities', 'gen/Q74'
 
 ```{r ageFreqForAggregate, echo=FALSE}
 
-## generateAgeFrequenciesForAggregate()
+(gg <- chartWrap(generateAgeFrequenciesForAggregate()))
+
 ```
 
 <!--

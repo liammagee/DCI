@@ -773,3 +773,15 @@ graphSubQuestionFrequencies  <- function(vars, legend.name, legendBreakFunc, fil
 
 	return (p)
 }
+
+# Opt include plot.ly for HTML output
+PLOTLY = FALSE
+chartWrap <- function(p) {
+	if (PLOTLY) {
+		library(plotly)
+		return (ggplotly(p))
+	}
+	else {
+		return (p)
+	}
+}
