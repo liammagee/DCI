@@ -409,6 +409,34 @@ genderAndAgeChart <- function(augmented.data) {
 	return (p)
 }
 
+
+
+stateChart <- function(augmented.data) {
+
+	p <- ggplot(augmented.data, aes(x=state)) +
+				geom_bar(width=0.5) + 
+				# x.scale + 
+	    		coord_flip() 
+
+	p <- augmentChart(p, augmented.data$state, unique(augmented.data$state))
+
+	return (p)
+}
+
+
+
+locationChart <- function(augmented.data) {
+
+	p <- ggplot(augmented.data, aes(x=location)) +
+				geom_bar(width=0.5) + 
+				# x.scale + 
+	    		coord_flip() 
+
+	p <- augmentChart(p, augmented.data$location, unique(augmented.data$location))
+
+	return (p)
+}
+
 chartVariableByAge <- function(data, filename, metadata, labelsY) {
 	p <- standardBarChart(data,
 					filename,
@@ -574,6 +602,70 @@ generateSingleGenderFrequency <- function(x, vars, func) {
 
 generateGenderFrequencies <- function(vars, func) {
 	sapply(seq(1:length(vars)), generateSingleGenderFrequency, vars, func)
+}
+
+generateSingleStateFrequency <- function(x, vars, func) {
+	if (x > 0) {
+		ind.names <- obtainIndicatorNames(vars)
+		var.name <- vars[x]
+		ind.name <- ind.names[x]
+
+		freqs <- table(augmented.data[,var.name], augmented.data$state)
+		metadata <- expandedIndicators[which(ind.name == expandedIndicators$DCI.ID),]
+	}
+	else {
+		var.name <- vars[1]
+		ind.name <- gsub("Q", "", var.name)
+	
+		freqs <- table(augmented.data[,var.name], augmented.data$state)
+		metadata <- indicators[which(ind.name == indicators$DCI.ID),]
+		# For consistency
+		metadata$Name <- as.character(metadata$Indicator...Variable)
+	}
+	p <- chartFrequencies(freqs,
+							paste("state/", var.name, "_freqs", sep = ""),
+							metadata,
+							func,
+							"by State",
+							"State",
+							FALSE)
+	return (p)
+}
+
+generateStateFrequencies <- function(vars, func) {
+	sapply(seq(1:length(vars)), generateSingleStateFrequency, vars, func)
+}
+
+generateSingleLocationFrequency <- function(x, vars, func) {
+	if (x > 0) {
+		ind.names <- obtainIndicatorNames(vars)
+		var.name <- vars[x]
+		ind.name <- ind.names[x]
+
+		freqs <- table(augmented.data[,var.name], augmented.data$location)
+		metadata <- expandedIndicators[which(ind.name == expandedIndicators$DCI.ID),]
+	}
+	else {
+		var.name <- vars[1]
+		ind.name <- gsub("Q", "", var.name)
+	
+		freqs <- table(augmented.data[,var.name], augmented.data$location)
+		metadata <- indicators[which(ind.name == indicators$DCI.ID),]
+		# For consistency
+		metadata$Name <- as.character(metadata$Indicator...Variable)
+	}
+	p <- chartFrequencies(freqs,
+							paste("location/", var.name, "_freqs", sep = ""),
+							metadata,
+							func,
+							"by Location",
+							"Location",
+							FALSE)
+	return (p)
+}
+
+generateLocationFrequencies <- function(vars, func) {
+	sapply(seq(1:length(vars)), generateSingleLocationFrequency, vars, func)
 }
 
 

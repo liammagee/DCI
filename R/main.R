@@ -233,6 +233,40 @@ generateGenderFrequenciesForAggregate <- function() {
 	return (p)
 }
 
+generateStateFrequenciesForAggregate <- function() {
+	p <- generateSingleStateFrequency(0, c("Q74"), frequencyLabels)
+	p <- generateSingleStateFrequency(0, c("Q287"), importanceLabels)
+	p <- generateSingleStateFrequency(0, c("Q341"), agreementLabels)
+	p <- generateSingleStateFrequency(0, c("Q343"), frequencyMonthLabels)
+	p <- generateSingleStateFrequency(0, c("Q352"), frequencyMonthLabels)
+	p <- generateSingleStateFrequency(0, c("Q353"), agreementLabels)
+	p <- generateSingleStateFrequency(0, c("Q428"), agreementLabels)
+	p <- generateSingleStateFrequency(0, c("Q429"), agreementLabels)
+	p <- generateSingleStateFrequency(0, c("Q430"), importanceLabels)
+	p <- generateSingleStateFrequency(0, c("Q431"), easeLabels)
+	p <- generateSingleStateFrequency(0, c("Q434"), frequencyMonthLabels)
+	p <- generateSingleStateFrequency(0, c("Q435"), agreementLabels)
+	p <- generateSingleStateFrequency(0, c("Q437"), frequencyMonthLabels)
+	return (p)
+}
+
+generateLocationFrequenciesForAggregate <- function() {
+	p <- generateSingleLocationFrequency(0, c("Q74"), frequencyLabels)
+	p <- generateSingleLocationFrequency(0, c("Q287"), importanceLabels)
+	p <- generateSingleLocationFrequency(0, c("Q341"), agreementLabels)
+	p <- generateSingleLocationFrequency(0, c("Q343"), frequencyMonthLabels)
+	p <- generateSingleLocationFrequency(0, c("Q352"), frequencyMonthLabels)
+	p <- generateSingleLocationFrequency(0, c("Q353"), agreementLabels)
+	p <- generateSingleLocationFrequency(0, c("Q428"), agreementLabels)
+	p <- generateSingleLocationFrequency(0, c("Q429"), agreementLabels)
+	p <- generateSingleLocationFrequency(0, c("Q430"), importanceLabels)
+	p <- generateSingleLocationFrequency(0, c("Q431"), easeLabels)
+	p <- generateSingleLocationFrequency(0, c("Q434"), frequencyMonthLabels)
+	p <- generateSingleLocationFrequency(0, c("Q435"), agreementLabels)
+	p <- generateSingleLocationFrequency(0, c("Q437"), frequencyMonthLabels)
+	return (p)
+}
+
 
 # Generate all subquestion charts
 generateSubQuestionCharts <- function() {
@@ -288,8 +322,22 @@ generateAll <- function() {
 	generateGenderFrequencies(vars.agreement, agreementLabels)
 	generateGenderFrequencies(vars.importance, importanceLabels)
 
+	generateStateFrequencies(vars.frequency, frequencyLabels)
+	generateStateFrequencies(vars.frequency.months, frequencyMonthLabels)
+	generateStateFrequencies(vars.ease, easeLabels)
+	generateStateFrequencies(vars.agreement, agreementLabels)
+	generateStateFrequencies(vars.importance, importanceLabels)
+
+	generateLocationFrequencies(vars.frequency, frequencyLabels)
+	generateLocationFrequencies(vars.frequency.months, frequencyMonthLabels)
+	generateLocationFrequencies(vars.ease, easeLabels)
+	generateLocationFrequencies(vars.agreement, agreementLabels)
+	generateLocationFrequencies(vars.importance, importanceLabels)
+
 	generateAgeFrequenciesForAggregate()
 	generateGenderFrequenciesForAggregate()
+	generateStateFrequenciesForAggregate()
+	generateLocationFrequenciesForAggregate()
 
 	# Sub question frequences
 	generateSubQuestionCharts()
