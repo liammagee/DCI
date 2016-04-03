@@ -2,8 +2,11 @@
 title: "Digital Capacities Index - Quantitative Findings"
 author: "Liam Magee, Delphine Bellarose, Anjali Sharma"
 date: "31 March 2016"
-output: html_document
 bibliography: DCI.bib
+output:
+  word_document:
+    toc: true
+    toc_depth: 4
 ---
 
 <!-- output: word_document -->
@@ -124,9 +127,19 @@ Our survey asked participants to respond to two questions about competencies:
 
 #### Frequency of online activity
 
+*Frequency of online activity* measures frequency of 15 different activities, ranging from highly common activities such as sending email through to less common activities (in 2016), such as writing blogs.
 
-##### Aggregated online activity
+##### By activity 
 
+The graph below shows the relative frequencies of each activity. Using the Internet generally (for work, study, and for personal use), sending email and social networking are the most common activities. Streaming music, playing games with others, sharing media and writing blogs or diaries are comparatively uncommon activities.
+
+```{r graphSubQuestion74, echo=FALSE}
+graphSubQuestionFrequencies(
+	vars.competencies.online.activities.74, 
+	"Frequency", 
+	frequencyLabels, 
+	"online-activities-74")
+```
 
 
 ##### Aggregated online activity
@@ -135,56 +148,136 @@ Our survey asked participants to respond to two questions about competencies:
 histogram(vars.competencies.online.activities.74, 'Online Activities', 'gen/Q74')
 ```
 
+#### Perceived ease of conducting online activity
 
-
-#### Aggregated by age
-
-```{r ageFreqForAggregate, echo=FALSE}
-
-generateAgeFrequenciesForAggregate()
+```{r echo=FALSE}
+    graphSubQuestionFrequencies(vars.competencies.431, "Ease", easeLabels, "competencies-ease-of-tasks-431")
 ```
+
+
 
 
 
 ### Interests
 
 
+#### General Interests
+
+```{r echo=FALSE}
+    graphSubQuestionFrequencies(vars.interests.general.437, "Frequency", frequencyMonthLabels, "interests-general-437")
+```
+
+
+#### Interest in seeking difference
+
+
+```{r echo=FALSE}
+    graphSubQuestionFrequencies(vars.interests.difference.seeking.341, "Agreement", agreementLabels, "interests-difference-seeking-341")
+```
+
+
+#### Interest in fitness and health improvement
+
+```{r echo=FALSE}
+    graphSubQuestionFrequencies(vars.interests.fitness.352, "Frequency", frequencyMonthLabels, "interests-fitness-352")
+```
+
+
+```{r echo=FALSE}
+    graphSubQuestionFrequencies(vars.interests.health.improvement.353, "Agreement", agreementLabels, "interests-health-improvement-353")
+```
+
+
+#### Interest in keeping in touch
+
+```{r echo=FALSE}
+    graphSubQuestionFrequencies(vars.interests.keeping.in.touch.430, "Importance", importanceLabels, "keeping-in-touch-430")
+```
+
 
 
 
 ### Resilience
 
-**TBD**
+
+
+
+#### Frequency of harmful events
+
+```{r echo=FALSE}
+    graphSubQuestionFrequencies(vars.resilience.harm.events.434, "Frequency", frequencyMonthLabels, "resilience-harm-events-434")
+```
+
+
+#### Responses to statements about online harms
+
+```{r echo=FALSE}
+    graphSubQuestionFrequencies(vars.resilience.harms.agreement.435, "Agreement", agreementLabels, "resilience-harms-agreement-435")
+```
+
+
+#### Willingness to engage with others
+
+```{r echo=FALSE}
+    graphSubQuestionFrequencies(vars.resilience.engage.with.others.428, "Agreement", agreementLabels, "resilience-engage-with-others-428")
+```
 
 
 ### Social Connectedness
 
-**TBD**
+#### Maintaining connections
+
+```{r echo=FALSE}
+    graphSubQuestionFrequencies(vars.connectedness.events.343, "Frequency", frequencyMonthLabels, "connectedness-events-343")
+```
+
+
+```{r echo=FALSE}
+    graphSubQuestionFrequencies(vars.connectedness.maintenance.287, "Importance", importanceLabels, "maintaining-connections-287")
+```
+
+
+
+#### Attitudes towards Technology
+
+
+```{r echo=FALSE}
+    graphSubQuestionFrequencies(vars.connectedness.tech.attitudes.429, "Agreement", agreementLabels, "connectedness-tech-attitudes-429")
+```
+
+
 
 
 
 ## Overall results
 
 
+#### Aggregated by age
+
+```{r ageFreqForAggregate, echo=FALSE}
+
+## generateAgeFrequenciesForAggregate()
+```
+
 <!--
 ```{r generateInterests, echo=FALSE}
-generateInterests()
+## generateInterests()
 ```
 
 ```{r generateCompetencies, echo=FALSE}
-generateCompetencies()
+## generateCompetencies()
 ```
 
 ```{r generateResilience, echo=FALSE}
-generateResilience()
+## generateResilience()
 ```
 
 ```{r generateConnectedness, echo=FALSE}
-generateConnectedness()
+## generateConnectedness()
 ```
 
 ```{r generateIndex, echo=FALSE}
-generateIndex()
+## generateIndex()
 ```
 
 -->

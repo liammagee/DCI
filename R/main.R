@@ -11,6 +11,7 @@ installDeps()
 # Imports
 library(gdata)
 library(reshape2)
+library(plyr)
 
 print("Loading DCI data")
 
@@ -142,8 +143,10 @@ results <- loadSurveyResults()
 # print(colnames(results))
 
 age <- "Q10_159"
-gender <- "Q1" # 193 = "Male", 194 = "Female"
-augmented.data <- results[,c(age, gender, vars)]
+gender <- "Q1" # 193 = "Male", 194 = "Female", 195 = "Other", 196 = "Refused"
+state <- "STATE1"
+location <- "LOCATION1"
+augmented.data <- results[,c(age, gender, state, location, vars)]
 
 # Recode variables
 augmented.data$age <- augmented.data$Q10_159
@@ -154,6 +157,17 @@ augmented.data$gender[augmented.data$Q1 == 193] <- "Male"
 augmented.data$gender[augmented.data$Q1 == 194] <- "Female"
 augmented.data$gender[augmented.data$Q1 == 195] <- "Other"
 augmented.data$gender[augmented.data$Q1 == 196] <- "Refused"
+augmented.data$state[augmented.data$STATE1 == 1] <- "ACT"
+augmented.data$state[augmented.data$STATE1 == 2] <- "NSW"
+augmented.data$state[augmented.data$STATE1 == 3] <- "VIC"
+augmented.data$state[augmented.data$STATE1 == 4] <- "QLD"
+augmented.data$state[augmented.data$STATE1 == 5] <- "SA"
+augmented.data$state[augmented.data$STATE1 == 6] <- "WA"
+augmented.data$state[augmented.data$STATE1 == 7] <- "NT"
+augmented.data$state[augmented.data$STATE1 == 8] <- "TAS"
+augmented.data$location[augmented.data$LOCATION1 == 1] <- "Urban"
+augmented.data$location[augmented.data$LOCATION1 == 2] <- "Regional/Rural"
+
 
 # Create sums
 augmented.data$Q74 <- round(rowMeans(augmented.data[,vars.competencies.online.activities.74])	)
@@ -173,181 +187,6 @@ augmented.data$Q437 <- round(rowMeans(augmented.data[,vars.interests.general.437
 # Shorthand
 data <- augmented.data
 
-chartVariableByAge <- function(data, filename, metadata, labelsY) {
-	p <- standardBarChart(data,
-					filename,
-					paste(metadata$Name, " by Age"),
-					"Age by Decade",
-					metadata$Name,
-					labelsY
-					)
-	comment <- paste("Printed graph of ", metadata$Name, " to ./figs/", filename, ".png", sep="")
-	if (PRINTING) {
-		print(comment)
-	}
-	comment <- paste("Type 'open ./figs/", filename, ".png' from the terminal to view the file.", sep="")
-	if (PRINTING) {
-		print(comment)
-	}
-	return (p)
-}
-
-chartFrequencies <- function(data, filename, metadata, labelsY, desc1, desc2, use.years = TRUE) {
-	p <- freqDistChart(data,
-					filename,
-					paste(metadata$Name, desc1),
-					desc2,
-					metadata$Name,
-					labelsY,
-					use.years
-					)
-	comment <- paste("Printed graph of ", metadata$Name, " to ./figs/", filename, ".png", sep="")
-	if (PRINTING == TRUE) {
-		print(comment)
-	}
-	# comment <- paste("Type 'open ./figs/", filename, ".png' from the terminal to view the file.", sep="")
-	# print(comment)
-	return (p)
-}
-
-
-
-
-# Obtain indicator names
-# vars.names <- gsub("Q([[:digit:]]*)_([[:digit:]]*)", "\\1.\\2", vars)
-
-generateChartsForVariable <- function(var) {
-	var.name <- gsub("Q", "", var)
-	var.parts <- unlist(strsplit(c(var.name), "_"))
-	v1 <- var.parts[1]
-	v2 <- var.parts[2]
-	var.name <- gsub("Q([[:digit:]]*)_([[:digit:]]*)", "\\1.\\2", var)
-	if (PRINTING) {
-		print(var.name)
-	}
-}
-
-
-
-obtainIndicatorName <- function(var) {
-	var.name <- gsub("Q", "", var)
-	var.parts <- unlist(strsplit(c(var.name), "_"))
-	v1 <- as.integer(var.parts[1])
-	v2 <- as.integer(var.parts[2])
-	if (!is.na(v1)) {
-		ind.name <- paste(v1, ".", v2, sep = "")
-	}
-	else {
-		ind.name <- v1
-	}
-	return (ind.name)		
-}
-
-obtainIndicatorNames <- function(vars) {
-	v1.last <- 0
-	v.counter <- 0
-	ind.names <- c()
-	for (i in 1:length(vars)) {
-		var <- vars[i]
-		var.name <- gsub("Q", "", var)
-		var.parts <- unlist(strsplit(c(var.name), "_"))
-		v1 <- as.integer(var.parts[1])
-		v2 <- as.integer(var.parts[2])
-		if (!is.na(v1)) {
-			if (v1 != v1.last) {
-				v.counter <- 1
-			}
-			v2 <- v.counter
-			ind.name <- paste(v1, ".", v2, sep = "")
-			v1.last <- v1
-		}
-		else {
-			v.counter <- 1
-			ind.name <- var.name
-		}
-		ind.names <- c(ind.names, ind.name)
-		v.counter <- v.counter + 1
-	}
-
-	return(ind.names)
-}
-
-
-
-generateSingleAgeFrequency <- function(x, vars, func) {
-	if (x > 0) {
-		ind.names <- obtainIndicatorNames(vars)
-		var.name <- vars[x]
-		ind.name <- ind.names[x]
-
-		freqs <- table(augmented.data[,var.name], augmented.data$age.breaks)
-		metadata <- expandedIndicators[which(ind.name == expandedIndicators$DCI.ID),]
-	}
-	else {
-		var.name <- vars[1]
-		ind.name <- gsub("Q", "", var.name)
-	
-		freqs <- table(augmented.data[,var.name], augmented.data$age.breaks)
-		metadata <- indicators[which(ind.name == indicators$DCI.ID),]
-		# For consistency
-		metadata$Name <- as.character(metadata$Indicator...Variable)
-	}
-
-	p <- chartFrequencies(freqs,
-							paste("age/", var.name, "_freqs", sep = ""),
-							metadata,
-							func,
-							"by Age",
-							"Age",
-							TRUE)
-	return (p)
-}
-
-generateAgeFrequencies <- function(vars, func) {
-	sapply(seq(1:length(vars)), generateSingleAgeFrequency, vars, func )
-}
-
-
-generateSingleGenderFrequency <- function(x, vars, func) {
-	if (x > 0) {
-		ind.names <- obtainIndicatorNames(vars)
-		var.name <- vars[x]
-		ind.name <- ind.names[x]
-
-		freqs <- table(augmented.data[,var.name], augmented.data$gender)
-		metadata <- expandedIndicators[which(ind.name == expandedIndicators$DCI.ID),]
-	}
-	else {
-		var.name <- vars[1]
-		ind.name <- gsub("Q", "", var.name)
-	
-		freqs <- table(augmented.data[,var.name], augmented.data$gender)
-		metadata <- indicators[which(ind.name == indicators$DCI.ID),]
-		# For consistency
-		metadata$Name <- as.character(metadata$Indicator...Variable)
-	}
-	p <- chartFrequencies(freqs,
-							paste("gender/", var.name, "_freqs", sep = ""),
-							metadata,
-							func,
-							"by Gender",
-							"Gender",
-							FALSE)
-	return (p)
-}
-
-generateGenderFrequencies <- function(vars, func) {
-	sapply(seq(1:length(vars)), generateSingleGenderFrequency, vars, func)
-}
-
-
-sumVariable <- function() {
-	vars.of.interest = vars.competencies.online.activities.74
-	means <- sapply(vars.of.interest, function(x) { 
-		mean(augmented.data[,x])
-	} )
-	print(mean(means))
-}
 
 ## Demographcs
 
@@ -398,18 +237,21 @@ generateGenderFrequenciesForAggregate <- function() {
 # Generate all subquestion charts
 generateSubQuestionCharts <- function() {
 	graphSubQuestionFrequencies(vars.competencies.online.activities.74, "Frequency", frequencyLabels, "online-activities-74")
-	graphSubQuestionFrequencies(vars.connectedness.maintenance.287, "Importance", importanceLabels, "maintaining-connections-287")
+	graphSubQuestionFrequencies(vars.competencies.431, "Ease", easeLabels, "competencies-ease-of-tasks-431")
+
 	graphSubQuestionFrequencies(vars.interests.difference.seeking.341, "Agreement", agreementLabels, "interests-difference-seeking-341")
-	graphSubQuestionFrequencies(vars.connectedness.events.343, "Frequency", frequencyMonthLabels, "connectedness-events-343")
 	graphSubQuestionFrequencies(vars.interests.fitness.352, "Frequency", frequencyMonthLabels, "interests-fitness-352")
 	graphSubQuestionFrequencies(vars.interests.health.improvement.353, "Agreement", agreementLabels, "interests-health-improvement-353")
-	graphSubQuestionFrequencies(vars.resilience.engage.with.others.428, "Agreement", agreementLabels, "resilience-engage-with-others-428")
-	graphSubQuestionFrequencies(vars.connectedness.tech.attitudes.429, "Agreement", agreementLabels, "connectedness-tech-attitudes-429")
+	graphSubQuestionFrequencies(vars.interests.general.437, "Frequency", frequencyMonthLabels, "interests-general-437")
 	graphSubQuestionFrequencies(vars.interests.keeping.in.touch.430, "Importance", importanceLabels, "keeping-in-touch-430")
-	graphSubQuestionFrequencies(vars.competencies.431, "Ease", easeLabels, "competencies-ease-of-tasks-431")
+
+	graphSubQuestionFrequencies(vars.resilience.engage.with.others.428, "Agreement", agreementLabels, "resilience-engage-with-others-428")
 	graphSubQuestionFrequencies(vars.resilience.harm.events.434, "Frequency", frequencyMonthLabels, "resilience-harm-events-434")
 	graphSubQuestionFrequencies(vars.resilience.harms.agreement.435, "Agreement", agreementLabels, "resilience-harms-agreement-435")
-	graphSubQuestionFrequencies(vars.interests.general.437, "Frequency", frequencyMonthLabels, "interests-general-437")
+
+	graphSubQuestionFrequencies(vars.connectedness.tech.attitudes.429, "Agreement", agreementLabels, "connectedness-tech-attitudes-429")
+	graphSubQuestionFrequencies(vars.connectedness.maintenance.287, "Importance", importanceLabels, "maintaining-connections-287")
+	graphSubQuestionFrequencies(vars.connectedness.events.343, "Frequency", frequencyMonthLabels, "connectedness-events-343")
 }
 
 generateInterests <- function() {
