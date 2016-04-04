@@ -1,7 +1,10 @@
 ---
 title: "Digital Capacities Index - Quantitative Findings"
-author: "Liam Magee, Delphine Bellarose, Anjali Sharma"
-date: "31 March 2016"
+author: | 
+  | Liam Magee^1^, Delphine Bellarose^1^, Anjali Sharma^1^, Louise Crabtree^1^, Philippa Collin^1^, Justine Humphry^1^, Paul James^1^, Emma Kearney^1^, Tanya Notley^1^, Amanda Third^1^, Samantha Yorke^2^
+  | 1. Western Sydney University
+  | 2. Google Australia
+date: "4 April 2016"
 bibliography: DCI.bib
 output:
   html_document:
@@ -94,7 +97,7 @@ Participant ages ranged from `r min(data$age)` to `r max(data$age)`, with a medi
 
 Participant gender is roughly evenly distributed. The survey included `r format(length(which(data$gender == "Female")), big.mark   = ",")` (`r format(100 * length(which(data$gender == "Female")) / length(data$gender), digits = 2)`%) women; `r format(length(which(data$gender == "Male")), big.mark   = ",")` (`r format(100 * length(which(data$gender == "Male")) / length(data$gender), digits = 2)`%) men; and `r format(length(which(data$gender == "Other")), big.mark   = ",")` (`r format(100 * length(which(data$gender == "Other")) / length(data$gender), digits = 2)`%) identifying as 'Other'.
 
-Gender demographics are distributed as per *Graph 2*:
+Gender demographics are distributed, as show in `r cf("gender.freq")`:
 
 ```{r genderFreq, echo=FALSE}
 

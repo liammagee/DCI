@@ -18,6 +18,8 @@ installDeps <- function() {
   if(length(.pkgs[!.inst]) > 0) install.packages(.pkgs[!.inst])
  
   # Install from Github
-  devtools::install_github("adletaw/captioner") 
+  # TODO: Make this conditional on whether the source has changed
+  # Otherwise slows down sourcing the main.R file.
+  # devtools::install_github("adletaw/captioner") 
 }
 

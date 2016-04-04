@@ -737,6 +737,8 @@ graphSubQuestionFrequencies  <- function(vars, legend.name, legendBreakFunc, fil
 	m <- melt(data[,vars], id.vars = c())
 	# Generate counts of the item data
 	cm <- count(m, c("variable", "value"))
+	# Recode, to solve problem with ggplotly and scale_fill_manual
+	cm$value.coded <- mapvalues(cm$value, from = 1:length(legendBreakFunc()), to = legendBreakFunc())
 	# Relative frequencies (Q10_159 is age)
 	cm$rel.freq <- cm$freq / length(data$Q10_159)
 	# Rename for simplicity - TODO: push up to the global variable
@@ -760,12 +762,13 @@ graphSubQuestionFrequencies  <- function(vars, legend.name, legendBreakFunc, fil
 									breaks = seq(0.0, 1.0, by = 0.2), 
 									labels = paste(seq(0, 100, by = 20), "%", sep = ""))
 	fill.scale <- scale_fill_manual(name=legend.name,
-				 values=yawcrcPalette,
-                 breaks=seq(1:length(legendBreakFunc())),
-                 labels=legendBreakFunc())
+				 values=yawcrcPalette)
+	# Works around problem with plot.ly - see http://stackoverflow.com/questions/35369309/plotly-legend-problems-with-ggplot2
+				# , breaks=seq(1:length(legendBreakFunc()))
+				# , labels=legendBreakFunc()
 	# Generate plot
 	p <- ggplot(data = cm, 
-		aes(x = variable, y = rel.freq, fill = factor(value))) + 
+		aes(x = variable, y = rel.freq, fill = factor(value.coded))) + 
 	    geom_bar(width = 0.5, stat = "identity") + 
 	    coord_flip() +
 	    x.scale +

@@ -398,6 +398,7 @@ generateIndexForCompetencies <- function() {
 	histogram(vars.competencies.for.index, 'Competencies', 'gen/index-competencies')
 }
 
+
 generateIndexForInterests <- function() {
 	# Interests are correctly coded: low values mean higher competencies
 	vars.interest.for.index <- vars.interest
@@ -471,6 +472,241 @@ generateAll <- function() {
 
 }
 
+sumCompetencies <- function() {
+	# Competencies are correctly coded: low values mean higher competencies
+	vars.competencies.for.index <- c()
+	# Score frequency
+	for (i in 1:length(vars.competencies.online.activities.74)) {
+		var.name <- vars.competencies.online.activities.74[i]
+		new.var <- paste(var.name, ".for.index", sep = "")
+		c <- augmented.data[,var.name]
+		d <- 5 - c
+		# Convert "Don't know" to "Less often" - conservative guess
+		d <- replace(d, d == -1, 1)
+		vars.competencies.for.index <- c(vars.competencies.for.index, new.var)
+		augmented.data[new.var] <- d
+	}
+	# Score ease
+	for (i in 1:length(vars.competencies.431)) {
+		var.name <- vars.competencies.431[i]
+		new.var <- paste(var.name, ".for.index", sep = "")
+		c <- augmented.data[,var.name]
+		d <- 5 - c
+		# Convert "Don't know" to "Neither easy nor difficult" - conservative guess
+		# Convert "Not applicable" to "Neither easy nor difficult" - conservative guess
+		d <- replace(d, d == -1, 2)
+		d <- replace(d, d == -2, 2)
+		vars.competencies.for.index <- c(vars.competencies.for.index, new.var)
+		augmented.data[new.var] <- d
+	}
+	# Max value: (Q74) +  (Q431)
+	# Max value: 15 * 4 + 27 * 4
+	divisor <- 168
+	augmented.data$competencies.index <- 100 * rowSums(augmented.data[,vars.competencies.for.index]) / divisor
+	return(augmented.data$competencies.index)
+}
+
+sumInterests <- function() {
+	# Score frequency
+	vars.interests.for.index <- c()
+
+	for (i in 1:length(vars.interests.general.437)) {
+		var.name <- vars.interests.general.437[i]
+		new.var <- paste(var.name, ".for.index", sep = "")
+		c <- augmented.data[,var.name]
+		d <- 6 - c
+		# Convert "Don't know" to "Less than Once a Month" - conservative guess
+		d <- replace(d, d == -1, 1)
+		vars.interests.for.index <- c(vars.interests.for.index, new.var)
+		augmented.data[new.var] <- d
+	}
+	for (i in 1:length(vars.interests.difference.seeking.341)) {
+		var.name <- vars.interests.difference.seeking.341[i]
+		new.var <- paste(var.name, ".for.index", sep = "")
+		c <- augmented.data[,var.name]
+		d <- 5 - c
+		# Convert "Don't know" to "Neither agree nor disagree" - conservative guess
+		d <- replace(d, d == -1, 2)
+		# Convert "Not Applicable" to "Neither agree nor disagree" - conservative guess
+		d <- replace(d, d == -2, 2)
+		vars.interests.for.index <- c(vars.interests.for.index, new.var)
+		augmented.data[new.var] <- d
+	}
+	for (i in 1:length(vars.interests.fitness.352)) {
+		var.name <- vars.interests.fitness.352[i]
+		new.var <- paste(var.name, ".for.index", sep = "")
+		c <- augmented.data[,var.name]
+		d <- 6 - c
+		# Convert "Don't know" to "Less than Once a Month" - conservative guess
+		d <- replace(d, d == -1, 1)
+		vars.interests.for.index <- c(vars.interests.for.index, new.var)
+		augmented.data[new.var] <- d
+	}
+	for (i in 1:length(vars.interests.health.improvement.353)) {
+		var.name <- vars.interests.health.improvement.353[i]
+		new.var <- paste(var.name, ".for.index", sep = "")
+		c <- augmented.data[,var.name]
+		d <- 5 - c
+		# Convert "Don't know" to "Neither agree nor disagree" - conservative guess
+		d <- replace(d, d == -1, 2)
+		# Convert "Not Applicable" to "Neither agree nor disagree" - conservative guess
+		d <- replace(d, d == -2, 2)
+		vars.interests.for.index <- c(vars.interests.for.index, new.var)
+		augmented.data[new.var] <- d
+	}
+	for (i in 1:length(vars.interests.keeping.in.touch.430)) {
+		var.name <- vars.interests.keeping.in.touch.430[i]
+		new.var <- paste(var.name, ".for.index", sep = "")
+		c <- augmented.data[,var.name]
+		d <- 4 - c
+		vars.interests.for.index <- c(vars.interests.for.index, new.var)
+		augmented.data[new.var] <- d
+	}
+	
+	# Max value: (Q437) + (Q341) + (Q352) + (Q353) + (Q341)
+	# Max value: 11 * 5 + 7 * 4  + 10 * 5  + 2 * 4 + 14 * 3
+	divisor <- 183
+	augmented.data$interests.index <- 100 * rowSums(augmented.data[,vars.interests.for.index]) / divisor
+	return(augmented.data$interests.index)
+	
+}
+
+sumResilience <- function() {
+	# Score frequency
+	vars.resilience.for.index <- c()
+	vars.resilience.engage.with.others.428
+	vars.resilience.harm.events.434
+	vars.resilience.harms.agreement.435
+
+	for (i in 1:length(vars.resilience.harm.events.434)) {
+		var.name <- vars.resilience.harm.events.434[i]
+		new.var <- paste(var.name, ".for.index", sep = "")
+		c <- augmented.data[,var.name]
+		d <- 6 - c
+		# Convert "Don't know" to "Less than Once a Month" - conservative guess
+		d <- replace(d, d == -1, 1)
+		vars.resilience.for.index <- c(vars.resilience.for.index, new.var)
+		augmented.data[new.var] <- d
+	}
+	for (i in 1:length(vars.resilience.harms.agreement.435)) {
+		var.name <- vars.resilience.harms.agreement.435[i]
+		new.var <- paste(var.name, ".for.index", sep = "")
+		c <- augmented.data[,var.name]
+		d <- 5 - c
+		# Convert "Don't know" to "Neither agree nor disagree" - conservative guess
+		d <- replace(d, d == -1, 2)
+		# Convert "Not Applicable" to "Neither agree nor disagree" - conservative guess
+		d <- replace(d, d == -2, 2)
+		vars.resilience.for.index <- c(vars.resilience.for.index, new.var)
+		augmented.data[new.var] <- d
+	}
+
+	# TODO: Meaning of 106-109 for resilience? Maybe connectedness?
+
+	# QUESTION: When I am going through a difficult time, I go online less often
+	var.name <- "Q428_110"
+	new.var <- paste(var.name, ".for.index", sep = "")
+	c <- augmented.data[,var.name]
+	# Normalise - Strongly agree means *less* resilient
+	d <- c - 1
+	# Convert "Don't know" to "Neither agree nor disagree" - conservative guess
+	d <- replace(d, d == 5, 2)
+	# Convert "Not Applicable" to "Neither agree nor disagree" - conservative guess
+	d <- replace(d, d == 6, 2)
+	vars.resilience.for.index <- c(vars.resilience.for.index, new.var)
+	augmented.data[new.var] <- d
+
+	# QUESTION: When I am going through a difficult time, going online makes me feel better
+	var.name <- "Q428_111"
+	new.var <- paste(var.name, ".for.index", sep = "")
+	c <- augmented.data[,var.name]
+	# Normalise - Strongly agree means *more* resilient
+	d <- 5 - c
+	# Convert "Don't know" to "Neither agree nor disagree" - conservative guess
+	d <- replace(d, d == -2, 2)
+	# Convert "Not Applicable" to "Neither agree nor disagree" - conservative guess
+	d <- replace(d, d == -1, 2)
+	vars.resilience.for.index <- c(vars.resilience.for.index, new.var)
+	augmented.data[new.var] <- d
+
+	# Max value: (Q434) + (Q435) + (Q428)
+	# Max value: 11 * 5 + 7 * 4  + 2 * 4
+	divisor <- 91
+	augmented.data$resilience.index <- 100 * rowSums(augmented.data[,vars.resilience.for.index]) / divisor
+	return(augmented.data$resilience.index)
+	
+}
+
+sumConnectedness <- function() {
+	# Score frequency
+	vars.connectedness.for.index <- c()
+
+	
+	for (i in 1:length(vars.connectedness.helping.others.277)) {
+		var.name <- vars.connectedness.helping.others.277[i]
+		new.var <- paste(var.name, ".for.index", sep = "")
+		c <- augmented.data[,var.name]
+		d <- c - 1
+		vars.connectedness.for.index <- c(vars.connectedness.for.index, new.var)
+		augmented.data[new.var] <- d
+	}
+	for (i in 1:length(vars.connectedness.sought.help.from.others.280)) {
+		var.name <- vars.connectedness.sought.help.from.others.280[i]
+		new.var <- paste(var.name, ".for.index", sep = "")
+		c <- augmented.data[,var.name]
+		d <- c - 1
+		vars.connectedness.for.index <- c(vars.connectedness.for.index, new.var)
+		augmented.data[new.var] <- d
+	}
+	for (i in 1:length(vars.connectedness.maintenance.287)) {
+		var.name <- vars.connectedness.maintenance.287[i]
+		new.var <- paste(var.name, ".for.index", sep = "")
+		c <- augmented.data[,var.name]
+		d <- 3 - c
+		# Convert "Don't know" to "Not important at all" - conservative guess
+		d <- replace(d, d == -1, 0)
+		vars.connectedness.for.index <- c(vars.connectedness.for.index, new.var)
+		augmented.data[new.var] <- d
+	}
+	for (i in 1:length(vars.connectedness.events.343)) {
+		var.name <- vars.connectedness.events.343[i]
+		new.var <- paste(var.name, ".for.index", sep = "")
+		c <- augmented.data[,var.name]
+		d <- 6 - c
+		# Convert "Don't know" to "Less than Once a Month" - conservative guess
+		d <- replace(d, d == -1, 1)
+		vars.connectedness.for.index <- c(vars.connectedness.for.index, new.var)
+		augmented.data[new.var] <- d
+	}
+	for (i in 1:length(vars.connectedness.tech.attitudes.429)) {
+		var.name <- vars.connectedness.tech.attitudes.429[i]
+		new.var <- paste(var.name, ".for.index", sep = "")
+		c <- augmented.data[,var.name]
+		d <- 5 - c
+		# Convert "Don't know" to "Neither agree nor disagree" - conservative guess
+		d <- replace(d, d == -1, 2)
+		# Convert "Not Applicable" to "Neither agree nor disagree" - conservative guess
+		d <- replace(d, d == -2, 2)
+		vars.connectedness.for.index <- c(vars.connectedness.for.index, new.var)
+		augmented.data[new.var] <- d
+	}
+
+	
+	# Max value: (Q277) + (Q280) + (Q287) + (Q343) + (Q429)
+	# Max value: 13 * 1 + 13 * 1 + 6 * 2  + 8 * 5  + 9 * 4 
+	divisor <- 114
+	augmented.data$connectedness.index <- 100 * rowSums(augmented.data[,vars.connectedness.for.index]) / divisor
+	return(augmented.data$connectedness.index)
+	
+}
+
+sumIndex <- function() {
+	sct <- sumCompetencies()
+	sin <- sumInterests()
+	sre <- sumResilience()
+	scn <- sumConnectedness()
+	return ( ( sct + sin + sre + scn ) / 4 )
+}
 
 # generateSingleAgeFrequency(1, vars.ease, easeLabels)
 # generateAll()s
