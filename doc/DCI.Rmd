@@ -14,15 +14,29 @@ output:
 
 
 ```{r setup, include=FALSE, echo=FALSE}
+library(captioner)
+library(pryr)
+
 knitr::opts_knit$set(root.dir="..")
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = FALSE, warning=FALSE, message=FALSE)
 setwd("..")
+
 
 source("R/main.R", FALSE)
 PRINTING <- FALSE
 
 # Set to false for non-HTML (e.g. word, pdf) outputs
 PLOTLY <- TRUE
+
+# Set up figure numbering
+fig_nums <- captioner(prefix = "Figure")
+cf <- partial(fig_nums, display = "cite")
+fig_nums("age.freq", "Age Frequency")
+fig_nums("gender.freq", "Gender Frequency")
+fig_nums("age.gender.freq", "Age & Gender Frequency")
+fig_nums("age.gender.freq.abs", "Australia's Age & Gender Frequency (ABS 2014)")
+
+
 
 ```
 
@@ -67,14 +81,14 @@ The survey included a total of `r format(sampleSize(), big.mark   = ",")` partic
 
 Participant ages ranged from `r min(data$age)` to `r max(data$age)`, with a median value of `r median(data$age)`. 
 
-*Graph 1* provides more detailed age demographics:
+*`r cf("age.freq")`* provides more detailed age demographics:
 
 ```{r ageFreq, echo=FALSE}
 
 (gg <- chartWrap(ageChart(data)))
 
 ```
-
+**`r fig_nums("age.freq")`**
 
 #### Gender
 
@@ -87,26 +101,27 @@ Gender demographics are distributed as per *Graph 2*:
 (gg <- chartWrap(genderChart(data)))
 
 ```
-
+**`r fig_nums("gender.freq")`**
 
 
 #### Combined Age and Gender
 
 
-Combined age and gender demographics are distributed as per *Graph 3*:
+Combined age and gender demographics are distributed as per *`r cf("age.gender.freq")`:
 
 ```{r genderAndAgeFreq, echo=FALSE}
 
 (gg <- chartWrap(genderAndAgeChart(data)))
 
 ```
+**`r fig_nums("age.gender.freq")`**
 
-These figures approximate to Australia's adult age distribution, as reported by the ABS in 2014 in *Graph 4* below, though with a considerably higher skew towards younger women and older men.
+These figures approximate to Australia's adult age distribution, as reported by the ABS in 2014 in **cf("age.gender.freq.abs")** below, though with a considerably higher skew towards younger women and older men.
 
 
 ![Population Structure, Age and sex - Australia - 1994 and 2014](http://www.abs.gov.au/ausstats/abs@.nsf/0/1cd2b1952afc5e7aca257298000f2e76/Body/0.2A9C!OpenElement&FieldElemFormat=gif)
 
-
+**fig_nums("age.gender.freq.abs")**
 
 
 

@@ -10,10 +10,14 @@ installDeps <- function() {
   			"stringr", 
   			"igraph", 
   			"plotly", 
-  			"plyr")
+  			"plyr", 
+  			"pryr", 
+  			"devtools")
   # Install required packages from CRAN (if not)
   .inst <- .pkgs %in% installed.packages()
   if(length(.pkgs[!.inst]) > 0) install.packages(.pkgs[!.inst])
-  
+ 
+  # Install from Github
+  devtools::install_github("adletaw/captioner") 
 }
 

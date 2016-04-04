@@ -14,6 +14,13 @@ knitr::opts_knit$set(root.dir="..")
 knitr::opts_chunk$set(echo = FALSE)
 setwd("..")
 
+library(captioner)
+library(pryr)
+fig_nums <- captioner(prefix = "Figure")
+fig_nums(name = "plot1", caption = "1st plot.")
+fig_nums(name = "plot2", caption = "2nd plot.")
+cf <- partial(fig_nums, display = "cite")
+
 source("R/main.R", FALSE)
 PRINTING <- FALSE
 
@@ -53,3 +60,28 @@ The correlation of *competencies* to *connectedness* is: `r cor(rowSums(augmente
 
 The correlation of *resilience* to *connectedness* is: `r cor(rowSums(augmented.data[,vars.resilience]), rowSums(augmented.data[,vars.connectedness]))`.
 
+```{r echo=FALSE}
+fn = local({
+  i = 0
+  function(x) {
+    i <<- i + 1
+    paste('Figure ', i, ': ', x, sep = '')
+  }
+})
+```
+
+```{r echo=FALSE}
+plot(1:10)
+```
+
+**`r fig_nums("plot1")`**
+
+
+```{r echo=FALSE}
+plot(rnorm(10))
+```
+
+**`r fig_nums("plot2")`**
+
+
+Referencing `r cf("plot2")`, then `r cf("plot1")`.
