@@ -317,8 +317,18 @@ generateSingleAgeFrequency(1, vars.ease, easeLabels)
 
 
 
-## Overall results
+## Overall results - TESTING ONLY
 
+### Index scores
+
+```{r echo=FALSE}
+
+(gg <- chartWrap(generateIndexChart()))
+
+```
+
+
+### Aggregated by age
 
 #### Aggregated by age
 

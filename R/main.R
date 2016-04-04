@@ -708,5 +708,29 @@ sumIndex <- function() {
 	return ( ( sct + sin + sre + scn ) / 4 )
 }
 
+generateIndexChart <- function() {
+
+	sc <- data.frame(sort(sumCompetencies()))
+	si <- data.frame(sort(sumInterests()))
+	sr <- data.frame(sort(sumResilience()))
+	ss <- data.frame(sort(sumConnectedness()))
+	sa <- data.frame(sort(sumIndex()))
+	sall <- cbind(sc, si, sr, ss, sa)
+	colnames(sall)[1] <- "Competencies"
+	colnames(sall)[2] <- "Interests"
+	colnames(sall)[3] <- "Resilience"
+	colnames(sall)[4] <- "Connectedness"
+	colnames(sall)[5] <- "Combined"
+	sall$id <- seq(1:length(sall$Competencies))
+
+	msc <- melt(sall, id = "id")
+
+	p <- ggplot(data=msc, aes(x = variable,y = value, colour=value)) + 
+		geom_bar(stat="identity", position = "fill") + 
+	    scale_colour_gradientn(colours=yawcrcPalette) +
+	    coord_flip() 
+    return (p)
+}
+
 # generateSingleAgeFrequency(1, vars.ease, easeLabels)
 # generateAll()s
