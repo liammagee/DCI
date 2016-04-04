@@ -28,7 +28,6 @@ PRINTING <- FALSE
 
 
 
-
 ## Digital Capacities Index - Test
 
 

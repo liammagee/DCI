@@ -7,7 +7,7 @@ author: |
 date: "4 April 2016"
 bibliography: DCI.bib
 output:
-  html_document:
+  pdf_document:
     toc: true
     toc_depth: 4
 ---
@@ -29,7 +29,12 @@ source("R/main.R", FALSE)
 PRINTING <- FALSE
 
 # Set to false for non-HTML (e.g. word, pdf) outputs
-PLOTLY <- TRUE
+PLOTLY <- FALSE
+rmd_output <- tryCatch({rmarkdown::metadata$output},
+                         error = function(e) {NULL})
+if (rmd_output == 'html_document') {
+  PLOTLY <- TRUE
+}
 
 # Set up figure numbering
 fig_nums <- captioner(prefix = "Figure")
