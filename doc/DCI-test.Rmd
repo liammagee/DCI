@@ -1,0 +1,86 @@
+---
+title: "Digital Capacities Index - Quantitative Findings"
+author: "Liam Magee, Delphine Bellarose, Anjali Sharma"
+date: "31 March 2016"
+output: html_document
+---
+
+<!-- output: word_document -->
+<!-- output: pdf_document -->
+
+
+```{r setup, include=FALSE, echo=FALSE}
+knitr::opts_knit$set(root.dir="..")
+knitr::opts_chunk$set(echo = FALSE)
+setwd("..")
+
+library(captioner)
+library(pryr)
+fig_nums <- captioner(prefix = "Figure")
+fig_nums(name = "plot1", caption = "1st plot.")
+fig_nums(name = "plot2", caption = "2nd plot.")
+cf <- partial(fig_nums, display = "cite")
+
+source("R/main.R", FALSE)
+PRINTING <- FALSE
+
+```
+
+
+
+## Digital Capacities Index - Test
+
+
+### Sum of scores
+
+The sum of the average scores to *interest* questions is: `r sum(colMeans(augmented.data[,vars.interest]))`.
+
+The sum of the average scores to *competency* questions is: `r sum(colMeans(augmented.data[,vars.competencies]))`.
+
+The sum of the average scores to *resilience* questions is: `r sum(colMeans(augmented.data[,vars.resilience]))`.
+
+The sum of the average scores to *connectedness* questions is: `r sum(colMeans(augmented.data[,vars.connectedness]))`.
+
+The sum of the average scores to all questions is: `r sum(colMeans(augmented.data[,vars.index]))`.
+
+
+### Correlations
+
+
+The correlation of *interests* to *competencies* is: `r cor(rowSums(augmented.data[,vars.interest]), rowSums(augmented.data[,vars.competencies]))`.
+
+The correlation of *interests* to *resilience* is: `r cor(rowSums(augmented.data[,vars.interest]), rowSums(augmented.data[,vars.resilience]))`.
+
+The correlation of *interests* to *connectedness* is: `r cor(rowSums(augmented.data[,vars.interest]), rowSums(augmented.data[,vars.connectedness]))`.
+
+The correlation of *competencies* to *resilience* is: `r cor(rowSums(augmented.data[,vars.competencies]), rowSums(augmented.data[,vars.resilience]))`.
+
+The correlation of *competencies* to *connectedness* is: `r cor(rowSums(augmented.data[,vars.competencies]), rowSums(augmented.data[,vars.connectedness]))`.
+
+The correlation of *resilience* to *connectedness* is: `r cor(rowSums(augmented.data[,vars.resilience]), rowSums(augmented.data[,vars.connectedness]))`.
+
+```{r echo=FALSE}
+fn = local({
+  i = 0
+  function(x) {
+    i <<- i + 1
+    paste('Figure ', i, ': ', x, sep = '')
+  }
+})
+```
+
+```{r echo=FALSE}
+plot(1:10)
+```
+
+**`r fig_nums("plot1")`**
+
+
+```{r echo=FALSE}
+plot(rnorm(10))
+```
+
+**`r fig_nums("plot2")`**
+
+
+Referencing `r cf("plot2")`, then `r cf("plot1")`.

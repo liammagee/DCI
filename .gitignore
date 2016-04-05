@@ -16,3 +16,6 @@ refs/att98dqt.pdf
 
 # Ignore temporary files
 ~*
+
+# Ignore outputs
+figs/**/*.png
