@@ -7,7 +7,7 @@ author: |
 date: "4 April 2016"
 bibliography: DCI.bib
 output:
-  pdf_document:
+  html_document:
     toc: true
     toc_depth: 4
 ---
@@ -82,8 +82,6 @@ A large number of candidate scales were distilled down to the current list after
 
 The survey included a total of `r format(sampleSize(), big.mark   = ",")` participants. We requested the survey provider provide a panel in terms of age groups, gender and geographic regions. As the panel provider recruited participants online, our pilot sample is expected to be skewed towards Australian citizens and families with comparatively high digital capacities. This caveat is signficant to the interpretation of our results below.
 
-[Need something on family composition]
-
 
 #### Age
 
@@ -96,7 +94,12 @@ Participant ages ranged from `r min(data$age)` to `r max(data$age)`, with a medi
 (gg <- chartWrap(ageChart(data)))
 
 ```
+
 **`r fig_nums("age.freq")`**
+
+These show participants' ages correspond approximately to Australia's adult demographic. `r top4AgesAsPercentage()` of participants were aged 35-54.
+
+
 
 #### Gender
 
@@ -109,6 +112,7 @@ Gender demographics are distributed, as show in `r cf("gender.freq")`:
 (gg <- chartWrap(genderChart(data)))
 
 ```
+
 **`r fig_nums("gender.freq")`**
 
 
@@ -122,6 +126,7 @@ Combined age and gender demographics are distributed as per *`r cf("age.gender.f
 (gg <- chartWrap(genderAndAgeChart(data)))
 
 ```
+
 **`r fig_nums("age.gender.freq")`**
 
 These figures approximate to Australia's adult age distribution, as reported by the ABS in 2014 in **cf("age.gender.freq.abs")** below, though with a considerably higher skew towards younger women and older men.
@@ -193,7 +198,7 @@ The graph below shows the relative frequencies of each activity. Using the Inter
 
 #### Perceived ease of conducting online activity
 
-```{r echo=FALSE}
+```{r competenciesEaseOfTasks, echo=FALSE}
 
 (gg <- chartWrap(graphSubQuestionFrequencies(vars.competencies.431, "Ease", easeLabels, "competencies-ease-of-tasks-431")))
 
@@ -214,7 +219,7 @@ generateSingleAgeFrequency(1, vars.ease, easeLabels)
 
 #### General Interests
 
-```{r echo=FALSE}
+```{r interestsGeneral, echo=FALSE}
 
 (gg <- chartWrap(graphSubQuestionFrequencies(vars.interests.general.437, "Frequency", frequencyMonthLabels, "interests-general-437")))
 
@@ -371,6 +376,16 @@ generateSingleAgeFrequency(1, vars.ease, easeLabels)
 ## Appendex 1 - Digital Capacities Index Survey
 
 [Include Full Survey Here]
+
+
+## Appendex 2 - To Be Completed
+
+ - Fix age axes - DONE
+ - More detailed demographics
+ - Fix References
+ - Name all chunks
+ - Name all figures
+ 
 
 
 

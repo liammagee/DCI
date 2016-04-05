@@ -386,6 +386,15 @@ ageChart <- function(augmented.data) {
 	return (p)
 }
 
+top4AgesAsPercentage <- function(){
+	c <- count(augmented.data$age.breaks) 
+	c$rel.freq <- c$freq * 100 / length(augmented.data$age.breaks)
+	p <- sum(head(sort(c$rel.freq, decreasing = TRUE), 4))
+	p <- paste(round(p, 1), "%", sep = "")
+	return (p)
+}
+
+
 
 genderChart <- function(augmented.data) {
 
@@ -403,7 +412,8 @@ genderChart <- function(augmented.data) {
 genderAndAgeChart <- function(augmented.data) {
 
 	age.breaks <- sort(unique(augmented.data$age.breaks))
-	age.breaks.labels <- sort(unique(augmented.data$age.breaks * 5))
+	a <- sort(unique(augmented.data$age.breaks * 5))
+	age.breaks.labels <- paste(a, " - ", a + 4, sep = "")
 	x.scale <- scale_x_continuous(name = "age.breaks",
 									breaks = age.breaks, 
 									labels = age.breaks.labels)
@@ -425,9 +435,12 @@ genderAndAgeChart <- function(augmented.data) {
 
 stateChart <- function(augmented.data) {
 
-	p <- ggplot(augmented.data, aes(x=state)) +
+	p <- ggplot(augmented.data, 
+				aes(x = factor(state, 
+		                  levels=names(sort(table(state), 
+                          decreasing=TRUE))))) +
+				xlab("State") +
 				geom_bar(width=0.5) + 
-				# x.scale + 
 	    		coord_flip() 
 
 	p <- augmentChart(p, augmented.data$state, unique(augmented.data$state))
@@ -439,9 +452,12 @@ stateChart <- function(augmented.data) {
 
 locationChart <- function(augmented.data) {
 
-	p <- ggplot(augmented.data, aes(x=location)) +
+	p <- ggplot(augmented.data, 
+				aes(x = factor(location, 
+		                  levels=names(sort(table(location), 
+                          decreasing=TRUE))))) +
 				geom_bar(width=0.5) + 
-				# x.scale + 
+				xlab("Location") +
 	    		coord_flip() 
 
 	p <- augmentChart(p, augmented.data$location, unique(augmented.data$location))
