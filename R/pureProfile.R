@@ -742,6 +742,7 @@ graphSubQuestionFrequencies  <- function(vars, legend.name, legendBreakFunc, fil
 	cm <- count(m, c("variable", "value"))
 	# Recode, to solve problem with ggplotly and scale_fill_manual
 	cm$value.coded <- mapvalues(cm$value, from = 1:length(legendBreakFunc()), to = legendBreakFunc())
+	cm$value.coded.f <- factor(cm$value.coded, levels = legendBreakFunc())
 	# Relative frequencies (Q10_159 is age)
 	cm$rel.freq <- cm$freq / length(data$Q10_159)
 	# Rename for simplicity - TODO: push up to the global variable
@@ -771,7 +772,7 @@ graphSubQuestionFrequencies  <- function(vars, legend.name, legendBreakFunc, fil
 				# , labels=legendBreakFunc()
 	# Generate plot
 	p <- ggplot(data = cm, 
-		aes(x = variable, y = rel.freq, fill = factor(value.coded))) + 
+		aes(x = variable, y = rel.freq, fill = value.coded.f)) + 
 	    geom_bar(width = 0.5, stat = "identity") + 
 	    coord_flip() +
 	    x.scale +
