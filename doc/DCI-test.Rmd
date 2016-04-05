@@ -26,6 +26,17 @@ PRINTING <- FALSE
 
 ```
 
+```{r}
+# Set to false for non-HTML (e.g. word, pdf) outputs
+PLOTLY <- FALSE
+rmd_output <- tryCatch({rmarkdown::metadata$output},
+                         error = function(e) {NULL})
+if (rmd_output == 'html_document') {
+  PLOTLY <- TRUE
+}
+
+print(PLOTLY)
+```
 
 
 ## Digital Capacities Index - Test

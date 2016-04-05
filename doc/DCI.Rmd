@@ -36,6 +36,8 @@ if (rmd_output == 'html_document') {
   PLOTLY <- TRUE
 }
 
+
+
 # Set up figure numbering
 fig_nums <- captioner(prefix = "Figure")
 cf <- partial(fig_nums, display = "cite")
@@ -45,11 +47,22 @@ fig_nums("age.gender.freq", "Age & Gender Frequency")
 fig_nums("age.gender.freq.abs", "Australia's Age & Gender Frequency (ABS 2014)")
 
 
-
 ```
 
+```{r}
+# Set to false for non-HTML (e.g. word, pdf) outputs
+PLOTLY <- FALSE
+rmd_output <- tryCatch({rmarkdown::metadata$output},
+                         error = function(e) {NULL})
+if (class(rmd_output) == "list") {
+  rmd_output <- names(unlist(rmd_output)[1])
+}
+if (length(grep('html_document',rmd_output)) > 0) {
+# if (rmd_output == 'html_document') {
+  PLOTLY <- TRUE
+}
 
-
+```
 
 ## Digital Capacities Index - Quantitative Findings
 
@@ -327,11 +340,11 @@ generateSingleAgeFrequency(1, vars.ease, easeLabels)
 
 
 
-## Overall results - TESTING ONLY
+## Overall results
 
 ### Index scores
 
-```{r echo=FALSE}
+```{r indexChart, echo=FALSE}
 
 (gg <- chartWrap(generateIndexChart()))
 

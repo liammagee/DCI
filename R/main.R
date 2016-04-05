@@ -725,7 +725,7 @@ generateIndexChart <- function() {
 
 	msc <- melt(sall, id = "id")
 
-	p <- ggplot(data=msc, aes(x = variable,y = value, colour=value)) + 
+	p <- ggplot(data=msc, aes(x = variable, y = value, colour=value)) + 
 		geom_bar(stat="identity", position = "fill") + 
 	    scale_colour_gradientn(colours=yawcrcPalette) +
 	    coord_flip() 

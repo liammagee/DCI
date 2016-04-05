@@ -262,10 +262,12 @@ standardBarChart <- function(data, file.name, title, x.label, y.label, func, use
 
 
   # Save the plot
-  ggsave(file=paste("./figs/", file.name, ".png", sep=""),
-      width = png.width,
-      height = png.height
-    )
+  if (PRINTING) {
+	  ggsave(file=paste("./figs/", file.name, ".png", sep=""),
+	      width = png.width,
+	      height = png.height
+	    )
+  }
 
   return (p)
 
@@ -351,10 +353,12 @@ freqDistChart <- function(freq.table, file.name, title, x.label, y.label, func, 
 	full.file <- paste("./figs/", file.name, ".png", sep="") 
 
 	# Save the plot
-	ggsave(file = full.file,
-	  width = png.width,
-	  height = png.height
-	)
+	if (PRINTING) {
+		ggsave(file = full.file,
+		  width = png.width,
+		  height = png.height
+		)
+	}
 
 	# Open the file if on Mac - TODO: check other OS'es
 	if (Sys.info()['sysname'] == "Darwin") {
@@ -718,33 +722,16 @@ histogram <- function(cols, name, file.name) {
 	full.file <- paste("./figs/", file.name, ".png", sep="") 
 
 	# Save the plot
-	ggsave(file = full.file,
-	  width = png.width,
-	  height = png.height
-	)
+	if (PRINTING) {
+		ggsave(file = full.file,
+		  width = png.width,
+		  height = png.height
+		)
+	}
 
 	return (p)
 }
 
-histogram <- function(cols, name, file.name) {
-	aggMeans <- data.frame(round(rowSums(augmented.data[,cols])))
-	colnames(aggMeans)[1] <- name
-	x.scale <- scale_x_continuous(name = name)
-	p <- ggplot(data = aggMeans, aes(x = aggMeans[1])) + 
-		geom_histogram(binwidth = 0.5) +
-		geom_density(aes(y=1.0*..count..), colour="red", adjust=4) +
-		x.scale
-
-	full.file <- paste("./figs/", file.name, ".png", sep="") 
-
-	# Save the plot
-	ggsave(file = full.file,
-	  width = png.width,
-	  height = png.height
-	)
-
-	return (p)
-}
 
 # vars.connectedness.maintenance.287, "Importance", importanceLabels, "maintaining-connections-287"
 # Generic function that returns relative frequencies of sub questions (items) as a graph
@@ -797,10 +784,12 @@ graphSubQuestionFrequencies  <- function(vars, legend.name, legendBreakFunc, fil
 	full.file <- paste("./figs/gen/", file.name, ".png", sep="") 
 
 	# Save the plot
-	ggsave(file = full.file,
-	  width = png.width,
-	  height = png.height
-	)
+	if (PRINTING) {
+		ggsave(file = full.file,
+		  width = png.width,
+		  height = png.height
+		)
+	}
 
 	return (p)
 }
