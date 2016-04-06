@@ -14,6 +14,7 @@ axis.title.size <- 12
 axis.text.size <- 10
 x.axis.vjust <- -0.25
 y.axis.vjust <- 0.5
+x.axis.text.vjust <- 1.0
 png.width = 8
 png.height = 6
 
@@ -49,8 +50,10 @@ cbPalette <- c("#999999", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2",
 # The palette with black:
 # cbbPalette <- c("#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
 # blackPalette <- c("#000000")
-yawcrcPalette <- c("#139DEA", "#56CDFF", "#949494", "#F07899", "#EA3568", "#FFFFFF", "#000000")
-
+yawcrcPalette1 <- c("#139DEA", "#56CDFF", "#949494", "#F07899", "#EA3568", "#FFFFFF", "#000000")
+yawcrcPalette2 <- c("#139DEA", "#56CDFF", "#949494", "#F07899", "#EA3568", "#FEF55B", "#000000")
+yawcrcPalette3 <- c("#032767", "#139DEC", "#4EB2E3", "#FFFBE2", "#FFF88A", "#FEF55B", "#000000")
+yawcrcPalette <- yawcrcPalette3
 
 
 # Generates year breaks to use on X axis
@@ -736,8 +739,11 @@ histogram <- function(cols, name, file.name) {
 # vars.connectedness.maintenance.287, "Importance", importanceLabels, "maintaining-connections-287"
 # Generic function that returns relative frequencies of sub questions (items) as a graph
 graphSubQuestionFrequencies  <- function(vars, legend.name, legendBreakFunc, file.name) {
+	# Add dummy column, to allow melt to work with single columns
+	data$dummy <- NA
+	vars <- c(vars, "dummy")
 	# Obtain a melted, long version of the column data
-	m <- melt(data[,vars], id.vars = c())
+	m <- melt(data[,vars], id.vars = c(), na.rm = TRUE)
 	# Generate counts of the item data
 	cm <- count(m, c("variable", "value"))
 	# Recode, to solve problem with ggplotly and scale_fill_manual
@@ -748,32 +754,38 @@ graphSubQuestionFrequencies  <- function(vars, legend.name, legendBreakFunc, fil
 	# Rename for simplicity - TODO: push up to the global variable
 	ex <- expandedIndicators
 	# Complicated code that loads truncated item names into the melted data
-	var.names = as.character(unlist(sapply(obtainIndicatorNames(unique(cm$variable)), function(lbl) {
-		v <- ex[which(ex$DCI.ID == lbl),2]
-		# Assume a name like "74 - 1 - XXX"
-		v <- unlist(strsplit(as.character(v), "-"))[3]
-		# Truncate if too long
-		v <- substring(v, 1, 30)
-		# Add back the ID, for reference
-		v <- paste(lbl, v, sep = " ")
-		return (v)
-	})))
+	var.names <- c(unique(cm$variable))
+	# If the length of variables is more than 1, we need proper labels
+	if (length(unique(cm$variable)) > 1) {
+		var.names = as.character(unlist(sapply(obtainIndicatorNames(unique(cm$variable)), function(lbl) {
+			v <- ex[which(ex$DCI.ID == lbl),2]
+			# Assume a name like "74 - 1 - XXX"
+			v <- unlist(strsplit(as.character(v), "-"))[3]
+			# Truncate if too long
+			v <- substring(v, 1, 67)
+			# Add back the ID, for reference
+			# v <- paste(lbl, v, sep = " ")
+			return (v)
+		})))
+	}
 	# Construct scales
-	x.scale <- scale_x_discrete(name = "Questions",
+	x.scale <- scale_x_discrete(name = " ",
 									breaks = unique(cm$variable), 
 									labels = var.names)
 	y.scale <- scale_y_continuous(name = "Percentage",
 									breaks = seq(0.0, 1.0, by = 0.2), 
 									labels = paste(seq(0, 100, by = 20), "%", sep = ""))
-	fill.scale <- scale_fill_manual(name=legend.name,
-				 values=yawcrcPalette)
+	fill.scale <- scale_fill_manual(
+						name=legend.name,
+				 		values=yawcrcPalette)
 	# Works around problem with plot.ly - see http://stackoverflow.com/questions/35369309/plotly-legend-problems-with-ggplot2
 				# , breaks=seq(1:length(legendBreakFunc()))
 				# , labels=legendBreakFunc()
 	# Generate plot
+	w <- 0.5
 	p <- ggplot(data = cm, 
-		aes(x = variable, y = rel.freq, fill = value.coded.f)) + 
-	    geom_bar(width = 0.5, stat = "identity") + 
+		aes(x = variable, y = rel.freq, fill = value.coded.f, label = variable)) + 
+	    geom_bar(width = w, stat = "identity") + 
 	    coord_flip() +
 	    x.scale +
 	    y.scale +
@@ -781,6 +793,40 @@ graphSubQuestionFrequencies  <- function(vars, legend.name, legendBreakFunc, fil
 	# p <- p + theme(
 	# 	axis.text.y = element_text(color=text.color, angle=45, vjust=1.0, hjust=1.0, size = axis.text.size * 0.8)
 	# )
+	p <- p +
+	  theme(
+	    # GRID
+	    panel.grid.minor.y = element_blank(),
+	    # panel.grid.major.y = element_blank(),
+	    # panel.grid.major.y = element_line(colour = foreground.color),
+	    panel.grid.minor.x = element_blank(),
+	    panel.grid.major.x = element_blank(),
+
+	    # BACKGROUND
+	    # panel.background = element_rect(fill = background.color, colour = foreground.color),
+	    
+	    # TITLE
+	    # plot.title = element_text(colour = title.color, lineheight=1.0, face="bold", size=graph.title.size),
+	    axis.title = element_text(color=title.color, lineheight=1.0, size = axis.title.size),
+	    # axis.title = element_text(lineheight=1.0, size = axis.title.size),
+	    axis.title.x = element_text(size = axis.title.size, vjust = x.axis.vjust),
+	    axis.title.y = element_text(size = axis.title.size, vjust = y.axis.vjust),
+	    
+	    # LINE
+	    axis.line = element_line(colour = "black"),
+
+	    # TEXT
+	    axis.text.x = element_text(margin = margin(t = 0.5, r = 0, b = 0, l = 0, unit ="cm"), color=text.color, angle=0, vjust=0.0, hjust=0.5, size = axis.text.size * 1.0),
+	    axis.text.y = element_text(margin = margin(t = 0, r = -14.5, b = 0, l = 0, unit ="cm"), color=text.color, angle=0, vjust=3, hjust=0.0, size = axis.text.size * 1.2),
+	    axis.ticks.x = element_line(colour = "white", size = 0.1),
+	    # axis.text.x = element_text(angle=45, vjust=1.0, hjust=1.0, size = axis.text.size),
+	    # axis.text.y = element_text(angle=45, size = axis.text.size)
+
+	    legend.position="bottom",
+	    legend.direction="vertical",
+	    plot.margin = unit(c(0,0,0,0), "cm"),
+	    panel.background = element_rect(fill = "white")
+	)
 
 	full.file <- paste("./figs/gen/", file.name, ".png", sep="") 
 
