@@ -163,6 +163,8 @@ pressure.digital.access <- "Q425"
 current.neighbourhood <- "Q427"
 level.education <- "Q436"
 main.activities <- "Q8"
+child.consent <- "Q5A"
+child.age <- "Q5B"
 augmented.data <- results[,c(age, 
 								gender, 
 								state, 
@@ -172,12 +174,24 @@ augmented.data <- results[,c(age,
 								current.neighbourhood, 
 								level.education, 
 								main.activities,
+								child.consent,
+								child.age,
 								vars)]
+
+
 
 # Recode variables
 augmented.data$age <- augmented.data$Q10_159
+augmented.data$age[augmented.data$Q5A == 1 & !is.na(augmented.data$Q5A)] <- augmented.data$Q5B[augmented.data$Q5A == 1 & !is.na(augmented.data$Q5A)] + 11
 # Find a better way, e.g. http://www.kkuniyuk.com/RTutorial1.pdf
-augmented.data$age.breaks <- floor(augmented.data$Q10_159 / 5.0)
+# augmented.data$age.breaks <- floor(augmented.data$Q10_159 / 5.0)
+augmented.data$age.breaks <- NA
+augmented.data$age.breaks[augmented.data$age >= 12 & augmented.data$age <= 17] <- "12 - 17"
+augmented.data$age.breaks[augmented.data$age >= 18 & augmented.data$age <= 34] <- "18 - 34"
+augmented.data$age.breaks[augmented.data$age >= 35 & augmented.data$age <= 49] <- "35 - 49"
+augmented.data$age.breaks[augmented.data$age >= 50 & augmented.data$age <= 64] <- "50 - 64"
+augmented.data$age.breaks[augmented.data$age >= 65] <- "65+"
+
 augmented.data$gender <- NA
 augmented.data$gender[augmented.data$Q1 == 193] <- "Male"
 augmented.data$gender[augmented.data$Q1 == 194] <- "Female"
