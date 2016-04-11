@@ -7,7 +7,7 @@ author: |
 date: "4 April 2016"
 bibliography: DCI.bib
 output:
-  html_document:
+  word_document:
     toc: true
     toc_depth: 4
 ---
@@ -274,12 +274,26 @@ generateSingleAgeFrequency(1, vars.ease, easeLabels)
 
 ### Resilience
 
-[Overview of Critical Issue]
+Our survey asked participants to respond to three questions about potential risks and harms of online activity, and how they prepare themselves for dealing with them.
 
+ - Experience of potential risks and harms of online activity in the last 12 months
+ - Level of agreement with statements about potential risks and harms
+ - Level of agreement with statements about engaging with others online
 
 
 
 #### Frequency of harmful events
+
+*Frequency of harmful events* measures frequency of 11 risks of online activity. These include getting a virus on one's device or seeing upsetting content online, or actions taken as a protection measure against those risks, such as reporting an issue online, deleting data or blocking further contacts from an individual.
+
+**The graph below shows the relative frequencies of experiencing a risk, or taking a specific action in response to a risk, in the last 12 months. 
+**
+
+A large proportion of respondents (`r "Enter value here"`) reported having never experienced these risks or potentially harmful events. The event that was most commonly experienced was 'Seeing or experiencing something on the internet that had bothered them in some way' with `r "Enter value here"` 50+% [exact %?] of respondents experiencing this at least once in the last 12 months and `r "Enter value here"` reporting experiencing this on a weekly basis or more often.
+
+Half of respondents reported taking protective measures, such as blocking further contacts from an individual or deleting data in response to security and privacy concerns, at least once in the last 12 months.
+
+Although respondents reported experiencing potentially harmful events online, the frequency of such events remains generally low. The most frequently reported action in response to online risks is to use extra security measures to protect privacy.
 
 ```{r graphSubQuestion434,fig.width = 8, fig.height = 8,  echo=FALSE}
 
@@ -290,6 +304,13 @@ generateSingleAgeFrequency(1, vars.ease, easeLabels)
 
 #### Responses to statements about online harms
 
+The graph below shows the level of agreement with a number of statements relating to online harms.
+
+Despite reporting having experienced some potentially harmful events in the last 12 months, the level of agreement with statements about online harms of a more general nature show an overall positive attitude towards those risks. The majority of respondents agree or strongly agree that the opportunities of online activities outweigh its risks and that some level of online risk is inevitable but also provides an important learning opportunity.
+
+Online security and safety remains a pressing concern for just over a third of respondents but there appears to be both an increased level of acceptance and the development of coping mechanisms to better manage the risks. 
+
+
 ```{r graphSubQuestion435, fig.width = 8, fig.height = 5.5, echo=FALSE}
 
 (gg <- chartWrap(graphSubQuestionFrequencies(vars.resilience.harms.agreement.435, "Agreement", agreementLabels, "resilience-harms-agreement-435", -6.5)))
@@ -298,6 +319,10 @@ generateSingleAgeFrequency(1, vars.ease, easeLabels)
 
 
 #### Willingness to engage with others
+
+Thinking about how they feel when they engage with others online, respondents were asked to what extent they agree with several statements relating to their willingness to engage with others.
+
+For each statements, a large proportion of respondents neither agree nor disagree. People tend to disagree that it is easier to be oneself online than face to face or that they talk about private things online that they do not share face to face. Similar proportions agree or disagree that going online make them feel better when they are going through a difficult time.
 
 ```{r graphSubQuestion428, fig.width = 8, fig.height = 5, echo=FALSE}
 
