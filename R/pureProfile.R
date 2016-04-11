@@ -40,7 +40,7 @@ png.height = 6
 # text.color <- '#202020'
 
 background.color <- '#FFFFFF'
-foreground.color <- '#FFFFFF'
+foreground.color <- '#DFDFDF'
 title.color <- '#000000'
 text.color <- '#000000'
 
@@ -52,8 +52,10 @@ cbPalette <- c("#999999", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2",
 # blackPalette <- c("#000000")
 yawcrcPalette1 <- c("#139DEA", "#56CDFF", "#949494", "#F07899", "#EA3568", "#FFFFFF", "#000000")
 yawcrcPalette2 <- c("#139DEA", "#56CDFF", "#949494", "#F07899", "#EA3568", "#FEF55B", "#000000")
-yawcrcPalette3 <- c("#032767", "#139DEC", "#4EB2E3", "#FFFBE2", "#FFF88A", "#FEF55B", "#000000")
+yawcrcPalette3 <- c("#032767", "#139DEC", "#6BCEFF", "#FFFBE2", "#FFF88A", "#FEF55B", "#000000")
+yawcrcPalette4 <- c("#032767", "#139DEC", "#DFDFDF", "#FFFBE2", "#FEF55B", "#000000", "#A8A8A8")
 yawcrcPalette <- yawcrcPalette3
+yawcrcPaletteAgreement <- yawcrcPalette4
 
 
 # Generates year breaks to use on X axis
@@ -270,6 +272,7 @@ standardBarChart <- function(data, file.name, title, x.label, y.label, func, use
 	      width = png.width,
 	      height = png.height
 	    )
+	  print()
   }
 
   return (p)
@@ -740,7 +743,7 @@ histogram <- function(cols, name, file.name) {
 
 # vars.connectedness.maintenance.287, "Importance", importanceLabels, "maintaining-connections-287"
 # Generic function that returns relative frequencies of sub questions (items) as a graph
-graphSubQuestionFrequencies  <- function(vars, legend.name, legendBreakFunc, file.name) {
+graphSubQuestionFrequencies  <- function(vars, legend.name, legendBreakFunc, file.name, y.right.offset = -8.0) {
 	# Add dummy column, to allow melt to work with single columns
 	data$dummy <- NA
 	vars <- c(vars, "dummy")
@@ -764,7 +767,7 @@ graphSubQuestionFrequencies  <- function(vars, legend.name, legendBreakFunc, fil
 			# Assume a name like "74 - 1 - XXX"
 			v <- unlist(strsplit(as.character(v), "-"))[3]
 			# Truncate if too long
-			v <- substring(v, 1, 67)
+			v <- substring(v, 1, 120)
 			# Add back the ID, for reference
 			# v <- paste(lbl, v, sep = " ")
 			return (v)
@@ -777,15 +780,24 @@ graphSubQuestionFrequencies  <- function(vars, legend.name, legendBreakFunc, fil
 	y.scale <- scale_y_continuous(name = "Percentage",
 									breaks = seq(0.0, 1.0, by = 0.2), 
 									labels = paste(seq(0, 100, by = 20), "%", sep = ""))
+
+	# Toggle palette depending on scale
+	palette <- yawcrcPalette
+	if (legend.name == 'Agreement' | legend.name == 'Ease') {
+		palette <- yawcrcPaletteAgreement
+	}
 	fill.scale <- scale_fill_manual(
 						name=legend.name,
-				 		values=yawcrcPalette)
+				 		values=palette)
 	# Works around problem with plot.ly - see http://stackoverflow.com/questions/35369309/plotly-legend-problems-with-ggplot2
 				# , breaks=seq(1:length(legendBreakFunc()))
 				# , labels=legendBreakFunc()
 	# Generate plot
 	w <- 0.5
-	p <- ggplot(data = cm, 
+	height <- 0.4 + 10 * length(cm$variable)
+	p <- ggplot(
+		height = height,
+		data = cm, 
 		aes(x = variable, y = rel.freq, fill = value.coded.f, label = variable)) + 
 	    geom_bar(width = w, stat = "identity") + 
 	    coord_flip() +
@@ -798,11 +810,14 @@ graphSubQuestionFrequencies  <- function(vars, legend.name, legendBreakFunc, fil
 	p <- p +
 	  theme(
 	    # GRID
-	    panel.grid.minor.y = element_blank(),
+	    # panel.grid.minor.y = element_blank(),
 	    # panel.grid.major.y = element_blank(),
 	    # panel.grid.major.y = element_line(colour = foreground.color),
-	    panel.grid.minor.x = element_blank(),
-	    panel.grid.major.x = element_blank(),
+	    # panel.grid.minor.y = element_line(colour = foreground.color),
+	    panel.grid.major.x = element_line(colour = foreground.color, linetype = "dashed"),
+	    # panel.grid.major.x = element_line(colour = foreground.color),
+	    # panel.grid.minor.x = element_blank(),
+	    # panel.grid.major.x = element_blank(),
 
 	    # BACKGROUND
 	    # panel.background = element_rect(fill = background.color, colour = foreground.color),
@@ -819,8 +834,9 @@ graphSubQuestionFrequencies  <- function(vars, legend.name, legendBreakFunc, fil
 
 	    # TEXT
 	    axis.text.x = element_text(margin = margin(t = 0.5, r = 0, b = 0, l = 0, unit ="cm"), color=text.color, angle=0, vjust=0.0, hjust=0.5, size = axis.text.size * 1.0),
-	    axis.text.y = element_text(margin = margin(t = 0, r = -14.5, b = 0, l = 0, unit ="cm"), color=text.color, angle=0, vjust=3, hjust=0.0, size = axis.text.size * 1.2),
+	    axis.text.y = element_text(margin = margin(t = 0, r = y.right.offset, b = 0, l = 0.5, unit ="in"), color=text.color, angle=0, vjust=2.5, hjust=0.0, size = axis.text.size * 1.0),
 	    axis.ticks.x = element_line(colour = "white", size = 0.1),
+	    axis.ticks.y = element_line(colour = "white", size = 0.1),
 	    # axis.text.x = element_text(angle=45, vjust=1.0, hjust=1.0, size = axis.text.size),
 	    # axis.text.y = element_text(angle=45, size = axis.text.size)
 
@@ -836,8 +852,10 @@ graphSubQuestionFrequencies  <- function(vars, legend.name, legendBreakFunc, fil
 	if (PRINTING) {
 		ggsave(file = full.file,
 		  width = png.width,
-		  height = png.height
+		  height = height
 		)
+		comment <- paste("Printed graph to ", full.file, sep="")
+		print(comment)
 	}
 
 	return (p)
@@ -851,6 +869,7 @@ chartWrap <- function(p) {
 		return (ggplotly(p))
 	}
 	else {
+
 		return (p)
 	}
 }
