@@ -373,19 +373,19 @@ freqDistChart <- function(freq.table, file.name, title, x.label, y.label, func, 
 
 ageChart <- function(augmented.data) {
 
-	age.breaks <- sort(unique(augmented.data$age.breaks))
-	age.breaks.labels <- sort(unique(augmented.data$age.breaks * 5))
+	age.breaks <- c(12, 18, 35, 50, 65)
+	age.breaks.labels <- sort(unique(augmented.data$age.breaks))
 
 	x.scale <- scale_x_continuous(name = "Ages",
 									breaks = age.breaks, 
 									labels = age.breaks.labels)
 
-	p <- ggplot(augmented.data, aes(x=age.breaks)) +
+	p <- ggplot(augmented.data, aes(x=age)) +
 				geom_histogram(binwidth=.5) + 
 				x.scale + 
 	    		coord_flip() 
 
-	p <- augmentChart(p, augmented.data$age.breaks, unique(augmented.data$age.breaks * 5))
+	p <- augmentChart(p, augmented.data$age.breaks, unique(augmented.data$age.breaks))
 
 	return (p)
 }
@@ -415,10 +415,10 @@ genderChart <- function(augmented.data) {
 
 genderAndAgeChart <- function(augmented.data) {
 
-	age.breaks <- sort(unique(augmented.data$age.breaks))
-	a <- sort(unique(augmented.data$age.breaks * 5))
-	age.breaks.labels <- paste(a, " - ", a + 4, sep = "")
-	x.scale <- scale_x_continuous(name = "age.breaks",
+	age.breaks <- c(12, 18, 35, 50, 65)
+	age.breaks.labels <- sort(unique(augmented.data$age.breaks))
+	# age.breaks.labels <- paste(a, " - ", a + 4, sep = "")
+	x.scale <- scale_x_discrete(name = "age.breaks",
 									breaks = age.breaks, 
 									labels = age.breaks.labels)
 
@@ -595,7 +595,7 @@ generateSingleAgeFrequency <- function(x, vars, func) {
 							func,
 							"by Age",
 							"Age",
-							TRUE)
+							FALSE)
 	return (p)
 }
 
