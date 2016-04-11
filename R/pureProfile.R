@@ -377,18 +377,18 @@ freqDistChart <- function(freq.table, file.name, title, x.label, y.label, func, 
 ageChart <- function(augmented.data) {
 
 	age.breaks <- sort(unique(augmented.data$age.breaks))
-	age.breaks.labels <- sort(unique(augmented.data$age.breaks * 5))
+	age.breaks.labels <- sort(unique(augmented.data$age.breaks))
 
-	x.scale <- scale_x_continuous(name = "Ages",
+	x.scale <- scale_x_discrete(name = "Ages",
 									breaks = age.breaks, 
 									labels = age.breaks.labels)
 
 	p <- ggplot(augmented.data, aes(x=age.breaks)) +
-				geom_histogram(binwidth=.5) + 
+				geom_bar(width=0.5) + 
 				x.scale + 
 	    		coord_flip() 
 
-	p <- augmentChart(p, augmented.data$age.breaks, unique(augmented.data$age.breaks * 5))
+	p <- augmentChart(p, augmented.data$age.breaks, unique(augmented.data$age.breaks))
 
 	return (p)
 }
@@ -419,16 +419,16 @@ genderChart <- function(augmented.data) {
 genderAndAgeChart <- function(augmented.data) {
 
 	age.breaks <- sort(unique(augmented.data$age.breaks))
-	a <- sort(unique(augmented.data$age.breaks * 5))
-	age.breaks.labels <- paste(a, " - ", a + 4, sep = "")
-	x.scale <- scale_x_continuous(name = "age.breaks",
+	# a <- sort(unique(augmented.data$age.breaks))
+	# age.breaks.labels <- paste(a, " - ", a + 4, sep = "")
+	x.scale <- scale_x_discrete(name = "age.breaks",
 									breaks = age.breaks, 
-									labels = age.breaks.labels)
+									labels = age.breaks)
 
 	ad <- table(augmented.data$gender, augmented.data$age.breaks)
 	ad <- melt(ad)
 
-	p <- ggplot(ad, aes(x=Var2, y=value, group=Var1, fill=Var1)) +
+	p <- ggplot(ad, aes(x=Var2, y=value, fill=Var1)) +
 				geom_bar(width=0.5, stat="identity", position="dodge") + 
 				x.scale + 
 	    		coord_flip() 
@@ -465,6 +465,7 @@ locationChart <- function(augmented.data) {
                           decreasing=TRUE))))) +
 				geom_bar(width=0.5) + 
 				xlab("Location") +
+				xlab("Percentage") +
 	    		coord_flip() 
 
 	p <- augmentChart(p, augmented.data$location, unique(augmented.data$location))
@@ -478,7 +479,8 @@ chartVariableByAge <- function(data, filename, metadata, labelsY) {
 					paste(metadata$Name, " by Age"),
 					"Age by Decade",
 					metadata$Name,
-					labelsY
+					labelsY,
+					FALSE
 					)
 	comment <- paste("Printed graph of ", metadata$Name, " to ./figs/", filename, ".png", sep="")
 	if (PRINTING) {
@@ -598,7 +600,7 @@ generateSingleAgeFrequency <- function(x, vars, func) {
 							func,
 							"by Age",
 							"Age",
-							TRUE)
+							FALSE)
 	return (p)
 }
 

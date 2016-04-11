@@ -137,19 +137,13 @@ These figures approximate to Australia's adult age distribution, as reported by 
 
 ![Population Structure, Age and sex - Australia - 1994 and 2014](http://www.abs.gov.au/ausstats/abs@.nsf/0/1cd2b1952afc5e7aca257298000f2e76/Body/0.2A9C!OpenElement&FieldElemFormat=gif)
 
-**fig_nums("age.gender.freq.abs")**
+**`r fig_nums("age.gender.freq.abs")`**
 
 
 
 #### State and Location
 
-Participants are distributed by state as follows:
-
-```{r stateFreq, echo=FALSE}
-
-(gg <- chartWrap(stateChart(data)))
-
-```
+Survey distribution by state broadly follows Australia's demographic distribution.
 
 The split of participants between urban and regional/rural is as follows:
 
@@ -158,6 +152,8 @@ The split of participants between urban and regional/rural is as follows:
 (gg <- chartWrap(locationChart(data)))
 
 ```
+
+The percentage of reported urban residents here is `r format(length(data[data$location == 2] / length(data)), width = 2, format = "d", flag = "0")` - considerably less than [World Bank figures of 89%](http://data.worldbank.org/indicator/SP.URB.TOTL.IN.ZS).
 
 
 ## Results by Critical Issue - Aggregated
