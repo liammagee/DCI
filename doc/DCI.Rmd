@@ -12,6 +12,7 @@ output:
     toc_depth: 4
 ---
 
+<!-- output: html_document -->
 <!-- output: word_document -->
 <!-- output: pdf_document -->
 
@@ -49,6 +50,8 @@ fig_nums("age.freq", "Age Frequency")
 fig_nums("gender.freq", "Gender Frequency")
 fig_nums("age.gender.freq", "Age & Gender Frequency")
 fig_nums("age.gender.freq.abs", "Australia's Age & Gender Frequency (ABS 2014)")
+
+fig_nums("agg.results", "Aggregated Results by Critical Issue")
 
 
 ```
@@ -494,11 +497,48 @@ generateSingleAgeFrequency(5, vars.connectedness.tech.attitudes.429, agreementLa
 
 ### Aggregates by Critical Issue
 
+To gain an overall picture of our results, we generated `r fig_nums("agg.results")`, which aggregates responses to each critical issue (*Competencies*, *Interests*, *Resilience* and *Competencies*).
+
+These results are indicative only, and have several evident limitations we discuss further below. The procedure to generate scores for each of the issues is as follows:
+
+1. Interpret each question as having either a *positive* or *negative* influence of the score of the critical issue. For example, "Frequency of harmful events" has a *negative influence* on the issue of Resilience (and indeed, on overall "Digital Capacities").
+2. Determine the *direction* of the scale coding. For example, in all of our "Agreement" questions, "Strongly Agree" was coded **5**. 
+3. For each question, calculate a question score based on both its interpretation and direction, by summing responses to individual items.
+4. For each respondent, add each of their question scores to produce a respondent critical issue score. This value is converted to a percentile, wher '100%' would indicate maximum responses to each item for each question in that critical issue.
+5. An combined score is taken by averaging the four critical issue scores.
+
+`r fig_nums("agg.results")` then displays the relative frequencies of these scores, similar to the preceding individual question graphs. Because values are continuous (anywhere on a scale between 0 and 100 per cent), the graphs show a spectrum from blue (indicating a low score) to bright yellow (indicating a high score).
+
+The *Resilience* score is calculated in the same way as the other issue scores, with the exception that only the first two items under *Question 428*, "Willingness to engage with others", are included in the scoring procedure. We have intepreted these items ("When I am going through a difficult time, I go online less often"; "When I am going through a difficult time, going online makes me feel better") as having some influence (the first negative, the second positive) on *Resilience*.
+
+
+<!--
+Incorporate math in final calculation. Example math:
+
+$$ y = mx +b $$
+
+-->
+
 ```{r indexChart, echo=FALSE}
 
 (gg <- chartWrap(generateIndexChart()))
 
 ```
+
+
+#### Limitations
+
+The above procedure has several limitations. 
+
+First, it is questionable whether complex concepts such as digital resilience and social connectedness, in particular, are reducible to a quantitative value, regardless of the procedure used to derive it. At the very least, we recommend comparing these scores with our qualitative findings, which illustrate the more nuanced and sometimes contradictory character of these qualities in Australian families.
+
+Second, the procedure treats, at the moment, each of the scales as numerically regular. For example, on the *Agreement* scale it assumes *Strongly agree* warrants 1 more score point than *Agree*, which in turn warrants 1 more point than *Neither Agree nor Disagree*. In other words, ordinal scales are treated as *ratio* variables, with regular intervals. 
+
+Third, the procedure assumes all questions and individual items have equal influence on the critical issue they have been aligned to. 
+
+[Note for reviewers: The latter two of these issues can be addresses by a more sophisticated scaling and weighting approach. We are considering holding a workshop for this purpose in preparation of the complete draft meeting in May 2016.]
+
+
 
 <!--
 ### Aggregated by age
@@ -513,8 +553,9 @@ generateSingleAgeFrequency(5, vars.connectedness.tech.attitudes.429, agreementLa
 -->
 
 
+<!--
 ## Appendices
-
+-->
 
 
 

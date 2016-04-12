@@ -50,11 +50,6 @@ fig_nums("gender.freq", "Gender Frequency")
 fig_nums("age.gender.freq", "Age & Gender Frequency")
 fig_nums("age.gender.freq.abs", "Australia's Age & Gender Frequency (ABS 2014)")
 
+Example math:
 
-```
-
-#### Maintaining connections
-
-```{r ageQ431_17, echo=FALSE}
-generateSingleAgeFrequency(0, c("Q431_17"), frequencyLabels)
-```
+$$ y = mx +b $$

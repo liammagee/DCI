@@ -54,8 +54,10 @@ yawcrcPalette1 <- c("#139DEA", "#56CDFF", "#949494", "#F07899", "#EA3568", "#FFF
 yawcrcPalette2 <- c("#139DEA", "#56CDFF", "#949494", "#F07899", "#EA3568", "#FEF55B", "#000000")
 yawcrcPalette3 <- c("#032767", "#139DEC", "#6BCEFF", "#FFFBE2", "#FFF88A", "#FEF55B", "#000000")
 yawcrcPalette4 <- c("#032767", "#139DEC", "#DFDFDF", "#FFFBE2", "#FEF55B", "#000000", "#A8A8A8")
+yawcrcPalette5 <- c("#032767", "#139DEC", "#6BCEFF", "#FFFBE2", "#FFF88A", "#FEF55B")
 yawcrcPalette <- yawcrcPalette3
 yawcrcPaletteAgreement <- yawcrcPalette4
+yawcrcPaletteAggregate <- yawcrcPalette5
 
 
 # Generates year breaks to use on X axis

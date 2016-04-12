@@ -654,7 +654,8 @@ sumResilience <- function() {
 		var.name <- vars.resilience.harm.events.434[i]
 		new.var <- paste(var.name, ".for.index", sep = "")
 		c <- augmented.data[,var.name]
-		d <- 6 - c
+		# d <- 6 - c
+		d <- c - 1
 		# Convert "Don't know" to "Less than Once a Month" - conservative guess
 		d <- replace(d, d == -1, 1)
 		vars.resilience.for.index <- c(vars.resilience.for.index, new.var)
@@ -823,7 +824,7 @@ generateIndexChart <- function() {
 
 	p <- ggplot(data=msc, aes(x = variable, y = value, colour=value)) + 
 		geom_bar(stat="identity", position = "fill") + 
-	    scale_colour_gradientn(colours=yawcrcPalette) +
+	    scale_colour_gradientn(colours=yawcrcPaletteAggregate) +
 	    coord_flip() 
     return (p)
 }
