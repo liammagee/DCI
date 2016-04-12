@@ -55,26 +55,6 @@ fig_nums("age.gender.freq.abs", "Australia's Age & Gender Frequency (ABS 2014)")
 
 #### Maintaining connections
 
-```{r graphSubQuestion343, fig.width = 8, fig.height = 6, echo=FALSE}
-
-(gg <- chartWrap(graphSubQuestionFrequencies(vars.connectedness.events.343, "Frequency", frequencyMonthLabels, "connectedness-events-343")))
-
-```
-
-
-```{r graphSubQuestion287, fig.width = 8, fig.height = 5, echo=FALSE}
-
-(gg <- chartWrap(graphSubQuestionFrequencies(vars.connectedness.maintenance.287, "Importance", importanceLabels, "maintaining-connections-287", -4.8)))
-
-```
-
-
-
-#### Attitudes towards Technology
-
-
-```{r graphSubQuestion429, fig.width = 8, fig.height = 6.5, echo=FALSE}
-
-(gg <- chartWrap(graphSubQuestionFrequencies(vars.connectedness.tech.attitudes.429, "Agreement", agreementLabels, "connectedness-tech-attitudes-429", -7.0)))
-
+```{r ageQ431_17, echo=FALSE}
+generateSingleAgeFrequency(0, c("Q431_17"), frequencyLabels)
 ```

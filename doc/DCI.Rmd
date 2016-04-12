@@ -7,7 +7,7 @@ author: |
 date: "4 April 2016"
 bibliography: DCI.bib
 output:
-  word_document:
+  html_document:
     toc: true
     toc_depth: 4
 ---
@@ -168,7 +168,9 @@ Our survey asked participants to respond to two questions about competencies:
  - Perceived ease of conducting online activity
 
 
-#### Frequency of online activity
+#### General Results
+
+##### Frequency of online activity
 
 *Frequency of online activity* measures frequency of 15 different activities, ranging from highly common activities such as sending email through to less common activities (in 2016), such as writing blogs.
 
@@ -196,7 +198,7 @@ The graph below shows the relative frequencies of each activity. Using the Inter
 
 -->
 
-#### Perceived ease of conducting online activity
+##### Perceived ease of conducting online activity
 
 [Introductory Text]
 
@@ -217,13 +219,44 @@ generateSingleAgeFrequency(1, vars.ease, easeLabels)
 -->
 
 
+#### Results by Age
+
+```{r ageQ74_2, fig.width = 8, fig.height = 5, echo=FALSE}
+generateSingleAgeFrequency(2, vars.competencies.online.activities.74, frequencyLabels)
+```
+
+```{r ageQ74_3, fig.width = 8, fig.height = 5, echo=FALSE}
+generateSingleAgeFrequency(3, vars.competencies.online.activities.74, frequencyLabels)
+```
+
+```{r ageQ74_5, fig.width = 8, fig.height = 5, echo=FALSE}
+generateSingleAgeFrequency(5, vars.competencies.online.activities.74, frequencyLabels)
+```
+
+```{r ageQ74_6, fig.width = 8, fig.height = 5, echo=FALSE}
+generateSingleAgeFrequency(6, vars.competencies.online.activities.74, frequencyLabels)
+```
+
+```{r ageQ431_17, fig.width = 8, fig.height = 5, echo=FALSE}
+generateSingleAgeFrequency(2, vars.competencies.431, easeLabels)
+```
+
+```{r ageQ431_29, fig.width = 8, fig.height = 5, echo=FALSE}
+generateSingleAgeFrequency(14, vars.competencies.431, easeLabels)
+```
+
+```{r ageQ431_34, fig.width = 8, fig.height = 5, echo=FALSE}
+generateSingleAgeFrequency(19, vars.competencies.431, easeLabels)
+```
+
 
 ### Interests
 
 [Overview of Critical Issue]
 
+#### General Results
 
-#### General Interests
+##### General Interests
 
 
 [Introductory Text]
@@ -236,7 +269,7 @@ generateSingleAgeFrequency(1, vars.ease, easeLabels)
 ```
 
 
-#### Interest in seeking difference
+##### Interest in seeking difference
 
 
 ```{r graphSubQuestion341, fig.width = 8, fig.height = 5.5, echo=FALSE}
@@ -246,7 +279,7 @@ generateSingleAgeFrequency(1, vars.ease, easeLabels)
 ```
 
 
-#### Interest in fitness and health improvement
+##### Interest in fitness and health improvement
 
 ```{r graphSubQuestion352, fig.width = 8, fig.height = 7, echo=FALSE}
 
@@ -261,7 +294,7 @@ generateSingleAgeFrequency(1, vars.ease, easeLabels)
 ```
 
 
-#### Interest in keeping in touch
+##### Interest in keeping in touch
 
 ```{r graphSubQuestion430, fig.width = 8, fig.height = 7.5, echo=FALSE}
 
@@ -269,6 +302,21 @@ generateSingleAgeFrequency(1, vars.ease, easeLabels)
 
 ```
 
+
+#### Results by Age
+
+```{r ageQ437_43, fig.width = 8, fig.height = 5, echo=FALSE}
+generateSingleAgeFrequency(1, vars.interests.general.437, frequencyMonthLabels)
+```
+```{r ageQ437_49, fig.width = 8, fig.height = 5, echo=FALSE}
+generateSingleAgeFrequency(7, vars.interests.general.437, frequencyMonthLabels)
+```
+```{r ageQ437_50, fig.width = 8, fig.height = 5, echo=FALSE}
+generateSingleAgeFrequency(8, vars.interests.general.437, frequencyMonthLabels)
+```
+```{r ageQ352_62, fig.width = 8, fig.height = 5, echo=FALSE}
+generateSingleAgeFrequency(1, vars.interests.fitness.352, frequencyMonthLabels)
+```
 
 
 
@@ -281,8 +329,9 @@ Our survey asked participants to respond to three questions about potential risk
  - Level of agreement with statements about engaging with others online
 
 
+#### General Results
 
-#### Frequency of harmful events
+##### Frequency of harmful events
 
 *Frequency of harmful events* measures frequency of 11 risks of online activity. These include getting a virus on one's device or seeing upsetting content online, or actions taken as a protection measure against those risks, such as reporting an issue online, deleting data or blocking further contacts from an individual.
 
@@ -302,7 +351,7 @@ Although respondents reported experiencing potentially harmful events online, th
 ```
 
 
-#### Responses to statements about online harms
+##### Responses to statements about online harms
 
 The graph below shows the level of agreement with a number of statements relating to online harms.
 
@@ -318,7 +367,7 @@ Online security and safety remains a pressing concern for just over a third of r
 ```
 
 
-#### Willingness to engage with others
+##### Willingness to engage with others
 
 Thinking about how they feel when they engage with others online, respondents were asked to what extent they agree with several statements relating to their willingness to engage with others.
 
@@ -330,13 +379,53 @@ For each statements, a large proportion of respondents neither agree nor disagre
 
 ```
 
+#### Results by Age
+
+```{r ageQ434_91, fig.width = 8, fig.height = 5, echo=FALSE}
+generateSingleAgeFrequency(4, vars.resilience.harm.events.434, frequencyMonthLabels)
+```
+
+```{r ageQ434_97, fig.width = 8, fig.height = 5, echo=FALSE}
+generateSingleAgeFrequency(10, vars.resilience.harm.events.434, frequencyMonthLabels)
+```
+
+```{r ageQ435_99, fig.width = 8, fig.height = 5, echo=FALSE}
+generateSingleAgeFrequency(1, vars.resilience.harms.agreement.435, agreementLabels)
+```
+
+```{r ageQ435_103, fig.width = 8, fig.height = 5, echo=FALSE}
+generateSingleAgeFrequency(5, vars.resilience.harms.agreement.435, agreementLabels)
+```
+
+```{r ageQ435_104, fig.width = 8, fig.height = 5, echo=FALSE}
+generateSingleAgeFrequency(6, vars.resilience.harms.agreement.435, agreementLabels)
+```
+
+```{r ageQ435_105, fig.width = 8, fig.height = 5, echo=FALSE}
+generateSingleAgeFrequency(7, vars.resilience.harms.agreement.435, agreementLabels)
+```
+
+```{r ageQ428_107, fig.width = 8, fig.height = 5, echo=FALSE}
+generateSingleAgeFrequency(2, vars.resilience.engage.with.others.428, agreementLabels)
+```
+
 
 ### Social Connectedness
 
-[Overview of Critical Issue]
+Our survey asked participants to respond to questions about social connectedness and the role technology plays in their interactions with other people.
+
+  * Frequency of online activity to maintain connections
+  * Importance of online life to maintaining relationships
+  * Level of agreement with statements about broader issues concerning technology
 
 
-#### Maintaining connections
+##### General Results
+
+##### Maintaining connections
+
+This question measures frequency of 8 different online activities whose main purpose, or direct consequence, is to interact with others and/or to maintain connections.
+
+The graph below shows the relative frequencies of each activity. Reading updates from friends or family via email or social media is the most frequent and most commonly reported activity, followed by making comments on those updates. Making new friends, meeting people or looking at websites that help meet new people are less common. This suggests that online activity is primarily used to strengthen connection with offline networks rather than as a distinct circle of connections.
 
 ```{r graphSubQuestion343, fig.width = 8, fig.height = 6, echo=FALSE}
 
@@ -344,6 +433,10 @@ For each statements, a large proportion of respondents neither agree nor disagre
 
 ```
 
+
+##### Importance of online life in maintaining relationships
+
+When asked how important online life is in maintaining relationships with various groups within a broader social network, friends and family were the two groups with the highest level of importance. Online is also considered important in maintaining relationships with other networks of interest and work or school peers, but comparatively not as important to maintain relationships with neighbours.
 
 ```{r graphSubQuestion287, fig.width = 8, fig.height = 5, echo=FALSE}
 
@@ -353,8 +446,13 @@ For each statements, a large proportion of respondents neither agree nor disagre
 
 
 
-#### Attitudes towards Technology
+##### Attitudes towards Technology
 
+The survey asked respondents to what extent they agree or disagree with a number of statements with regards to attitudes towards broader issues concerning technology.
+
+Similar to our findings on the more general statements about online risks and harms, the attitudes of respondents towards technology is especially positive with over 60% reporting being optimistic about the future of technology. Three quarters `r ` agree or strongly agree that technology is part of everyday life and half `r ` believe that technology can not only strengthen familial relationships but also foster social inclusion.
+
+The positive attitude is nevertheless counterbalanced with concerns about the use of online information by governments or companies, the impact on the environment or the growing divide between technology experts and the rest of society.
 
 ```{r graphSubQuestion429, fig.width = 8, fig.height = 6.5, echo=FALSE}
 
@@ -362,8 +460,31 @@ For each statements, a large proportion of respondents neither agree nor disagre
 
 ```
 
+#### Results by Age
 
+```{r ageQ277_11, fig.width = 8, fig.height = 5, echo=FALSE}
+generateSingleAgeFrequency(3, vars.connectedness.helping.others.277, yesNoLabels)
+```
 
+```{r ageQ277_119, fig.width = 8, fig.height = 5, echo=FALSE}
+generateSingleAgeFrequency(8, vars.connectedness.helping.others.277, yesNoLabels)
+```
+
+```{r ageQ287_137, fig.width = 8, fig.height = 5, echo=FALSE}
+generateSingleAgeFrequency(1, vars.connectedness.maintenance.287, importanceLabels)
+```
+
+```{r ageQ343_146, fig.width = 8, fig.height = 5, echo=FALSE}
+generateSingleAgeFrequency(4, vars.connectedness.events.343, frequencyMonthLabels)
+```
+
+```{r ageQ429_152, fig.width = 8, fig.height = 5, echo=FALSE}
+generateSingleAgeFrequency(2, vars.connectedness.tech.attitudes.429, agreementLabels)
+```
+
+```{r ageQ429_155, fig.width = 8, fig.height = 5, echo=FALSE}
+generateSingleAgeFrequency(5, vars.connectedness.tech.attitudes.429, agreementLabels)
+```
 
 
 

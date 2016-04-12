@@ -282,7 +282,7 @@ standardBarChart <- function(data, file.name, title, x.label, y.label, func, use
 ## Augment chart with standard look and feel 
 augmentChart <- function(p, breaks, labels) {
 	p <- p +
-		scale_fill_manual(name="Frequency",
+		scale_fill_manual(name="",
 				 values=yawcrcPalette,
                  breaks=unique(breaks),
                  labels=labels) +
@@ -589,12 +589,20 @@ generateSingleAgeFrequency <- function(x, vars, func) {
 	}
 	else {
 		var.name <- vars[1]
-		ind.name <- gsub("Q", "", var.name)
-	
-		freqs <- table(augmented.data[,var.name], augmented.data$age.breaks)
-		metadata <- indicators[which(ind.name == indicators$DCI.ID),]
-		# For consistency
-		metadata$Name <- as.character(metadata$Indicator...Variable)
+		if (str_count(var.name, "_") == 1) {
+			# Matches a specific question pattern like "Q74_2"
+			ind.name <- obtainIndicatorName(vars)
+			freqs <- table(augmented.data[,var.name], augmented.data$age.breaks)
+			metadata <- expandedIndicators[which(ind.name == expandedIndicators$DCI.ID),]
+		}
+		else {
+			# Matches a general question pattern like "Q74"
+			ind.name <- gsub("Q", "", var.name)
+			freqs <- table(augmented.data[,var.name], augmented.data$age.breaks)
+			metadata <- indicators[which(ind.name == indicators$DCI.ID),]
+			# For consistency
+			metadata$Name <- as.character(metadata$Indicator...Variable)
+		}
 	}
 
 	p <- chartFrequencies(freqs,
