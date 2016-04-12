@@ -1,13 +1,13 @@
 ---
 title: "Digital Capacities Index - Quantitative Findings"
 author: | 
-  | Liam Magee^1^, Delphine Bellarose^1^, Anjali Sharma^1^, Louise Crabtree^1^, Philippa Collin^1^, Justine Humphry^1^, Paul James^1^, Emma Kearney^1^, Tanya Notley^1^, Amanda Third^1^, Samantha Yorke^2^
+  | Liam Magee^1^, Delphine Bellerose^1^, Anjali Sharma^1^, Louise Crabtree^1^, Philippa Collin^1^, Justine Humphry^1^, Paul James^1^, Emma Kearney^1^, Tanya Notley^1^, Amanda Third^1^, Samantha Yorke^2^
   | 1. Western Sydney University
   | 2. Google Australia
 date: "4 April 2016"
 bibliography: DCI.bib
 output:
-  word_document:
+  pdf_document:
     toc: true
     toc_depth: 4
 ---
@@ -40,7 +40,7 @@ if (length(grep('html_document',rmd_output)) > 0) {
 # if (rmd_output == 'html_document') {
   PLOTLY <- TRUE
 }
-# PLOTLY <- FALSE
+PLOTLY <- FALSE
 
 
 # Set up figure numbering
@@ -60,7 +60,7 @@ fig_nums("agg.results", "Aggregated Results by Critical Issue")
 ## Digital Capacities Index - Quantitative Findings
 
 The *Digital Capacities Index* is a pilot survey instrument developed by researchers at Western Sydney University and Google Australia. 
-The survey was administered by [Pure Profile](https://www.pureprofile.com/us/) in Febuary 2016.
+The survey was administered by [Pure Profile](https://www.pureprofile.com/us/) in February 2016.
 
 
 ### Introduction
@@ -186,70 +186,103 @@ The graph below shows the relative frequencies of each activity. Using the Inter
   "Frequency", 
   frequencyLabels, 
   "online-activities-74",
-  -6.0)))
+  -6.0,
+  yawcrcPaletteFivePoints
+  )))
 
 ```
 
-<!--
-##### Aggregated online activity
-
-```{r onlineActivities, echo=FALSE}
-
-(gg <- chartWrap(histogram(vars.competencies.online.activities.74, 'Online Activities', 'gen/Q74')))
-
-```
-
--->
 
 ##### Perceived ease of conducting online activity
 
-[Introductory Text]
+
 
 ```{r graphSubQuestion431, fig.width = 8, fig.height = 15.5, echo=FALSE}
 
-(gg <- chartWrap(graphSubQuestionFrequencies(vars.competencies.431, "Ease", easeLabels, "competencies-ease-of-tasks-431", -7.5)))
+(gg <- chartWrap(graphSubQuestionFrequencies(
+    vars.competencies.431, 
+    "Ease", 
+    easeLabels,
+    "competencies-ease-of-tasks-431", 
+    -7.5,
+    yawcrcPaletteFivePoints)))
 
 ```
 
-<!--
-
-```{r ageFreqForEase, echo=FALSE}
-
-generateSingleAgeFrequency(1, vars.ease, easeLabels)
-
-```
-
--->
 
 
 #### Results by Age
 
-```{r ageQ74_2, fig.width = 8, fig.height = 5, echo=FALSE}
-generateSingleAgeFrequency(2, vars.competencies.online.activities.74, frequencyLabels)
+##### `r getLabel(2, vars.competencies.online.activities.74)`
+
+Across all age groups, a large majority of respondents reported using the internet for personal use almost daily or more often. The 18-34 age group are the heaviest users, with 58% using the internet for personal use several times a day.
+
+```{r ageQ74_2, fig.width = 8, fig.height = 2, echo=FALSE}
+generateSingleAgeFrequency(
+    2, 
+    vars.competencies.online.activities.74, 
+    frequencyLabels,
+    yawcrcPaletteFivePoints
+    )
 ```
 
-```{r ageQ74_3, fig.width = 8, fig.height = 5, echo=FALSE}
-generateSingleAgeFrequency(3, vars.competencies.online.activities.74, frequencyLabels)
+##### `r getLabel(3, vars.competencies.online.activities.74)`
+
+Differences by age groups are more visible depending on specific uses of the internet. Watching video clips for example is an activity where there is a clear demarcation between the under 35s, who are more likely to do this on a daily basis or more often, and those aged 35 or over, who are more likely to do this on a weekly basis or less often.
+
+```{r ageQ74_3, fig.width = 8, fig.height = 2, echo=FALSE}
+generateSingleAgeFrequency(3, 
+  vars.competencies.online.activities.74, 
+  frequencyLabels,
+  yawcrcPaletteFivePoints)
 ```
 
-```{r ageQ74_5, fig.width = 8, fig.height = 5, echo=FALSE}
-generateSingleAgeFrequency(5, vars.competencies.online.activities.74, frequencyLabels)
+
+##### `r getLabel(6, vars.competencies.online.activities.74)`
+
+In contrast, respondents over 18 overwhelmingly reported using email as a mean of communication several times a day, compared to only a fifth of those aged 12 to 17.
+
+```{r ageQ74_6, fig.width = 8, fig.height = 2, echo=FALSE}
+generateSingleAgeFrequency(6, 
+  vars.competencies.online.activities.74, 
+  frequencyLabels,
+  yawcrcPaletteFivePoints)
 ```
 
-```{r ageQ74_6, fig.width = 8, fig.height = 5, echo=FALSE}
-generateSingleAgeFrequency(6, vars.competencies.online.activities.74, frequencyLabels)
+
+##### `r getLabel(13, vars.competencies.431)`
+
+Although respondents in the older age groups were less likely than younger people to report specific digital tasks to be easy or very easy, it is worth noting that they did not necessarily report those to be especially difficult. Rather, much higher proportions of respondents in the older age groups answered ‘Don’t know’ or ‘Not applicable’ to those specific tasks such as creating a blog, pointing to a difference in levels of need and interest more so than actual competencies.
+
+```{r ageQ431_28, fig.width = 8, fig.height = 2, echo=FALSE}
+generateSingleAgeFrequency(13, 
+  vars.competencies.431, 
+  easeLabels,
+  yawcrcPaletteFivePoints)
 ```
 
-```{r ageQ431_17, fig.width = 8, fig.height = 5, echo=FALSE}
-generateSingleAgeFrequency(2, vars.competencies.431, easeLabels)
+
+##### `r getLabel(14, vars.competencies.431)`
+
+When asked about more 'general' or overarching skills such as understanding the language that others use online, the age correlation by which the perceived ease of conducting specific tasks decreases as the age of respondents increases becomes more apparent.
+
+```{r ageQ431_29, fig.width = 8, fig.height = 2, echo=FALSE}
+generateSingleAgeFrequency(14, 
+  vars.competencies.431, 
+  easeLabels,
+  yawcrcPaletteFivePoints)
 ```
 
-```{r ageQ431_29, fig.width = 8, fig.height = 5, echo=FALSE}
-generateSingleAgeFrequency(14, vars.competencies.431, easeLabels)
-```
 
-```{r ageQ431_34, fig.width = 8, fig.height = 5, echo=FALSE}
-generateSingleAgeFrequency(19, vars.competencies.431, easeLabels)
+##### `r getLabel(19, vars.competencies.431)`
+
+There is, however, greater consistency across age groups for competencies such as blocking unwanted adverts or junk mail.
+
+```{r ageQ431_34, fig.width = 8, fig.height = 2, echo=FALSE}
+generateSingleAgeFrequency(19, 
+  vars.competencies.431, 
+  easeLabels,
+  yawcrcPaletteFivePoints)
 ```
 
 
@@ -277,7 +310,12 @@ generateSingleAgeFrequency(19, vars.competencies.431, easeLabels)
 
 ```{r graphSubQuestion341, fig.width = 8, fig.height = 5.5, echo=FALSE}
 
-(gg <- chartWrap(graphSubQuestionFrequencies(vars.interests.difference.seeking.341, "Agreement", agreementLabels, "interests-difference-seeking-341", -7.5)))
+(gg <- chartWrap(graphSubQuestionFrequencies(vars.interests.difference.seeking.341, 
+  "Agreement", 
+  agreementLabels, 
+  "interests-difference-seeking-341", 
+  -7.5,
+  yawcrcPaletteFivePoints)))
 
 ```
 
@@ -292,7 +330,10 @@ generateSingleAgeFrequency(19, vars.competencies.431, easeLabels)
 
 ```{r graphSubQuestion353, fig.width = 8, fig.height = 3.75, echo=FALSE}
 
-(gg <- chartWrap(graphSubQuestionFrequencies(vars.interests.health.improvement.353, "Agreement", agreementLabels, "interests-health-improvement-353", -7.5)))
+(gg <- chartWrap(graphSubQuestionFrequencies(
+  vars.interests.health.improvement.353, 
+  "Agreement", agreementLabels, "interests-health-improvement-353", -7.5,
+  yawcrcPaletteFivePoints)))
 
 ```
 
@@ -308,17 +349,30 @@ generateSingleAgeFrequency(19, vars.competencies.431, easeLabels)
 
 #### Results by Age
 
-```{r ageQ437_43, fig.width = 8, fig.height = 5, echo=FALSE}
+##### `r getLabel(1, vars.interests.general.437)`
+
+As previously mentioned, differences by age are more or less noticeable depending on the various uses of the internet, which directly relates to motivations, interests and the reasons why respondents go online. A commonly reported use such as going online to look for information about a topic of general interest (where answers are provided by informational sites like Wikipedia or Quora) is typically one where the relative frequency is consistent across all age groups.
+
+```{r ageQ437_43, fig.width = 8, fig.height = 2, echo=FALSE}
 generateSingleAgeFrequency(1, vars.interests.general.437, frequencyMonthLabels)
 ```
-```{r ageQ437_49, fig.width = 8, fig.height = 5, echo=FALSE}
-generateSingleAgeFrequency(7, vars.interests.general.437, frequencyMonthLabels)
+
+
+##### `r getLabel(9, vars.interests.general.437)`
+
+Comparatively, much lower relative frequencies were reported for going online to look for information about a political or societal issue.
+
+```{r ageQ437_51, fig.width = 8, fig.height = 2, echo=FALSE}
+generateSingleAgeFrequency(9, vars.interests.general.437, frequencyMonthLabels)
 ```
-```{r ageQ437_50, fig.width = 8, fig.height = 5, echo=FALSE}
-generateSingleAgeFrequency(8, vars.interests.general.437, frequencyMonthLabels)
-```
-```{r ageQ352_62, fig.width = 8, fig.height = 5, echo=FALSE}
-generateSingleAgeFrequency(1, vars.interests.fitness.352, frequencyMonthLabels)
+
+
+##### `r getLabel(4, vars.interests.fitness.352)`
+
+Nearly half (46%) of younger respondents (under 18) reported not looking up information about health or medical care in the last 12 months. The proportion of those who did so at least once in the last 12 months increase with age, although the relative frequencies remain low.
+
+```{r ageQ352_65, fig.width = 8, fig.height = 2, echo=FALSE}
+generateSingleAgeFrequency(4, vars.interests.fitness.352, frequencyMonthLabels)
 ```
 
 
@@ -341,7 +395,7 @@ Our survey asked participants to respond to three questions about potential risk
 **The graph below shows the relative frequencies of experiencing a risk, or taking a specific action in response to a risk, in the last 12 months. 
 **
 
-A large proportion of respondents (`r "Enter value here"`) reported having never experienced these risks or potentially harmful events. The event that was most commonly experienced was 'Seeing or experiencing something on the internet that had bothered them in some way' with `r "Enter value here"` 50+% [exact %?] of respondents experiencing this at least once in the last 12 months and `r "Enter value here"` reporting experiencing this on a weekly basis or more often.
+On average, more than half of respondents (51%) reported having never experienced these risks or potentially harmful events. The event that was most commonly experienced was 'Seeing or experiencing something on the internet that had bothered them in some way' with 55% of respondents experiencing this at least once in the last 12 months and 14% reporting experiencing this on a weekly basis or more often.
 
 Half of respondents reported taking protective measures, such as blocking further contacts from an individual or deleting data in response to security and privacy concerns, at least once in the last 12 months.
 
@@ -365,7 +419,10 @@ Online security and safety remains a pressing concern for just over a third of r
 
 ```{r graphSubQuestion435, fig.width = 8, fig.height = 5.5, echo=FALSE}
 
-(gg <- chartWrap(graphSubQuestionFrequencies(vars.resilience.harms.agreement.435, "Agreement", agreementLabels, "resilience-harms-agreement-435", -6.5)))
+(gg <- chartWrap(graphSubQuestionFrequencies(
+  vars.resilience.harms.agreement.435, 
+  "Agreement", agreementLabels, "resilience-harms-agreement-435", -6.5,
+  yawcrcPaletteFivePoints)))
 
 ```
 
@@ -376,41 +433,53 @@ Thinking about how they feel when they engage with others online, respondents we
 
 For each statements, a large proportion of respondents neither agree nor disagree. People tend to disagree that it is easier to be oneself online than face to face or that they talk about private things online that they do not share face to face. Similar proportions agree or disagree that going online make them feel better when they are going through a difficult time.
 
-```{r graphSubQuestion428, fig.width = 8, fig.height = 5, echo=FALSE}
+```{r graphSubQuestion428, fig.width = 8, fig.height = 5.5, echo=FALSE}
 
-(gg <- chartWrap(graphSubQuestionFrequencies(vars.resilience.engage.with.others.428, "Agreement", agreementLabels, "resilience-engage-with-others-428", -7.0)))
+(gg <- chartWrap(graphSubQuestionFrequencies(vars.resilience.engage.with.others.428, 
+  "Agreement", agreementLabels, "resilience-engage-with-others-428", -7.0,
+  yawcrcPaletteFivePoints)))
 
 ```
 
 #### Results by Age
 
-```{r ageQ434_91, fig.width = 8, fig.height = 5, echo=FALSE}
+#####
+
+Respondents under the age of 35 were more likely to report higher frequency of seeing something on the internet that had bothered them in some way.
+
+```{r ageQ434_91, fig.width = 8, fig.height = 2, echo=FALSE}
 generateSingleAgeFrequency(4, vars.resilience.harm.events.434, frequencyMonthLabels)
 ```
 
-```{r ageQ434_97, fig.width = 8, fig.height = 5, echo=FALSE}
+##### `r getLabel(10, vars.resilience.harm.events.434)`
+
+
+There are no differences by age in the reported frequency of deleting data in response to privacy concerns.
+
+```{r ageQ434_97, fig.width = 8, fig.height = 2, echo=FALSE}
 generateSingleAgeFrequency(10, vars.resilience.harm.events.434, frequencyMonthLabels)
 ```
 
-```{r ageQ435_99, fig.width = 8, fig.height = 5, echo=FALSE}
-generateSingleAgeFrequency(1, vars.resilience.harms.agreement.435, agreementLabels)
+
+##### `r getLabel(6, vars.resilience.harms.agreement.435)`
+
+Over a third (35%) of respondents agree or strongly agree that online security and safety is generally a pressing concern. Interestingly, there were no noticeable differences by age groups.
+
+```{r ageQ435_104, fig.width = 8, fig.height = 2, echo=FALSE}
+generateSingleAgeFrequency(6, vars.resilience.harms.agreement.435, agreementLabels,
+  yawcrcPaletteFivePoints)
 ```
 
-```{r ageQ435_103, fig.width = 8, fig.height = 5, echo=FALSE}
-generateSingleAgeFrequency(5, vars.resilience.harms.agreement.435, agreementLabels)
+
+##### `r getLabel(7, vars.resilience.harms.agreement.435)`
+
+Having said that, respondents also overwhelmingly agree that the opportunities of online activity outweigh its risks, with half agreeing or strongly agreeing with that statement. Again, there are no noticeable differences by age groups.
+
+```{r ageQ435_105, fig.width = 8, fig.height = 2, echo=FALSE}
+generateSingleAgeFrequency(7, vars.resilience.harms.agreement.435, agreementLabels,
+  yawcrcPaletteFivePoints)
 ```
 
-```{r ageQ435_104, fig.width = 8, fig.height = 5, echo=FALSE}
-generateSingleAgeFrequency(6, vars.resilience.harms.agreement.435, agreementLabels)
-```
-
-```{r ageQ435_105, fig.width = 8, fig.height = 5, echo=FALSE}
-generateSingleAgeFrequency(7, vars.resilience.harms.agreement.435, agreementLabels)
-```
-
-```{r ageQ428_107, fig.width = 8, fig.height = 5, echo=FALSE}
-generateSingleAgeFrequency(2, vars.resilience.engage.with.others.428, agreementLabels)
-```
 
 
 ### Social Connectedness
@@ -422,7 +491,7 @@ Our survey asked participants to respond to questions about social connectedness
   * Level of agreement with statements about broader issues concerning technology
 
 
-##### General Results
+#### General Results
 
 ##### Maintaining connections
 
@@ -453,43 +522,44 @@ When asked how important online life is in maintaining relationships with variou
 
 The survey asked respondents to what extent they agree or disagree with a number of statements with regards to attitudes towards broader issues concerning technology.
 
-Similar to our findings on the more general statements about online risks and harms, the attitudes of respondents towards technology is especially positive with over 60% reporting being optimistic about the future of technology. Three quarters `r ` agree or strongly agree that technology is part of everyday life and half `r ` believe that technology can not only strengthen familial relationships but also foster social inclusion.
+Similar to our findings on the more general statements about online risks and harms, the attitudes of respondents towards technology is especially positive with over 60% reporting being optimistic about the future of technology. Nearly three quarters (74%) agree or strongly agree that technology is part of everyday life. Nearly half (49%) believe that technology can not only make participants more effective members of their community or nation, but can also foster social inclusion.
 
 The positive attitude is nevertheless counterbalanced with concerns about the use of online information by governments or companies, the impact on the environment or the growing divide between technology experts and the rest of society.
 
 ```{r graphSubQuestion429, fig.width = 8, fig.height = 6.5, echo=FALSE}
 
-(gg <- chartWrap(graphSubQuestionFrequencies(vars.connectedness.tech.attitudes.429, "Agreement", agreementLabels, "connectedness-tech-attitudes-429", -7.0)))
+(gg <- chartWrap(graphSubQuestionFrequencies(vars.connectedness.tech.attitudes.429, "Agreement", agreementLabels, "connectedness-tech-attitudes-429", -7.0,
+  yawcrcPaletteFivePoints)))
 
 ```
 
 #### Results by Age
 
-```{r ageQ277_11, fig.width = 8, fig.height = 5, echo=FALSE}
-generateSingleAgeFrequency(3, vars.connectedness.helping.others.277, yesNoLabels)
-```
+##### `r getLabel(1, vars.connectedness.maintenance.287)`
 
-```{r ageQ277_119, fig.width = 8, fig.height = 5, echo=FALSE}
-generateSingleAgeFrequency(8, vars.connectedness.helping.others.277, yesNoLabels)
-```
+Across all age groups, a large proportion of respondents reported that their online life was extremely important in maintaining relationships with family members.
 
-```{r ageQ287_137, fig.width = 8, fig.height = 5, echo=FALSE}
+```{r ageQ287_137, fig.width = 8, fig.height = 2, echo=FALSE}
 generateSingleAgeFrequency(1, vars.connectedness.maintenance.287, importanceLabels)
 ```
 
-```{r ageQ343_146, fig.width = 8, fig.height = 5, echo=FALSE}
+##### `r getLabel(4, vars.connectedness.events.343)`
+
+The ways in which people maintain connections with others online, however, differ depending on the people’s age. The likelihood of sharing pictures of oneself with family or friends decreases with age, with half of 12-17 year olds doing so weekly or more often compared to less than a fifth of those aged 65 or over.
+
+```{r ageQ343_146, fig.width = 8, fig.height = 2, echo=FALSE}
 generateSingleAgeFrequency(4, vars.connectedness.events.343, frequencyMonthLabels)
 ```
 
-```{r ageQ429_152, fig.width = 8, fig.height = 5, echo=FALSE}
-generateSingleAgeFrequency(2, vars.connectedness.tech.attitudes.429, agreementLabels)
+
+##### `r getLabel(2, vars.connectedness.tech.attitudes.429)`
+
+Overall, respondents largely agreed to being concerned about how companies, governments or others might use their online information, and results are consistent across all age groups.
+
+```{r ageQ429_152, fig.width = 8, fig.height = 2, echo=FALSE}
+generateSingleAgeFrequency(2, vars.connectedness.tech.attitudes.429, agreementLabels,
+  yawcrcPaletteFivePoints)
 ```
-
-```{r ageQ429_155, fig.width = 8, fig.height = 5, echo=FALSE}
-generateSingleAgeFrequency(5, vars.connectedness.tech.attitudes.429, agreementLabels)
-```
-
-
 
 
 
@@ -530,13 +600,13 @@ $$ y = mx +b $$
 
 The above procedure has several limitations. 
 
-First, it is questionable whether complex concepts such as digital resilience and social connectedness, in particular, are reducible to a quantitative value, regardless of the procedure used to derive it. At the very least, we recommend comparing these scores with our qualitative findings, which illustrate the more nuanced and sometimes contradictory character of these qualities in Australian families.
+First, it is questionable whether complex concepts such as digital resilience and social connectedness, in particular, are reducible to a quantitative value, regardless of the procedure used to derive it. For reasons of space, our characterisation of Digital Capacities includes a total of nine critical issues, only four of which are included in the survey. We recommend comparing these scores with our qualitative findings, which illustrate the more nuanced and sometimes contradictory character of these qualities in Australian families.
 
 Second, the procedure treats, at the moment, each of the scales as numerically regular. For example, on the *Agreement* scale it assumes *Strongly agree* warrants 1 more score point than *Agree*, which in turn warrants 1 more point than *Neither Agree nor Disagree*. In other words, ordinal scales are treated as *ratio* variables, with regular intervals. 
 
 Third, the procedure assumes all questions and individual items have equal influence on the critical issue they have been aligned to. 
 
-[Note for reviewers: The latter two of these issues can be addresses by a more sophisticated scaling and weighting approach. We are considering holding a workshop for this purpose in preparation of the complete draft meeting in May 2016.]
+**[REVIEW NOTE: The latter two of these issues can be addressed by a more sophisticated scaling and weighting approach. We are considering holding a workshop for this purpose in preparation of the complete draft meeting in May 2016.]**
 
 
 
@@ -558,29 +628,6 @@ Third, the procedure assumes all questions and individual items have equal influ
 -->
 
 
-
-<!--
-```{r generateInterests, echo=FALSE}
-## generateInterests()
-```
-
-```{r generateCompetencies, echo=FALSE}
-## generateCompetencies()
-```
-
-```{r generateResilience, echo=FALSE}
-## generateResilience()
-```
-
-```{r generateConnectedness, echo=FALSE}
-## generateConnectedness()
-```
-
-```{r generateIndex, echo=FALSE}
-## generateIndex()
-```
-
--->
 
 
 

@@ -654,8 +654,7 @@ sumResilience <- function() {
 		var.name <- vars.resilience.harm.events.434[i]
 		new.var <- paste(var.name, ".for.index", sep = "")
 		c <- augmented.data[,var.name]
-		# d <- 6 - c
-		d <- c - 1
+		d <- 6 - c
 		# Convert "Don't know" to "Less than Once a Month" - conservative guess
 		d <- replace(d, d == -1, 1)
 		vars.resilience.for.index <- c(vars.resilience.for.index, new.var)
@@ -824,7 +823,7 @@ generateIndexChart <- function() {
 
 	p <- ggplot(data=msc, aes(x = variable, y = value, colour=value)) + 
 		geom_bar(stat="identity", position = "fill") + 
-	    scale_colour_gradientn(colours=yawcrcPaletteAggregate) +
+	    scale_colour_gradientn(colours=yawcrcPalette5) +
 	    coord_flip() 
     return (p)
 }
@@ -860,11 +859,6 @@ randomFunctions <- function() {
 	ggplot(data, aes(x=total.437, y=total.341, color=gender)) +
 	    geom_point(shape=1) +    # Use hollow circles
 	    geom_smooth(method=lm)   # Add linear regression line 
-	
-	s <- table(augmented.data$Q429_159)
-	s <- data.frame(s)
-	sum(s$Freq)
-	s$rf <- s$Freq / sum(s$Freq)
 
 }
 

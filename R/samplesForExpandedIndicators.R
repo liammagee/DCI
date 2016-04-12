@@ -54,7 +54,8 @@ generateExpandedVariableSet_Looped = function() {
   
   # Obtain standalone indicators (the inverse of those indicators that have subindicators)
   standaloneIndicators <- validIndicators[!(validIndicators$DCI.ID %in% subIndicators$DCI.ID), ]
-  
+  standaloneIndicators$Label <- standaloneIndicators$Name
+
   # New data set with both variables and subvariables
   extendedData <- as.matrix(standaloneIndicators)
   
@@ -85,6 +86,9 @@ modifyRow <- function(option, id, row) {
     row$DCI.ID <- newID
           
     # Add the option to the variable name, for a new variable name
+    row$Label <- paste(option, sep = "")
+          
+    # Add Simplified name
     row$Name <- paste(row$DCI.ID, row$Name, option, sep = " - ")
     
     # Copy these values as strings not factors
