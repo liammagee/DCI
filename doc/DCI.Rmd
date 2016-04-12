@@ -7,7 +7,7 @@ author: |
 date: "4 April 2016"
 bibliography: DCI.bib
 output:
-  html_document:
+  word_document:
     toc: true
     toc_depth: 4
 ---
@@ -40,7 +40,7 @@ if (length(grep('html_document',rmd_output)) > 0) {
 # if (rmd_output == 'html_document') {
   PLOTLY <- TRUE
 }
-PLOTLY <- FALSE
+# PLOTLY <- FALSE
 
 
 # Set up figure numbering
@@ -502,7 +502,7 @@ To gain an overall picture of our results, we generated `r fig_nums("agg.results
 These results are indicative only, and have several evident limitations we discuss further below. The procedure to generate scores for each of the issues is as follows:
 
 1. Interpret each question as having either a *positive* or *negative* influence of the score of the critical issue. For example, "Frequency of harmful events" has a *negative influence* on the issue of Resilience (and indeed, on overall "Digital Capacities").
-2. Determine the *direction* of the scale coding. For example, in all of our "Agreement" questions, "Strongly Agree" was coded **5**. 
+2. Determine the *direction* of the scale coding. For example, in all of our "Agreement" questions, "Strongly Agree" was coded **1**. 
 3. For each question, calculate a question score based on both its interpretation and direction, by summing responses to individual items.
 4. For each respondent, add each of their question scores to produce a respondent critical issue score. This value is converted to a percentile, wher '100%' would indicate maximum responses to each item for each question in that critical issue.
 5. An combined score is taken by averaging the four critical issue scores.

@@ -872,7 +872,7 @@ graphSubQuestionFrequencies  <- function(vars, legend.name, legendBreakFunc, fil
 }
 
 # Opt include plot.ly for HTML output
-PLOTLY = FALSE
+# PLOTLY = FALSE
 chartWrap <- function(p) {
 	if (PLOTLY) {
 		library(plotly)

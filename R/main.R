@@ -860,6 +860,11 @@ randomFunctions <- function() {
 	ggplot(data, aes(x=total.437, y=total.341, color=gender)) +
 	    geom_point(shape=1) +    # Use hollow circles
 	    geom_smooth(method=lm)   # Add linear regression line 
+	
+	s <- table(augmented.data$Q429_159)
+	s <- data.frame(s)
+	sum(s$Freq)
+	s$rf <- s$Freq / sum(s$Freq)
 
 }
 
