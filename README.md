@@ -23,5 +23,5 @@ Rscript R/main.R
 To generate the main report:
 
 ```
-Rscript -e 'rmarkdown::render("doc/DCI.Rmd")' 0.5 0.7
+Rscript -e 'rmarkdown::render("doc/DCI.Rmd", output_format="all")' 
 ```

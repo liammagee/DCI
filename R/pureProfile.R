@@ -834,8 +834,8 @@ graphSubQuestionFrequencies  <- function(vars, legend.name, legendBreakFunc, fil
 	    axis.line = element_line(colour = "black"),
 
 	    # TEXT
-	    axis.text.x = element_text(margin = margin(t = 0.5, r = 0, b = 0, l = 0, unit ="cm"), color=text.color, angle=0, vjust=0.0, hjust=0.5, size = axis.text.size * 1.0),
-	    axis.text.y = element_text(margin = margin(t = 0, r = y.right.offset, b = 0, l = 0.5, unit ="in"), color=text.color, angle=0, vjust=2.5, hjust=0.0, size = axis.text.size * 1.0),
+	    axis.text.x = element_text(margin = margin(t = 0, r = 0, b = 0, l = 0, unit ="cm"), color=text.color, angle=0, vjust=0.0, hjust=0.5, size = axis.text.size * 1.0),
+	    axis.text.y = element_text(margin = margin(t = 0, r = y.right.offset, b = 0, l = 0.5, unit ="in"), color=text.color, angle=0, vjust=-1.5, hjust=0.0, size = axis.text.size * 1.0),
 	    axis.ticks.x = element_line(colour = "white", size = 0.1),
 	    axis.ticks.y = element_line(colour = "white", size = 0.1),
 	    # axis.text.x = element_text(angle=45, vjust=1.0, hjust=1.0, size = axis.text.size),
@@ -907,3 +907,26 @@ getLabel <- function(index, cols) {
 	metadata <- expandedIndicators[which(ind.name == expandedIndicators$DCI.ID),]
 	return (metadata$Label)
 }
+
+questionCategory <- function(var.name) {
+	ind.name <- gsub("Q", "", var.name)
+
+	freqs <- table(augmented.data[,var.name], augmented.data$age.breaks)
+	metadata <- indicators[which(ind.name == indicators$DCI.ID),]
+	# For consistency
+	metadata$Name <- as.character(metadata$Indicator...Variable)
+
+	return (metadata$Name)
+}
+
+questionText <- function(var.name) {
+	ind.name <- gsub("Q", "", var.name)
+
+	freqs <- table(augmented.data[,var.name], augmented.data$age.breaks)
+	metadata <- indicators[which(ind.name == indicators$DCI.ID),]
+	# For consistency
+	metadata$Name <- as.character(metadata$Question..Adult)
+
+	return (metadata$Name)
+}
+

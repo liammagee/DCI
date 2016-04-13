@@ -49,7 +49,18 @@ fig_nums("age.freq", "Age Frequency")
 fig_nums("gender.freq", "Gender Frequency")
 fig_nums("age.gender.freq", "Age & Gender Frequency")
 fig_nums("age.gender.freq.abs", "Australia's Age & Gender Frequency (ABS 2014)")
+```
 
-Example math:
 
-$$ y = mx +b $$
+```{r graphSubQuestion74, fig.width = 8, fig.height = 9.5, echo=FALSE}
+
+(gg <- chartWrap(graphSubQuestionFrequencies(
+  vars.competencies.online.activities.74, 
+  "Frequency", 
+  frequencyLabels, 
+  "online-activities-74",
+  -6.0,
+  yawcrcPaletteFivePoints
+  )))
+
+```

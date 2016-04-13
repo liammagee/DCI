@@ -7,7 +7,13 @@ author: |
 date: "4 April 2016"
 bibliography: DCI.bib
 output:
+  html_document:
+    toc: true
+    toc_depth: 4
   pdf_document:
+    toc: true
+    toc_depth: 4
+  word_document:
     toc: true
     toc_depth: 4
 ---
@@ -48,8 +54,23 @@ fig_nums <- captioner(prefix = "Figure")
 cf <- partial(fig_nums, display = "cite")
 fig_nums("age.freq", "Age Frequency")
 fig_nums("gender.freq", "Gender Frequency")
-fig_nums("age.gender.freq", "Age & Gender Frequency")
-fig_nums("age.gender.freq.abs", "Australia's Age & Gender Frequency (ABS 2014)")
+fig_nums("gender.and.age.freq", "Age & Gender Frequency")
+fig_nums("gender.and.age.freq.abs", "Australia's Age & Gender Frequency (ABS 2014)")
+fig_nums("location.freq", "Location Frequency")
+
+fig_nums("freq.74", "Frequency of online activity")
+fig_nums("freq.431", "Perceived ease of conducting online activity")
+fig_nums("freq.437", "General Interests")
+fig_nums("freq.341", "Interest in seeking difference")
+fig_nums("freq.352", "Interest in fitness and health improvement")
+fig_nums("freq.353", "Health Impacts")
+fig_nums("freq.430", "Interest in keeping in touch")
+fig_nums("freq.434", "Frequency of harmful events")
+fig_nums("freq.435", "Responses to statements about online harms")
+fig_nums("freq.428", "Willingness to engage with others")
+fig_nums("freq.343", "Maintaining connections")
+fig_nums("freq.287", "Importance of online life in maintaining relationships")
+fig_nums("freq.429", "Attitudes towards Technology")
 
 fig_nums("agg.results", "Aggregated Results by Critical Issue")
 
@@ -125,7 +146,7 @@ Gender demographics are distributed, as show in `r cf("gender.freq")`:
 #### Combined Age and Gender
 
 
-Combined age and gender demographics are distributed as per *`r cf("age.gender.freq")`:
+Combined age and gender demographics are distributed as per *`r cf("gender.and.age.freq")`:
 
 ```{r genderAndAgeFreq, echo=FALSE}
 
@@ -133,14 +154,14 @@ Combined age and gender demographics are distributed as per *`r cf("age.gender.f
 
 ```
 
-**`r fig_nums("age.gender.freq")`**
+**`r fig_nums("gender.and.age.freq")`**
 
-These figures approximate to Australia's adult age distribution, as reported by the ABS in 2014 in **`r cf("age.gender.freq.abs")`** below, though with a considerably higher skew towards younger women and older men.
+These figures approximate to Australia's adult age distribution, as reported by the ABS in 2014 in **`r cf("gender.and.age.freq.abs")`** below, though with a considerably higher skew towards younger women and older men.
 
 
 ![Population Structure, Age and sex - Australia - 1994 and 2014](http://www.abs.gov.au/ausstats/abs@.nsf/0/1cd2b1952afc5e7aca257298000f2e76/Body/0.2A9C!OpenElement&FieldElemFormat=gif)
 
-**`r fig_nums("age.gender.freq.abs")`**
+**`r fig_nums("gender.and.age.freq.abs")`**
 
 
 
@@ -150,11 +171,12 @@ Survey distribution by state broadly follows Australia's demographic distributio
 
 The split of participants between urban and regional/rural is as follows:
 
-```{r locationFreq, echo=FALSE}
+```{r locationFreq, fig.height = 2, echo=FALSE}
 
 (gg <- chartWrap(locationChart(data)))
 
 ```
+**`r fig_nums("location.freq")`**
 
 The percentage of reported urban residents here is `r formatC(100 * length(data[data$location == "Urban", "location"]) / length(data[,"location"]))` - considerably less than [World Bank figures of 89%](http://data.worldbank.org/indicator/SP.URB.TOTL.IN.ZS).
 
@@ -177,7 +199,7 @@ Our survey asked participants to respond to two questions about competencies:
 
 *Frequency of online activity* measures frequency of 15 different activities, ranging from highly common activities such as sending email through to less common activities (in 2016), such as writing blogs.
 
-The graph below shows the relative frequencies of each activity. Using the Internet generally (for work, study, and for personal use), sending email and social networking are the most common activities. Streaming music, playing games with others, sharing media and writing blogs or diaries are comparatively uncommon activities.
+`r cf("freq.74")` below shows the relative frequencies of each activity. Using the Internet generally (for work, study, and for personal use), sending email and social networking are the most common activities. Streaming music, playing games with others, sharing media and writing blogs or diaries are comparatively uncommon activities.
 
 ```{r graphSubQuestion74, fig.width = 8, fig.height = 9.5, echo=FALSE}
 
@@ -192,10 +214,12 @@ The graph below shows the relative frequencies of each activity. Using the Inter
 
 ```
 
+**`r fig_nums("freq.74")`**
+
 
 ##### Perceived ease of conducting online activity
 
-
+Respondents were asked to rate the ease or difficulty of 27 online activities. Overall respondents report a high level of competency across all activities with bookmarking a website and connecting to a wifi network scoring the highest. Understanding the language that others use online and creating a blog were reported as more difficult activities. Despite the high level of competence reported by respondents in each of the 27 activities there were a small percentage of respondents who reported each of these activities as difficult or very difficult. Analysing the results according to age ranges provides a more illustrative breakdown of the results.
 
 ```{r graphSubQuestion431, fig.width = 8, fig.height = 15.5, echo=FALSE}
 
@@ -209,6 +233,7 @@ The graph below shows the relative frequencies of each activity. Using the Inter
 
 ```
 
+**`r fig_nums("freq.431")`**
 
 
 #### Results by Age
@@ -288,14 +313,15 @@ generateSingleAgeFrequency(19,
 
 ### Interests
 
-[Overview of Critical Issue]
 
 #### General Results
 
 ##### General Interests
 
+*Frequency of online activity* measures frequency of 11 different activities related to information seeking, ranging from highly common activities such as looking for information about general interests on platforms such as Wikipedia through to more specific activities (in 2016), such as national government services.
 
-[Introductory Text]
+The graph below shows the relative frequencies of each activity. Looking for information about a topic of general interest where answers were provided by Wikipedia, Quora or other informational sites, and searching for prices are the most common activities. Looking for information about concerts and events, and political or societal issues are comparatively uncommon activities.
+
 
 
 ```{r graphSubQuestion437, fig.width = 8, fig.height = 7.5, echo=FALSE}
@@ -304,8 +330,14 @@ generateSingleAgeFrequency(19,
 
 ```
 
+**`r fig_nums("freq.437")`**
+
 
 ##### Interest in seeking difference
+
+This question measures frequency of 7 different online activities whose main purpose is to determine to what extent online information seeking helps people to find others who share their interests and to learn about or understand social and cultural difference.
+
+The graph below shows the relative frequencies of each activity. Finding people of a similar age who share my interests is the most frequent and most commonly reported activity, followed by learning new things about people with mental illnesses or physical disabilities and learning new things about my ethnic group. Learning things about participant's own ethnic group and feeling more connected to spiritual or religious beliefs are less common. This suggests that for Australians, online information seeking is more directed towards questions of interest, gender and health, rather than ethnicity and religion.
 
 
 ```{r graphSubQuestion341, fig.width = 8, fig.height = 5.5, echo=FALSE}
@@ -319,8 +351,15 @@ generateSingleAgeFrequency(19,
 
 ```
 
+**`r fig_nums("freq.341")`**
+
 
 ##### Interest in fitness and health improvement
+
+This question measures frequency of 10 different online activities whose main purpose is to determine to what extent online technologies assist people to manage their health and fitness. 
+
+The graph below shows the relative frequencies of each activity. Looking up information or asking others about a training program is the most frequent and commonly reported activity followed by looking up information or asking advice on a medical condition. The least common activities reported are participating in an online health or fitness community and filling out questionnaires about fitness. There are not large differences reported between any of the activities, and less than 40% of participants reported engaging in any of the activities on more than a monthly basis.
+
 
 ```{r graphSubQuestion352, fig.width = 8, fig.height = 7, echo=FALSE}
 
@@ -328,7 +367,11 @@ generateSingleAgeFrequency(19,
 
 ```
 
-```{r graphSubQuestion353, fig.width = 8, fig.height = 3.75, echo=FALSE}
+**`r fig_nums("freq.352")`**
+
+We asked a series of subsidiary statements about use of digital capacities to improve health. More participants agreed than disagreed (32% to 17%) with the statement they made better decisions as a result of online advice. In terms of outcomes, responses were more evenly split: 25% agreed their health had improved, while 20% disagreed.
+
+```{r graphSubQuestion353, fig.width = 8, fig.height = 3.5, echo=FALSE}
 
 (gg <- chartWrap(graphSubQuestionFrequencies(
   vars.interests.health.improvement.353, 
@@ -337,14 +380,21 @@ generateSingleAgeFrequency(19,
 
 ```
 
+**`r fig_nums("freq.353")`**
+
 
 ##### Interest in keeping in touch
+
+The survey asked respondents to rate the importance of their motivations for using the internet for maintaining their general interests, along with their connections with others. Respondents were asked to rate 14 statements which ranged between extremely important and not important at all. All the statements were rated with a degree of  importance in over 50% of all responses. "Communicating with friends and family" was rated the highest, with over 90% of respondents rating this on the scale of importance. Opening up new worlds and fueling my imagination also scored highly.  Less common in the scale was providing continuity of connection in a changing world.  This suggests that the reasons that motivate people to use the internet are contingent to their connections with others and their sense of self. 
+
 
 ```{r graphSubQuestion430, fig.width = 8, fig.height = 7.5, echo=FALSE}
 
 (gg <- chartWrap(graphSubQuestionFrequencies(vars.interests.keeping.in.touch.430, "Importance", importanceLabels, "keeping-in-touch-430", -5.0)))
 
 ```
+
+**`r fig_nums("freq.430")`**
 
 
 #### Results by Age
@@ -392,7 +442,7 @@ Our survey asked participants to respond to three questions about potential risk
 
 *Frequency of harmful events* measures frequency of 11 risks of online activity. These include getting a virus on one's device or seeing upsetting content online, or actions taken as a protection measure against those risks, such as reporting an issue online, deleting data or blocking further contacts from an individual.
 
-**The graph below shows the relative frequencies of experiencing a risk, or taking a specific action in response to a risk, in the last 12 months. 
+** *`r cf("freq.434")`* below shows the relative frequencies of experiencing a risk, or taking a specific action in response to a risk, in the last 12 months. 
 **
 
 On average, more than half of respondents (51%) reported having never experienced these risks or potentially harmful events. The event that was most commonly experienced was 'Seeing or experiencing something on the internet that had bothered them in some way' with 55% of respondents experiencing this at least once in the last 12 months and 14% reporting experiencing this on a weekly basis or more often.
@@ -401,16 +451,18 @@ Half of respondents reported taking protective measures, such as blocking furthe
 
 Although respondents reported experiencing potentially harmful events online, the frequency of such events remains generally low. The most frequently reported action in response to online risks is to use extra security measures to protect privacy.
 
-```{r graphSubQuestion434,fig.width = 8, fig.height = 8,  echo=FALSE}
+```{r graphSubQuestion434, fig.width = 8, fig.height = 8,  echo=FALSE}
 
 (gg <- chartWrap(graphSubQuestionFrequencies(vars.resilience.harm.events.434, "Frequency", frequencyMonthLabels, "resilience-harm-events-434", -8.5)))
 
 ```
 
+**`r fig_nums("freq.434")`**
+
 
 ##### Responses to statements about online harms
 
-The graph below shows the level of agreement with a number of statements relating to online harms.
+*`r cf("freq.435")`* below shows the level of agreement with a number of statements relating to online harms.
 
 Despite reporting having experienced some potentially harmful events in the last 12 months, the level of agreement with statements about online harms of a more general nature show an overall positive attitude towards those risks. The majority of respondents agree or strongly agree that the opportunities of online activities outweigh its risks and that some level of online risk is inevitable but also provides an important learning opportunity.
 
@@ -426,6 +478,8 @@ Online security and safety remains a pressing concern for just over a third of r
 
 ```
 
+**`r fig_nums("freq.435")`**
+
 
 ##### Willingness to engage with others
 
@@ -440,6 +494,10 @@ For each statements, a large proportion of respondents neither agree nor disagre
   yawcrcPaletteFivePoints)))
 
 ```
+
+**`r fig_nums("freq.428")`**
+
+
 
 #### Results by Age
 
@@ -505,6 +563,9 @@ The graph below shows the relative frequencies of each activity. Reading updates
 
 ```
 
+**`r fig_nums("freq.343")`**
+
+
 
 ##### Importance of online life in maintaining relationships
 
@@ -515,6 +576,8 @@ When asked how important online life is in maintaining relationships with variou
 (gg <- chartWrap(graphSubQuestionFrequencies(vars.connectedness.maintenance.287, "Importance", importanceLabels, "maintaining-connections-287", -4.8)))
 
 ```
+
+**`r fig_nums("freq.287")`**
 
 
 
@@ -532,6 +595,9 @@ The positive attitude is nevertheless counterbalanced with concerns about the us
   yawcrcPaletteFivePoints)))
 
 ```
+
+**`r fig_nums("freq.429")`**
+
 
 #### Results by Age
 
