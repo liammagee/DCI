@@ -11,7 +11,14 @@ For further information, please contact the project team at the [Young and Well 
 
 ## Notes
 
-The *DCI* project uses [R](https://www.r-project.org/) and [Markdown](https://daringfireball.net/projects/markdown/) heavily.
+The *DCI* project uses [R](https://www.r-project.org/) and [Markdown](https://daringfireball.net/projects/markdown/) heavily. These are used to process data, generate graphs and produce draft reports in HTML, Microsoft Word and PDF formats.
+
+
+To generate the main report in all formats:
+
+```
+Rscript -e 'rmarkdown::render("doc/DCI.Rmd", output_format="all")' 
+```
 
 To run the main script:
 
@@ -20,8 +27,8 @@ Rscript R/main.R
 ```
 
 
-To generate the main report:
+## Structure
 
-```
-Rscript -e 'rmarkdown::render("doc/DCI.Rmd")' 0.5 0.7
-```
+
+
+

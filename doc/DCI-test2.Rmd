@@ -1,0 +1,66 @@
+---
+title: "Digital Capacities Index - Quantitative Findings"
+author: | 
+  | Liam Magee^1^, Delphine Bellarose^1^, Anjali Sharma^1^, Louise Crabtree^1^, Philippa Collin^1^, Justine Humphry^1^, Paul James^1^, Emma Kearney^1^, Tanya Notley^1^, Amanda Third^1^, Samantha Yorke^2^
+  | 1. Western Sydney University
+  | 2. Google Australia
+date: "4 April 2016"
+bibliography: DCI.bib
+output:
+  html_document:
+    toc: true
+    toc_depth: 4
+---
+
+<!-- output: word_document -->
+<!-- output: pdf_document -->
+
+
+```{r setup, include=FALSE, echo=FALSE}
+library(captioner)
+library(pryr)
+
+knitr::opts_knit$set(root.dir="..")
+knitr::opts_chunk$set(echo = FALSE, warning=FALSE, message=FALSE)
+setwd("..")
+
+
+source("R/main.R", FALSE)
+PRINTING <- FALSE
+
+# Set to false for non-HTML (e.g. word, pdf) outputs
+PLOTLY <- FALSE
+rmd_output <- tryCatch({rmarkdown::metadata$output},
+                         error = function(e) {NULL})
+if (class(rmd_output) == "list") {
+  rmd_output <- names(unlist(rmd_output)[1])
+}
+if (length(grep('html_document',rmd_output)) > 0) {
+# if (rmd_output == 'html_document') {
+  PLOTLY <- TRUE
+}
+PLOTLY <- FALSE
+
+
+# Set up figure numbering
+fig_nums <- captioner(prefix = "Figure")
+cf <- partial(fig_nums, display = "cite")
+fig_nums("age.freq", "Age Frequency")
+fig_nums("gender.freq", "Gender Frequency")
+fig_nums("age.gender.freq", "Age & Gender Frequency")
+fig_nums("age.gender.freq.abs", "Australia's Age & Gender Frequency (ABS 2014)")
+```
+
+
+```{r graphSubQuestion74, fig.width = 8, fig.height = 9.5, echo=FALSE}
+
+(gg <- chartWrap(graphSubQuestionFrequencies(
+  vars.competencies.online.activities.74, 
+  "Frequency", 
+  frequencyLabels, 
+  "online-activities-74",
+  -6.0,
+  yawcrcPaletteFivePoints
+  )))
+
+```

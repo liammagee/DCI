@@ -11,7 +11,9 @@ installDeps <- function() {
   			"igraph", 
   			"plotly", 
   			"plyr", 
-  			"pryr", 
+        "pryr", 
+        "rmarkdown", 
+  			"captioner", 
   			"devtools")
   # Install required packages from CRAN (if not)
   .inst <- .pkgs %in% installed.packages()

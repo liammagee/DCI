@@ -15,13 +15,15 @@ library(plyr)
 
 print("Loading DCI data")
 
-# Settings
+# Global Settings
 PRINTING <- TRUE
 
-# Name variables
 
+
+# Variable collections
+
+## All variables
 vars <- c(
-
 	"Q74_1", "Q74_2", "Q74_3", "Q74_4", "Q74_5", "Q74_6", "Q74_7", "Q74_8", "Q74_9", "Q74_10", "Q74_11", "Q74_12", "Q74_13", "Q74_14", "Q74_15",
 			"Q431_16", "Q431_17", "Q431_18", "Q431_19", "Q431_20", "Q431_21", "Q431_22", "Q431_23", "Q431_24", "Q431_25", "Q431_26", "Q431_27", "Q431_28", "Q431_29", "Q431_30", "Q431_31", "Q431_32", "Q431_33", "Q431_34", "Q431_35", "Q431_36", "Q431_37", "Q431_38", "Q431_39", "Q431_40", "Q431_41", "Q431_42",
 			"Q437_43", "Q437_44", "Q437_45", "Q437_46", "Q437_47", "Q437_49", "Q437_50", "Q437_51", "Q437_52", "Q437_53", "Q437_54",
@@ -50,6 +52,7 @@ vars <- c(
 			"Q9_212", "Q9_213", "Q9_214", "Q9_215", "Q9_216", "Q9_217", "Q9_218", "Q9_219", "Q9_220"
 )
 
+## Variables - scaled
 vars.competencies.online.activities.74 <- c("Q74_1", "Q74_2", "Q74_3", "Q74_4", "Q74_5", "Q74_6", "Q74_7", "Q74_8", "Q74_9", "Q74_10", "Q74_11", "Q74_12", "Q74_13", "Q74_14", "Q74_15")
 vars.connectedness.maintenance.287 <- c("Q287_137", "Q287_138", "Q287_139", "Q287_140", "Q287_141", "Q287_142")
 vars.interests.difference.seeking.341 <- c("Q341_55", "Q341_56", "Q341_57", "Q341_58", "Q341_59", "Q341_60", "Q341_61")
@@ -64,11 +67,12 @@ vars.resilience.harm.events.434 <- c("Q434_88", "Q434_89", "Q434_90", "Q434_91",
 vars.resilience.harms.agreement.435 <- c("Q435_99", "Q435_100", "Q435_101", "Q435_102", "Q435_103", "Q435_104", "Q435_105")
 vars.interests.general.437 <- c("Q437_43", "Q437_44", "Q437_45", "Q437_46", "Q437_47", "Q437_49", "Q437_50", "Q437_51", "Q437_52", "Q437_53", "Q437_54")
 
-# Binary 
+## Variables - binary
 vars.connectedness.helping.others.277 <- c("Q277_112", "Q277_113", "Q277_114", "Q277_115", "Q277_116", "Q277_117", "Q277_118", "Q277_119", "Q277_120", "Q277_121", "Q277_122", "Q277_123")
 vars.connectedness.sought.help.from.others.280 <- c("Q280_124", "Q280_125", "Q280_126", "Q280_127", "Q280_128", "Q280_129", "Q280_130", "Q280_131", "Q280_132", "Q280_133", "Q280_134", "Q280_135", "Q280_136")
 
 
+## Variables - by critical issues
 vars.competencies <- c(
 	vars.competencies.online.activities.74,
 	vars.competencies.431
@@ -142,6 +146,36 @@ vars.all <- c(
 	vars.yes_no
 )
 
+vars.competency.totals <- c(
+	"total.74",
+	"total.431"
+)
+vars.interests.totals <- c(
+	"total.437",
+	"total.341",
+	"total.352",
+	"total.353",
+	"total.430"
+)
+vars.resilience.totals <- c(
+	"total.434",
+	"total.435",
+	"total.428"
+)
+vars.resilience.totals <- c(
+	"total.277",
+	"total.280",
+	"total.287",
+	"total.343",
+	"total.420"
+)
+vars.totals <- c(
+	vars.competency.totals,
+	vars.interests.totals,
+	vars.resilience.totals,
+	vars.resilience.totals
+)
+
 
 
 indicators <- loadIndicators()
@@ -163,6 +197,8 @@ pressure.digital.access <- "Q425"
 current.neighbourhood <- "Q427"
 level.education <- "Q436"
 main.activities <- "Q8"
+child.consent <- "Q5A"
+child.age <- "Q5B"
 augmented.data <- results[,c(age, 
 								gender, 
 								state, 
@@ -172,12 +208,24 @@ augmented.data <- results[,c(age,
 								current.neighbourhood, 
 								level.education, 
 								main.activities,
+								child.consent,
+								child.age,
 								vars)]
+
+
 
 # Recode variables
 augmented.data$age <- augmented.data$Q10_159
+augmented.data$age[augmented.data$Q5A == 1 & !is.na(augmented.data$Q5A)] <- augmented.data$Q5B[augmented.data$Q5A == 1 & !is.na(augmented.data$Q5A)] + 11
 # Find a better way, e.g. http://www.kkuniyuk.com/RTutorial1.pdf
 augmented.data$age.breaks <- floor(augmented.data$Q10_159 / 5.0)
+augmented.data$age.breaks <- NA
+augmented.data$age.breaks[augmented.data$age >= 12 & augmented.data$age <= 17] <- "12 - 17"
+augmented.data$age.breaks[augmented.data$age >= 18 & augmented.data$age <= 34] <- "18 - 34"
+augmented.data$age.breaks[augmented.data$age >= 35 & augmented.data$age <= 49] <- "35 - 49"
+augmented.data$age.breaks[augmented.data$age >= 50 & augmented.data$age <= 64] <- "50 - 64"
+augmented.data$age.breaks[augmented.data$age >= 65] <- "65+"
+
 augmented.data$gender <- NA
 augmented.data$gender[augmented.data$Q1 == 193] <- "Male"
 augmented.data$gender[augmented.data$Q1 == 194] <- "Female"
@@ -418,7 +466,7 @@ generateIndexForResilience <- function() {
 		d <- 6 - c
 		d <- replace(d, d == -1, 0)
 		vars.resilience.harm.events.434.for.index <- c(vars.resilience.harm.events.434.for.index, var.name)
-		augmented.data[new.var] <- d
+		augmented.data[new.var] <<- d
 	}
 
 	vars.resilience.for.index <- c(
@@ -475,6 +523,11 @@ generateAll <- function() {
 sumCompetencies <- function() {
 	# Competencies are correctly coded: low values mean higher competencies
 	vars.competencies.for.index <- c()
+
+	# Totals
+	total.74 <- 0
+	total.431 <- 0
+
 	# Score frequency
 	for (i in 1:length(vars.competencies.online.activities.74)) {
 		var.name <- vars.competencies.online.activities.74[i]
@@ -484,7 +537,8 @@ sumCompetencies <- function() {
 		# Convert "Don't know" to "Less often" - conservative guess
 		d <- replace(d, d == -1, 1)
 		vars.competencies.for.index <- c(vars.competencies.for.index, new.var)
-		augmented.data[new.var] <- d
+		augmented.data[new.var] <<- d
+		total.74 <- total.74 + d
 	}
 	# Score ease
 	for (i in 1:length(vars.competencies.431)) {
@@ -497,18 +551,30 @@ sumCompetencies <- function() {
 		d <- replace(d, d == -1, 2)
 		d <- replace(d, d == -2, 2)
 		vars.competencies.for.index <- c(vars.competencies.for.index, new.var)
-		augmented.data[new.var] <- d
+		augmented.data[new.var] <<- d
+		total.431 <- total.431 + d
 	}
+
+	augmented.data$total.74 <<- total.74
+	augmented.data$total.431 <<- total.431
+
 	# Max value: (Q74) +  (Q431)
 	# Max value: 15 * 4 + 27 * 4
 	divisor <- 168
-	augmented.data$competencies.index <- 100 * rowSums(augmented.data[,vars.competencies.for.index]) / divisor
+	augmented.data$competencies.index <<- 100 * rowSums(augmented.data[,vars.competencies.for.index]) / divisor
 	return(augmented.data$competencies.index)
 }
 
 sumInterests <- function() {
 	# Score frequency
 	vars.interests.for.index <- c()
+
+	# Totals
+	total.437 <- 0
+	total.341 <- 0
+	total.352 <- 0
+	total.353 <- 0
+	total.430 <- 0
 
 	for (i in 1:length(vars.interests.general.437)) {
 		var.name <- vars.interests.general.437[i]
@@ -518,7 +584,8 @@ sumInterests <- function() {
 		# Convert "Don't know" to "Less than Once a Month" - conservative guess
 		d <- replace(d, d == -1, 1)
 		vars.interests.for.index <- c(vars.interests.for.index, new.var)
-		augmented.data[new.var] <- d
+		augmented.data[new.var] <<- d
+		total.437 <- total.437 + d
 	}
 	for (i in 1:length(vars.interests.difference.seeking.341)) {
 		var.name <- vars.interests.difference.seeking.341[i]
@@ -530,7 +597,8 @@ sumInterests <- function() {
 		# Convert "Not Applicable" to "Neither agree nor disagree" - conservative guess
 		d <- replace(d, d == -2, 2)
 		vars.interests.for.index <- c(vars.interests.for.index, new.var)
-		augmented.data[new.var] <- d
+		augmented.data[new.var] <<- d
+		total.341 <- total.341 + d
 	}
 	for (i in 1:length(vars.interests.fitness.352)) {
 		var.name <- vars.interests.fitness.352[i]
@@ -540,7 +608,8 @@ sumInterests <- function() {
 		# Convert "Don't know" to "Less than Once a Month" - conservative guess
 		d <- replace(d, d == -1, 1)
 		vars.interests.for.index <- c(vars.interests.for.index, new.var)
-		augmented.data[new.var] <- d
+		augmented.data[new.var] <<- d
+		total.352 <- total.352 + d
 	}
 	for (i in 1:length(vars.interests.health.improvement.353)) {
 		var.name <- vars.interests.health.improvement.353[i]
@@ -552,7 +621,8 @@ sumInterests <- function() {
 		# Convert "Not Applicable" to "Neither agree nor disagree" - conservative guess
 		d <- replace(d, d == -2, 2)
 		vars.interests.for.index <- c(vars.interests.for.index, new.var)
-		augmented.data[new.var] <- d
+		augmented.data[new.var] <<- d
+		total.353 <- total.353 + d
 	}
 	for (i in 1:length(vars.interests.keeping.in.touch.430)) {
 		var.name <- vars.interests.keeping.in.touch.430[i]
@@ -560,13 +630,20 @@ sumInterests <- function() {
 		c <- augmented.data[,var.name]
 		d <- 4 - c
 		vars.interests.for.index <- c(vars.interests.for.index, new.var)
-		augmented.data[new.var] <- d
+		augmented.data[new.var] <<- d
+		total.430 <- total.430 + d
 	}
-	
+
+	augmented.data$total.437 <<- total.437
+	augmented.data$total.341 <<- total.341
+	augmented.data$total.352 <<- total.352
+	augmented.data$total.353 <<- total.353
+	augmented.data$total.430 <<- total.430
+
 	# Max value: (Q437) + (Q341) + (Q352) + (Q353) + (Q341)
 	# Max value: 11 * 5 + 7 * 4  + 10 * 5  + 2 * 4 + 14 * 3
 	divisor <- 183
-	augmented.data$interests.index <- 100 * rowSums(augmented.data[,vars.interests.for.index]) / divisor
+	augmented.data$interests.index <<- 100 * rowSums(augmented.data[,vars.interests.for.index]) / divisor
 	return(augmented.data$interests.index)
 	
 }
@@ -574,19 +651,22 @@ sumInterests <- function() {
 sumResilience <- function() {
 	# Score frequency
 	vars.resilience.for.index <- c()
-	vars.resilience.engage.with.others.428
-	vars.resilience.harm.events.434
-	vars.resilience.harms.agreement.435
+
+	total.434 <- 0
+	total.435 <- 0
+	total.428 <- 0
 
 	for (i in 1:length(vars.resilience.harm.events.434)) {
 		var.name <- vars.resilience.harm.events.434[i]
 		new.var <- paste(var.name, ".for.index", sep = "")
 		c <- augmented.data[,var.name]
-		d <- 6 - c
+		# d <- 6 - c
+		d <- c - 1
 		# Convert "Don't know" to "Less than Once a Month" - conservative guess
 		d <- replace(d, d == -1, 1)
 		vars.resilience.for.index <- c(vars.resilience.for.index, new.var)
-		augmented.data[new.var] <- d
+		augmented.data[new.var] <<- d
+		total.434 <- total.434 + d
 	}
 	for (i in 1:length(vars.resilience.harms.agreement.435)) {
 		var.name <- vars.resilience.harms.agreement.435[i]
@@ -598,7 +678,8 @@ sumResilience <- function() {
 		# Convert "Not Applicable" to "Neither agree nor disagree" - conservative guess
 		d <- replace(d, d == -2, 2)
 		vars.resilience.for.index <- c(vars.resilience.for.index, new.var)
-		augmented.data[new.var] <- d
+		augmented.data[new.var] <<- d
+		total.435 <- total.435 + d
 	}
 
 	# TODO: Meaning of 106-109 for resilience? Maybe connectedness?
@@ -614,7 +695,8 @@ sumResilience <- function() {
 	# Convert "Not Applicable" to "Neither agree nor disagree" - conservative guess
 	d <- replace(d, d == 6, 2)
 	vars.resilience.for.index <- c(vars.resilience.for.index, new.var)
-	augmented.data[new.var] <- d
+	augmented.data[new.var] <<- d
+	total.428 <- total.428 + d
 
 	# QUESTION: When I am going through a difficult time, going online makes me feel better
 	var.name <- "Q428_111"
@@ -627,12 +709,17 @@ sumResilience <- function() {
 	# Convert "Not Applicable" to "Neither agree nor disagree" - conservative guess
 	d <- replace(d, d == -1, 2)
 	vars.resilience.for.index <- c(vars.resilience.for.index, new.var)
-	augmented.data[new.var] <- d
+	augmented.data[new.var] <<- d
+	total.428 <- total.428 + d
+
+	augmented.data$total.434 <<- total.434
+	augmented.data$total.435 <<- total.435
+	augmented.data$total.428 <<- total.428
 
 	# Max value: (Q434) + (Q435) + (Q428)
 	# Max value: 11 * 5 + 7 * 4  + 2 * 4
 	divisor <- 91
-	augmented.data$resilience.index <- 100 * rowSums(augmented.data[,vars.resilience.for.index]) / divisor
+	augmented.data$resilience.index <<- 100 * rowSums(augmented.data[,vars.resilience.for.index]) / divisor
 	return(augmented.data$resilience.index)
 	
 }
@@ -641,6 +728,11 @@ sumConnectedness <- function() {
 	# Score frequency
 	vars.connectedness.for.index <- c()
 
+	total.277 <- 0
+	total.280 <- 0
+	total.287 <- 0
+	total.343 <- 0
+	total.420 <- 0
 	
 	for (i in 1:length(vars.connectedness.helping.others.277)) {
 		var.name <- vars.connectedness.helping.others.277[i]
@@ -648,7 +740,8 @@ sumConnectedness <- function() {
 		c <- augmented.data[,var.name]
 		d <- c - 1
 		vars.connectedness.for.index <- c(vars.connectedness.for.index, new.var)
-		augmented.data[new.var] <- d
+		augmented.data[new.var] <<- d
+		total.277 <- total.277 + d
 	}
 	for (i in 1:length(vars.connectedness.sought.help.from.others.280)) {
 		var.name <- vars.connectedness.sought.help.from.others.280[i]
@@ -656,7 +749,8 @@ sumConnectedness <- function() {
 		c <- augmented.data[,var.name]
 		d <- c - 1
 		vars.connectedness.for.index <- c(vars.connectedness.for.index, new.var)
-		augmented.data[new.var] <- d
+		augmented.data[new.var] <<- d
+		total.280 <- total.280 + d
 	}
 	for (i in 1:length(vars.connectedness.maintenance.287)) {
 		var.name <- vars.connectedness.maintenance.287[i]
@@ -666,7 +760,8 @@ sumConnectedness <- function() {
 		# Convert "Don't know" to "Not important at all" - conservative guess
 		d <- replace(d, d == -1, 0)
 		vars.connectedness.for.index <- c(vars.connectedness.for.index, new.var)
-		augmented.data[new.var] <- d
+		augmented.data[new.var] <<- d
+		total.287 <- total.287 + d
 	}
 	for (i in 1:length(vars.connectedness.events.343)) {
 		var.name <- vars.connectedness.events.343[i]
@@ -676,7 +771,8 @@ sumConnectedness <- function() {
 		# Convert "Don't know" to "Less than Once a Month" - conservative guess
 		d <- replace(d, d == -1, 1)
 		vars.connectedness.for.index <- c(vars.connectedness.for.index, new.var)
-		augmented.data[new.var] <- d
+		augmented.data[new.var] <<- d
+		total.343 <- total.343 + d
 	}
 	for (i in 1:length(vars.connectedness.tech.attitudes.429)) {
 		var.name <- vars.connectedness.tech.attitudes.429[i]
@@ -688,14 +784,20 @@ sumConnectedness <- function() {
 		# Convert "Not Applicable" to "Neither agree nor disagree" - conservative guess
 		d <- replace(d, d == -2, 2)
 		vars.connectedness.for.index <- c(vars.connectedness.for.index, new.var)
-		augmented.data[new.var] <- d
+		augmented.data[new.var] <<- d
+		total.420 <- total.420 + d
 	}
 
-	
+	augmented.data$total.277 <<- total.277
+	augmented.data$total.280 <<- total.280
+	augmented.data$total.287 <<- total.287
+	augmented.data$total.343 <<- total.343
+	augmented.data$total.420 <<- total.420
+
 	# Max value: (Q277) + (Q280) + (Q287) + (Q343) + (Q429)
 	# Max value: 13 * 1 + 13 * 1 + 6 * 2  + 8 * 5  + 9 * 4 
 	divisor <- 114
-	augmented.data$connectedness.index <- 100 * rowSums(augmented.data[,vars.connectedness.for.index]) / divisor
+	augmented.data$connectedness.index <<- 100 * rowSums(augmented.data[,vars.connectedness.for.index]) / divisor
 	return(augmented.data$connectedness.index)
 	
 }
@@ -705,7 +807,8 @@ sumIndex <- function() {
 	sin <- sumInterests()
 	sre <- sumResilience()
 	scn <- sumConnectedness()
-	return ( ( sct + sin + sre + scn ) / 4 )
+	augmented.data$combined.index <<- ( sct + sin + sre + scn ) / 4
+	return ( augmented.data$combined.index )
 }
 
 generateIndexChart <- function() {
@@ -725,11 +828,46 @@ generateIndexChart <- function() {
 
 	msc <- melt(sall, id = "id")
 
-	p <- ggplot(data=msc, aes(x = variable,y = value, colour=value)) + 
+	p <- ggplot(data=msc, aes(x = variable, y = value, colour=value)) + 
 		geom_bar(stat="identity", position = "fill") + 
-	    scale_colour_gradientn(colours=yawcrcPalette) +
+	    scale_colour_gradientn(colours=yawcrcPalette5) +
 	    coord_flip() 
+	p <- p + scale_y_continuous(name = "Aggregate Score", breaks= c(0, 0.25, 0.5, 0.75, 1.0), labels= c("0%", "25%", "50%", "75%", "100%"))
     return (p)
+}
+
+randomFunctions <- function() {
+  sumIndex()
+  
+	data <- augmented.data
+	# Correlations for interest columns
+	cor(data[,vars.interests.totals])
+
+	# Pairwise scatterplot for interest columns
+	pairs(~total.437+total.341+total.352+total.353+total.430,data=data, 
+      main="Simple Scatterplot Matrix")
+
+	# Scatterplot of 2 variables
+	p <- plot(data$total.437, data$total.341, main="Scatterplot Example", 
+  		xlab="Gen Interests", ylab="Difference Seeking", pch=19)
+
+	# Add fit lines
+	abline(lm(data$total.437~data$total.341), col="red") # regression line (y~x) 
+	lines(lowess(data$total.341,data$total), col="blue") # lowess line (x,y)
+	p
+
+	# ggplot variant
+	# http://www.cookbook-r.com/Graphs/Scatterplots_(ggplot2)/
+	ggplot(data, aes(x=total.437, y=total.341)) +
+	    geom_point(shape=1) +    # Use hollow circles
+	    geom_smooth(method=lm)   # Add linear regression line 
+	                             #  (by default includes 95% confidence region)	
+
+	# http://www.cookbook-r.com/Graphs/Scatterplots_(ggplot2)/#set-colorshape-by-another-variable
+	ggplot(data, aes(x=total.437, y=total.341, color=gender)) +
+	    geom_point(shape=1) +    # Use hollow circles
+	    geom_smooth(method=lm)   # Add linear regression line 
+
 }
 
 # generateSingleAgeFrequency(1, vars.ease, easeLabels)
