@@ -10,9 +10,6 @@ output:
   html_document:
     toc: true
     toc_depth: 4
-  pdf_document:
-    toc: true
-    toc_depth: 4
   word_document:
     toc: true
     toc_depth: 4
@@ -58,20 +55,47 @@ fig_nums("gender.and.age.freq", "Age & Gender Frequency")
 fig_nums("gender.and.age.freq.abs", "Australia's Age & Gender Frequency (ABS 2014)")
 fig_nums("location.freq", "Location Frequency")
 
+# Competencies
 fig_nums("freq.74", "Frequency of online activity")
 fig_nums("freq.431", "Perceived ease of conducting online activity")
+fig_nums("freq.74.2", getLabel(2, vars.competencies.online.activities.74))
+fig_nums("freq.74.3", getLabel(3, vars.competencies.online.activities.74))
+fig_nums("freq.74.6", getLabel(6, vars.competencies.online.activities.74))
+fig_nums("freq.74.2", getLabel(2, vars.competencies.online.activities.74))
+fig_nums("freq.431.13", getLabel(13, vars.competencies.431))
+fig_nums("freq.431.14", getLabel(14, vars.competencies.431))
+fig_nums("freq.431.19", getLabel(19, vars.competencies.431))
+
+# Interests
 fig_nums("freq.437", "General Interests")
 fig_nums("freq.341", "Interest in seeking difference")
 fig_nums("freq.352", "Interest in fitness and health improvement")
 fig_nums("freq.353", "Health Impacts")
 fig_nums("freq.430", "Interest in keeping in touch")
+fig_nums("freq.437.1", getLabel(1, vars.interests.general.437))
+fig_nums("freq.437.9", getLabel(9, vars.interests.general.437))
+fig_nums("freq.352.4", getLabel(4, vars.interests.fitness.352))
+
+
+# Resilience
 fig_nums("freq.434", "Frequency of harmful events")
 fig_nums("freq.435", "Responses to statements about online harms")
 fig_nums("freq.428", "Willingness to engage with others")
+fig_nums("freq.434.4", getLabel(4, vars.resilience.harm.events.434))
+fig_nums("freq.434.10", getLabel(10, vars.resilience.harm.events.434))
+fig_nums("freq.435.6", getLabel(6, vars.resilience.harms.agreement.435))
+fig_nums("freq.435.7", getLabel(7, vars.resilience.harms.agreement.435))
+
+# Connectedness
 fig_nums("freq.343", "Maintaining connections")
 fig_nums("freq.287", "Importance of online life in maintaining relationships")
 fig_nums("freq.429", "Attitudes towards Technology")
+fig_nums("freq.287.1", getLabel(1, vars.connectedness.maintenance.287))
+fig_nums("freq.343.4", getLabel(4, vars.connectedness.events.343))
+fig_nums("freq.429.2", getLabel(2, vars.connectedness.tech.attitudes.429))
 
+
+# Aggregated
 fig_nums("agg.results", "Aggregated Results by Critical Issue")
 
 
@@ -98,7 +122,7 @@ We further distinguished questions into the following key thematic areas, or wha
 These four issues were distilled from a list of nine issues that also included *Engagement*, *Inclusion*, *Policy Environment*, *Infrastructure* and *Consequences*. 
 
 Against these four issues, we selected items and scales from existing sources in the literature where possible. In particular we drew from 'Kids Online'
-[@livingstone2010risks], Helsper's [-@helsper2012corresponding] 'Corresponding fields model', a study by Humphry [-@humphry2014importance] of mobile use among homeless populations, and indicators compiled by the [Young and Well CRC](http://www.youngandwellcrc.org.au/). Other indicators were developed by the *Digital Capacities Index* team. 
+[@livingstone2010risks], Helsper's [-@helsper2012corresponding] 'Corresponding fields model', a study by Humphry [-@humphry2014importance] of mobile use among homeless populations, and indicators compiled by the [Young and Well CRC](http://www.youngandwellcrc.org.au/) [-@crc2013standardmeasures]. Other indicators were developed by the *Digital Capacities Index* team. 
 
 A large number of candidate scales were distilled down to the current list after two day-long workshops, and testing of the survey.
 
@@ -132,7 +156,7 @@ These show participants' ages correspond approximately to Australia's adult demo
 
 Participant gender is roughly evenly distributed. The survey included `r format(length(which(data$gender == "Female")), big.mark   = ",")` (`r format(100 * length(which(data$gender == "Female")) / length(data$gender), digits = 2)`%) women; `r format(length(which(data$gender == "Male")), big.mark   = ",")` (`r format(100 * length(which(data$gender == "Male")) / length(data$gender), digits = 2)`%) men; and `r format(length(which(data$gender == "Other")), big.mark   = ",")` (`r format(100 * length(which(data$gender == "Other")) / length(data$gender), digits = 2)`%) identifying as 'Other'.
 
-Gender demographics are distributed, as show in `r cf("gender.freq")`:
+Gender demographics are distributed, as shown in `r cf("gender.freq")`:
 
 ```{r genderFreq, echo=FALSE}
 
@@ -146,7 +170,7 @@ Gender demographics are distributed, as show in `r cf("gender.freq")`:
 #### Combined Age and Gender
 
 
-Combined age and gender demographics are distributed as per *`r cf("gender.and.age.freq")`:
+Combined age and gender demographics are distributed as shown in *`r cf("gender.and.age.freq")`*:
 
 ```{r genderAndAgeFreq, echo=FALSE}
 
@@ -251,6 +275,9 @@ generateSingleAgeFrequency(
     )
 ```
 
+**`r fig_nums("freq.74.2")`**
+
+
 ##### `r getLabel(3, vars.competencies.online.activities.74)`
 
 Differences by age groups are more visible depending on specific uses of the internet. Watching video clips for example is an activity where there is a clear demarcation between the under 35s, who are more likely to do this on a daily basis or more often, and those aged 35 or over, who are more likely to do this on a weekly basis or less often.
@@ -262,10 +289,12 @@ generateSingleAgeFrequency(3,
   yawcrcPaletteFivePoints)
 ```
 
+**`r fig_nums("freq.74.3")`**
+
 
 ##### `r getLabel(6, vars.competencies.online.activities.74)`
 
-In contrast, respondents over 18 overwhelmingly reported using email as a mean of communication several times a day, compared to only a fifth of those aged 12 to 17.
+In contrast, respondents over 18 overwhelmingly reported using email as a means of communication several times a day, compared to only a fifth of those aged 12 to 17.
 
 ```{r ageQ74_6, fig.width = 8, fig.height = 2, echo=FALSE}
 generateSingleAgeFrequency(6, 
@@ -274,10 +303,12 @@ generateSingleAgeFrequency(6,
   yawcrcPaletteFivePoints)
 ```
 
+**`r fig_nums("freq.74.6")`**
+
 
 ##### `r getLabel(13, vars.competencies.431)`
 
-Although respondents in the older age groups were less likely than younger people to report specific digital tasks to be easy or very easy, it is worth noting that they did not necessarily report those to be especially difficult. Rather, much higher proportions of respondents in the older age groups answered ‘Don’t know’ or ‘Not applicable’ to those specific tasks such as creating a blog, pointing to a difference in levels of need and interest more so than actual competencies.
+Although respondents in the older age groups were less likely than younger people to report specific digital tasks to be easy or very easy, it is worth noting that they did not necessarily report those to be especially difficult. Rather, much higher proportions of respondents in the older age groups answered "Don't know" or "Not applicable" to those specific tasks such as creating a blog, pointing to a difference in levels of need and interest more so than actual competencies.
 
 ```{r ageQ431_28, fig.width = 8, fig.height = 2, echo=FALSE}
 generateSingleAgeFrequency(13, 
@@ -285,6 +316,8 @@ generateSingleAgeFrequency(13,
   easeLabels,
   yawcrcPaletteFivePoints)
 ```
+
+**`r fig_nums("freq.431.13")`**
 
 
 ##### `r getLabel(14, vars.competencies.431)`
@@ -298,6 +331,8 @@ generateSingleAgeFrequency(14,
   yawcrcPaletteFivePoints)
 ```
 
+**`r fig_nums("freq.431.14")`**
+
 
 ##### `r getLabel(19, vars.competencies.431)`
 
@@ -310,6 +345,8 @@ generateSingleAgeFrequency(19,
   yawcrcPaletteFivePoints)
 ```
 
+**`r fig_nums("freq.431.19")`**
+
 
 ### Interests
 
@@ -318,9 +355,9 @@ generateSingleAgeFrequency(19,
 
 ##### General Interests
 
-*Frequency of online activity* measures frequency of 11 different activities related to information seeking, ranging from highly common activities such as looking for information about general interests on platforms such as Wikipedia through to more specific activities (in 2016), such as national government services.
+*Frequency of online activity* measures frequency of 11 different activities related to information seeking, ranging from highly common activities, such as looking for information about general interests on platforms such as Wikipedia, through to more specific activities (in 2016), such as national government services.
 
-The graph below shows the relative frequencies of each activity. Looking for information about a topic of general interest where answers were provided by Wikipedia, Quora or other informational sites, and searching for prices are the most common activities. Looking for information about concerts and events, and political or societal issues are comparatively uncommon activities.
+*`r cf("freq.437")`* below shows the relative frequencies of each activity. Looking for information about a topic of general interest where answers were provided by Wikipedia, Quora or other informational sites, and searching for prices are the most common activities. Looking for information about concerts and events, and political or societal issues are comparatively uncommon activities.
 
 
 
@@ -337,10 +374,10 @@ The graph below shows the relative frequencies of each activity. Looking for inf
 
 This question measures frequency of 7 different online activities whose main purpose is to determine to what extent online information seeking helps people to find others who share their interests and to learn about or understand social and cultural difference.
 
-The graph below shows the relative frequencies of each activity. Finding people of a similar age who share my interests is the most frequent and most commonly reported activity, followed by learning new things about people with mental illnesses or physical disabilities and learning new things about my ethnic group. Learning things about participant's own ethnic group and feeling more connected to spiritual or religious beliefs are less common. This suggests that for Australians, online information seeking is more directed towards questions of interest, gender and health, rather than ethnicity and religion.
+*`r cf("freq.341")`* below shows the relative frequencies of each activity. Finding people of a similar age who share my interests is the most frequent and most commonly reported activity, followed by learning new things about people with mental illnesses or physical disabilities and learning new things about other ethnic groups. Learning things about participant's own ethnic group and feeling more connected to spiritual or religious beliefs are less common. This suggests that for Australians, online information seeking is more directed towards questions of interest, gender and health, rather than ethnicity and religion.
 
 
-```{r graphSubQuestion341, fig.width = 8, fig.height = 5.5, echo=FALSE}
+```{r graphSubQuestion341, fig.width = 8, fig.height = 6.0, echo=FALSE}
 
 (gg <- chartWrap(graphSubQuestionFrequencies(vars.interests.difference.seeking.341, 
   "Agreement", 
@@ -358,7 +395,7 @@ The graph below shows the relative frequencies of each activity. Finding people 
 
 This question measures frequency of 10 different online activities whose main purpose is to determine to what extent online technologies assist people to manage their health and fitness. 
 
-The graph below shows the relative frequencies of each activity. Looking up information or asking others about a training program is the most frequent and commonly reported activity followed by looking up information or asking advice on a medical condition. The least common activities reported are participating in an online health or fitness community and filling out questionnaires about fitness. There are not large differences reported between any of the activities, and less than 40% of participants reported engaging in any of the activities on more than a monthly basis.
+*`r cf("freq.352")`* below shows the relative frequencies of each activity. Looking up information or asking others about a training program is the most frequent and commonly reported activity, followed by looking up information or asking advice on a medical condition. The least common activities reported are participating in an online health or fitness community and filling out questionnaires about fitness. There are not large differences reported between any of the activities, and less than 40% of participants reported engaging in any of the activities on more than a monthly basis.
 
 
 ```{r graphSubQuestion352, fig.width = 8, fig.height = 7, echo=FALSE}
@@ -385,7 +422,7 @@ We asked a series of subsidiary statements about use of digital capacities to im
 
 ##### Interest in keeping in touch
 
-The survey asked respondents to rate the importance of their motivations for using the internet for maintaining their general interests, along with their connections with others. Respondents were asked to rate 14 statements which ranged between extremely important and not important at all. All the statements were rated with a degree of  importance in over 50% of all responses. "Communicating with friends and family" was rated the highest, with over 90% of respondents rating this on the scale of importance. Opening up new worlds and fueling my imagination also scored highly.  Less common in the scale was providing continuity of connection in a changing world.  This suggests that the reasons that motivate people to use the internet are contingent to their connections with others and their sense of self. 
+The survey asked respondents to rate the importance of their motivations for using the internet for maintaining their general interests, along with their connections with others. Respondents were asked to rate 14 statements which ranged between extremely important and not important at all. All the statements were rated with a degree of  importance in over 50% of all responses. "Communicating with friends and family" was rated the highest, with over 90% of respondents rating this on the scale of importance. Opening up new worlds and fueling my imagination also scored highly.  Less common in the scale was providing continuity of connection in a changing world.  This suggests that the reasons that motivate people to use the internet are contingent upon their connections with others and their sense of self. 
 
 
 ```{r graphSubQuestion430, fig.width = 8, fig.height = 7.5, echo=FALSE}
@@ -407,6 +444,8 @@ As previously mentioned, differences by age are more or less noticeable dependin
 generateSingleAgeFrequency(1, vars.interests.general.437, frequencyMonthLabels)
 ```
 
+**`r fig_nums("freq.437.1")`**
+
 
 ##### `r getLabel(9, vars.interests.general.437)`
 
@@ -415,6 +454,8 @@ Comparatively, much lower relative frequencies were reported for going online to
 ```{r ageQ437_51, fig.width = 8, fig.height = 2, echo=FALSE}
 generateSingleAgeFrequency(9, vars.interests.general.437, frequencyMonthLabels)
 ```
+
+**`r fig_nums("freq.437.9")`**
 
 
 ##### `r getLabel(4, vars.interests.fitness.352)`
@@ -425,6 +466,7 @@ Nearly half (46%) of younger respondents (under 18) reported not looking up info
 generateSingleAgeFrequency(4, vars.interests.fitness.352, frequencyMonthLabels)
 ```
 
+**`r fig_nums("freq.352.4")`**
 
 
 ### Resilience
@@ -442,10 +484,10 @@ Our survey asked participants to respond to three questions about potential risk
 
 *Frequency of harmful events* measures frequency of 11 risks of online activity. These include getting a virus on one's device or seeing upsetting content online, or actions taken as a protection measure against those risks, such as reporting an issue online, deleting data or blocking further contacts from an individual.
 
-** *`r cf("freq.434")`* below shows the relative frequencies of experiencing a risk, or taking a specific action in response to a risk, in the last 12 months. 
+**_`r cf("freq.434")`_ below shows the relative frequencies of experiencing a risk, or taking a specific action in response to a risk, in the last 12 months. 
 **
 
-On average, more than half of respondents (51%) reported having never experienced these risks or potentially harmful events. The event that was most commonly experienced was 'Seeing or experiencing something on the internet that had bothered them in some way' with 55% of respondents experiencing this at least once in the last 12 months and 14% reporting experiencing this on a weekly basis or more often.
+On average, more than half of respondents (51%) reported having never experienced these risks or potentially harmful events. The event that was most commonly experienced was 'Seeing or experiencing something on the internet that had bothered them in some way' with 55% of respondents experiencing this at least once in the last 12 months, and 14% reporting experiencing this on a weekly basis or more often.
 
 Half of respondents reported taking protective measures, such as blocking further contacts from an individual or deleting data in response to security and privacy concerns, at least once in the last 12 months.
 
@@ -485,7 +527,7 @@ Online security and safety remains a pressing concern for just over a third of r
 
 Thinking about how they feel when they engage with others online, respondents were asked to what extent they agree with several statements relating to their willingness to engage with others.
 
-For each statements, a large proportion of respondents neither agree nor disagree. People tend to disagree that it is easier to be oneself online than face to face or that they talk about private things online that they do not share face to face. Similar proportions agree or disagree that going online make them feel better when they are going through a difficult time.
+For each of these statements, a large proportion of respondents neither agree nor disagree. People tend to disagree that it is easier to be oneself online than face to face or that they talk about private things online that they do not share face to face. Similar proportions agree or disagree that going online makes them feel better when they are going through a difficult time.
 
 ```{r graphSubQuestion428, fig.width = 8, fig.height = 5.5, echo=FALSE}
 
@@ -501,13 +543,16 @@ For each statements, a large proportion of respondents neither agree nor disagre
 
 #### Results by Age
 
-#####
+##### `r getLabel(4, vars.resilience.harm.events.434)`
 
 Respondents under the age of 35 were more likely to report higher frequency of seeing something on the internet that had bothered them in some way.
 
 ```{r ageQ434_91, fig.width = 8, fig.height = 2, echo=FALSE}
 generateSingleAgeFrequency(4, vars.resilience.harm.events.434, frequencyMonthLabels)
 ```
+
+**`r fig_nums("freq.434.4")`**
+
 
 ##### `r getLabel(10, vars.resilience.harm.events.434)`
 
@@ -517,6 +562,8 @@ There are no differences by age in the reported frequency of deleting data in re
 ```{r ageQ434_97, fig.width = 8, fig.height = 2, echo=FALSE}
 generateSingleAgeFrequency(10, vars.resilience.harm.events.434, frequencyMonthLabels)
 ```
+
+**`r fig_nums("freq.434.10")`**
 
 
 ##### `r getLabel(6, vars.resilience.harms.agreement.435)`
@@ -528,6 +575,9 @@ generateSingleAgeFrequency(6, vars.resilience.harms.agreement.435, agreementLabe
   yawcrcPaletteFivePoints)
 ```
 
+**`r fig_nums("freq.435.6")`**
+
+
 
 ##### `r getLabel(7, vars.resilience.harms.agreement.435)`
 
@@ -538,11 +588,13 @@ generateSingleAgeFrequency(7, vars.resilience.harms.agreement.435, agreementLabe
   yawcrcPaletteFivePoints)
 ```
 
+**`r fig_nums("freq.435.7")`**
+
 
 
 ### Social Connectedness
 
-Our survey asked participants to respond to questions about social connectedness and the role technology plays in their interactions with other people.
+Our survey asked participants to respond to questions about social connectedness and the role technology plays in their interactions with other people. Key topics include:
 
   * Frequency of online activity to maintain connections
   * Importance of online life to maintaining relationships
@@ -555,7 +607,7 @@ Our survey asked participants to respond to questions about social connectedness
 
 This question measures frequency of 8 different online activities whose main purpose, or direct consequence, is to interact with others and/or to maintain connections.
 
-The graph below shows the relative frequencies of each activity. Reading updates from friends or family via email or social media is the most frequent and most commonly reported activity, followed by making comments on those updates. Making new friends, meeting people or looking at websites that help meet new people are less common. This suggests that online activity is primarily used to strengthen connection with offline networks rather than as a distinct circle of connections.
+*`r cf("freq.343")`* below shows the relative frequencies of each activity. Reading updates from friends or family via email or social media is the most frequent and most commonly reported activity, followed by making comments on those updates. Making new friends, meeting people or looking at websites that help meet new people are less common. This suggests that online activity is primarily used to strengthen connection with offline networks rather than as a distinct circle of connections.
 
 ```{r graphSubQuestion343, fig.width = 8, fig.height = 6, echo=FALSE}
 
@@ -569,7 +621,7 @@ The graph below shows the relative frequencies of each activity. Reading updates
 
 ##### Importance of online life in maintaining relationships
 
-When asked how important online life is in maintaining relationships with various groups within a broader social network, friends and family were the two groups with the highest level of importance. Online is also considered important in maintaining relationships with other networks of interest and work or school peers, but comparatively not as important to maintain relationships with neighbours.
+When asked how important online life is in maintaining relationships with various groups within a broader social network, friends and family were the two groups with the highest level of importance. Online is also considered important in maintaining relationships with other networks of interest and work or school peers, but comparatively not as important to the maintenance of relationships with neighbours.
 
 ```{r graphSubQuestion287, fig.width = 8, fig.height = 5, echo=FALSE}
 
@@ -609,13 +661,18 @@ Across all age groups, a large proportion of respondents reported that their onl
 generateSingleAgeFrequency(1, vars.connectedness.maintenance.287, importanceLabels)
 ```
 
+**`r fig_nums("freq.287.1")`**
+
+
 ##### `r getLabel(4, vars.connectedness.events.343)`
 
-The ways in which people maintain connections with others online, however, differ depending on the people’s age. The likelihood of sharing pictures of oneself with family or friends decreases with age, with half of 12-17 year olds doing so weekly or more often compared to less than a fifth of those aged 65 or over.
+The ways in which people maintain connections with others online, however, differ depending on the people's age. The likelihood of sharing pictures of oneself with family or friends decreases with age, with half of 12-17 year olds doing so weekly or more often compared to less than a fifth of those aged 65 or over.
 
 ```{r ageQ343_146, fig.width = 8, fig.height = 2, echo=FALSE}
 generateSingleAgeFrequency(4, vars.connectedness.events.343, frequencyMonthLabels)
 ```
+
+**`r fig_nums("freq.343.4")`**
 
 
 ##### `r getLabel(2, vars.connectedness.tech.attitudes.429)`
@@ -627,26 +684,43 @@ generateSingleAgeFrequency(2, vars.connectedness.tech.attitudes.429, agreementLa
   yawcrcPaletteFivePoints)
 ```
 
+**`r fig_nums("freq.429.2")`**
 
 
 ## Overall results
 
 ### Aggregates by Critical Issue
 
-To gain an overall picture of our results, we generated `r fig_nums("agg.results")`, which aggregates responses to each critical issue (*Competencies*, *Interests*, *Resilience* and *Competencies*).
+To gain an overall picture of our results, we generated a series of stacked graphs in *`r fig_nums("agg.results")`*. These aggregate responses to each critical issue (*Competencies*, *Interests*, *Resilience* and *Competencies*), and the combined total.
 
 These results are indicative only, and have several evident limitations we discuss further below. The procedure to generate scores for each of the issues is as follows:
 
 1. Interpret each question as having either a *positive* or *negative* influence of the score of the critical issue. For example, "Frequency of harmful events" has a *negative influence* on the issue of Resilience (and indeed, on overall "Digital Capacities").
 2. Determine the *direction* of the scale coding. For example, in all of our "Agreement" questions, "Strongly Agree" was coded **1**. 
-3. For each question, calculate a question score based on both its interpretation and direction, by summing responses to individual items.
-4. For each respondent, add each of their question scores to produce a respondent critical issue score. This value is converted to a percentile, wher '100%' would indicate maximum responses to each item for each question in that critical issue.
-5. An combined score is taken by averaging the four critical issue scores.
+3. For each question, calculate a question score based on both its interpretation and direction, by adding responses to individual items.
+4. For each respondent, add each of their question scores to produce a respondent critical issue score. This value is converted to a percentile, where '100%' would indicate maximum responses to each item for each question in that critical issue.
+5. A combined score is taken by averaging the four critical issue scores.
 
-`r fig_nums("agg.results")` then displays the relative frequencies of these scores, similar to the preceding individual question graphs. Because values are continuous (anywhere on a scale between 0 and 100 per cent), the graphs show a spectrum from blue (indicating a low score) to bright yellow (indicating a high score).
+`r cf("agg.results")` then displays the relative frequencies of these scores, similar to the preceding individual question graphs. Because values are continuous (anywhere on a scale between 0 and 100 per cent), the graphs show a spectrum from blue (indicating a low score) to bright yellow (indicating a high score).
 
 The *Resilience* score is calculated in the same way as the other issue scores, with the exception that only the first two items under *Question 428*, "Willingness to engage with others", are included in the scoring procedure. We have intepreted these items ("When I am going through a difficult time, I go online less often"; "When I am going through a difficult time, going online makes me feel better") as having some influence (the first negative, the second positive) on *Resilience*.
 
+
+
+#### Limitations
+
+The above procedure has several limitations. 
+
+First, it is questionable whether complex concepts such as digital resilience and social connectedness, in particular, are reducible to a quantitative value, regardless of the procedure used to derive it. Further, for reasons of space, our characterisation of Digital Capacities includes a total of nine critical issues, only four of which are included in the survey. We recommend comparing these scores with our qualitative findings, which illustrate the more nuanced and sometimes contradictory character of these qualities in Australian families.
+
+Second, the procedure treats, at the moment, each of the scales as numerically regular. For example, on the *Agreement* scale it assumes *Strongly agree* warrants 1 more score point than *Agree*, which in turn warrants 1 more point than *Neither Agree nor Disagree*. In other words, ordinal scales are treated as *ratio* variables, with regular intervals. 
+
+Third, the procedure assumes all questions and individual items have equal influence on the critical issue they have been aligned to. 
+
+**[REVIEW NOTE: The latter two of these issues can be addressed partially by a more sophisticated scaling and weighting approach. We are considering holding a workshop for this purpose in preparation of the complete draft meeting in May 2016.]**
+
+
+### Observations
 
 <!--
 Incorporate math in final calculation. Example math:
@@ -655,24 +729,17 @@ $$ y = mx +b $$
 
 -->
 
+Bearing in mind the method of deriving these aggregate scores, we make only minimal observations at this stage. *`r cf("agg.results")`* shows that results for *Compentencies* and *Connectedness* are evenly distributed, with respondents' scores spread across the 100-point scale. These are also similar to the spread of *Combined* scores. *Resilience* scores tend high, with most respondents reporting little exposure to harms, and familiarity with methods for responding to those harms. 
+
+On the other hand, *Interest* scores tend low. This may be explained by our limiting interests to areas of social difference, fitness, health and family, which will not effectively poll the range or extent of participants' interests. 
+
 ```{r indexChart, echo=FALSE}
 
 (gg <- chartWrap(generateIndexChart()))
 
 ```
 
-
-#### Limitations
-
-The above procedure has several limitations. 
-
-First, it is questionable whether complex concepts such as digital resilience and social connectedness, in particular, are reducible to a quantitative value, regardless of the procedure used to derive it. For reasons of space, our characterisation of Digital Capacities includes a total of nine critical issues, only four of which are included in the survey. We recommend comparing these scores with our qualitative findings, which illustrate the more nuanced and sometimes contradictory character of these qualities in Australian families.
-
-Second, the procedure treats, at the moment, each of the scales as numerically regular. For example, on the *Agreement* scale it assumes *Strongly agree* warrants 1 more score point than *Agree*, which in turn warrants 1 more point than *Neither Agree nor Disagree*. In other words, ordinal scales are treated as *ratio* variables, with regular intervals. 
-
-Third, the procedure assumes all questions and individual items have equal influence on the critical issue they have been aligned to. 
-
-**[REVIEW NOTE: The latter two of these issues can be addressed by a more sophisticated scaling and weighting approach. We are considering holding a workshop for this purpose in preparation of the complete draft meeting in May 2016.]**
+*`r fig_nums("agg.results")`*
 
 
 

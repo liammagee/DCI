@@ -341,6 +341,8 @@ freqDistChart <- function(freq.table, file.name, title, x.label, y.label, func, 
 		x.scale <- xlab(x.label)
 	}
 
+	# FOR NOW, clear the Y label
+	y.label <- ""
 	y.scale <- scale_y_continuous(name = y.label,
 									breaks = seq(0.0, 1.0, by = 0.2), 
 									labels = paste(seq(0, 100, by = 20), "%", sep = ""))
@@ -835,7 +837,7 @@ graphSubQuestionFrequencies  <- function(vars, legend.name, legendBreakFunc, fil
 
 	    # TEXT
 	    axis.text.x = element_text(margin = margin(t = 0, r = 0, b = 0, l = 0, unit ="cm"), color=text.color, angle=0, vjust=0.0, hjust=0.5, size = axis.text.size * 1.0),
-	    axis.text.y = element_text(margin = margin(t = 0, r = y.right.offset, b = 0, l = 0.5, unit ="in"), color=text.color, angle=0, vjust=-1.5, hjust=0.0, size = axis.text.size * 1.0),
+	    axis.text.y = element_text(margin = margin(t = 0, r = y.right.offset, b = 0, l = 0.5, unit ="in"), color=text.color, angle=0, vjust=-1.25, hjust=0.0, size = axis.text.size * 1.0),
 	    axis.ticks.x = element_line(colour = "white", size = 0.1),
 	    axis.ticks.y = element_line(colour = "white", size = 0.1),
 	    # axis.text.x = element_text(angle=45, vjust=1.0, hjust=1.0, size = axis.text.size),
