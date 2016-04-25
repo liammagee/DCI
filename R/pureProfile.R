@@ -39,7 +39,7 @@ png.height = 6
 # text.color <- '#202020'
 
 background.color <- '#FFFFFF'
-foreground.color <- '#FFFFFF'
+foreground.color <- '#DFDFDF'
 title.color <- '#000000'
 text.color <- '#000000'
 
@@ -49,8 +49,13 @@ cbPalette <- c("#999999", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2",
 # The palette with black:
 # cbbPalette <- c("#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
 # blackPalette <- c("#000000")
-yawcrcPalette <- c("#139DEA", "#56CDFF", "#949494", "#F07899", "#EA3568", "#FFFFFF", "#000000")
-
+yawcrcPalette1 <- c("#139DEA", "#56CDFF", "#949494", "#F07899", "#EA3568", "#FFFFFF", "#000000")
+yawcrcPalette2 <- c("#139DEA", "#56CDFF", "#949494", "#F07899", "#EA3568", "#E8A81C", "#000000")
+yawcrcPalette3 <- c("#032767", "#139DEC", "#6BCEFF", "#FFFBE2", "#FFF88A", "#E8A81C", "#000000")
+yawcrcPalette4 <- c("#032767", "#139DEC", "#DFDFDF", "#FFFBE2", "#FFF88A", "#000000", "#A8A8A8")
+yawcrcPalette5 <- c("#032767", "#139DEC", "#6BCEFF", "#FFFBE2", "#FFF88A", "#F8B84C")
+yawcrcPalette <- yawcrcPalette3
+yawcrcPaletteFivePoints <- yawcrcPalette4
 
 
 # Generates year breaks to use on X axis
@@ -267,6 +272,7 @@ standardBarChart <- function(data, file.name, title, x.label, y.label, func, use
 	      width = png.width,
 	      height = png.height
 	    )
+	  print()
   }
 
   return (p)
@@ -274,19 +280,19 @@ standardBarChart <- function(data, file.name, title, x.label, y.label, func, use
 }
 
 ## Augment chart with standard look and feel 
-augmentChart <- function(p, breaks, labels) {
+augmentChart <- function(p, breaks, labels, palette = yawcrcPalette) {
 	p <- p +
-		scale_fill_manual(name="Frequency",
-				 values=yawcrcPalette,
+		scale_fill_manual(name="",
+				 values=palette,
                  breaks=unique(breaks),
                  labels=labels) +
 	  theme(
 	    # GRID
 	    panel.grid.minor.y = element_blank(),
-	    # panel.grid.major.y = element_blank(),
+	    panel.grid.major.y = element_blank(),
 	    # panel.grid.major.y = element_line(colour = foreground.color),
 	    panel.grid.minor.x = element_blank(),
-	    panel.grid.major.x = element_blank(),
+	    panel.grid.major.x = element_line(colour = foreground.color, linetype = "dashed"),
 
 	    # BACKGROUND
 	    # panel.background = element_rect(fill = background.color, colour = foreground.color),
@@ -302,11 +308,12 @@ augmentChart <- function(p, breaks, labels) {
 	    axis.line = element_line(colour = "black"),
 
 	    # TEXT
-	    axis.text.x = element_text(color=text.color, angle=45, vjust=1.0, hjust=1.0, size = axis.text.size * 0.8),
-	    axis.text.y = element_text(color=text.color, angle=0, vjust=1.0, hjust=1.0, size = axis.text.size * 0.8)
+	    axis.text.x = element_text(color=text.color, angle=0, vjust=1.0, hjust=0.5, size = axis.text.size * 0.8),
+	    axis.text.y = element_text(color=text.color, angle=0, vjust=1.0, hjust=1.0, size = axis.text.size * 0.8),
 	    # axis.text.x = element_text(angle=45, vjust=1.0, hjust=1.0, size = axis.text.size),
 	    # axis.text.y = element_text(angle=45, size = axis.text.size)
 
+		panel.background = element_rect(fill = "white")
 	)
 
 
@@ -315,7 +322,7 @@ augmentChart <- function(p, breaks, labels) {
 }
 
 ## Provides a single function for generating frequency distribution bar charts
-freqDistChart <- function(freq.table, file.name, title, x.label, y.label, func, use.years = TRUE) {
+freqDistChart <- function(freq.table, file.name, title, x.label, y.label, func, palette = yawcrcPalette, use.years = TRUE) {
 
 	# Assume the columns contain decade breaks
 	prop.freq.table <- prop.table(freq.table, 2)
@@ -333,6 +340,8 @@ freqDistChart <- function(freq.table, file.name, title, x.label, y.label, func, 
 		x.scale <- xlab(x.label)
 	}
 
+	# FOR NOW, clear the Y label
+	y.label <- ""
 	y.scale <- scale_y_continuous(name = y.label,
 									breaks = seq(0.0, 1.0, by = 0.2), 
 									labels = paste(seq(0, 100, by = 20), "%", sep = ""))
@@ -344,11 +353,11 @@ freqDistChart <- function(freq.table, file.name, title, x.label, y.label, func, 
 	    coord_flip() 
 
 	p <- p +
-	  ggtitle(title) + 
+	  # ggtitle(title) + 
 	  x.scale +
 	  y.scale
 
-	p <- augmentChart(p, prop.freq.melted$Var1, func())
+	p <- augmentChart(p, prop.freq.melted$Var1, func(), palette)
 
 	full.file <- paste("./figs/", file.name, ".png", sep="") 
 
@@ -373,15 +382,15 @@ freqDistChart <- function(freq.table, file.name, title, x.label, y.label, func, 
 
 ageChart <- function(augmented.data) {
 
-	age.breaks <- c(12, 18, 35, 50, 65)
+	age.breaks <- sort(unique(augmented.data$age.breaks))
 	age.breaks.labels <- sort(unique(augmented.data$age.breaks))
 
-	x.scale <- scale_x_continuous(name = "Ages",
+	x.scale <- scale_x_discrete(name = "Ages",
 									breaks = age.breaks, 
 									labels = age.breaks.labels)
 
-	p <- ggplot(augmented.data, aes(x=age)) +
-				geom_histogram(binwidth=.5) + 
+	p <- ggplot(augmented.data, aes(x=age.breaks)) +
+				geom_bar(width=0.5) + 
 				x.scale + 
 	    		coord_flip() 
 
@@ -415,17 +424,17 @@ genderChart <- function(augmented.data) {
 
 genderAndAgeChart <- function(augmented.data) {
 
-	age.breaks <- c(12, 18, 35, 50, 65)
-	age.breaks.labels <- sort(unique(augmented.data$age.breaks))
+	age.breaks <- sort(unique(augmented.data$age.breaks))
+	# a <- sort(unique(augmented.data$age.breaks))
 	# age.breaks.labels <- paste(a, " - ", a + 4, sep = "")
 	x.scale <- scale_x_discrete(name = "age.breaks",
 									breaks = age.breaks, 
-									labels = age.breaks.labels)
+									labels = age.breaks)
 
 	ad <- table(augmented.data$gender, augmented.data$age.breaks)
 	ad <- melt(ad)
 
-	p <- ggplot(ad, aes(x=Var2, y=value, group=Var1, fill=Var1)) +
+	p <- ggplot(ad, aes(x=Var2, y=value, fill=Var1)) +
 				geom_bar(width=0.5, stat="identity", position="dodge") + 
 				x.scale + 
 	    		coord_flip() 
@@ -462,6 +471,7 @@ locationChart <- function(augmented.data) {
                           decreasing=TRUE))))) +
 				geom_bar(width=0.5) + 
 				xlab("Location") +
+				xlab("Percentage") +
 	    		coord_flip() 
 
 	p <- augmentChart(p, augmented.data$location, unique(augmented.data$location))
@@ -475,7 +485,8 @@ chartVariableByAge <- function(data, filename, metadata, labelsY) {
 					paste(metadata$Name, " by Age"),
 					"Age by Decade",
 					metadata$Name,
-					labelsY
+					labelsY,
+					FALSE
 					)
 	comment <- paste("Printed graph of ", metadata$Name, " to ./figs/", filename, ".png", sep="")
 	if (PRINTING) {
@@ -488,13 +499,14 @@ chartVariableByAge <- function(data, filename, metadata, labelsY) {
 	return (p)
 }
 
-chartFrequencies <- function(data, filename, metadata, labelsY, desc1, desc2, use.years = TRUE) {
+chartFrequencies <- function(data, filename, metadata, labelsY, desc1, desc2, palette = yawcrcPalette, use.years = TRUE) {
 	p <- freqDistChart(data,
 					filename,
-					paste(metadata$Name, desc1),
+					desc1,
 					desc2,
-					metadata$Name,
+					metadata$Label,
 					labelsY,
+					palette,
 					use.years
 					)
 	comment <- paste("Printed graph of ", metadata$Name, " to ./figs/", filename, ".png", sep="")
@@ -570,7 +582,7 @@ obtainIndicatorNames <- function(vars) {
 
 
 
-generateSingleAgeFrequency <- function(x, vars, func) {
+generateSingleAgeFrequency <- function(x, vars, func, palette = yawcrcPalette) {
 	if (x > 0) {
 		ind.names <- obtainIndicatorNames(vars)
 		var.name <- vars[x]
@@ -595,6 +607,7 @@ generateSingleAgeFrequency <- function(x, vars, func) {
 							func,
 							"by Age",
 							"Age",
+							palette,
 							FALSE)
 	return (p)
 }
@@ -604,7 +617,7 @@ generateAgeFrequencies <- function(vars, func) {
 }
 
 
-generateSingleGenderFrequency <- function(x, vars, func) {
+generateSingleGenderFrequency <- function(x, vars, func, palette = yawcrcPalette) {
 	if (x > 0) {
 		ind.names <- obtainIndicatorNames(vars)
 		var.name <- vars[x]
@@ -628,6 +641,7 @@ generateSingleGenderFrequency <- function(x, vars, func) {
 							func,
 							"by Gender",
 							"Gender",
+							palette, 
 							FALSE)
 	return (p)
 }
@@ -636,7 +650,7 @@ generateGenderFrequencies <- function(vars, func) {
 	sapply(seq(1:length(vars)), generateSingleGenderFrequency, vars, func)
 }
 
-generateSingleStateFrequency <- function(x, vars, func) {
+generateSingleStateFrequency <- function(x, vars, func, palette = yawcrcPalette) {
 	if (x > 0) {
 		ind.names <- obtainIndicatorNames(vars)
 		var.name <- vars[x]
@@ -660,6 +674,7 @@ generateSingleStateFrequency <- function(x, vars, func) {
 							func,
 							"by State",
 							"State",
+							palette,
 							FALSE)
 	return (p)
 }
@@ -668,7 +683,7 @@ generateStateFrequencies <- function(vars, func) {
 	sapply(seq(1:length(vars)), generateSingleStateFrequency, vars, func)
 }
 
-generateSingleLocationFrequency <- function(x, vars, func) {
+generateSingleLocationFrequency <- function(x, vars, func, palette = yawcrcPalette) {
 	if (x > 0) {
 		ind.names <- obtainIndicatorNames(vars)
 		var.name <- vars[x]
@@ -692,6 +707,7 @@ generateSingleLocationFrequency <- function(x, vars, func) {
 							func,
 							"by Location",
 							"Location",
+							palette,
 							FALSE)
 	return (p)
 }
@@ -735,7 +751,11 @@ histogram <- function(cols, name, file.name) {
 
 # vars.connectedness.maintenance.287, "Importance", importanceLabels, "maintaining-connections-287"
 # Generic function that returns relative frequencies of sub questions (items) as a graph
-graphSubQuestionFrequencies  <- function(vars, legend.name, legendBreakFunc, file.name) {
+graphSubQuestionFrequencies  <- function(vars, legend.name, legendBreakFunc, file.name, y.right.offset = -8.0, palette = yawcrcPalette) {
+	# Add dummy column, to allow melt to work with single columns
+	data$dummy <- NA
+	vars <- c(vars, "dummy")
+
 	# Obtain a melted, long version of the column data
 	m <- melt(data[,vars], id.vars = c())
 	# Generate counts of the item data
@@ -748,16 +768,20 @@ graphSubQuestionFrequencies  <- function(vars, legend.name, legendBreakFunc, fil
 	# Rename for simplicity - TODO: push up to the global variable
 	ex <- expandedIndicators
 	# Complicated code that loads truncated item names into the melted data
-	var.names = as.character(unlist(sapply(obtainIndicatorNames(unique(cm$variable)), function(lbl) {
-		v <- ex[which(ex$DCI.ID == lbl),2]
-		# Assume a name like "74 - 1 - XXX"
-		v <- unlist(strsplit(as.character(v), "-"))[3]
-		# Truncate if too long
-		v <- substring(v, 1, 30)
-		# Add back the ID, for reference
-		v <- paste(lbl, v, sep = " ")
-		return (v)
-	})))
+	var.names <- c(unique(cm$variable))
+	# If the length of variables is more than 1, we need proper labels
+	if (length(unique(cm$variable)) > 1) {
+		var.names = as.character(unlist(sapply(obtainIndicatorNames(unique(cm$variable)), function(lbl) {
+			v <- ex[which(ex$DCI.ID == lbl),2]
+			# Assume a name like "74 - 1 - XXX"
+			v <- unlist(strsplit(as.character(v), "-"))[3]
+			# Truncate if too long
+			v <- substring(v, 1, 120)
+			# Add back the ID, for reference
+			# v <- paste(lbl, v, sep = " ")
+			return (v)
+		})))
+	}
 	# Construct scales
 	x.scale <- scale_x_discrete(name = "Questions",
 									breaks = unique(cm$variable), 
@@ -765,15 +789,19 @@ graphSubQuestionFrequencies  <- function(vars, legend.name, legendBreakFunc, fil
 	y.scale <- scale_y_continuous(name = "Percentage",
 									breaks = seq(0.0, 1.0, by = 0.2), 
 									labels = paste(seq(0, 100, by = 20), "%", sep = ""))
-	fill.scale <- scale_fill_manual(name=legend.name,
-				 values=yawcrcPalette)
+	fill.scale <- scale_fill_manual(
+						name=legend.name,
+				 		values=palette)
 	# Works around problem with plot.ly - see http://stackoverflow.com/questions/35369309/plotly-legend-problems-with-ggplot2
 				# , breaks=seq(1:length(legendBreakFunc()))
 				# , labels=legendBreakFunc()
 	# Generate plot
-	p <- ggplot(data = cm, 
-		aes(x = variable, y = rel.freq, fill = value.coded.f)) + 
-	    geom_bar(width = 0.5, stat = "identity") + 
+	w <- 0.5
+	height <- 0.4 + 10 * length(cm$variable)
+	p <- ggplot(
+		data = cm, 
+		aes(x = variable, y = rel.freq, fill = value.coded.f, label = variable)) + 
+	    geom_bar(width = w, stat = "identity") + 
 	    coord_flip() +
 	    x.scale +
 	    y.scale +
@@ -781,6 +809,44 @@ graphSubQuestionFrequencies  <- function(vars, legend.name, legendBreakFunc, fil
 	# p <- p + theme(
 	# 	axis.text.y = element_text(color=text.color, angle=45, vjust=1.0, hjust=1.0, size = axis.text.size * 0.8)
 	# )
+	p <- p +
+	  theme(
+	    # GRID
+	    # panel.grid.minor.y = element_blank(),
+	    # panel.grid.major.y = element_blank(),
+	    # panel.grid.major.y = element_line(colour = foreground.color),
+	    # panel.grid.minor.y = element_line(colour = foreground.color),
+	    panel.grid.major.x = element_line(colour = foreground.color, linetype = "dashed"),
+	    # panel.grid.major.x = element_line(colour = foreground.color),
+	    # panel.grid.minor.x = element_blank(),
+	    # panel.grid.major.x = element_blank(),
+
+	    # BACKGROUND
+	    # panel.background = element_rect(fill = background.color, colour = foreground.color),
+	    
+	    # TITLE
+	    # plot.title = element_text(colour = title.color, lineheight=1.0, face="bold", size=graph.title.size),
+	    axis.title = element_text(color=title.color, lineheight=1.0, size = axis.title.size),
+	    # axis.title = element_text(lineheight=1.0, size = axis.title.size),
+	    axis.title.x = element_text(size = axis.title.size, vjust = x.axis.vjust),
+	    axis.title.y = element_text(size = axis.title.size, vjust = y.axis.vjust),
+	    
+	    # LINE
+	    axis.line = element_line(colour = "black"),
+
+	    # TEXT
+	    axis.text.x = element_text(margin = margin(t = 0, r = 0, b = 0, l = 0, unit ="cm"), color=text.color, angle=0, vjust=0.0, hjust=0.5, size = axis.text.size * 1.0),
+	    axis.text.y = element_text(margin = margin(t = 0, r = y.right.offset, b = 0, l = 0.5, unit ="in"), color=text.color, angle=0, vjust=-1.25, hjust=0.0, size = axis.text.size * 1.0),
+	    axis.ticks.x = element_line(colour = "white", size = 0.1),
+	    axis.ticks.y = element_line(colour = "white", size = 0.1),
+	    # axis.text.x = element_text(angle=45, vjust=1.0, hjust=1.0, size = axis.text.size),
+	    # axis.text.y = element_text(angle=45, size = axis.text.size)
+
+	    legend.position="bottom",
+	    legend.direction="vertical",
+	    plot.margin = unit(c(0,0,0,0), "cm"),
+	    panel.background = element_rect(fill = "white")
+	)
 
 	full.file <- paste("./figs/gen/", file.name, ".png", sep="") 
 
@@ -790,19 +856,78 @@ graphSubQuestionFrequencies  <- function(vars, legend.name, legendBreakFunc, fil
 		  width = png.width,
 		  height = png.height
 		)
+		comment <- paste("Printed graph to ", full.file, sep="")
+		print(comment)
 	}
 
 	return (p)
 }
 
-# Opt include plot.ly for HTML output
-PLOTLY = FALSE
 chartWrap <- function(p) {
 	if (PLOTLY) {
 		library(plotly)
 		return (ggplotly(p))
 	}
 	else {
+
 		return (p)
 	}
 }
+
+freqAlls <- function(cols, labels) {
+	means <- round(rowMeans(augmented.data[,cols]))
+	dt <- data.frame(table(means))
+	dt$labels <- labels()
+	dt$rel.freq <- format(100 * dt$Freq / sum(dt$Freq), digits = 2)
+	return (dt)
+}
+
+freqs <- function(index, cols, labels) {
+	col <- cols[index]
+	dt <- data.frame(table(augmented.data[,c(col)]))
+	dt$labels <- labels()
+	dt$rel.freq <- format(100 * dt$Freq / sum(dt$Freq), digits = 2)
+	return (dt)
+}
+
+freqAges <- function(index, cols, labels) {
+	col <- cols[index]
+	dt <- data.frame(table(augmented.data[,c("age.breaks", col)]))
+	dt <- dt[order(dt$age.breaks),]
+	dt$labels <- labels()
+	gt <- aggregate(Freq ~ age.breaks, dt, sum)
+	dt <- merge(dt[,], gt, by="age.breaks")
+	dt$rel.freq <- format(100 * dt$Freq.x / dt$Freq.y, digits = 2)
+	dt <- dt[,c("age.breaks", "labels", "rel.freq")]
+	return (dt)
+}
+
+getLabel <- function(index, cols) {
+	ind.names <- obtainIndicatorNames(cols)
+	ind.name <- ind.names[index]
+	metadata <- expandedIndicators[which(ind.name == expandedIndicators$DCI.ID),]
+	return (metadata$Label)
+}
+
+questionCategory <- function(var.name) {
+	ind.name <- gsub("Q", "", var.name)
+
+	freqs <- table(augmented.data[,var.name], augmented.data$age.breaks)
+	metadata <- indicators[which(ind.name == indicators$DCI.ID),]
+	# For consistency
+	metadata$Name <- as.character(metadata$Indicator...Variable)
+
+	return (metadata$Name)
+}
+
+questionText <- function(var.name) {
+	ind.name <- gsub("Q", "", var.name)
+
+	freqs <- table(augmented.data[,var.name], augmented.data$age.breaks)
+	metadata <- indicators[which(ind.name == indicators$DCI.ID),]
+	# For consistency
+	metadata$Name <- as.character(metadata$Question..Adult)
+
+	return (metadata$Name)
+}
+
