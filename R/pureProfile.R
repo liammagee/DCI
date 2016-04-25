@@ -14,6 +14,7 @@ axis.title.size <- 12
 axis.text.size <- 10
 x.axis.vjust <- -0.25
 y.axis.vjust <- 0.5
+x.axis.text.vjust <- 1.0
 png.width = 8
 png.height = 6
 
@@ -755,9 +756,8 @@ graphSubQuestionFrequencies  <- function(vars, legend.name, legendBreakFunc, fil
 	# Add dummy column, to allow melt to work with single columns
 	data$dummy <- NA
 	vars <- c(vars, "dummy")
-
 	# Obtain a melted, long version of the column data
-	m <- melt(data[,vars], id.vars = c())
+	m <- melt(data[,vars], id.vars = c(), na.rm = TRUE)
 	# Generate counts of the item data
 	cm <- count(m, c("variable", "value"))
 	# Recode, to solve problem with ggplotly and scale_fill_manual
@@ -783,12 +783,13 @@ graphSubQuestionFrequencies  <- function(vars, legend.name, legendBreakFunc, fil
 		})))
 	}
 	# Construct scales
-	x.scale <- scale_x_discrete(name = "Questions",
+	x.scale <- scale_x_discrete(name = " ",
 									breaks = unique(cm$variable), 
 									labels = var.names)
 	y.scale <- scale_y_continuous(name = "Percentage",
 									breaks = seq(0.0, 1.0, by = 0.2), 
 									labels = paste(seq(0, 100, by = 20), "%", sep = ""))
+
 	fill.scale <- scale_fill_manual(
 						name=legend.name,
 				 		values=palette)
