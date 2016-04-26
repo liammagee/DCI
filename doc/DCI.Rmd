@@ -725,7 +725,7 @@ Third, the procedure assumes all questions and individual items have equal influ
 <!--
 Incorporate math in final calculation. Example math:
 
-$$ y = mx +b $$
+$$ y = mx + b $$
 
 -->
 
