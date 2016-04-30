@@ -1,0 +1,111 @@
+---
+title: "Cultivating Digital Capacities"
+author: | 
+  | Liam Magee^1^, Delphine Bellerose^1^, Anjali Sharma^1^, Louise Crabtree^1^, Philippa Collin^1^, Justine Humphry^1^, Paul James^1^, Emma Kearney^1^, Tanya Notley^1^, Amanda Third^1^, Samantha Yorke^2^
+  | 1. Western Sydney University
+  | 2. Google Australia
+date: "4 April 2016"
+bibliography: DCI.bib
+output:
+  html_document:
+    theme: flatly
+    highlight: tango
+    smart: true
+    template: DCI-template.html
+    css: dci.css
+---
+
+
+<!-- output: html_document -->
+<!-- output: word_document -->
+<!-- output: pdf_document -->
+
+<section id="summary" class="container content-section text-left">
+<div class="row">
+<div class="col-lg-8 col-lg-offset-2">
+```{r child='DCI-1-Exec-Summary.Rmd'}
+```
+</div>
+</div>
+</section>
+
+<section id="concept" class="container content-section text-left">
+<div class="row">
+<div class="col-lg-8 col-lg-offset-2">
+```{r child='DCI-2-Conceptual-Framework.Rmd'}
+```
+</div>
+</div>
+</section>
+
+<section id="lit" class="container content-section text-left">
+<div class="row">
+<div class="col-lg-8 col-lg-offset-2">
+```{r child='DCI-3-Literature-Review.Rmd'}
+```
+</div>
+</div>
+</section>
+
+<section id="method" class="container content-section text-left">
+<div class="row">
+<div class="col-lg-8 col-lg-offset-2">
+```{r child='DCI-4-Methodology.Rmd'}
+```
+</div>
+</div>
+</section>
+
+<section id="crit" class="container content-section text-left">
+<div class="row">
+<div class="col-lg-8 col-lg-offset-2">
+```{r child='DCI-5-Critical-Issues.Rmd'}
+```
+</div>
+</div>
+</section>
+
+<section id="qual" class="container content-section text-left">
+<div class="row">
+<div class="col-lg-8 col-lg-offset-2">
+```{r child='DCI-6-Qualitative-Findings.Rmd'}
+```
+</div>
+</div>
+</section>
+
+<section id="quant" class="container content-section text-left">
+<div class="row">
+<div class="col-lg-8 col-lg-offset-2">
+```{r child='DCI-7-Quantitative-Findings.Rmd'}
+```
+</div>
+</div>
+</section>
+
+<section id="families" class="container content-section text-left">
+<div class="row">
+<div class="col-lg-8 col-lg-offset-2">
+```{r child='DCI-8-Digital-Capacities-of-Families.Rmd'}
+```
+</div>
+</div>
+</section>
+
+<section id="agenda" class="container content-section text-left">
+<div class="row">
+<div class="col-lg-8 col-lg-offset-2">
+```{r child='DCI-9-Setting-the-Agenda.Rmd'}
+```
+</div>
+</div>
+</section>
+
+
+<section id="agenda" class="container content-section text-left">
+<div class="row">
+<div class="col-lg-8 col-lg-offset-2">
+## References
+</div>
+</div>
+</section>
