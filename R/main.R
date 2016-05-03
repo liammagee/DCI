@@ -385,7 +385,6 @@ generateStateFrequenciesForAggregate <- function() {
 	p <- generateSingleStateFrequency(0, c("Q343"), frequencyMonthLabels)
 	p <- generateSingleStateFrequency(0, c("Q352"), frequencyMonthLabels)
 	p <- generateSingleStateFrequency(0, c("Q353"), agreementLabels)
-	p <- generateSingleStateFrequency(0, c("Q428"), agreementLabels)
 	p <- generateSingleStateFrequency(0, c("Q429"), agreementLabels)
 	p <- generateSingleStateFrequency(0, c("Q430"), importanceLabels)
 	p <- generateSingleStateFrequency(0, c("Q431"), easeLabels)

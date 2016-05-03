@@ -105,7 +105,6 @@ fig_nums("agg.results", "Aggregated Results by Critical Issue")
 ## Digital Capacities Index - Quantitative Findings
 
 The *Digital Capacities Index* is a pilot survey instrument developed by researchers at Western Sydney University and Google Australia. 
-The survey was administered by [Pure Profile](https://www.pureprofile.com/us/) in February 2016.
 
 
 ### Introduction

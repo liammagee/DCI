@@ -4,7 +4,6 @@ output: html_document
 ---
 
 $$ q_{i'} = \sum_{i=0}^{n} \frac{(q_{i}-1) \cdot 100}{(x-1)} $$
-
 $$ q_{i"} = q_{i'} - 2 \cdot (q_{i'} - \frac{100}{2}) $$
 
 \usepackage{amsmath}
