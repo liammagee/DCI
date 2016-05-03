@@ -17,7 +17,7 @@ The *DCI* project uses [R](https://www.r-project.org/) and [Markdown](https://da
 To generate the main report in all formats:
 
 ```
-Rscript -e 'rmarkdown::render("doc/DCI.Rmd", output_format="all")' 
+Rscript -e 'rmarkdown::render("doc/DCI.Rmd", output_format="html_document")' 
 ```
 
 To run the main script:

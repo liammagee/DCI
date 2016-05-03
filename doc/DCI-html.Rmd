@@ -13,6 +13,7 @@ output:
     smart: true
     template: DCI-template.html
     css: dci.css
+    after_body: DCI-html-close.html
 ---
 
 
@@ -102,10 +103,14 @@ output:
 </section>
 
 
-<section id="agenda" class="container content-section text-left">
+<!-- Map Section -->
+<div id="map"></div>
+
+<section id="refences" class="container content-section text-left">
 <div class="row">
 <div class="col-lg-8 col-lg-offset-2">
 ## References
 </div>
 </div>
 </section>
+

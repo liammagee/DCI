@@ -94,7 +94,7 @@ $endfor$
                         <a class="page-scroll" href="#method">method</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#crit">crit</a>
+                        <a class="page-scroll" href="#crit">issues</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#qual">qual</a>
@@ -159,7 +159,14 @@ $endfor$
     </section>
 
     <!-- Contact Section -->
+    $for(include-before)$
+    $include-before$
+    $endfor$
     $body$
+    $for(include-after)$
+    $include-after$
+    $endfor$
+
 
     <!-- Footer -->
     <footer>
