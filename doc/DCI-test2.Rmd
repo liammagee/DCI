@@ -1,5 +1,5 @@
 ---
-title: "Digital Capacities Index - Quantitative Findings"
+title: "Cultivating Digital Capacities"
 author: | 
   | Liam Magee^1^, Delphine Bellarose^1^, Anjali Sharma^1^, Louise Crabtree^1^, Philippa Collin^1^, Justine Humphry^1^, Paul James^1^, Emma Kearney^1^, Tanya Notley^1^, Amanda Third^1^, Samantha Yorke^2^
   | 1. Western Sydney University
@@ -10,7 +10,14 @@ output:
   html_document:
     toc: true
     toc_depth: 4
+    theme: flatly
+    highlight: tango
+    smart: true
+    template: DCI-template.html
 ---
+
+<!-- css: template.css -->
+<!-- css: ../web/dci.css -->
 
 <!-- output: word_document -->
 <!-- output: pdf_document -->

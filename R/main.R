@@ -15,15 +15,13 @@ library(plyr)
 
 print("Loading DCI data")
 
-# Global Settings
+# Settings
 PRINTING <- TRUE
 
+# Name variables
 
-
-# Variable collections
-
-## All variables
 vars <- c(
+
 	"Q74_1", "Q74_2", "Q74_3", "Q74_4", "Q74_5", "Q74_6", "Q74_7", "Q74_8", "Q74_9", "Q74_10", "Q74_11", "Q74_12", "Q74_13", "Q74_14", "Q74_15",
 			"Q431_16", "Q431_17", "Q431_18", "Q431_19", "Q431_20", "Q431_21", "Q431_22", "Q431_23", "Q431_24", "Q431_25", "Q431_26", "Q431_27", "Q431_28", "Q431_29", "Q431_30", "Q431_31", "Q431_32", "Q431_33", "Q431_34", "Q431_35", "Q431_36", "Q431_37", "Q431_38", "Q431_39", "Q431_40", "Q431_41", "Q431_42",
 			"Q437_43", "Q437_44", "Q437_45", "Q437_46", "Q437_47", "Q437_49", "Q437_50", "Q437_51", "Q437_52", "Q437_53", "Q437_54",
@@ -52,7 +50,6 @@ vars <- c(
 			"Q9_212", "Q9_213", "Q9_214", "Q9_215", "Q9_216", "Q9_217", "Q9_218", "Q9_219", "Q9_220"
 )
 
-## Variables - scaled
 vars.competencies.online.activities.74 <- c("Q74_1", "Q74_2", "Q74_3", "Q74_4", "Q74_5", "Q74_6", "Q74_7", "Q74_8", "Q74_9", "Q74_10", "Q74_11", "Q74_12", "Q74_13", "Q74_14", "Q74_15")
 vars.connectedness.maintenance.287 <- c("Q287_137", "Q287_138", "Q287_139", "Q287_140", "Q287_141", "Q287_142")
 vars.interests.difference.seeking.341 <- c("Q341_55", "Q341_56", "Q341_57", "Q341_58", "Q341_59", "Q341_60", "Q341_61")
@@ -67,12 +64,11 @@ vars.resilience.harm.events.434 <- c("Q434_88", "Q434_89", "Q434_90", "Q434_91",
 vars.resilience.harms.agreement.435 <- c("Q435_99", "Q435_100", "Q435_101", "Q435_102", "Q435_103", "Q435_104", "Q435_105")
 vars.interests.general.437 <- c("Q437_43", "Q437_44", "Q437_45", "Q437_46", "Q437_47", "Q437_49", "Q437_50", "Q437_51", "Q437_52", "Q437_53", "Q437_54")
 
-## Variables - binary
+# Binary 
 vars.connectedness.helping.others.277 <- c("Q277_112", "Q277_113", "Q277_114", "Q277_115", "Q277_116", "Q277_117", "Q277_118", "Q277_119", "Q277_120", "Q277_121", "Q277_122", "Q277_123")
 vars.connectedness.sought.help.from.others.280 <- c("Q280_124", "Q280_125", "Q280_126", "Q280_127", "Q280_128", "Q280_129", "Q280_130", "Q280_131", "Q280_132", "Q280_133", "Q280_134", "Q280_135", "Q280_136")
 
 
-## Variables - by critical issues
 vars.competencies <- c(
 	vars.competencies.online.activities.74,
 	vars.competencies.431
@@ -162,18 +158,18 @@ vars.resilience.totals <- c(
 	"total.435",
 	"total.428"
 )
-vars.resilience.totals <- c(
+vars.connectedness.totals <- c(
 	"total.277",
 	"total.280",
 	"total.287",
 	"total.343",
-	"total.420"
+	"total.429"
 )
 vars.totals <- c(
 	vars.competency.totals,
 	vars.interests.totals,
 	vars.resilience.totals,
-	vars.resilience.totals
+	vars.connectedness.totals
 )
 
 
@@ -211,8 +207,6 @@ augmented.data <- results[,c(age,
 								child.consent,
 								child.age,
 								vars)]
-
-
 
 # Recode variables
 augmented.data$age <- augmented.data$Q10_159
@@ -660,8 +654,7 @@ sumResilience <- function() {
 		var.name <- vars.resilience.harm.events.434[i]
 		new.var <- paste(var.name, ".for.index", sep = "")
 		c <- augmented.data[,var.name]
-		# d <- 6 - c
-		d <- c - 1
+		d <- 6 - c
 		# Convert "Don't know" to "Less than Once a Month" - conservative guess
 		d <- replace(d, d == -1, 1)
 		vars.resilience.for.index <- c(vars.resilience.for.index, new.var)
@@ -732,7 +725,7 @@ sumConnectedness <- function() {
 	total.280 <- 0
 	total.287 <- 0
 	total.343 <- 0
-	total.420 <- 0
+	total.429 <- 0
 	
 	for (i in 1:length(vars.connectedness.helping.others.277)) {
 		var.name <- vars.connectedness.helping.others.277[i]
@@ -785,14 +778,14 @@ sumConnectedness <- function() {
 		d <- replace(d, d == -2, 2)
 		vars.connectedness.for.index <- c(vars.connectedness.for.index, new.var)
 		augmented.data[new.var] <<- d
-		total.420 <- total.420 + d
+		total.429 <- total.429 + d
 	}
 
 	augmented.data$total.277 <<- total.277
 	augmented.data$total.280 <<- total.280
 	augmented.data$total.287 <<- total.287
 	augmented.data$total.343 <<- total.343
-	augmented.data$total.420 <<- total.420
+	augmented.data$total.429 <<- total.429
 
 	# Max value: (Q277) + (Q280) + (Q287) + (Q343) + (Q429)
 	# Max value: 13 * 1 + 13 * 1 + 6 * 2  + 8 * 5  + 9 * 4 
@@ -832,7 +825,6 @@ generateIndexChart <- function() {
 		geom_bar(stat="identity", position = "fill") + 
 	    scale_colour_gradientn(colours=yawcrcPalette5) +
 	    coord_flip() 
-	p <- p + scale_y_continuous(name = "Aggregate Score", breaks= c(0, 0.25, 0.5, 0.75, 1.0), labels= c("0%", "25%", "50%", "75%", "100%"))
     return (p)
 }
 
@@ -869,6 +861,163 @@ randomFunctions <- function() {
 	    geom_smooth(method=lm)   # Add linear regression line 
 
 }
+
+generateCorrelations <- function() {
+	sumIndex()
+	data <- augmented.data
+
+	cors.totals <- cor(data[,vars.totals])
+	cors.totals <- cor.test(data$vars.totals[1], data$vars.totals[2])
+	rownames(cors.totals) <- paste(sapply(rownames(cors.totals), questionCategory), ", [", rownames(cors.totals), "]")
+	colnames(cors.totals) <- paste(sapply(colnames(cors.totals), questionCategory), ", [", colnames(cors.totals), "]")
+	write.table(cors.totals, "output/cors-totals.csv", col.names=NA, sep = ",")
+
+	cors.index <- cor(data[,vars.index])
+	write.table(cors.index, "output/cors-index.csv", col.names=NA, sep = ",")
+
+	cors.above.08 <- cor(data[,vars.index])
+	cors.above.08[cors.above.08 == 1.0] <- 0
+	cors.above.08[cors.above.08 <= 0.8] <- 0
+	write.table(cors.above.08, "output/cors-index-08.csv", col.names=NA, sep = ",")
+
+	library(Hmisc)
+	rcorrs <- rcorr(cors.index)
+	p.values <- rcorrs$P
+	write.table(p.values, "output/cors-p-values.csv", col.names=NA, sep = ",")
+
+	library(corrplot)
+	corrplot(rcorrs$r, method="circle", order="hclust", addrect=2)
+
+	## ggplot version	
+	qplot(x=Var1, y=Var2, data=melt(cors.index), fill=value, geom="tile") +
+   		scale_fill_gradient2(limits=c(-1, 1))
+
+	## ggplot version	
+	qplot(x=Var1, y=Var2, data=melt(rcorrs$r), fill=value, geom="tile") +
+   		scale_fill_gradient2(limits=c(-1, 1))
+
+	
+	# Scale
+	data.scaled <- as.data.frame(scale(data[,vars.index]))
+	data.totals.scaled <- as.data.frame(scale(data[,vars.totals]))
+
+
+	## PCA 
+  ## http://www.r-bloggers.com/computing-and-visualizing-pca-in-r/
+
+	dt.pca <- prcomp(data.totals.scaled[,vars.totals], center = TRUE, scale. = TRUE)
+	# d.pca <- prcomp(data.scaled[,vars.index])
+	print(dt.pca)
+	
+	# plot method
+	plot(dt.pca, type = "l")
+	
+	# summary method
+	summary(dt.pca)
+	
+	
+	comp1 <- dt.pca$rotation[,1]
+	n <- length(comp1)
+	stack(comp1[order(stack(comp1)$values)])
+
+	printMeanAndSdByGroup(data.totals.scaled,data[224])
+	
+	library("MASS")
+	d.lda <- lda(data$age.breaks ~ 
+	               data$total.74
+	             + data$total.287
+	             + data$total.341
+	             + data$total.343
+	             + data$total.352
+	             + data$total.353
+	             + data$total.428
+	             + data$total.429
+	             + data$total.430
+	             + data$total.431
+	             + data$total.434
+	             + data$total.435
+	             + data$total.437)
+	d.lda.values <- predict(d.lda, data.scaled)
+	ldahist(data = d.lda.values$x[,1], g=data$gender)
+	ldahist(data = d.lda.values$x[,2], g=data$gender)
+	plot(d.lda.values$x[,1],d.lda.values$x[,2]) # make a scatterplot
+	
+	d.pca <- prcomp(data.scaled[,vars.index], center = TRUE, scale. = TRUE)
+	# d.pca <- prcomp(data.scaled[,vars.index])
+	print(d.pca)
+	
+	
+	
+	# plot method
+	plot(d.pca, type = "l")
+	
+	# summary method
+	summary(d.pca)
+
+	(d.pca$sdev)^2
+
+	d.pca$x
+
+	comp1 <- d.pca$rotation[,1]
+	n <- length(comp1)
+	stack(comp1[order(stack(comp1)$values)])
+	
+	plot(d.pca$x[,1], d.pca$x[,2]) # make a scatterplot
+	text(d.pca$x[,1], d.pca$x[,2], data$gender, cex=0.4, pos=4, col="red") # add labels
+	
+	library(devtools)
+	install_github("ggbiplot", "vqv")
+	
+	library(ggbiplot)
+	g <- ggbiplot(d.pca, obs.scale = 1, var.scale = 1, 
+	              groups = data$age.breaks, ellipse = TRUE, 
+	              circle = TRUE)
+	g <- g + scale_color_discrete(name = '')
+	g <- g + theme(legend.direction = 'horizontal', 
+	               legend.position = 'top')
+	print(g)
+	
+	## http://www.statmethods.net/advstats/factor.html
+	fit <- princomp(data.scaled[,vars.index], cor=TRUE)
+	summary(fit) # print variance accounted for 
+	loadings(fit) # pc loadings 
+	plot(fit,type="lines") # scree plot 
+	fit$scores # the principal components
+	biplot(fit)
+
+	g <- ggbiplot(fit, obs.scale = 1, var.scale = 1, 
+	              groups = data$gender, ellipse = TRUE, 
+	              circle = TRUE)
+	g <- g + scale_color_discrete(name = '')
+	g <- g + theme(legend.direction = 'horizontal', 
+	               legend.position = 'top')
+	print(g)
+	
+	# Varimax Rotated Principal Components
+	# retaining 5 components 
+	library(psych)
+	fit <- principal(data.scaled[,vars.index], nfactors=4, rotate="varimax")
+	fit # print results
+
+	# Maximum Likelihood Factor Analysis
+	# entering raw data and extracting 3 factors, 
+	# with varimax rotation 
+	fit <- factanal(data.scaled[,vars.index], 5, rotation="varimax")
+	print(fit, digits=2, cutoff=.3, sort=TRUE)
+	# plot factor 1 by factor 2 
+	load <- fit$loadings[,1:2] 
+	plot(load,type="n") # set up plot 
+	text(load,labels=names(data.scaled[,vars.index]),cex=.7) # add variable names
+	
+	# PCA Variable Factor Map 
+	library(FactoMineR)
+	result <- PCA(data.scaled[,vars.index]) # graphs generated automatically
+	
+	
+	# http://little-book-of-r-for-multivariate-analysis.readthedocs.io/en/latest/src/multivariateanalysis.html
+}
+
+
 
 # generateSingleAgeFrequency(1, vars.ease, easeLabels)
 # generateAll()s
