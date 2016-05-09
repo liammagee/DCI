@@ -26,5 +26,7 @@ installDeps <- function() {
   # TODO: Make this conditional on whether the source has changed
   # Otherwise slows down sourcing the main.R file.
   # devtools::install_github("adletaw/captioner") 
-}
+
+  }
+
 
