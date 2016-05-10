@@ -14,7 +14,10 @@ installDeps <- function() {
         "pryr", 
         "rmarkdown", 
   			"captioner", 
-  			"devtools")
+        "devtools", 
+        "Hmisc", 
+        "psych", 
+  			"corrplot")
   # Install required packages from CRAN (if not)
   .inst <- .pkgs %in% installed.packages()
   if(length(.pkgs[!.inst]) > 0) install.packages(.pkgs[!.inst])

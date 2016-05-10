@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"$if(lang)$ lang="$lang$" xml:lang="$lang$"$endif$$if(dir)$ dir="$dir$"$endif$>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+$for(author-meta)$
+  <meta name="author" content="$author-meta$" />
+$endfor$
+$if(date-meta)$
+  <meta name="date" content="$date-meta$" />
+$endif$
+$if(keywords)$
+  <meta name="keywords" content="$for(keywords)$$keywords$$sep$, $endfor$" />
+$endif$
+
+  <title>$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$</title>
+
+
+    <!-- Bootstrap Core CSS -->
+    <link href="startbootstrap-grayscale-1.0.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="startbootstrap-grayscale-1.0.6/css/grayscale.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="startbootstrap-grayscale-1.0.6/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  <style type="text/css">code{white-space: pre;}</style>
+$if(quotes)$
+  <style type="text/css">q { quotes: "“" "”" "‘" "’"; }</style>
+$endif$
+$if(highlighting-css)$
+  <style type="text/css">
+$highlighting-css$
+  </style>
+$endif$
+$for(css)$
+  <link rel="stylesheet" href="$css$" type="text/css" />
+$endfor$
+$if(math)$
+  $math$
+$endif$
+$for(header-includes)$
+  $header-includes$
+$endfor$
+</head>
+
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">
+                    <!--<img src="http://www.youngandwellcrc.org.au/wp-content/themes/yaw/images/logo.png"/>-->
+                    <i class="fa fa-play-circle"></i>  <span class="light">YAWCRC</span>
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#summary">summary</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#concept">concept</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#lit">literature</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#method">method</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#crit">issues</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#qual">qual</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#quant">quant</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#families">families</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#agenda">agenda</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Intro Header -->
+    <header class="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+
+                        $if(title)$
+                        <div id="$idprefix$header">
+                        <h1 class="brand-heading">$title$</h1>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+
+                  $if(subtitle)$
+                  <h1 class="subtitle">$subtitle$</h1>
+                  $endif$
+                  $for(author)$
+                  <h2 class="author">$author$</h2>
+                  $endfor$
+                  $if(date)$
+                  <h3 class="date">$date$</h3>
+                  $endif$
+                  </div>
+                  $endif$
+                  $if(toc)$
+                  <div id="$idprefix$TOC">
+                  $toc$
+                  </div>
+                  $endif$
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    $for(include-before)$
+    $include-before$
+    $endfor$
+    $body$
+    $for(include-after)$
+    $include-after$
+    $endfor$
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p>Copyright &copy; Young and Well CRC 2016</p>
+        </div>
+    </footer>
+
+
+    <!-- jQuery -->
+    <script src="startbootstrap-grayscale-1.0.6/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="startbootstrap-grayscale-1.0.6/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="startbootstrap-grayscale-1.0.6/js/jquery.easing.min.js"></script>
+
+    <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="startbootstrap-grayscale-1.0.6/js/grayscale.js"></script>
+</body>
+</html>
