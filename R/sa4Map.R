@@ -5,6 +5,7 @@ require("ggplot2")
 require("plyr")
 require("rgeos")
 require("plotly")
+require("dplyr")
 
 #I upped my memory limit as the file we are going to map is pretty large
 memory.limit(6000)
@@ -39,7 +40,27 @@ names = c("POSTCODE",
 names(sa4s) = names
 sa4s = sa4s[3:3107,]
 
+sa4s = 
+  sa4s[,2:5] %>%
+  mutate( RATIO = as.numeric(RATIO),
+          POSTCODE = as.numeric(POSTCODE) ) %>%
+  filter( RATIO > 0.5 ) %>%
+  .[,c(1, 3)]
+
 # Original survey data needs SA4 column from postcodes
-DCI_DATA <- read.csv("~/data/DCI_DATA.csv")
-temp = sa4s[DCI_DATA$Q2_197_OTHER %in% sa4s$POSTCODE,]$SA4_NAME_2011
+DCI_DATA = 
+  read.csv("data/DCI_DATA.csv") %>%
+  rename( POSTCODE = Q2_197_OTHER ) %>%
+  
+data = left_join( DCI_DATA, sa4s )
+
+# This says no one in Sydney was surveyed.
+View(table(data$SA4_NAME_2011))
+
+# This says 1487 (66%) is not in an SA4 area
+table(is.na(data$SA4_NAME_2011))
+
+#Manually check
+View(sa4s)
+View(data[, c("POSTCODE", "SA4_NAME_2011")])
 
