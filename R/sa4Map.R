@@ -50,17 +50,17 @@ sa4s =
 # Original survey data needs SA4 column from postcodes
 DCI_DATA = 
   read.csv("data/DCI_DATA.csv") %>%
-  rename( POSTCODE = Q2_197_OTHER ) %>%
+  rename( POSTCODE = Q2_197_OTHER )
   
 data = left_join( DCI_DATA, sa4s )
 
 # This says no one in Sydney was surveyed.
 View(table(data$SA4_NAME_2011))
 
-# This says 1487 (66%) is not in an SA4 area
+# This says 1487 (66%) are not in an SA4 area
 table(is.na(data$SA4_NAME_2011))
 
 #Manually check
 View(sa4s)
 View(data[, c("POSTCODE", "SA4_NAME_2011")])
-
+getwd()
