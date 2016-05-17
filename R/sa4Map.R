@@ -96,7 +96,15 @@ ggplot(aus.df) +
   aes(long, lat, group = group, fill = median) +
   #Don't want a legend with 150 variables so suppress the legend
   geom_polygon( ) +
-  geom_path(color = "white") +
   #for some reason it maps too much ocean so limit coords (EDIT: due to Christmas Island)
   coord_equal(xlim = c(110,155)) +
-  scale_fill_continuous( )
+  scale_fill_gradient( ) +
+  theme(
+    panel.background = element_blank(),
+    panel.border = element_blank(),
+    axis.line = element_blank(),
+    axis.text = element_blank(),
+    axis.title = element_blank(),
+    axis.ticks = element_blank()
+  )
+
