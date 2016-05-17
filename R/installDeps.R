@@ -17,7 +17,10 @@ installDeps <- function() {
         "devtools", 
         "Hmisc", 
         "psych", 
-  			"corrplot")
+  			"corrplot", 
+  			"rgdal", 
+  			"maptools", 
+  			"rgeos")
   # Install required packages from CRAN (if not)
   .inst <- .pkgs %in% installed.packages()
   if(length(.pkgs[!.inst]) > 0) install.packages(.pkgs[!.inst])

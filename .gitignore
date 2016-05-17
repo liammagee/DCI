@@ -19,3 +19,8 @@ refs/att98dqt.pdf
 
 # Ignore outputs
 figs/**/*.png
+
+# Ignore doc outputs
+doc/**/*.html
+doc/**/*.pdf
+doc/**/*.docx
