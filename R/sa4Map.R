@@ -37,12 +37,12 @@ names = c("POSTCODE",
 names(sa4s) = names
 sa4s = sa4s[3:3107,]
 
-sa4s = 
-  sa4s[,2:5] %>%
-  mutate( RATIO = as.numeric(RATIO),
-          POSTCODE = as.numeric(POSTCODE) ) %>%
-  filter( RATIO > 0.5 ) %>%
-  .[,c(1, 3)]
+# sa4s = 
+#   sa4s[,2:5] %>%
+#   mutate( RATIO = as.numeric(RATIO),
+#           POSTCODE = as.numeric(POSTCODE) ) %>%
+#   filter( RATIO > 0.5 ) %>%
+#   .[,c(1, 3)]
 
 # Original survey data needs SA4 column from postcodes
 DCI_DATA = 
@@ -68,14 +68,35 @@ data <- DCI_DATA
 data$SA4_NAME_2011 <- unlist(sapply(data$POSTCODE, obtainSA4))
 # data = left_join( DCI_DATA, sa4s )
 
-# This says no one in Sydney was surveyed.
+
 View(table(data$SA4_NAME_2011))
 
 View(table(data$POSTCODE))
 
-# This says 1487 (66%) is not in an SA4 area
 table(is.na(data$SA4_NAME_2011))
 
 #Manually check
 View(sa4s)
 View(data[, c("POSTCODE", "SA4_NAME_2011")])
+
+# Summarise data by SA4 area for a question
+merged = 
+data %>%
+  group_by( SA4_NAME_2011 ) %>%
+  summarise( median = median(Q431_26),
+             average = mean(Q431_26) ) %>%
+  left_join( aus@data, ., by = c("SA4_NAME11" = "SA4_NAME_2011") )
+
+aus@data = merged
+aus.points = fortify(aus, region="id") #replaced aus.buffered with aus
+aus.df = join(aus.points, aus@data, by="id")
+
+# Plotting with merged data
+ggplot(aus.df) +
+  aes(long, lat, group = group, fill = median) +
+  #Don't want a legend with 150 variables so suppress the legend
+  geom_polygon( ) +
+  geom_path(color = "white") +
+  #for some reason it maps too much ocean so limit coords (EDIT: due to Christmas Island)
+  coord_equal(xlim = c(110,155)) +
+  scale_fill_continuous( )
