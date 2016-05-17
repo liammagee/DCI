@@ -54,12 +54,18 @@ DCI_DATA$POSTCODE = as.character(DCI_DATA$POSTCODE)
 
 
 obtainSA4 <- function(postcode) {
-  value <- na.omit(as.character(head(sa4s[sa4s$POSTCODE == postcode, "SA4_NAME_2011"]), 1))
+  value <- as.character(head(sa4s[sa4s$POSTCODE == postcode, "SA4_NAME_2011"], 1))
+  if (is.null(value) | length(value) == 0) {
+    value <- ""
+  }
+  else {
+    value <- as.character(value)
+  }
   return (value)
 }
 
 data <- DCI_DATA
-data$SA4_NAME_2011 <- sapply(data$POSTCODE, obtainSA4)
+data$SA4_NAME_2011 <- unlist(sapply(data$POSTCODE, obtainSA4))
 # data = left_join( DCI_DATA, sa4s )
 
 # This says no one in Sydney was surveyed.
