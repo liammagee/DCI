@@ -1,0 +1,55 @@
+# ---
+title: "Digital Capacities Index"
+author: |
+  | Liam Magee^1^, Delphine Bellerose^1^, Anjali Sharma^1^, Emma Kearney^1^, Louise Crabtree^1^, Philippa Collin^1^, Justine Humphry^1^, Paul James^1^, Tanya Notley^1^, Amanda Third^1^, Samantha Yorke^2^
+  | 1. Western Sydney University
+  | 2. Google Australia
+date: "4 April 2016"
+bibliography: DCI.bib
+output:
+  html_document:
+    toc: true
+    toc_depth: 4
+---
+
+# Digital Capacities Index
+
+## Introduction
+
+Much has been made of the transition, in 2008, of more than half the world's population to urban settlements. Far more dramatic, in terms of time and acceleration, has been the 'onboarding' of more than half the world's population to some kind of digital life - predominantly through the extraordinary rise of low cost smart phones in Asia, and to lesser degrees, Africa and Latin America. Young people in slums and informal settlements in Bangladesh are likely to play the same games - Candy Crush or Clash of Clans- and use the same social networking apps - WhatsApp, Facebook Messenger - as their peers in traditional centres of technological innovation, San Francisco, London or Tokyo.
+
+This phenomenal growth has been matched by an interest in measuring different facets of what is unquestionably now a globalised digital society. Since the 2000s, the measurement of digital life has developed markedly. Studies of digital connectivity [cite], access [cite], inclusion [cite], use [cite], competencies [cite], skills [cite], engagement [cite], and risk and resilience [cite] illustrate the growing complexity of patterns of digital behaviour among diverse communities, countries and regions. At the same time, this complexity risks obscuring broader patterns of digital life amid studies that focus on measurement of highly particular dimensions. This risk becomes acute as the forms of use of digital technologies have themselves become more pervasive as well as more diverse. Use of devices, platforms, apps and methods of interaction expand and, periodically, contract around new products, services and standards. Home, work and in-transit digital technologies - from mobile devices to virtual reality sets, CCTV surveillance cameras, in-flight entertainment systems, public sensors, 'smart' fitness devices and home automation systems - increasingly blur categories of explicit 'use' and 'non-uses'. As Bratton [cite] has argued, we are all 'users' now.
+
+How then might a general empirical social analysis of the digital proceed? We argue that the preoccupation with specifically measurable qualities of digital infrastructural availability and individual interactions need to regrouped and reframed within a more comprehensive theoretical rubric. The rubric we suggest here employs the vocabulary of 'capacities'. Capacities capture something of the wide and open conntations of human capabilities, developed by Amartya Sen and Martha Nussbaum [cite]. At the same time, the term also captures the technical quantitiatve capacities inherent in the digital world. Bandwidth, hard drives, memory and telecommunication networks all can be readily described in terms of capacity, meaning simply the quantitiative expansion possible within digital infrastructure. Capability, for all its resonance in the development literature, acquires more specific meaning in relation to digital equipment, and even then not universally: while complex networks have capabilities, raw qualities such as bandwidth instead express at best *single* capability. As we discuss further in *Methodology* below, this feature of translatability is an important for devices which seek to measure a varied, multidimensional and diverse set of sociotechnical variables. *Capacities* is the term which best seems to meet this demand. We stress however that, applied at societal and individual units of analysis, our use of 'capacity' has similar associations to Sen's *Capabilities Approach*.
+
+In this article we propose a general theoretical account of digital capacities. This account is complicated by its goal of generality however. Both the direct speed of technological change, and varied or differential pace of that change, mean that methodological instrumentation of theories are subject to considerable revision across time and space. At least some of our collective digital capacities alternate at the rate of hardware developments and software releases - that is, at the rate of days, weeks or months, rather than across years or decades. This contrasts with other forms of social capacities, such as language use, mathematical competency or political engagement, which vary in line with the slower pace of education diffusion, policy reform and economic development.
+
+Similarly, the rates of digital capacity occur across extremely complex social vectors. The expansion of programming skill - a highly developed digital capacity - through coding clinics, hackathons, interpretive scripting environments and broader social pressures to 'learn to code' represent a salient example. Since definitions of 'programming' vary from full-time professionals to occasional 'hackers' or 'script junkies', worldwide estimates of programmers are impossible to estimate precisely. However indicators are available from popular code repositories such as GitHub [GitHub], and technical Q&A fora, such as [Stack Overflow](http://stackoverflow.com/). As of April 2014, *GitHub* reports [14 million users](https://github.com/about/press), while Stack Overflow reports 4.5 million registered ['programmers'](http://stackoverflow.com/). Both are likely underestimates; many programmers do not use these sites, or access them anonymously. Regardless of precision these numbers represent order-of-magnitude increases over approximate estimates in the 2000s (approximately 5 million) and 1990s (under 1 million). Yet the diffusion of programming skills also follow broad trajectories of geography, education, availability of digital infrastructure: entry to the programming profession corresponds strongly to availability of tertiary education, affordable hardware, software and the Internet, and clusters of investment in technological innovation. As [] note, programmers also are sharply skewed demographically: male gender, middle class, and urban residents.
+
+
+
+This account attempts to work in two ways: through an integration of the considerable existing literature that discuss
+
+
+## Towards a Definition of Digital Capacity
+
+[Literature Review]
+
+
+## Methodology
+
+
+
+## Results
+
+
+
+## Discussion
+
+
+
+## Conclusion
+
+
+
+## References
