@@ -28,7 +28,3 @@ Rscript R/main.R
 
 
 ## Structure
-
-
-
-

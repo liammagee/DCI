@@ -48,7 +48,7 @@ vars <- c(
 			"Q436",
 			"Q15A_1", "Q15A_2", "Q15A_3", "Q15A_4", "Q15A_5", "Q15A_6", "Q15A_7", "Q15A_8",
 			"Q15Y_1", "Q15Y_2", "Q15Y_3", "Q15Y_4", "Q15Y_5", "Q15Y_6", "Q15Y_7", "Q15Y_8", "Q15Y_9", "Q15Y_10", "Q15Y_11", "Q15Y_12", "Q15Y_13", "Q15Y_14", "Q15Y_15", "Q15Y_16",
-	"Q5_1", "Q5_2", "Q5_3", "Q5_4", 
+	"Q5_1", "Q5_2", "Q5_3", "Q5_4",
 			"Q8",
 			"Q9_212", "Q9_213", "Q9_214", "Q9_215", "Q9_216", "Q9_217", "Q9_218", "Q9_219", "Q9_220"
 )
@@ -331,8 +331,7 @@ sumIndex()
 data <- augmented.data
 
 # Generate scaled versions of data
-data.scaled <- as.data.frame(scale(data[,vars.index]))
-data.totals.scaled <- as.data.frame(scale(data[,vars.totals]))
+data.scaled <- cbind(data[,!(names(data) %in% c(vars.index, vars.totals))], scale(data[,c(vars.index, vars.totals)]))
 
 
 
@@ -509,4 +508,9 @@ generateSubQuestionCharts <- function() {
 	graphSubQuestionFrequencies(vars.connectedness.tech.attitudes.429, "Agreement", agreementLabels, "connectedness-tech-attitudes-429")
 	graphSubQuestionFrequencies(vars.connectedness.maintenance.287, "Importance", importanceLabels, "maintaining-connections-287")
 	graphSubQuestionFrequencies(vars.connectedness.events.343, "Frequency", frequencyMonthLabels, "connectedness-events-343")
+}
+
+generatePrebuiltCorrelations <- function() {
+  generateCorrelation("total.431", "Q436", "skills-education")
+
 }
