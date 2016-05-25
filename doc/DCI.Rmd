@@ -1,6 +1,6 @@
 ---
 title: "Digital Capacities Index - Quantitative Findings"
-author: | 
+author: |
   | Liam Magee^1^, Delphine Bellerose^1^, Anjali Sharma^1^, Louise Crabtree^1^, Philippa Collin^1^, Justine Humphry^1^, Paul James^1^, Emma Kearney^1^, Tanya Notley^1^, Amanda Third^1^, Samantha Yorke^2^
   | 1. Western Sydney University
   | 2. Google Australia
@@ -10,6 +10,9 @@ output:
   html_document:
     toc: true
     toc_depth: 4
+    number_sections: true
+    theme: united
+    highlight: tango
   word_document:
     toc: true
     toc_depth: 4
@@ -94,6 +97,9 @@ fig_nums("freq.287.1", getLabel(1, vars.connectedness.maintenance.287))
 fig_nums("freq.343.4", getLabel(4, vars.connectedness.events.343))
 fig_nums("freq.429.2", getLabel(2, vars.connectedness.tech.attitudes.429))
 
+# Correlations - exploratory
+fig_nums("corrections.exploratory", "The Exploratory Matrix of all Variables Correlated")
+
 
 # Aggregated
 fig_nums("agg.results", "Aggregated Results by Critical Issue")
@@ -102,32 +108,32 @@ fig_nums("agg.results", "Aggregated Results by Critical Issue")
 ```
 
 
-## Digital Capacities Index - Quantitative Findings
+# Digital Capacities Index - Quantitative Findings
 
-The *Digital Capacities Index* is a pilot survey instrument developed by researchers at Western Sydney University and Google Australia. 
+The *Digital Capacities Index* is a pilot survey instrument developed by researchers at Western Sydney University and Google Australia.
 
 
-### Introduction
+## Introduction
 
 We included a total of `r length(vars.all)` items measuring (a) frequency of various online behaviour, (b) levels of agreement with statements about digital capacities, (c) perceived importance of online activities and (d) ease of use of digital technologies.
 
 We further distinguished questions into the following key thematic areas, or what we have termed, following @james2014urban, 'critical issues'. These issues are:
 
- - **Competencies** (`r length(vars.competencies)` indicators). 
+ - **Competencies** (`r length(vars.competencies)` indicators).
  - **Interests** (`r length(vars.interest)` indicators).
  - **Resilience** (`r length(vars.resilience)` indicators).
  - **Social Connectedness** (`r length(vars.connectedness)` indicators).
 
-These four issues were distilled from a list of nine issues that also included *Engagement*, *Inclusion*, *Policy Environment*, *Infrastructure* and *Consequences*. 
+These four issues were distilled from a list of nine issues that also included *Engagement*, *Inclusion*, *Policy Environment*, *Infrastructure* and *Consequences*.
 
 Against these four issues, we selected items and scales from existing sources in the literature where possible. In particular we drew from 'Kids Online'
-[@livingstone2010risks], Helsper's [-@helsper2012corresponding] 'Corresponding fields model', a study by Humphry [-@humphry2014importance] of mobile use among homeless populations, and indicators compiled by the [Young and Well CRC](http://www.youngandwellcrc.org.au/) [-@crc2013standardmeasures]. Other indicators were developed by the *Digital Capacities Index* team. 
+[@livingstone2010risks], Helsper's [-@helsper2012corresponding] 'Corresponding fields model', a study by Humphry [-@humphry2014importance] of mobile use among homeless populations, and indicators compiled by the [Young and Well CRC](http://www.youngandwellcrc.org.au/) [-@crc2013standardmeasures]. Other indicators were developed by the *Digital Capacities Index* team.
 
 A large number of candidate scales were distilled down to the current list after two day-long workshops, and testing of the survey.
 
 
 
-### Demographics
+## Demographics
 
 
 The survey included a total of `r format(sampleSize(), big.mark   = ",")` participants. We requested the survey provider provide a panel in terms of age groups, gender and geographic regions. As the panel provider recruited participants online, our pilot sample is expected to be skewed towards Australian citizens and families with comparatively high digital capacities. This caveat is signficant to the interpretation of our results below.
@@ -135,7 +141,7 @@ The survey included a total of `r format(sampleSize(), big.mark   = ",")` partic
 
 #### Age
 
-Participant ages ranged from `r min(data$age)` to `r max(data$age)`, with a median value of `r median(data$age)`. 
+Participant ages ranged from `r min(data$age)` to `r max(data$age)`, with a median value of `r median(data$age)`.
 
 *`r cf("age.freq")`* provides more detailed age demographics:
 
@@ -204,7 +210,7 @@ The split of participants between urban and regional/rural is as follows:
 The percentage of reported urban residents here is `r formatC(100 * length(data[data$location == "Urban", "location"]) / length(data[,"location"]))` - considerably less than [World Bank figures of 89%](http://data.worldbank.org/indicator/SP.URB.TOTL.IN.ZS).
 
 
-## Results by Critical Issue - Aggregated
+## Aggregated Results by Critical Issue
 
 
 
@@ -227,9 +233,9 @@ Our survey asked participants to respond to two questions about competencies:
 ```{r graphSubQuestion74, fig.width = 8, fig.height = 9.5, echo=FALSE}
 
 (gg <- chartWrap(graphSubQuestionFrequencies(
-  vars.competencies.online.activities.74, 
-  "Frequency", 
-  frequencyLabels, 
+  vars.competencies.online.activities.74,
+  "Frequency",
+  frequencyLabels,
   "online-activities-74",
   -6.0,
   yawcrcPaletteFivePoints
@@ -247,10 +253,10 @@ Respondents were asked to rate the ease or difficulty of 27 online activities. O
 ```{r graphSubQuestion431, fig.width = 8, fig.height = 15.5, echo=FALSE}
 
 (gg <- chartWrap(graphSubQuestionFrequencies(
-    vars.competencies.431, 
-    "Ease", 
+    vars.competencies.431,
+    "Ease",
     easeLabels,
-    "competencies-ease-of-tasks-431", 
+    "competencies-ease-of-tasks-431",
     -7.5,
     yawcrcPaletteFivePoints)))
 
@@ -267,8 +273,8 @@ Across all age groups, a large majority of respondents reported using the intern
 
 ```{r ageQ74_2, fig.width = 8, fig.height = 2, echo=FALSE}
 generateSingleAgeFrequency(
-    2, 
-    vars.competencies.online.activities.74, 
+    2,
+    vars.competencies.online.activities.74,
     frequencyLabels,
     yawcrcPaletteFivePoints
     )
@@ -282,8 +288,8 @@ generateSingleAgeFrequency(
 Differences by age groups are more visible depending on specific uses of the internet. Watching video clips for example is an activity where there is a clear demarcation between the under 35s, who are more likely to do this on a daily basis or more often, and those aged 35 or over, who are more likely to do this on a weekly basis or less often.
 
 ```{r ageQ74_3, fig.width = 8, fig.height = 2, echo=FALSE}
-generateSingleAgeFrequency(3, 
-  vars.competencies.online.activities.74, 
+generateSingleAgeFrequency(3,
+  vars.competencies.online.activities.74,
   frequencyLabels,
   yawcrcPaletteFivePoints)
 ```
@@ -296,8 +302,8 @@ generateSingleAgeFrequency(3,
 In contrast, respondents over 18 overwhelmingly reported using email as a means of communication several times a day, compared to only a fifth of those aged 12 to 17.
 
 ```{r ageQ74_6, fig.width = 8, fig.height = 2, echo=FALSE}
-generateSingleAgeFrequency(6, 
-  vars.competencies.online.activities.74, 
+generateSingleAgeFrequency(6,
+  vars.competencies.online.activities.74,
   frequencyLabels,
   yawcrcPaletteFivePoints)
 ```
@@ -310,8 +316,8 @@ generateSingleAgeFrequency(6,
 Although respondents in the older age groups were less likely than younger people to report specific digital tasks to be easy or very easy, it is worth noting that they did not necessarily report those to be especially difficult. Rather, much higher proportions of respondents in the older age groups answered "Don't know" or "Not applicable" to those specific tasks such as creating a blog, pointing to a difference in levels of need and interest more so than actual competencies.
 
 ```{r ageQ431_28, fig.width = 8, fig.height = 2, echo=FALSE}
-generateSingleAgeFrequency(13, 
-  vars.competencies.431, 
+generateSingleAgeFrequency(13,
+  vars.competencies.431,
   easeLabels,
   yawcrcPaletteFivePoints)
 ```
@@ -324,8 +330,8 @@ generateSingleAgeFrequency(13,
 When asked about more 'general' or overarching skills such as understanding the language that others use online, the age correlation by which the perceived ease of conducting specific tasks decreases as the age of respondents increases becomes more apparent.
 
 ```{r ageQ431_29, fig.width = 8, fig.height = 2, echo=FALSE}
-generateSingleAgeFrequency(14, 
-  vars.competencies.431, 
+generateSingleAgeFrequency(14,
+  vars.competencies.431,
   easeLabels,
   yawcrcPaletteFivePoints)
 ```
@@ -338,8 +344,8 @@ generateSingleAgeFrequency(14,
 There is, however, greater consistency across age groups for competencies such as blocking unwanted adverts or junk mail.
 
 ```{r ageQ431_34, fig.width = 8, fig.height = 2, echo=FALSE}
-generateSingleAgeFrequency(19, 
-  vars.competencies.431, 
+generateSingleAgeFrequency(19,
+  vars.competencies.431,
   easeLabels,
   yawcrcPaletteFivePoints)
 ```
@@ -378,10 +384,10 @@ This question measures frequency of 7 different online activities whose main pur
 
 ```{r graphSubQuestion341, fig.width = 8, fig.height = 6.0, echo=FALSE}
 
-(gg <- chartWrap(graphSubQuestionFrequencies(vars.interests.difference.seeking.341, 
-  "Agreement", 
-  agreementLabels, 
-  "interests-difference-seeking-341", 
+(gg <- chartWrap(graphSubQuestionFrequencies(vars.interests.difference.seeking.341,
+  "Agreement",
+  agreementLabels,
+  "interests-difference-seeking-341",
   -7.5,
   yawcrcPaletteFivePoints)))
 
@@ -392,7 +398,7 @@ This question measures frequency of 7 different online activities whose main pur
 
 ##### Interest in fitness and health improvement
 
-This question measures frequency of 10 different online activities whose main purpose is to determine to what extent online technologies assist people to manage their health and fitness. 
+This question measures frequency of 10 different online activities whose main purpose is to determine to what extent online technologies assist people to manage their health and fitness.
 
 *`r cf("freq.352")`* below shows the relative frequencies of each activity. Looking up information or asking others about a training program is the most frequent and commonly reported activity, followed by looking up information or asking advice on a medical condition. The least common activities reported are participating in an online health or fitness community and filling out questionnaires about fitness. There are not large differences reported between any of the activities, and less than 40% of participants reported engaging in any of the activities on more than a monthly basis.
 
@@ -410,7 +416,7 @@ We asked a series of subsidiary statements about use of digital capacities to im
 ```{r graphSubQuestion353, fig.width = 8, fig.height = 3.5, echo=FALSE}
 
 (gg <- chartWrap(graphSubQuestionFrequencies(
-  vars.interests.health.improvement.353, 
+  vars.interests.health.improvement.353,
   "Agreement", agreementLabels, "interests-health-improvement-353", -7.5,
   yawcrcPaletteFivePoints)))
 
@@ -421,7 +427,7 @@ We asked a series of subsidiary statements about use of digital capacities to im
 
 ##### Interest in keeping in touch
 
-The survey asked respondents to rate the importance of their motivations for using the internet for maintaining their general interests, along with their connections with others. Respondents were asked to rate 14 statements which ranged between extremely important and not important at all. All the statements were rated with a degree of  importance in over 50% of all responses. "Communicating with friends and family" was rated the highest, with over 90% of respondents rating this on the scale of importance. Opening up new worlds and fueling my imagination also scored highly.  Less common in the scale was providing continuity of connection in a changing world.  This suggests that the reasons that motivate people to use the internet are contingent upon their connections with others and their sense of self. 
+The survey asked respondents to rate the importance of their motivations for using the internet for maintaining their general interests, along with their connections with others. Respondents were asked to rate 14 statements which ranged between extremely important and not important at all. All the statements were rated with a degree of  importance in over 50% of all responses. "Communicating with friends and family" was rated the highest, with over 90% of respondents rating this on the scale of importance. Opening up new worlds and fueling my imagination also scored highly.  Less common in the scale was providing continuity of connection in a changing world.  This suggests that the reasons that motivate people to use the internet are contingent upon their connections with others and their sense of self.
 
 
 ```{r graphSubQuestion430, fig.width = 8, fig.height = 7.5, echo=FALSE}
@@ -483,7 +489,7 @@ Our survey asked participants to respond to three questions about potential risk
 
 *Frequency of harmful events* measures frequency of 11 risks of online activity. These include getting a virus on one's device or seeing upsetting content online, or actions taken as a protection measure against those risks, such as reporting an issue online, deleting data or blocking further contacts from an individual.
 
-**_`r cf("freq.434")`_ below shows the relative frequencies of experiencing a risk, or taking a specific action in response to a risk, in the last 12 months. 
+**_`r cf("freq.434")`_ below shows the relative frequencies of experiencing a risk, or taking a specific action in response to a risk, in the last 12 months.
 **
 
 On average, more than half of respondents (51%) reported having never experienced these risks or potentially harmful events. The event that was most commonly experienced was 'Seeing or experiencing something on the internet that had bothered them in some way' with 55% of respondents experiencing this at least once in the last 12 months, and 14% reporting experiencing this on a weekly basis or more often.
@@ -507,13 +513,13 @@ Although respondents reported experiencing potentially harmful events online, th
 
 Despite reporting having experienced some potentially harmful events in the last 12 months, the level of agreement with statements about online harms of a more general nature show an overall positive attitude towards those risks. The majority of respondents agree or strongly agree that the opportunities of online activities outweigh its risks and that some level of online risk is inevitable but also provides an important learning opportunity.
 
-Online security and safety remains a pressing concern for just over a third of respondents but there appears to be both an increased level of acceptance and the development of coping mechanisms to better manage the risks. 
+Online security and safety remains a pressing concern for just over a third of respondents but there appears to be both an increased level of acceptance and the development of coping mechanisms to better manage the risks.
 
 
 ```{r graphSubQuestion435, fig.width = 8, fig.height = 5.5, echo=FALSE}
 
 (gg <- chartWrap(graphSubQuestionFrequencies(
-  vars.resilience.harms.agreement.435, 
+  vars.resilience.harms.agreement.435,
   "Agreement", agreementLabels, "resilience-harms-agreement-435", -6.5,
   yawcrcPaletteFivePoints)))
 
@@ -530,7 +536,7 @@ For each of these statements, a large proportion of respondents neither agree no
 
 ```{r graphSubQuestion428, fig.width = 8, fig.height = 5.5, echo=FALSE}
 
-(gg <- chartWrap(graphSubQuestionFrequencies(vars.resilience.engage.with.others.428, 
+(gg <- chartWrap(graphSubQuestionFrequencies(vars.resilience.engage.with.others.428,
   "Agreement", agreementLabels, "resilience-engage-with-others-428", -7.0,
   yawcrcPaletteFivePoints)))
 
@@ -686,6 +692,150 @@ generateSingleAgeFrequency(2, vars.connectedness.tech.attitudes.429, agreementLa
 **`r fig_nums("freq.429.2")`**
 
 
+## Mapped Results
+
+
+## Correlations - Hypothesised
+
+### Demographics
+
+_To what extent does education correlates with competencies and interests?_
+
+ - Skills (Q431) by education level (Q436)
+
+```{r correlation-skills-educations, fig.width = 8, fig.height = 6, echo=FALSE}
+generateCorrelation("total.431", "Q436", "skills-education")
+```
+
+ - Interest (Q437) by education level (Q436)
+
+
+_Relationship between occupation and aspects of digital capacities_
+
+ - Reasons for using internet (Q430) by occupation (Q8)
+ - Interests: what type of info look for online (Q437) by occupation (Q8)
+ - Connectedness: Providing help (Q277) or seeking help (Q280) by occupation (Q8)
+
+_Relationship between financial pressure and aspects of digital capacities_
+
+ - Financial pressure generally (Q45)
+ - Financial pressure from digital access (Q425)
+ - Low income (Q9_214)
+
+
+_By competencies and interests: uses of the internet (Q74), what you look for (Q437), reasons for use (430)_
+
+_By resilience: attitude twds harm/risk (Q435)_
+
+_By connectedness: relationships (Q287), frequency of connecting (Q343)_
+
+_Minority groups_
+
+ - Interests: what type of info look for online (Q437) by minority grps (Q9)
+ - Seeking help (Q280) by minority grp (Q9)
+ - Minority groups (Q9) by current location (Q427)
+ - Are gender differences more pronounced in some grps?
+
+_Families_
+
+ - Does gender have an effect for different types of families?
+ - 'families': analyse by size of household (Q24), sole parents (Q9_215), households with children (CH1) (look at 5-17 especially?)
+ - Household with children + CALD(Q9_212)/Indigenous(Q9_218)
+
+
+### Competencies / Interests
+
+_To what extent various levels of competencies (use + skills) translate into knowledge sharing?
+Higher level of competencies into providing help and/or lower level into seeking help_
+
+ - Helping others (Q277) by skills (Q431), use (Q74)
+ - Seeking help (Q280) by skills (Q431), use (Q74)
+ - At statement level, social media:
+    - 74_7 use social media
+    - 431_23 update status
+    - 431_24 upload onto social media
+    - 277_113 help set up social media account
+    - 280_125 sought help to set up social media account
+ - At statement level, safety
+    - 431_32 find info on how to use internet safely
+    - 431_38 restrict access to adult content
+    - 431_42 anonymise
+    - 277_120 help on how to stay safe
+    - 280_132 been shown how to stay safe
+
+_Can different uses of the internet (Q74), different interests (Q437) or reasons for use (Q430) help identifying profiles or types of engagement?
+How do different uses/interest (types of engagement) correlate to different types, or level, of resilience and connectedness?
+_
+
+### Resilience/safety
+
+_Does higher level of use lead to increased exposure to risk? Does lower level of skills mean increased exposure to risk?_
+
+ - Correlation between use (Q74) and resilience (Q435)
+ - Correlation between use (Q74) and risks (Q434)
+ - Between skills (Q431) and resilience (Q435)
+ - Find information on using the internet safely (431_32) by attitude twds harm/risk (Q435)
+
+_How does risk exposure impact on attitude towards risks/harms?_
+
+ - exposure to potential harm (Q434_91, 92, 93) by attitude twds harm/risk (Q435)
+
+
+### Connectedness
+
+Exploring technology as an enabler of social connectedness.
+
+Can digital technology facilitate settling into new location and/or establish social/community network?
+ - current location (Q427). Combine 179+180+181 into <6 months to get a sample of 218
+   - made new friends/met new people online (Q343_149)
+   - info on gvt serv (Q437_51)
+ - 280_126 help to find info and resources
+
+_How/to what extent does tech support social connectedness of minority grps?_
+
+ - learn new things about my ethnic grp (341_57)
+   - by CALD (Q9_212), Indigenous (Q9_218), Refugees (Q9_213), Homeless? (Q9_220)
+ - 	Find people of similar age/interests online (Q341_55)
+   - by gender (check sig)
+   - by age (correlates, but 35+ do not disagree more rather N/A increases: check with 35+ with higher competency/use?)
+   - by minority groups
+
+_focus on social media as a very specific online activity to explore connectedness and resilience_
+
+ - Use of soc media (74_7) in relation to connectedness, and to resilience (428, 434_92, 277_122)
+ - Interacting using text or IM (431_25) in relation to connectedness
+
+### Notes
+
+Best to not use hypotheses at high level (4 critical issues): very likely to find that more competencies correlates with more interested, more connected, better support, more resilient...
+But at a lower level: are there diff types of resilience, do types of competencies lead to better/more supportive networks?
+within those 4 areas: need to classify types of skills, types of support networks etc.
+
+In a previous conversation, we had discussed the different uses of the internet: from a more informational/technical use to a more emotional/social involvement, with the overarching question/hypothesis: does the emotional/social use lead to increased connectedness, and in turn to increased resilience?
+
+Those two ‘types’, informational and social, can be applied across the 4 critical issues and many of the survey questions. Within each questions, below are the variables that I think best outline one or the other.
+
+
+
+
+## Correlations - Exploratory
+
+
+The exploratory correlation matrix depicts the directions and intensities of all individual variables
+correlated with eachother, in the order questions associated with these variables were asked in the survey.
+
+```{r correlation-exploratory, fig.width = 8, fig.height = 8, echo=FALSE}
+generateCorrelationsExploratory()
+```
+
+**`r fig_nums("corrections.exploratory")`**
+
+As `r fig_nums("corrections.exploratory")`
+
+
+## Principal Component Analysis
+
+
 ## Overall results
 
 ### Aggregates by Critical Issue
@@ -695,7 +845,7 @@ To gain an overall picture of our results, we generated a series of stacked grap
 These results are indicative only, and have several evident limitations we discuss further below. The procedure to generate scores for each of the issues is as follows:
 
 1. Interpret each question as having either a *positive* or *negative* influence of the score of the critical issue. For example, "Frequency of harmful events" has a *negative influence* on the issue of Resilience (and indeed, on overall "Digital Capacities").
-2. Determine the *direction* of the scale coding. For example, in all of our "Agreement" questions, "Strongly Agree" was coded **1**. 
+2. Determine the *direction* of the scale coding. For example, in all of our "Agreement" questions, "Strongly Agree" was coded **1**.
 3. For each question, calculate a question score based on both its interpretation and direction, by adding responses to individual items.
 4. For each respondent, add each of their question scores to produce a respondent critical issue score. This value is converted to a percentile, where '100%' would indicate maximum responses to each item for each question in that critical issue.
 5. A combined score is taken by averaging the four critical issue scores.
@@ -708,13 +858,13 @@ The *Resilience* score is calculated in the same way as the other issue scores, 
 
 #### Limitations
 
-The above procedure has several limitations. 
+The above procedure has several limitations.
 
 First, it is questionable whether complex concepts such as digital resilience and social connectedness, in particular, are reducible to a quantitative value, regardless of the procedure used to derive it. Further, for reasons of space, our characterisation of Digital Capacities includes a total of nine critical issues, only four of which are included in the survey. We recommend comparing these scores with our qualitative findings, which illustrate the more nuanced and sometimes contradictory character of these qualities in Australian families.
 
-Second, the procedure treats, at the moment, each of the scales as numerically regular. For example, on the *Agreement* scale it assumes *Strongly agree* warrants 1 more score point than *Agree*, which in turn warrants 1 more point than *Neither Agree nor Disagree*. In other words, ordinal scales are treated as *ratio* variables, with regular intervals. 
+Second, the procedure treats, at the moment, each of the scales as numerically regular. For example, on the *Agreement* scale it assumes *Strongly agree* warrants 1 more score point than *Agree*, which in turn warrants 1 more point than *Neither Agree nor Disagree*. In other words, ordinal scales are treated as *ratio* variables, with regular intervals.
 
-Third, the procedure assumes all questions and individual items have equal influence on the critical issue they have been aligned to. 
+Third, the procedure assumes all questions and individual items have equal influence on the critical issue they have been aligned to.
 
 **[REVIEW NOTE: The latter two of these issues can be addressed partially by a more sophisticated scaling and weighting approach. We are considering holding a workshop for this purpose in preparation of the complete draft meeting in May 2016.]**
 
@@ -728,9 +878,9 @@ $$ y = mx +b $$
 
 -->
 
-Bearing in mind the method of deriving these aggregate scores, we make only minimal observations at this stage. *`r cf("agg.results")`* shows that results for *Compentencies* and *Connectedness* are evenly distributed, with respondents' scores spread across the 100-point scale. These are also similar to the spread of *Combined* scores. *Resilience* scores tend high, with most respondents reporting little exposure to harms, and familiarity with methods for responding to those harms. 
+Bearing in mind the method of deriving these aggregate scores, we make only minimal observations at this stage. *`r cf("agg.results")`* shows that results for *Compentencies* and *Connectedness* are evenly distributed, with respondents' scores spread across the 100-point scale. These are also similar to the spread of *Combined* scores. *Resilience* scores tend high, with most respondents reporting little exposure to harms, and familiarity with methods for responding to those harms.
 
-On the other hand, *Interest* scores tend low. This may be explained by our limiting interests to areas of social difference, fitness, health and family, which will not effectively poll the range or extent of participants' interests. 
+On the other hand, *Interest* scores tend low. This may be explained by our limiting interests to areas of social difference, fitness, health and family, which will not effectively poll the range or extent of participants' interests.
 
 ```{r indexChart, echo=FALSE}
 
@@ -740,6 +890,35 @@ On the other hand, *Interest* scores tend low. This may be explained by our limi
 
 *`r fig_nums("agg.results")`*
 
+As *`r cf("agg.results")`* shows, no variables correlate strongly in a negative direction - such cells would be shown in
+red, but these are non-existent. Instead, there are varying degrees of positive correlations. Positive correlations are particularly marked
+by the purplish squares that accompany the diagonal. These suggest that specific variables co-correlate strongly with other variables that belong to the same construct.
+There is also reasonable correlation between those constructs that belong to the same theme or critical issue.
+
+One interpretation of this pattern is confirmation that the majority of statements are positively worded, such that higher numerical scores
+indicates higher levels of interests, competencies, resilience or connectedness. The positive correlation then reinforces the idea
+that these various capacities are, to varying degress, both internally (within a single construct and critical issue) and externally interrelated.
+Broadly, participants with high levels of interests are also likely to have high competencies, resilience and connectedness, and vice versa for each of the other issues.
+More substantively, it never appears that any individual variables, contructs or themes are negatively correlated; no-one with low competencies thought they had high degrees
+of resilience, interests or connectedness for instance.
+
+Further, we can assume the patterns of clustering provide general but useful indication that the survey instrument is reasonably robust.
+Responses to certain questions act as more or less moderate predictors of other responses to other questions.
+This suggests some redundancy in the survey instrument, and therefore opportunity to either truncate its length or to supplement it with
+measurements of other critical issues or capacities.
+
+While we have not run a full set of regression models, on a initial regression test of the first question (Q74_1), 12 out of 157 variables were multicollinear,
+as the output below shows. This suggests that in spite of the strong overall pattern of co-correlation, strict multicollinearity may not be problem for the
+survey instrument as it currently stands.
+
+```{r }
+library(psych)
+library(car)
+library(plyr)
+fit=lm(Q74_1~.,data=data.scaled[,vars.index])
+v<-vif(fit) # variance inflation factors
+table(sqrt(vif(fit)) > 2) # problem?
+```
 
 
 <!--
@@ -776,5 +955,3 @@ On the other hand, *Interest* scores tend low. This may be explained by our limi
 
 
 ## References
-
-

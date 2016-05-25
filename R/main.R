@@ -48,6 +48,7 @@ vars <- c(
 			"Q436",
 			"Q15A_1", "Q15A_2", "Q15A_3", "Q15A_4", "Q15A_5", "Q15A_6", "Q15A_7", "Q15A_8",
 			"Q15Y_1", "Q15Y_2", "Q15Y_3", "Q15Y_4", "Q15Y_5", "Q15Y_6", "Q15Y_7", "Q15Y_8", "Q15Y_9", "Q15Y_10", "Q15Y_11", "Q15Y_12", "Q15Y_13", "Q15Y_14", "Q15Y_15", "Q15Y_16",
+	"Q5_1", "Q5_2", "Q5_3", "Q5_4",
 			"Q8",
 			"Q9_212", "Q9_213", "Q9_214", "Q9_215", "Q9_216", "Q9_217", "Q9_218", "Q9_219", "Q9_220"
 )
@@ -66,7 +67,7 @@ vars.resilience.harm.events.434 <- c("Q434_88", "Q434_89", "Q434_90", "Q434_91",
 vars.resilience.harms.agreement.435 <- c("Q435_99", "Q435_100", "Q435_101", "Q435_102", "Q435_103", "Q435_104", "Q435_105")
 vars.interests.general.437 <- c("Q437_43", "Q437_44", "Q437_45", "Q437_46", "Q437_47", "Q437_49", "Q437_50", "Q437_51", "Q437_52", "Q437_53", "Q437_54")
 
-# Binary 
+# Binary
 vars.connectedness.helping.others.277 <- c("Q277_112", "Q277_113", "Q277_114", "Q277_115", "Q277_116", "Q277_117", "Q277_118", "Q277_119", "Q277_120", "Q277_121", "Q277_122", "Q277_123")
 vars.connectedness.sought.help.from.others.280 <- c("Q280_124", "Q280_125", "Q280_126", "Q280_127", "Q280_128", "Q280_129", "Q280_130", "Q280_131", "Q280_132", "Q280_133", "Q280_134", "Q280_135", "Q280_136")
 
@@ -128,11 +129,11 @@ vars.agreement <- c(
 
 vars.importance <- c(
 	vars.interests.keeping.in.touch.430,
-	vars.connectedness.maintenance.287	
+	vars.connectedness.maintenance.287
 )
 vars.yes_no <- c(
 	vars.connectedness.helping.others.277,
-	vars.connectedness.sought.help.from.others.280	
+	vars.connectedness.sought.help.from.others.280
 )
 
 vars.all <- c(
@@ -195,16 +196,17 @@ pressure.digital.access <- "Q425"
 current.neighbourhood <- "Q427"
 level.education <- "Q436"
 main.activities <- "Q8"
+# minority.group <- "Q9"
 child.consent <- "Q5A"
 child.age <- "Q5B"
-augmented.data <- results[,c(age, 
-								gender, 
-								state, 
-								location, 
-								pressure.fin, 
-								pressure.digital.access, 
-								current.neighbourhood, 
-								level.education, 
+augmented.data <- results[,c(age,
+								gender,
+								state,
+								location,
+								pressure.fin,
+								pressure.digital.access,
+								current.neighbourhood,
+								level.education,
 								main.activities,
 								child.consent,
 								child.age,
@@ -254,29 +256,58 @@ augmented.data$current.neighbourhood[augmented.data$Q427 == 181] <- "Less than s
 augmented.data$current.neighbourhood[augmented.data$Q427 == 182] <- "Less than three years."
 augmented.data$current.neighbourhood[augmented.data$Q427 == 183] <- "More than three years."
 augmented.data$level.education <- NA
-augmented.data$level.education[augmented.data$Q427 == 179] <- "No school."
-augmented.data$level.education[augmented.data$Q427 == 180] <- "Primary school."
-augmented.data$level.education[augmented.data$Q427 == 181] <- "Some secondary school."
-augmented.data$level.education[augmented.data$Q427 == 182] <- "Finished secondary school."
-augmented.data$level.education[augmented.data$Q427 == 183] <- "Trade training."
-augmented.data$level.education[augmented.data$Q427 == 184] <- "University or college (undergraduate)."
-augmented.data$level.education[augmented.data$Q427 == 185] <- "University or college (postgraduate)."
-augmented.data$level.education[augmented.data$Q427 == 186] <- "Don't know."
-augmented.data$level.education[augmented.data$Q427 == 187] <- "Refused."
+augmented.data$level.education[augmented.data$Q436 == 179] <- "No school."
+augmented.data$level.education[augmented.data$Q436 == 180] <- "Primary school."
+augmented.data$level.education[augmented.data$Q436 == 181] <- "Some secondary school."
+augmented.data$level.education[augmented.data$Q436 == 182] <- "Finished secondary school."
+augmented.data$level.education[augmented.data$Q436 == 183] <- "Trade training."
+augmented.data$level.education[augmented.data$Q436 == 184] <- "University or college (undergraduate)."
+augmented.data$level.education[augmented.data$Q436 == 185] <- "University or college (postgraduate)."
+augmented.data$level.education[augmented.data$Q436 == 186] <- "Don't know."
+augmented.data$level.education[augmented.data$Q436 == 187] <- "Refused."
 augmented.data$main.activities <- NA
-augmented.data$main.activities[augmented.data$Q427 == 200] <- "Full-time work greater than or equal to 30 hours paid employment per week"
-augmented.data$main.activities[augmented.data$Q427 == 201] <- "Part-time work less than 30 hours paid employment per week"
-augmented.data$main.activities[augmented.data$Q427 == 202] <- "Unemployed/looking for work"
-augmented.data$main.activities[augmented.data$Q427 == 203] <- "Home duties"
-augmented.data$main.activities[augmented.data$Q427 == 204] <- "Have a job but not at work due to illness, vacation etc"
-augmented.data$main.activities[augmented.data$Q427 == 205] <- "Not working and currently receiving sickness allowance/disability support pension."
-augmented.data$main.activities[augmented.data$Q427 == 206] <- "Volunteer work"
-augmented.data$main.activities[augmented.data$Q427 == 207] <- "Student attending school"
-augmented.data$main.activities[augmented.data$Q427 == 208] <- "Student attending university, TAFE or other tertiary education provider"
-augmented.data$main.activities[augmented.data$Q427 == 209] <- "Other"
-augmented.data$main.activities[augmented.data$Q427 == 210] <- "Don't know"
-augmented.data$main.activities[augmented.data$Q427 == 211] <- "Refused"
-
+augmented.data$main.activities[augmented.data$Q8 == 200] <- "Full-time work greater than or equal to 30 hours paid employment per week"
+augmented.data$main.activities[augmented.data$Q8 == 201] <- "Part-time work less than 30 hours paid employment per week"
+augmented.data$main.activities[augmented.data$Q8 == 202] <- "Unemployed/looking for work"
+augmented.data$main.activities[augmented.data$Q8 == 203] <- "Home duties"
+augmented.data$main.activities[augmented.data$Q8 == 204] <- "Have a job but not at work due to illness, vacation etc"
+augmented.data$main.activities[augmented.data$Q8 == 205] <- "Not working and currently receiving sickness allowance/disability support pension."
+augmented.data$main.activities[augmented.data$Q8 == 206] <- "Volunteer work"
+augmented.data$main.activities[augmented.data$Q8 == 207] <- "Student attending school"
+augmented.data$main.activities[augmented.data$Q8 == 208] <- "Student attending university, TAFE or other tertiary education provider"
+augmented.data$main.activities[augmented.data$Q8 == 209] <- "Other"
+augmented.data$main.activities[augmented.data$Q8 == 210] <- "Don't know"
+augmented.data$main.activities[augmented.data$Q8 == 211] <- "Refused"
+# Household size
+household.spouse.or.partner <- "Q24_160"
+household.children <- "Q24_161"
+household.father <- "Q24_162"
+household.mother <- "Q24_163"
+household.fathers.partner.or.step.parent <- "Q24_164"
+household.mothers.partner.or.step.parent <- "Q24_165"
+household.older.siblings <- "Q24_166"
+household.younger.siblings <- "Q24_167"
+household.grandparents <- "Q24_168"
+household.other.relatives <- "Q24_169"
+household.other.people <- "Q24_170"
+household.vars <- c(
+	household.spouse.or.partner,
+	household.children,
+	household.father,
+	household.mother,
+	household.fathers.partner.or.step.parent,
+	household.mothers.partner.or.step.parent,
+	household.older.siblings,
+	household.younger.siblings,
+	household.grandparents,
+	household.other.relatives,
+	household.other.people
+)
+augmented.data$household.size <- rowSums(subset(augmented.data, select = household.vars))
+# Remove rows where household size > 10
+augmented.data <- augmented.data[augmented.data$household.size <= 10,]
+augmented.data$household.with.children.5.to.17 <- ifelse(augmented.data$Q5_2 == 1 | augmented.data$Q5_3 == 1, 1, 0)
+# sum(augmented.data$household.with.children.5.to.17, na.rm = TRUE)
 
 # Create sums
 augmented.data$Q74 <- round(rowMeans(augmented.data[,vars.competencies.online.activities.74])	)
@@ -300,8 +331,7 @@ sumIndex()
 data <- augmented.data
 
 # Generate scaled versions of data
-data.scaled <- as.data.frame(scale(data[,vars.index]))
-data.totals.scaled <- as.data.frame(scale(data[,vars.totals]))
+data.scaled <- cbind(data[,!(names(data) %in% c(vars.index, vars.totals))], scale(data[,c(vars.index, vars.totals)]))
 
 
 
@@ -415,11 +445,48 @@ generateLocationFrequenciesForAggregate <- function() {
 	return (p)
 }
 
+generateEducationFrequenciesForAggregate <- function() {
+	p <- generateSingleEducationFrequency(0, c("Q74"), frequencyLabels)
+	p <- generateSingleEducationFrequency(0, c("Q287"), importanceLabels)
+	p <- generateSingleEducationFrequency(0, c("Q341"), agreementLabels)
+	p <- generateSingleEducationFrequency(0, c("Q343"), frequencyMonthLabels)
+	p <- generateSingleEducationFrequency(0, c("Q352"), frequencyMonthLabels)
+	p <- generateSingleEducationFrequency(0, c("Q353"), agreementLabels)
+	p <- generateSingleEducationFrequency(0, c("Q428"), agreementLabels)
+	p <- generateSingleEducationFrequency(0, c("Q429"), agreementLabels)
+	p <- generateSingleEducationFrequency(0, c("Q430"), importanceLabels)
+	p <- generateSingleEducationFrequency(0, c("Q431"), easeLabels)
+	p <- generateSingleEducationFrequency(0, c("Q434"), frequencyMonthLabels)
+	p <- generateSingleEducationFrequency(0, c("Q435"), agreementLabels)
+	p <- generateSingleEducationFrequency(0, c("Q437"), frequencyMonthLabels)
+	return (p)
+}
+
+generateOccupationFrequenciesForAggregate <- function() {
+	p <- generateSingleOccupationFrequency(0, c("Q74"), frequencyLabels)
+	p <- generateSingleOccupationFrequency(0, c("Q287"), importanceLabels)
+	p <- generateSingleOccupationFrequency(0, c("Q341"), agreementLabels)
+	p <- generateSingleOccupationFrequency(0, c("Q343"), frequencyMonthLabels)
+	p <- generateSingleOccupationFrequency(0, c("Q352"), frequencyMonthLabels)
+	p <- generateSingleOccupationFrequency(0, c("Q353"), agreementLabels)
+	p <- generateSingleOccupationFrequency(0, c("Q428"), agreementLabels)
+	p <- generateSingleOccupationFrequency(0, c("Q429"), agreementLabels)
+	p <- generateSingleOccupationFrequency(0, c("Q430"), importanceLabels)
+	p <- generateSingleOccupationFrequency(0, c("Q431"), easeLabels)
+	p <- generateSingleOccupationFrequency(0, c("Q434"), frequencyMonthLabels)
+	p <- generateSingleOccupationFrequency(0, c("Q435"), agreementLabels)
+	p <- generateSingleOccupationFrequency(0, c("Q437"), frequencyMonthLabels)
+	return (p)
+}
+
+
 generateAggregateFrequences <- function() {
 	generateAgeFrequenciesForAggregate()
 	generateGenderFrequenciesForAggregate()
 	generateStateFrequenciesForAggregate()
 	generateLocationFrequenciesForAggregate()
+	generateEducationFrequenciesForAggregate()
+	generateOccupationFrequenciesForAggregate()
 }
 
 
@@ -441,4 +508,9 @@ generateSubQuestionCharts <- function() {
 	graphSubQuestionFrequencies(vars.connectedness.tech.attitudes.429, "Agreement", agreementLabels, "connectedness-tech-attitudes-429")
 	graphSubQuestionFrequencies(vars.connectedness.maintenance.287, "Importance", importanceLabels, "maintaining-connections-287")
 	graphSubQuestionFrequencies(vars.connectedness.events.343, "Frequency", frequencyMonthLabels, "connectedness-events-343")
+}
+
+generatePrebuiltCorrelations <- function() {
+  generateCorrelation("total.431", "Q436", "skills-education")
+
 }
