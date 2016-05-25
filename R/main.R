@@ -4,6 +4,7 @@ source("R/utils.R", FALSE)
 
 source("R/samplesForExpandedIndicators.R", FALSE)
 source("R/histograms.R", FALSE)
+source("R/maps.R", FALSE)
 source("R/indexFunctions.R", FALSE)
 source("R/multivariateAnalysis.R", FALSE)
 
@@ -189,6 +190,7 @@ results <- loadSurveyResults()
 
 age <- "Q10_159"
 gender <- "Q1" # 193 = "Male", 194 = "Female", 195 = "Other", 196 = "Refused"
+postcode <- "Q2_197_OTHER"
 state <- "STATE1"
 location <- "LOCATION1"
 pressure.fin <- "Q45"
@@ -201,6 +203,7 @@ child.consent <- "Q5A"
 child.age <- "Q5B"
 augmented.data <- results[,c(age,
 								gender,
+								postcode,
 								state,
 								location,
 								pressure.fin,
@@ -230,6 +233,7 @@ augmented.data$gender[augmented.data$Q1 == 194] <- "Female"
 augmented.data$gender[augmented.data$Q1 == 195] <- "Other"
 augmented.data$gender[augmented.data$Q1 == 196] <- "Refused"
 augmented.data$state[augmented.data$STATE1 == 1] <- "ACT"
+augmented.data$postcode <- as.character(augmented.data$Q2_197_OTHER)
 augmented.data$state[augmented.data$STATE1 == 2] <- "NSW"
 augmented.data$state[augmented.data$STATE1 == 3] <- "VIC"
 augmented.data$state[augmented.data$STATE1 == 4] <- "QLD"
@@ -323,6 +327,11 @@ augmented.data$Q431 <- round(rowMeans(augmented.data[,vars.competencies.431]))
 augmented.data$Q434 <- round(rowMeans(augmented.data[,vars.resilience.harm.events.434]))
 augmented.data$Q435 <- round(rowMeans(augmented.data[,vars.resilience.harms.agreement.435]))
 augmented.data$Q437 <- round(rowMeans(augmented.data[,vars.interests.general.437]))
+
+# Make sure initMaps() is called first. Turn off when debugging
+# initMaps()
+augmented.data$SA4_NAME_2011 <- unlist(sapply(augmented.data$postcode, obtainSA4))
+
 
 ## Generate totals
 sumIndex()
@@ -487,6 +496,16 @@ generateAggregateFrequences <- function() {
 	generateLocationFrequenciesForAggregate()
 	generateEducationFrequenciesForAggregate()
 	generateOccupationFrequenciesForAggregate()
+}
+
+
+generateAllSA4Maps <- function() {
+	generateSA4MapForVariable(vars.frequency, frequencyLabels)
+	generateSA4MapForVariable(vars.frequency.months, frequencyMonthLabels)
+	generateSA4MapForVariable(vars.ease, easeLabels)
+	generateSA4MapForVariable(vars.agreement, agreementLabels)
+	generateSA4MapForVariable(vars.importance, importanceLabels)
+	generateSA4MapForVariable(vars.yes_no, yesNoLabels)
 }
 
 
