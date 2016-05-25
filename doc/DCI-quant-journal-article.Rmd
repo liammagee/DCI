@@ -1,55 +1,216 @@
-# ---
+---
 title: "Digital Capacities Index"
 author: |
   | Liam Magee^1^, Delphine Bellerose^1^, Anjali Sharma^1^, Emma Kearney^1^, Louise Crabtree^1^, Philippa Collin^1^, Justine Humphry^1^, Paul James^1^, Tanya Notley^1^, Amanda Third^1^, Samantha Yorke^2^
   | 1. Western Sydney University
   | 2. Google Australia
-date: "4 April 2016"
+date: "23 May 2016"
 bibliography: DCI.bib
 output:
   html_document:
     toc: true
     toc_depth: 4
+    number_sections: true
+    theme: united
+    highlight: tango
+  word_document:
+    toc: true
+    toc_depth: 4
 ---
+
+
+<!--
+
+Journal: Information Communication and Society
+URL: http://www.tandfonline.com/toc/rics20/current
+Instructions for Authors: http://www.tandfonline.com/action/authorSubmission?journalCode=rics20&page=instructions#.V0JfRZN96uU
+Word count (exclusive): 8,000
+
+-->
+
+
+```{r setup, include=FALSE, echo=FALSE}
+library(captioner)
+library(pryr)
+
+knitr::opts_knit$set(root.dir="..")
+knitr::opts_chunk$set(echo = FALSE, warning=FALSE, message=FALSE)
+setwd("..")
+
+
+source("R/main.R", FALSE)
+PRINTING <- FALSE
+
+# Set to false for non-HTML (e.g. word, pdf) outputs
+PLOTLY <- FALSE
+rmd_output <- tryCatch({rmarkdown::metadata$output},
+                         error = function(e) {NULL})
+if (class(rmd_output) == "list") {
+  rmd_output <- names(unlist(rmd_output)[1])
+}
+if (length(grep('html_document',rmd_output)) > 0) {
+# if (rmd_output == 'html_document') {
+  PLOTLY <- TRUE
+}
+PLOTLY <- FALSE
+
+
+# Set up figure numbering
+fig_nums <- captioner(prefix = "Figure")
+cf <- partial(fig_nums, display = "cite")
+fig_nums("age.freq", "Age Frequency")
+fig_nums("gender.freq", "Gender Frequency")
+fig_nums("gender.and.age.freq", "Age & Gender Frequency")
+fig_nums("gender.and.age.freq.abs", "Australia's Age & Gender Frequency (ABS 2014)")
+fig_nums("location.freq", "Location Frequency")
+
+# Competencies
+fig_nums("freq.74", "Frequency of online activity")
+fig_nums("freq.431", "Perceived ease of conducting online activity")
+fig_nums("freq.74.2", getLabel(2, vars.competencies.online.activities.74))
+fig_nums("freq.74.3", getLabel(3, vars.competencies.online.activities.74))
+fig_nums("freq.74.6", getLabel(6, vars.competencies.online.activities.74))
+fig_nums("freq.74.2", getLabel(2, vars.competencies.online.activities.74))
+fig_nums("freq.431.13", getLabel(13, vars.competencies.431))
+fig_nums("freq.431.14", getLabel(14, vars.competencies.431))
+fig_nums("freq.431.19", getLabel(19, vars.competencies.431))
+
+# Interests
+fig_nums("freq.437", "General Interests")
+fig_nums("freq.341", "Interest in seeking difference")
+fig_nums("freq.352", "Interest in fitness and health improvement")
+fig_nums("freq.353", "Health Impacts")
+fig_nums("freq.430", "Interest in keeping in touch")
+fig_nums("freq.437.1", getLabel(1, vars.interests.general.437))
+fig_nums("freq.437.9", getLabel(9, vars.interests.general.437))
+fig_nums("freq.352.4", getLabel(4, vars.interests.fitness.352))
+
+
+# Resilience
+fig_nums("freq.434", "Frequency of harmful events")
+fig_nums("freq.435", "Responses to statements about online harms")
+fig_nums("freq.428", "Willingness to engage with others")
+fig_nums("freq.434.4", getLabel(4, vars.resilience.harm.events.434))
+fig_nums("freq.434.10", getLabel(10, vars.resilience.harm.events.434))
+fig_nums("freq.435.6", getLabel(6, vars.resilience.harms.agreement.435))
+fig_nums("freq.435.7", getLabel(7, vars.resilience.harms.agreement.435))
+
+# Connectedness
+fig_nums("freq.343", "Maintaining connections")
+fig_nums("freq.287", "Importance of online life in maintaining relationships")
+fig_nums("freq.429", "Attitudes towards Technology")
+fig_nums("freq.287.1", getLabel(1, vars.connectedness.maintenance.287))
+fig_nums("freq.343.4", getLabel(4, vars.connectedness.events.343))
+fig_nums("freq.429.2", getLabel(2, vars.connectedness.tech.attitudes.429))
+
+
+# Aggregated
+fig_nums("agg.results", "Aggregated Results by Critical Issue")
+
+```
+
+
 
 # Digital Capacities Index
 
 ## Introduction
 
-Much has been made of the transition, in 2008, of more than half the world's population to urban settlements. Far more dramatic, in terms of time and acceleration, has been the 'onboarding' of more than half the world's population to some kind of digital life - predominantly through the extraordinary rise of low cost smart phones in Asia, and to lesser degrees, Africa and Latin America. Young people in slums and informal settlements in Bangladesh are likely to play the same games - Candy Crush or Clash of Clans- and use the same social networking apps - WhatsApp, Facebook Messenger - as their peers in traditional centres of technological innovation, San Francisco, London or Tokyo.
+Much has been made of the transition, in 2008, of more than half the world's population to urban settlements. Far more dramatic, in terms of time and acceleration, has been the 'onboarding' of more than half the world's population to some kind of digital life - predominantly through the extraordinary rise of low cost smart phones in Asia, and to lesser degrees, Africa and Latin America. Young people in slums and informal settlements in Bangladesh are likely to play the same games - Candy Crush or Clash of Clans - and use the same social networking apps - WhatsApp, Facebook Messenger - as their peers in traditional centres of technological innovation, San Francisco, London or Tokyo.
 
 This phenomenal growth has been matched by an interest in measuring different facets of what is unquestionably now a globalised digital society. Since the 2000s, the measurement of digital life has developed markedly. Studies of digital connectivity [cite], access [cite], inclusion [cite], use [cite], competencies [cite], skills [cite], engagement [cite], and risk and resilience [cite] illustrate the growing complexity of patterns of digital behaviour among diverse communities, countries and regions. At the same time, this complexity risks obscuring broader patterns of digital life amid studies that focus on measurement of highly particular dimensions. This risk becomes acute as the forms of use of digital technologies have themselves become more pervasive as well as more diverse. Use of devices, platforms, apps and methods of interaction expand and, periodically, contract around new products, services and standards. Home, work and in-transit digital technologies - from mobile devices to virtual reality sets, CCTV surveillance cameras, in-flight entertainment systems, public sensors, 'smart' fitness devices and home automation systems - increasingly blur categories of explicit 'use' and 'non-uses'. As Bratton [cite] has argued, we are all 'users' now.
 
 How then might a general empirical social analysis of the digital proceed? We argue that the preoccupation with specifically measurable qualities of digital infrastructural availability and individual interactions need to regrouped and reframed within a more comprehensive theoretical rubric. The rubric we suggest here employs the vocabulary of 'capacities'. Capacities capture something of the wide and open conntations of human capabilities, developed by Amartya Sen and Martha Nussbaum [cite]. At the same time, the term also captures the technical quantitiatve capacities inherent in the digital world. Bandwidth, hard drives, memory and telecommunication networks all can be readily described in terms of capacity, meaning simply the quantitiative expansion possible within digital infrastructure. Capability, for all its resonance in the development literature, acquires more specific meaning in relation to digital equipment, and even then not universally: while complex networks have capabilities, raw qualities such as bandwidth instead express at best *single* capability. As we discuss further in *Methodology* below, this feature of translatability is an important for devices which seek to measure a varied, multidimensional and diverse set of sociotechnical variables. *Capacities* is the term which best seems to meet this demand. We stress however that, applied at societal and individual units of analysis, our use of 'capacity' has similar associations to Sen's *Capabilities Approach*.
 
-In this article we propose a general theoretical account of digital capacities. This account is complicated by its goal of generality however. Both the direct speed of technological change, and varied or differential pace of that change, mean that methodological instrumentation of theories are subject to considerable revision across time and space. At least some of our collective digital capacities alternate at the rate of hardware developments and software releases - that is, at the rate of days, weeks or months, rather than across years or decades. This contrasts with other forms of social capacities, such as language use, mathematical competency or political engagement, which vary in line with the slower pace of education diffusion, policy reform and economic development.
+In this article we propose a general theoretical account of digital capacities. This account is however complicated by its goal of generality. Both the direct speed of technological change, and varied or differential pace of that change, mean that methodological instrumentation of theories are subject to considerable revision across time and space. At least some of our collective digital capacities alternate at the rate of hardware developments and software releases - that is, at the rate of days, weeks or months, rather than across years or decades. This contrasts with other forms of social capacities, such as language use, mathematical competency or political engagement, which vary in line with the slower pace of education diffusion, policy reform and economic development.
 
-Similarly, the rates of digital capacity occur across extremely complex social vectors. The expansion of programming skill - a highly developed digital capacity - through coding clinics, hackathons, interpretive scripting environments and broader social pressures to 'learn to code' represent a salient example. Since definitions of 'programming' vary from full-time professionals to occasional 'hackers' or 'script junkies', worldwide estimates of programmers are impossible to estimate precisely. However indicators are available from popular code repositories such as GitHub [GitHub], and technical Q&A fora, such as [Stack Overflow](http://stackoverflow.com/). As of April 2014, *GitHub* reports [14 million users](https://github.com/about/press), while Stack Overflow reports 4.5 million registered ['programmers'](http://stackoverflow.com/). Both are likely underestimates; many programmers do not use these sites, or access them anonymously. Regardless of precision these numbers represent order-of-magnitude increases over approximate estimates in the 2000s (approximately 5 million) and 1990s (under 1 million). Yet the diffusion of programming skills also follow broad trajectories of geography, education, availability of digital infrastructure: entry to the programming profession corresponds strongly to availability of tertiary education, affordable hardware, software and the Internet, and clusters of investment in technological innovation. As [] note, programmers also are sharply skewed demographically: male gender, middle class, and urban residents.
+Similarly, the rates of digital capacity occur across extremely complex social vectors. The expansion of programming skill - a highly developed digital capacity - through coding clinics, hackathons, interpretive scripting environments and broader social pressures to 'learn to code' represent a salient example. Since definitions of 'programming' vary from full-time professionals to occasional 'hackers' or 'script junkies', worldwide estimates of programmers are impossible to estimate precisely. However indicators are available from popular code repositories such as GitHub [GitHub], and technical Q&A fora, such as [Stack Overflow](http://stackoverflow.com/). As of April 2014, *GitHub* reports [14 million users](https://github.com/about/press), while Stack Overflow reports 4.5 million registered ['programmers'](http://stackoverflow.com/). Both are likely underestimates; many programmers do not use these sites, or access them anonymously. Regardless of precision these numbers represent order-of-magnitude increases over approximate estimates in the 2000s (approximately 5 million) and 1990s (under 1 million). Yet the diffusion of programming skills also follow broad trajectories of geography, education, availability of digital infrastructure: entry to the programming profession corresponds strongly to availability of tertiary education, affordable hardware, software and the Internet, and clusters of investment in technological innovation. As [] note, programmers also are sharply skewed demographically and geographically: male gendered, middle class, and urban residents.
+
+This example highlights that digital capacities are not only spread spatially; this spatial distribution is also mutating rapidly. In 2010, @takhteyev2010investigating noted the top ten countries responsible for GitHub contributions included, in order, USA, UK, Germany, Canada, Brazil, Japan, France, Australia, Russia and Sweden. An estimate conducted on the last available public data of location, in the month of December 2010, showed users by country now included China, India and the Netherlands, at the expense of Brazil, Russia and Sweden, which nevertheless show growth in absolute numbers.
+
+Responding to the prevalence of digital infrastructure, technology education and lower costs of devices and access, these figures index the global growth and relative geographic change of digital capacity. Numerous other trends, both endogenous and exogenous to the tech industry, also impact how capacity is configured. In-built product obsolescence, switches from desktop to mobile apps, ease of accessing social media apps and networks, increases in automation and improvements in design mean certain capacities are more readily acquired, while others become forgotten or obscured.
+
+Our definition and analysis of digital capacities foregrounds two implications of this conceptual volatility. The first implication is that any specific measureable dimension of capacity is likely to have limited 'shelf-life' in terms of relevance, both over time and across regions. This suggests the need for intermediary levels of analysis between these measures and any definition of capacity itself. It further suggests that while direct measures may not be replicable, both these intermediary levels and the process of selecting those measures may have greater prospect for reuse across different spatiotemporal frames.
+
+The second implication draws upon the exogenous social factors that impact upon the development of digital capacities. Policy change, community orientations, geographic proximity to centres of technology, and economic investment, particularly in infrastructure and innovation, act as spurs to the production of new capacities. It is a truism, bourn out in recent STS qualitative analyses of households, communities and workplaces, that technology skills not develop in isolation of their social context. Yet this relational dimension is underplayed in recent quantitative studies of skills and competencies in particular. In our own survey instrument, we seek to draw out the importance of various aspects of this relationality.
+
+We elaborate upon both of these implications in our account of digital capacities below. We then discuss a pilot study that operationalises that account through a pilot survey of 2,000 Australian individuals. We present in some detail our procedure for arriving at a set of four themes, or what we term "critical issues", and associate variables or indicators of capacities. We then present the results of the study, highlighting significant findings by demographic variables and relationships. We conclude with observations on what these results say about digital capacities of Australians in 2016, and on the methodological prospects for adapting the instrument to measure capacities in other times and places.
 
 
+<!--
 
-This account attempts to work in two ways: through an integration of the considerable existing literature that discuss
+These results were broadly confirmed by more extensive analysis conducted in October 2014 by data analyst Nikita S. Nikitinsky on a [blog post in June 2015](http://nlpx.net/archives/172).
+
+-->
+
+
+<!--
+Relevant links:
+
+https://www.igvita.com/slides/2012/bigquery-github-strata.pdf
+http://www.itworld.com/article/2704843/cloud-computing/where-in-the-world-are-github-users-.html
+https://github.com/rstats-db/bigrquery
+https://www.githubarchive.org/
+-->
+
 
 
 ## Towards a Definition of Digital Capacity
 
-[Literature Review]
-
+<!--
+This account attempts to work in two ways: through an integration of the fast growing literature that discusses measurement of various types of what we have here
+-->
 
 ## Methodology
 
+The development of the Digital Capacity Index uses a mixed-methods approach:
+
+1.  Data collected from international consultations, literature scans and interviews with Australian stakeholders have been used to build the database of relevant capacity definitions, metrics and indicators.
+2.  Eight in-depth qualitative case studies has been conducted in parallel with other aspects of developing and evaluating the index and any associated instruments. These case studies illuminates the digital capacity challenges faced by particular communities and across three generations (children, their parents and their grandparents). This in-depth qualitative data is vital to communicating the diversity and complexity of the experience of digital capacity to policy makers, service providers and other vested parties. They identify specific aspects of capacity that warrant either adding new indicators, or weighting existing indicators. Data collected through these studies augment the quantitative evaluation.
+3.  Development of a draft index and associated survey instrument, which have been  piloted with a convenience sample of (n=20) Australian families. The pilot involved a mix of online and offline administering of the survey, accompanied by a short series of open-ended questions designed to elicit feedback on the survey and any associated issues. Both quantitative and qualitative data have been used to refine the instrument.
+4.  The Index are being progressively and iteratively refined based on the qualitative and pilot survey data before being run online with a targeted sample of 16 – 25, 45 – 60 and 65 – 75 year olds.
+5.  Data has been analysed and compiled to produce a report on the digital capacity of Australian families.
+
+These methods are coordinated within an integrated and holistic theoretical approach. We adapt and extend recent work – for example on digital safety and digital inclusion, which we view as a prerequisites but not equivalent to the broader idea of “digital capacity”. To establish a framework for assessing different dimensions of digital capacity, we propose drawing upon the [Circles of Social Life approach](http://www.circlesofsustainability.org/). Used by the United Nations Global Compact Cities Programme, the World Association of Major Metropolises, World Vision, and a number of local governments to support their engagement in cities, the approach treats social life as made up of four domains of practice — the economic, the ecological, the political and the cultural. In the context of digital capacity, we would identify and align specific indicators against each of these fields. We list some strictly indicative examples below:
+
+* Economic:   capacity to use digital resources to improve job readiness; use of technology to derive income; perceived significance of digital skills and competencies in future employment
+* Ecological:     levels of concern about online safety i.e. perceived safety and security operating in various online ‘spaces’; capacity to locate and deploy privacy and security tools; management of technology (both use and abuse) within the household; use of maps to understand local and global environments
+* Political:  impact of online safety policy and legislation across generations; key sources of digital safety influence; use of digital media to stay informed about political events; capacity to mobilise or engage with others for political purposes through technology
+* Cultural:   understanding of and resilience in dealing with digital safety issues; impact of informal learning on digital safety and participation; participation in cultural life through technology; active role as digital “facilitator” in cultural fields of family, neighbourhoods, and community groups.
+
+The statistical data from the Index (the collection of which is deeply informed by the findings of the qualitative case studies) can be represented primarily in the form of ‘circles of social life’ diagrams, as well as through other data visualisation methods such as mapping and infographics. Mapped to these four domains, pilot results can be further analysed in terms of significant thematic and demographic hypotheses and relationships. For example, do young people with strong economic digital capacities translate those capacities to other spheres of social life? Or are there significant differences in how different generations exercise digital capacities in relation to sustaining cultural forms? The data gathered through the Index will therefore allow for important diagnostics about intergenerational and interdomain relationships, highlighting areas of community and social concern.
+
+One key area the Index addresses explicitly is perceptions of and responses to digital safety issues. We propose that the deployment of “capacity”, along with the four domain model, forms a strong platform for interpreting these concerns – as inhibitors of the exercise of distinct capacities, rather than as a stand-alone area. As examples, perceived concern about political censorship or privacy acts as an inhibitor of the expression of free speech online; perceived concern about predation and vilification acts as an inhibitor of cultural expression. By discussing capacities as positive virtues of digital life, mapped against the four domains outlined above, the Index provides a robust platform from which to develop meaningful policy and practice interventions.
+
+We included a total of `r length(vars.all)` items measuring (a) frequency of various online behaviour, (b) levels of agreement with statements about digital capacities, (c) perceived importance of online activities and (d) ease of use of digital technologies.
+
+We further distinguished questions into the following key thematic areas, or what we have termed, following @james2014urban, 'critical issues'. These issues are:
+
+ - **Competencies** (`r length(vars.competencies)` indicators).
+ - **Interests** (`r length(vars.interest)` indicators).
+ - **Resilience** (`r length(vars.resilience)` indicators).
+ - **Social Connectedness** (`r length(vars.connectedness)` indicators).
+
+These four issues were distilled from a list of nine issues that also included *Engagement*, *Inclusion*, *Policy Environment*, *Infrastructure* and *Consequences*.
+
+Against these four issues, we selected items and scales from existing sources in the literature where possible. In particular we drew from 'Kids Online'
+[@livingstone2010risks], Helsper's [-@helsper2012corresponding] 'Corresponding fields model', a study by Humphry [-@humphry2014importance] of mobile use among homeless populations, and indicators compiled by the [Young and Well CRC](http://www.youngandwellcrc.org.au/) [-@crc2013standardmeasures]. Other indicators were developed by the *Digital Capacities Index* team.
+
+A large number of candidate scales were distilled down to the current list after two day-long workshops, and testing of the survey.
 
 
 ## Results
 
+TBD
 
 
 ## Discussion
 
+TBD
 
 
 ## Conclusion
 
+TBD
 
 
 ## References

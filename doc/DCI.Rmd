@@ -6,7 +6,6 @@ author: |
   | 2. Google Australia
 date: "4 April 2016"
 bibliography: DCI.bib
-numbered-sections: true
 output:
   html_document:
     toc: true
@@ -17,7 +16,6 @@ output:
   word_document:
     toc: true
     toc_depth: 4
-    number_sections: true
 ---
 
 <!-- output: html_document -->
