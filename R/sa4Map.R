@@ -81,11 +81,12 @@ View(data[, c("POSTCODE", "SA4_NAME_2011")])
 
 # Summarise data by SA4 area for a question
 merged = 
-data %>%
+( data %>%
   group_by( SA4_NAME_2011 ) %>%
   summarise( median = median(Q431_26),
              average = mean(Q431_26) ) %>%
   left_join( aus@data, ., by = c("SA4_NAME11" = "SA4_NAME_2011") )
+)
 
 aus@data = merged
 aus.points = fortify(aus, region="id") #replaced aus.buffered with aus
@@ -98,7 +99,7 @@ ggplot(aus.df) +
   geom_polygon( ) +
   #for some reason it maps too much ocean so limit coords (EDIT: due to Christmas Island)
   coord_equal(xlim = c(110,155)) +
-  scale_fill_gradient( ) +
+  scale_fill_gradient( high = "#132B43", low = "#56B1F7")
   theme(
     panel.background = element_blank(),
     panel.border = element_blank(),
@@ -108,3 +109,21 @@ ggplot(aus.df) +
     axis.ticks = element_blank()
   )
 
+location = read.csv("data/LocationData.csv")
+location$postcode = as.character(location$postcode)
+df = left_join(DCI_DATA, location, by = c("POSTCODE" = "postcode"))
+
+# Wrong coordinates for resp 812, userid 2389477443
+# Should be -34.75513, 139.30616
+
+df[3827, "lat"] = -34.75513
+df[3827, "lon"] = 139.30616
+
+p =
+ggplot(df) +
+  aes(lon, lat, colour = Q431_26) +
+  geom_point() +
+  coord_equal(xlim = c(110, 155), ylim = c(-45, -10)) +
+  scale_colour_gradient( high = "#132B43", low = "#56B1F7")
+
+ggplotly(p)
