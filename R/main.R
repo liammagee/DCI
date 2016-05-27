@@ -536,19 +536,19 @@ generateAllScatterMaps <- function() {
 	generateScatterMapForVariable(vars.yes_no, yesNoLabels)
 
 	# Generate maps for variable aggregates
-	generateSA4Map(0, c("Q74"), frequencyLabels)
-	generateSA4Map(0, c("Q287"), importanceLabels)
-	generateSA4Map(0, c("Q341"), agreementLabels)
-	generateSA4Map(0, c("Q343"), frequencyMonthLabels)
-	generateSA4Map(0, c("Q352"), frequencyMonthLabels)
-	generateSA4Map(0, c("Q353"), agreementLabels)
-	generateSA4Map(0, c("Q428"), agreementLabels)
-	generateSA4Map(0, c("Q429"), agreementLabels)
-	generateSA4Map(0, c("Q430"), importanceLabels)
-	generateSA4Map(0, c("Q431"), easeLabels)
-	generateSA4Map(0, c("Q434"), frequencyMonthLabels)
-	generateSA4Map(0, c("Q435"), agreementLabels)
-	generateSA4Map(0, c("Q437"), frequencyMonthLabels)
+	generateScatterMap(0, c("Q74"), frequencyLabels)
+	generateScatterMap(0, c("Q287"), importanceLabels)
+	generateScatterMap(0, c("Q341"), agreementLabels)
+	generateScatterMap(0, c("Q343"), frequencyMonthLabels)
+	generateScatterMap(0, c("Q352"), frequencyMonthLabels)
+	generateScatterMap(0, c("Q353"), agreementLabels)
+	generateScatterMap(0, c("Q428"), agreementLabels)
+	generateScatterMap(0, c("Q429"), agreementLabels)
+	generateScatterMap(0, c("Q430"), importanceLabels)
+	generateScatterMap(0, c("Q431"), easeLabels)
+	generateScatterMap(0, c("Q434"), frequencyMonthLabels)
+	generateScatterMap(0, c("Q435"), agreementLabels)
+	generateScatterMap(0, c("Q437"), frequencyMonthLabels)
 }
 
 generateAllMaps <- function() {
