@@ -21,8 +21,16 @@ ggplot(aus.df) +
   geom_polygon(show_guide = FALSE ) +
   geom_path(color="white") +
   #for some reason it maps too much ocean so limit coords (EDIT: due to Christmas Island)
-  coord_equal(xlim=c(110,155)) +
-  scale_fill_hue(c=45, l=80)
+  coord_equal(xlim = c(110, 155), ylim = c(-45, -10)) +
+  scale_fill_hue(c=90, l=90) +
+  theme(
+    panel.background = element_blank(),
+    panel.border = element_blank(),
+    axis.line = element_blank(),
+    axis.text = element_blank(),
+    axis.title = element_blank(),
+    axis.ticks = element_blank()
+  )
 
 #To add plotting points, merge data with aus@data$SA4_NAME11
 
@@ -99,7 +107,7 @@ ggplot(aus.df) +
   geom_polygon( ) +
   #for some reason it maps too much ocean so limit coords (EDIT: due to Christmas Island)
   coord_equal(xlim = c(110,155)) +
-  scale_fill_gradient( high = "#132B43", low = "#56B1F7")
+  scale_fill_gradient( high = "#132B43", low = "#56B1F7") +
   theme(
     panel.background = element_blank(),
     panel.border = element_blank(),
@@ -119,11 +127,24 @@ df = left_join(DCI_DATA, location, by = c("POSTCODE" = "postcode"))
 df[3827, "lat"] = -34.75513
 df[3827, "lon"] = 139.30616
 
-p =
+jitter =
 ggplot(df) +
+  aes(lon, lat, colour = Q431_26) +
+  geom_point( position = position_jitter(00.004, 00.004),
+              alpha = 0.05) +
+  coord_equal(xlim = c(110, 155), ylim = c(-45, -10)) +
+  scale_colour_gradient( high = "#132B43", low = "#56B1F7")
+
+nojitter =
+  ggplot(df) +
   aes(lon, lat, colour = Q431_26) +
   geom_point() +
   coord_equal(xlim = c(110, 155), ylim = c(-45, -10)) +
   scale_colour_gradient( high = "#132B43", low = "#56B1F7")
 
-ggplotly(p)
+ggplotly(jitter)
+ggplotly(nojitter)
+
+temp =
+  df %>%
+  group_by(POSTCODE)
