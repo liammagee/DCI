@@ -43,6 +43,20 @@ initMaps <- function() {
   sa4s = sa4s[,2:5]
   sa4s$POSTCODE = as.character(sa4s$POSTCODE)
 
+
+}
+
+initAugmentedDataWithCoords <- function() {
+  location = read.csv("data/LocationData.csv")
+  location$postcode = as.character(location$postcode)
+  df = left_join(augmented.data, location, by = c("postcode" = "postcode"))
+
+  # Wrong coordinates for resp 812, userid 2389477443
+  # Should be -34.75513, 139.30616
+  df[3827, "lat"] = -34.75513
+  df[3827, "lon"] = 139.30616
+
+  return (df)
 }
 
 
@@ -120,4 +134,50 @@ generateSA4Map <- function(x, vars, func, palette = yawcrcPalette) {
 
 generateSA4MapForVariable <- function(vars, func) {
 	sapply(seq(1:length(vars)), generateSA4Map, vars, func )
+}
+
+generateScatterMap <- function(x, vars, func, palette = yawcrcPalette) {
+  if (x > 0) {
+		ind.names <- obtainIndicatorNames(vars)
+		var.name <- vars[x]
+		ind.name <- ind.names[x]
+
+		metadata <- expandedIndicators[which(ind.name == expandedIndicators$DCI.ID),]
+	}
+	else {
+		var.name <- vars[1]
+		ind.name <- gsub("Q", "", var.name)
+
+		metadata <- indicators[which(ind.name == indicators$DCI.ID),]
+		# For consistency
+		metadata$Name <- as.character(metadata$Indicator...Variable)
+	}
+
+  df <- augmented.data.with.coords
+  df$var.name <- df[,var.name]
+
+  p =
+  ggplot(df) +
+    aes(lon, lat, colour = var.name) +
+    geom_point() +
+    coord_equal(xlim = c(110, 155), ylim = c(-45, -10)) +
+    scale_colour_gradient( high = "#132B43", low = "#56B1F7")
+
+
+  full.file <- paste("./figs/maps/", var.name, "_scatter.png", sep="")
+
+	# Save the plot
+	if (PRINTING) {
+		ggsave(file = full.file,
+		  width = png.width,
+		  height = png.height
+		)
+	}
+
+  return (p)
+
+}
+
+generateScatterMapForVariable <- function(vars, func) {
+	sapply(seq(1:length(vars)), generateScatterMap, vars, func )
 }
