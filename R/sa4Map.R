@@ -28,16 +28,16 @@ ggplot(aus.df) +
 
 sa4s = read.csv("data/1270055006_CG_POSTCODE_2011_SA4_2011.csv")
 sa4s = sa4s[5:3115, 1:6]
-names = c("POSTCODE", 
-          "POSTCODE", 
-          "SA4_CODE_2011", 
-          "SA4_NAME_2011", 
-          "RATIO", 
+names = c("POSTCODE",
+          "POSTCODE",
+          "SA4_CODE_2011",
+          "SA4_NAME_2011",
+          "RATIO",
           "PERCENTAGE")
 names(sa4s) = names
 sa4s = sa4s[3:3107,]
 
-# sa4s = 
+# sa4s =
 #   sa4s[,2:5] %>%
 #   mutate( RATIO = as.numeric(RATIO),
 #           POSTCODE = as.numeric(POSTCODE) ) %>%
@@ -45,7 +45,7 @@ sa4s = sa4s[3:3107,]
 #   .[,c(1, 3)]
 
 # Original survey data needs SA4 column from postcodes
-DCI_DATA = 
+DCI_DATA =
   ( read.csv("data/DCI_DATA.csv")  %>% rename( POSTCODE = Q2_197_OTHER ))
 
 sa4s = sa4s[,2:5]
@@ -80,7 +80,7 @@ View(sa4s)
 View(data[, c("POSTCODE", "SA4_NAME_2011")])
 
 # Summarise data by SA4 area for a question
-merged = 
+merged =
 ( data %>%
   group_by( SA4_NAME_2011 ) %>%
   summarise( median = median(Q431_26),
@@ -113,17 +113,20 @@ location = read.csv("data/LocationData.csv")
 location$postcode = as.character(location$postcode)
 df = left_join(DCI_DATA, location, by = c("POSTCODE" = "postcode"))
 
+
 # Wrong coordinates for resp 812, userid 2389477443
 # Should be -34.75513, 139.30616
 
 df[3827, "lat"] = -34.75513
 df[3827, "lon"] = 139.30616
 
+df$var.name <- df[,"Q431_26"]
 p =
 ggplot(df) +
-  aes(lon, lat, colour = Q431_26) +
+  aes(lon, lat, colour = var.name) +
   geom_point() +
   coord_equal(xlim = c(110, 155), ylim = c(-45, -10)) +
   scale_colour_gradient( high = "#132B43", low = "#56B1F7")
+p
 
 ggplotly(p)

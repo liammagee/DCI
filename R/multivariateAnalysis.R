@@ -67,6 +67,7 @@ generateCorrelations_test <- function() {
 	  scale_fill_gradient2(limits=c(-1, 1))
 	ggsave(file = "figs/correlation-matrix-3.png", width = 8, height = 6)
 
+  
   # Test regression and multicollinearity
 	library(psych)
 	library(car)
