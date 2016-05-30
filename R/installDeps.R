@@ -22,7 +22,7 @@ installDeps <- function() {
   			"rgeos")
   # Install required packages from CRAN (if not)
   .inst <- .pkgs %in% installed.packages()
-  if(length(.pkgs[!.inst]) > 0) install.packages(.pkgs[!.inst])
+  if(length(.pkgs[!.inst]) > 0) install.packages(.pkgs[!.inst], repos="http://cran.rstudio.com/")
 
   # Install from Github
   # TODO: Make this conditional on whether the source has changed
