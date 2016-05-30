@@ -384,6 +384,20 @@ generateFrequencies <- function() {
 	generateLocationFrequencies(vars.importance, importanceLabels)
 	generateLocationFrequencies(vars.yes_no, yesNoLabels)
 
+	generateEducationFrequencies(vars.frequency, frequencyLabels)
+	generateEducationFrequencies(vars.frequency.months, frequencyMonthLabels)
+	generateEducationFrequencies(vars.ease, easeLabels)
+	generateEducationFrequencies(vars.agreement, agreementLabels)
+	generateEducationFrequencies(vars.importance, importanceLabels)
+	generateEducationFrequencies(vars.yes_no, yesNoLabels)
+
+	generateOccupationFrequencies(vars.frequency, frequencyLabels)
+	generateOccupationFrequencies(vars.frequency.months, frequencyMonthLabels)
+	generateOccupationFrequencies(vars.ease, easeLabels)
+	generateOccupationFrequencies(vars.agreement, agreementLabels)
+	generateOccupationFrequencies(vars.importance, importanceLabels)
+	generateOccupationFrequencies(vars.yes_no, yesNoLabels)
+
 }
 
 
@@ -490,6 +504,7 @@ generateOccupationFrequenciesForAggregate <- function() {
 
 
 generateAggregateFrequences <- function() {
+	
 	generateAgeFrequenciesForAggregate()
 	generateGenderFrequenciesForAggregate()
 	generateStateFrequenciesForAggregate()
@@ -551,11 +566,6 @@ generateAllScatterMaps <- function() {
 	generateScatterMap(0, c("Q437"), frequencyMonthLabels)
 }
 
-generateAllMaps <- function() {
-	generateAllSA4Maps()
-	generateAllScatterMaps()
-}
-
 
 # Generate all subquestion charts
 generateSubQuestionCharts <- function() {
@@ -580,4 +590,19 @@ generateSubQuestionCharts <- function() {
 generatePrebuiltCorrelations <- function() {
   generateCorrelation("total.431", "Q436", "skills-education")
 
+}
+
+generateAllMaps <- function() {
+	generateAllSA4Maps()
+	generateAllScatterMaps()
+}
+
+runAll <- function() {
+	
+	generateFrequencies()
+	generateAggregateFrequences()
+	generateSubQuestionCharts()
+	generatePrebuiltCorrelations()
+	generateAllMaps()
+	
 }

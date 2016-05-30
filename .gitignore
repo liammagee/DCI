@@ -24,3 +24,6 @@ figs/**/*.png
 doc/**/*.html
 doc/**/*.pdf
 doc/**/*.docx
+
+# Ignore Visual Studio
+.vscode
