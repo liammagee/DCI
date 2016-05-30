@@ -24,7 +24,7 @@ obtainSA4 <- function(postcode) {
 initMaps <- function() {
   aus <- readOGR(dsn="data", layer="SA4_2011_AUST")
   aus.sim <- gSimplify(aus, tol=0.01, topologyPreserve=FALSE)
-  aus.sim <- as(aus.sim, "SpatialPolygonsDataFrame")
+  aus.sim <<- as(aus.sim, "SpatialPolygonsDataFrame")
   aus.sim@data$SA4_NAME11 <- aus@data$SA4_NAME11
   aus.sim@data$id = rownames(aus.sim@data)
   aus.points = fortify(aus.sim, region="id") #replaced aus.buffered with aus
