@@ -4,7 +4,7 @@ source("R/utils.R", FALSE)
 
 source("R/samplesForExpandedIndicators.R", FALSE)
 source("R/histograms.R", FALSE)
-INIT_MAPS <- FALSE
+INIT_MAPS <- TRUE
 source("R/maps.R", FALSE)
 source("R/indexFunctions.R", FALSE)
 source("R/multivariateAnalysis.R", FALSE)
@@ -329,8 +329,7 @@ augmented.data$Q434 <- round(rowMeans(augmented.data[,vars.resilience.harm.event
 augmented.data$Q435 <- round(rowMeans(augmented.data[,vars.resilience.harms.agreement.435]))
 augmented.data$Q437 <- round(rowMeans(augmented.data[,vars.interests.general.437]))
 
-# Make sure initMaps() is called first. Turn off when debugging
-# initMaps()
+# Make sure INIT_MAPS == TRUE is called first. Turn off when debugging
 augmented.data$SA4_NAME_2011 <- unlist(sapply(augmented.data$postcode, obtainSA4))
 augmented.data.with.coords <- initAugmentedDataWithCoords()
 

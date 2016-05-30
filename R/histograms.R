@@ -4,6 +4,7 @@ library(ggplot2)
 library(scales)
 library(reshape2)
 library(ggthemes)
+library(dplyr)
 
 
 # Global variables for graphs
@@ -824,7 +825,7 @@ graphSubQuestionFrequencies  <- function(vars, legend.name, legendBreakFunc, fil
 	# Obtain a melted, long version of the column data
 	m <- melt(data[,vars], id.vars = c(), na.rm = TRUE)
 	# Generate counts of the item data
-	cm <- count(m, c("variable", "value"))
+	cm <- plyr::count(m, c("variable", "value"))
 	# Recode, to solve problem with ggplotly and scale_fill_manual
 	cm$value.coded <- mapvalues(cm$value, from = 1:length(legendBreakFunc()), to = legendBreakFunc())
 	cm$value.coded.f <- factor(cm$value.coded, levels = legendBreakFunc())

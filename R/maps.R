@@ -21,14 +21,14 @@ obtainSA4 <- function(postcode) {
 
 
 # Initial work
-initMaps <- function() {
+if (INIT_MAPS) {
   aus <- readOGR(dsn="data", layer="SA4_2011_AUST")
   aus.sim <- gSimplify(aus, tol=0.01, topologyPreserve=FALSE)
   aus.sim <- as(aus.sim, "SpatialPolygonsDataFrame")
   aus.sim@data$SA4_NAME11 <- aus@data$SA4_NAME11
-  aus.sim@data$id = rownames(aus.sim@data)
-  aus.points = fortify(aus.sim, region="id") #replaced aus.buffered with aus
-  aus.df = join(aus.points, aus.sim@data, by="id")
+  aus.sim@data$id <- rownames(aus.sim@data)
+  aus.points <- fortify(aus.sim, region="id") #replaced aus.buffered with aus
+  aus.df <- join(aus.points, aus.sim@data, by="id")
 
   sa4s = read.csv("data/1270055006_CG_POSTCODE_2011_SA4_2011.csv")
   sa4s = sa4s[5:3115, 1:6]
@@ -40,10 +40,8 @@ initMaps <- function() {
             "PERCENTAGE")
   names(sa4s) = names
   sa4s = sa4s[3:3107,]
-  sa4s = sa4s[,2:5]
+  sa4s <- sa4s[,2:5]
   sa4s$POSTCODE = as.character(sa4s$POSTCODE)
-
-
 }
 
 initAugmentedDataWithCoords <- function() {
