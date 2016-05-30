@@ -40,7 +40,7 @@ initMaps <- function() {
             "PERCENTAGE")
   names(sa4s) = names
   sa4s = sa4s[3:3107,]
-  sa4s = sa4s[,2:5]
+  sa4s <<- sa4s[,2:5]
   sa4s$POSTCODE = as.character(sa4s$POSTCODE)
 
 
