@@ -24,7 +24,10 @@ output:
 
 
 ```{r setup, include=FALSE, echo=FALSE}
-library(captioner)
+if (!require("captioner")) {
+  devtools::install_github("adletaw/captioner")
+  library(captioner)
+}
 library(pryr)
 
 knitr::opts_knit$set(root.dir="..")
