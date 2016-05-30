@@ -11,8 +11,16 @@ generateCorrelation <- function(var1, var2, label) {
     geom_point(shape = 19, size = 2) +    # Use hollow circles
     geom_smooth(colour = "red", fill = "lightgreen", method = lm) +
     geom_text(x = 3, y = 3,
-            label = corr_eqn(data.scaled$var1,
-                             data.scaled$var2), parse = TRUE) +
+            label = corrEqn(data.scaled[,var1],
+                             data.scaled[,var2]), parse = TRUE)
+
+   if (PRINTING) {
+ 		ggsave(file = paste("./figs/correlation/", label, ".png", sep = ""),
+ 		  width = png.width,
+ 		  height = png.height
+ 		)
+ 	}
+
   return (g)
 }
 
@@ -20,6 +28,14 @@ generateCorrelationsExploratory <- function() {
   cors.index <- cor(data.scaled[,vars.index], method = "spearman")
   g <- qplot(x=Var1, y=Var2, data=melt(cors.index), fill=value, geom="tile") +
     scale_fill_gradient2(limits=c(-1, 1))
+
+  if (PRINTING) {
+		ggsave(file = "figs/correlation/exploratory-matrix.png",
+		  width = png.width,
+		  height = png.height
+		)
+	}
+
   return (g)
 }
 
@@ -67,7 +83,7 @@ generateCorrelations_test <- function() {
 	  scale_fill_gradient2(limits=c(-1, 1))
 	ggsave(file = "figs/correlation-matrix-3.png", width = 8, height = 6)
 
-  
+
   # Test regression and multicollinearity
 	library(psych)
 	library(car)

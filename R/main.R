@@ -504,7 +504,7 @@ generateOccupationFrequenciesForAggregate <- function() {
 
 
 generateAggregateFrequences <- function() {
-	
+
 	generateAgeFrequenciesForAggregate()
 	generateGenderFrequenciesForAggregate()
 	generateStateFrequenciesForAggregate()
@@ -598,11 +598,11 @@ generateAllMaps <- function() {
 }
 
 runAll <- function() {
-	
+
 	generateFrequencies()
 	generateAggregateFrequences()
 	generateSubQuestionCharts()
 	generatePrebuiltCorrelations()
 	generateAllMaps()
-	
+
 }
