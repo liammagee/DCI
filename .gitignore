@@ -24,6 +24,7 @@ figs/**/*.png
 doc/**/*.html
 doc/**/*.pdf
 doc/**/*.docx
+doc/DCI_files/*
 
 # Ignore Visual Studio
 .vscode
