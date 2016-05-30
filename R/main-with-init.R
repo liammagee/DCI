@@ -4,7 +4,7 @@ source("R/utils.R", FALSE)
 
 source("R/samplesForExpandedIndicators.R", FALSE)
 source("R/histograms.R", FALSE)
-INIT_MAPS = TRUE
+INIT_MAPS <- TRUE
 source("R/maps.R", FALSE)
 source("R/indexFunctions.R", FALSE)
 source("R/multivariateAnalysis.R", FALSE)

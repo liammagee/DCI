@@ -21,7 +21,7 @@ obtainSA4 <- function(postcode) {
 
 
 # Initial work
-if (INIT_MAPS == TRUE) {
+if (INIT_MAPS) {
   aus <- readOGR(dsn="data", layer="SA4_2011_AUST")
   aus.sim <- gSimplify(aus, tol=0.01, topologyPreserve=FALSE)
   aus.sim <- as(aus.sim, "SpatialPolygonsDataFrame")
