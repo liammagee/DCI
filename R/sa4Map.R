@@ -127,9 +127,19 @@ df = left_join(DCI_DATA, location, by = c("POSTCODE" = "postcode"))
 df[3827, "lat"] = -34.75513
 df[3827, "lon"] = 139.30616
 
-# Allows font to be used
-# Only neccessary for Windows
+# Allows font to be used, only neccessary for Windows
 windowsFonts(Times=windowsFont("TT Times New Roman"))
+
+#Change the numbers 1-7 to their response text
+df$Q431_26 = factor(df$Q431_26, labels=c(
+  "Several times per day",
+  "Daily",
+  "Weekly",
+  "Monthly",
+  "Less than Once a Month",
+  "Never",
+  "Don't know")
+)
 
 scatter =
   ggplot() +
@@ -160,21 +170,12 @@ scatter =
 
   ###The Transparent Jittered Scatterplot###
   geom_point(data = df, 
-             aes(lon, lat, colour = factor(df$Q431_26,labels=c(
-               "Several times per day",
-               "Daily",
-               "Weekly",
-               "Monthly",
-               "Less than Once a Month",
-               "Never",
-               "Don't know")
-               )),
+             aes(lon, lat, colour = Q431_26),
              position = position_jitter(00.004, 00.004),
              alpha = 0.05) +
   coord_equal(xlim = c(110, 155), 
               ylim = c(-45, -10)) +
-  scale_colour_gradient(high = "#132B43", 
-                        low = "#56B1F7") +
+  scale_colour_brewer() +
   ggtitle("Replace with int.name")
 
 
