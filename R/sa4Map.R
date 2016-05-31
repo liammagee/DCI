@@ -15,14 +15,14 @@ aus.points = fortify(aus, region="id") #replaced aus.buffered with aus
 aus.df = join(aus.points, aus@data, by="id")
 
 graph =
-ggplot(aus.df) +
+  ggplot(aus.df) +
   aes(long,lat,group=group,fill=SA4_NAME11)+
   #Don't want a legend with 150 variables so suppress the legend
   geom_polygon(show_guide = FALSE ) +
   geom_path(color="white") +
   #for some reason it maps too much ocean so limit coords (EDIT: due to Christmas Island)
   coord_equal(xlim = c(110, 155), ylim = c(-45, -10)) +
-  scale_fill_hue(c=90, l=90) +
+  scale_fill_hue(c=10, l=90) +
   theme(
     panel.background = element_blank(),
     panel.border = element_blank(),
@@ -89,12 +89,12 @@ View(data[, c("POSTCODE", "SA4_NAME_2011")])
 
 # Summarise data by SA4 area for a question
 merged = 
-( data %>%
-  group_by( SA4_NAME_2011 ) %>%
-  summarise( median = median(Q431_26),
-             average = mean(Q431_26) ) %>%
-  left_join( aus@data, ., by = c("SA4_NAME11" = "SA4_NAME_2011") )
-)
+  ( data %>%
+      group_by( SA4_NAME_2011 ) %>%
+      summarise( median = median(Q431_26),
+                 average = mean(Q431_26) ) %>%
+      left_join( aus@data, ., by = c("SA4_NAME11" = "SA4_NAME_2011") )
+  )
 
 aus@data = merged
 aus.points = fortify(aus, region="id") #replaced aus.buffered with aus
@@ -127,24 +127,56 @@ df = left_join(DCI_DATA, location, by = c("POSTCODE" = "postcode"))
 df[3827, "lat"] = -34.75513
 df[3827, "lon"] = 139.30616
 
-jitter =
-ggplot(df) +
-  aes(lon, lat, colour = Q431_26) +
-  geom_point( position = position_jitter(00.004, 00.004),
-              alpha = 0.05) +
-  coord_equal(xlim = c(110, 155), ylim = c(-45, -10)) +
-  scale_colour_gradient( high = "#132B43", low = "#56B1F7")
+# Allows font to be used
+# Only neccessary for Windows
+windowsFonts(Times=windowsFont("TT Times New Roman"))
 
-nojitter =
-  ggplot(df) +
-  aes(lon, lat, colour = Q431_26) +
-  geom_point() +
-  coord_equal(xlim = c(110, 155), ylim = c(-45, -10)) +
-  scale_colour_gradient( high = "#132B43", low = "#56B1F7")
+scatter =
+  ggplot() +
 
-ggplotly(jitter)
-ggplotly(nojitter)
+  ###The Background Map###
+  #Don't want a legend with 150 variables so suppress the legend
+  #geom_polygon(data = aus.df, 
+  #             aes(long, lat, group = group, fill = SA4_NAME11), 
+  #             show_guide = FALSE ) +
+  geom_path(data = aus.df, 
+            aes(long, lat, group = group, fill = SA4_NAME11), 
+            color="#DFDFDF") +
+  #for some reason it maps too much ocean so limit coords (EDIT: due to Christmas Island)
+  #scale_fill_hue(c=10, 
+  #               l=90) +
+  theme(
+    panel.background = element_blank(),
+    panel.border = element_blank(),
+    axis.line = element_blank(),
+    axis.text = element_blank(),
+    axis.title = element_blank(),
+    axis.ticks = element_blank(),
+    plot.title = element_text(family = "Times", 
+                              color="#000000", 
+                              size=32),
+    legend.title = element_blank()
+    ) +
 
-temp =
-  df %>%
-  group_by(POSTCODE)
+  ###The Transparent Jittered Scatterplot###
+  geom_point(data = df, 
+             aes(lon, lat, colour = factor(df$Q431_26,labels=c(
+               "Several times per day",
+               "Daily",
+               "Weekly",
+               "Monthly",
+               "Less than Once a Month",
+               "Never",
+               "Don't know")
+               )),
+             position = position_jitter(00.004, 00.004),
+             alpha = 0.05) +
+  coord_equal(xlim = c(110, 155), 
+              ylim = c(-45, -10)) +
+  scale_colour_gradient(high = "#132B43", 
+                        low = "#56B1F7") +
+  ggtitle("Replace with int.name")
+
+
+###Interactive Plotly Map###
+ggplotly(scatter)
