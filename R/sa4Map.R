@@ -151,7 +151,8 @@ scatter =
   #             show_guide = FALSE ) +
   geom_path(data = aus.df, 
             aes(long, lat, group = group, fill = SA4_NAME11), 
-            color="#DFDFDF") +
+            color="#DFDFDF",
+            alpha = 0.05) +
   #for some reason it maps too much ocean so limit coords (EDIT: due to Christmas Island)
   #scale_fill_hue(c=10, 
   #               l=90) +
@@ -171,12 +172,12 @@ scatter =
   ###The Transparent Jittered Scatterplot###
   geom_point(data = df, 
              aes(lon, lat, colour = Q431_26),
-             position = position_jitter(00.004, 00.004),
-             alpha = 0.05) +
+             position = position_jitter(00.004, 00.004)) +
   coord_equal(xlim = c(110, 155), 
               ylim = c(-45, -10)) +
   scale_colour_brewer() +
-  ggtitle("Replace with int.name")
+  ggtitle("Replace with int.name") +
+  guides(colour = guide_legend(override.aes = list(alpha = 1)))
 
 
 ###Interactive Plotly Map###
