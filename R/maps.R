@@ -99,12 +99,14 @@ generateSA4Map <- function(x, vars, func, palette = yawcrcPalette) {
 
   aus.df = join(aus.points, merged5, by="id")
 
+  break.labels <- func()
+  break.points <- seq(1:length(break.labels))
   # Plotting with merged data
   g <- ggplot(aus.df) +
     aes(x = long, y = lat, group = group, fill = median) +
     #Don't want a legend with 150 variables so suppress the legend
     geom_polygon()  +
-    scale_fill_continuous(breaks = c(1, 2, 3, 4, 5, 6), labels = func())  +
+    scale_fill_continuous(breaks = break.points, labels = break.labels)  +
     #for some reason it maps too much ocean so limit coords (EDIT: due to Christmas Island)
     coord_equal(xlim = c(110,155)) +
     #scale_fill_gradient( ) +
