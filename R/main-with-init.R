@@ -4,7 +4,7 @@ source("R/utils.R", FALSE)
 
 source("R/samplesForExpandedIndicators.R", FALSE)
 source("R/histograms.R", FALSE)
-INIT_MAPS <- TRUE
+INIT_MAPS <- TRUE 
 source("R/maps.R", FALSE)
 source("R/indexFunctions.R", FALSE)
 source("R/multivariateAnalysis.R", FALSE)
@@ -235,6 +235,8 @@ augmented.data$gender[augmented.data$Q1 == 195] <- "Other"
 augmented.data$gender[augmented.data$Q1 == 196] <- "Refused"
 augmented.data$state[augmented.data$STATE1 == 1] <- "ACT"
 augmented.data$postcode <- as.character(augmented.data$Q2_197_OTHER)
+# Add leading '0', to match SA4 codes for 3-digit postcodes
+augmented.data[nchar(augmented.data$postcode)==3,]$postcode <- paste("0",augmented.data[nchar(augmented.data$postcode)==3,]$postcode, sep="")
 augmented.data$state[augmented.data$STATE1 == 2] <- "NSW"
 augmented.data$state[augmented.data$STATE1 == 3] <- "VIC"
 augmented.data$state[augmented.data$STATE1 == 4] <- "QLD"
@@ -329,7 +331,8 @@ augmented.data$Q434 <- round(rowMeans(augmented.data[,vars.resilience.harm.event
 augmented.data$Q435 <- round(rowMeans(augmented.data[,vars.resilience.harms.agreement.435]))
 augmented.data$Q437 <- round(rowMeans(augmented.data[,vars.interests.general.437]))
 
-# Make sure INIT_MAPS == TRUE is called first. Turn off when debugging
+# Make sure initMaps() is called first. Turn off when debugging
+# initMaps()
 augmented.data$SA4_NAME_2011 <- unlist(sapply(augmented.data$postcode, obtainSA4))
 augmented.data.with.coords <- initAugmentedDataWithCoords()
 
@@ -518,52 +521,90 @@ generateAllSA4Maps <- function() {
 
 	# Generate maps for single statements
 	generateSA4MapForVariable(vars.frequency, frequencyLabels)
+	print("generateSA4MapForVariable(vars.frequency, frequencyLabels)")
 	generateSA4MapForVariable(vars.frequency.months, frequencyMonthLabels)
+	print("generateSA4MapForVariable(vars.frequency.months, frequencyMonthLabels)")
 	generateSA4MapForVariable(vars.ease, easeLabels)
+	print("generateSA4MapForVariable(vars.ease, easeLabels)")
 	generateSA4MapForVariable(vars.agreement, agreementLabels)
+	print("generateSA4MapForVariable(vars.agreement, agreementLabels)")
 	generateSA4MapForVariable(vars.importance, importanceLabels)
+	print("generateSA4MapForVariable(vars.importance, importanceLabels)")
 	generateSA4MapForVariable(vars.yes_no, yesNoLabels)
+	print("generateSA4MapForVariable(vars.yes_no, yesNoLabels)")
 
 	# Generate maps for variable aggregates
 	generateSA4Map(0, c("Q74"), frequencyLabels)
+	print("generateSA4Map(0, c(Q74), frequencyLabels)")
 	generateSA4Map(0, c("Q287"), importanceLabels)
+	print("generateSA4Map(0, c(Q287), importanceLabels)")
 	generateSA4Map(0, c("Q341"), agreementLabels)
+	print("generateSA4Map(0, c(Q341), agreementLabels)")
 	generateSA4Map(0, c("Q343"), frequencyMonthLabels)
+	print("generateSA4Map(0, c(Q343), frequencyMonthLabels)")
 	generateSA4Map(0, c("Q352"), frequencyMonthLabels)
+	print("generateSA4Map(0, c(Q352), frequencyMonthLabels)")
 	generateSA4Map(0, c("Q353"), agreementLabels)
+	print("generateSA4Map(0, c(Q353), agreementLabels)")
 	generateSA4Map(0, c("Q428"), agreementLabels)
+	print("generateSA4Map(0, c(Q428), agreementLabels)")
 	generateSA4Map(0, c("Q429"), agreementLabels)
+	print("generateSA4Map(0, c(Q429), agreementLabels)")
 	generateSA4Map(0, c("Q430"), importanceLabels)
+	print("generateSA4Map(0, c(Q430), importanceLabels)")
 	generateSA4Map(0, c("Q431"), easeLabels)
+	print("generateSA4Map(0, c(Q431), easeLabels)")
 	generateSA4Map(0, c("Q434"), frequencyMonthLabels)
+	print("generateSA4Map(0, c(Q434), frequencyMonthLabels)")
 	generateSA4Map(0, c("Q435"), agreementLabels)
+	print("generateSA4Map(0, c(Q435), agreementLabels)")
 	generateSA4Map(0, c("Q437"), frequencyMonthLabels)
+	print("generateSA4Map(0, c(Q437), frequencyMonthLabels)")
 }
 
 generateAllScatterMaps <- function() {
 
 	# Generate maps for single statements
-	generateScatterMapForVariable(vars.frequency, frequencyLabels)
+	generateScatterMapForVariable(vars.frequency, frequencyLabels, yawcrcPalette6)
+	print("generateScatterMapForVariable(vars.frequency, frequencyLabels, yawcrcPalette6)")
 	generateScatterMapForVariable(vars.frequency.months, frequencyMonthLabels)
+	print("generateScatterMapForVariable(vars.frequency.months, frequencyMonthLabels)")
 	generateScatterMapForVariable(vars.ease, easeLabels)
+	print("generateScatterMapForVariable(vars.ease, easeLabels)")
 	generateScatterMapForVariable(vars.agreement, agreementLabels)
+	print("generateScatterMapForVariable(vars.agreement, agreementLabels)")
 	generateScatterMapForVariable(vars.importance, importanceLabels)
+	print("generateScatterMapForVariable(vars.importance, importanceLabels)")
 	generateScatterMapForVariable(vars.yes_no, yesNoLabels)
+	print("generateScatterMapForVariable(vars.yes_no, yesNoLabels)")
 
 	# Generate maps for variable aggregates
-	generateScatterMap(0, c("Q74"), frequencyLabels)
+	generateScatterMap(0, c("Q74"), frequencyLabels, yawcrcPalette6)
+	print("generateScatterMap(0, c(Q74), frequencyLabels, yawcrcPalette6)")
 	generateScatterMap(0, c("Q287"), importanceLabels)
+	print("generateScatterMap(0, c(Q287), importanceLabels)")
 	generateScatterMap(0, c("Q341"), agreementLabels)
+	print("generateScatterMap(0, c(Q341), agreementLabels)")
 	generateScatterMap(0, c("Q343"), frequencyMonthLabels)
+	print("generateScatterMap(0, c(Q343), frequencyMonthLabels)")
 	generateScatterMap(0, c("Q352"), frequencyMonthLabels)
+	print("generateScatterMap(0, c(Q352), frequencyMonthLabels)")
 	generateScatterMap(0, c("Q353"), agreementLabels)
+	print("generateScatterMap(0, c(Q353), agreementLabels)")
 	generateScatterMap(0, c("Q428"), agreementLabels)
+	print("generateScatterMap(0, c(Q428), agreementLabels)")
 	generateScatterMap(0, c("Q429"), agreementLabels)
+	print("generateScatterMap(0, c(Q429), agreementLabels)")
 	generateScatterMap(0, c("Q430"), importanceLabels)
+	print("generateScatterMap(0, c(Q430), importanceLabels)")
 	generateScatterMap(0, c("Q431"), easeLabels)
+	print("generateScatterMap(0, c(Q431), easeLabels)")
 	generateScatterMap(0, c("Q434"), frequencyMonthLabels)
+	print("generateScatterMap(0, c(Q434), frequencyMonthLabels)")
 	generateScatterMap(0, c("Q435"), agreementLabels)
+	print("generateScatterMap(0, c(Q435), agreementLabels)")
 	generateScatterMap(0, c("Q437"), frequencyMonthLabels)
+	print("generateScatterMap(0, c(Q437), frequencyMonthLabels)")
 }
 
 
