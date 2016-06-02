@@ -103,18 +103,23 @@ generateSA4Map <- function(x, vars, func, palette = yawcrcPalette) {
   g <- ggplot(aus.df) +
     aes(x = long, y = lat, group = group, fill = median) +
     #Don't want a legend with 150 variables so suppress the legend
-    geom_polygon() +
+    geom_polygon()  +
+    scale_fill_continuous(breaks = c(1, 2, 3, 4, 5, 6), labels = func())  +
     #for some reason it maps too much ocean so limit coords (EDIT: due to Christmas Island)
     coord_equal(xlim = c(110,155)) +
-    scale_fill_gradient( ) +
+    #scale_fill_gradient( ) +
     theme(
       panel.background = element_blank(),
       panel.border = element_blank(),
       axis.line = element_blank(),
       axis.text = element_blank(),
       axis.title = element_blank(),
-      axis.ticks = element_blank()
-    )
+      axis.ticks = element_blank(),
+      #family = "Times",
+      plot.title = element_text(color="#404040",
+                                size=14),
+      legend.title = element_blank()
+    ) + ggtitle(unlist(metadata$Name))
 
   full.file <- paste("./figs/maps/", var.name, "_clusters.png", sep="")
 
@@ -184,9 +189,9 @@ generateScatterMap <- function(x, vars, func, palette = yawcrcPalette) {
       axis.text = element_blank(),
       axis.title = element_blank(),
       axis.ticks = element_blank(),
-      plot.title = element_text(family = "Times",
-                                color="#404040",
-                                size=18),
+      #family = "Times",
+      plot.title = element_text(color="#404040",
+                                size=14),
       legend.title = element_blank()
       ) +
 

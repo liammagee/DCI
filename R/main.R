@@ -235,6 +235,8 @@ augmented.data$gender[augmented.data$Q1 == 195] <- "Other"
 augmented.data$gender[augmented.data$Q1 == 196] <- "Refused"
 augmented.data$state[augmented.data$STATE1 == 1] <- "ACT"
 augmented.data$postcode <- as.character(augmented.data$Q2_197_OTHER)
+# Add leading '0', to match SA4 codes for 3-digit postcodes
+augmented.data[nchar(augmented.data$postcode)==3,]$postcode <- paste("0",augmented.data[nchar(augmented.data$postcode)==3,]$postcode, sep="")
 augmented.data$state[augmented.data$STATE1 == 2] <- "NSW"
 augmented.data$state[augmented.data$STATE1 == 3] <- "VIC"
 augmented.data$state[augmented.data$STATE1 == 4] <- "QLD"
