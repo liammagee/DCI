@@ -123,7 +123,7 @@ generateSA4Map <- function(x, vars, func, palette = yawcrcPalette) {
       legend.title = element_blank()
     ) + ggtitle(unlist(metadata$Name))
 
-  full.file <- paste("./figs/maps/", var.name, "_clusters.jpg", sep="")
+  full.file <- paste("./figs/maps/", var.name, "_clusters.png", sep="")
 
 	# Save the plot
 	if (PRINTING) {
@@ -211,7 +211,7 @@ generateScatterMap <- function(x, vars, func, palette = yawcrcPalette) {
                                                      size = 10)))
 
 
-  full.file <- paste("./figs/maps/", var.name, "_scatter.jpg", sep="")
+  full.file <- paste("./figs/maps/", var.name, "_scatter.png", sep="")
 
 	# Save the plot
 	if (PRINTING) {
