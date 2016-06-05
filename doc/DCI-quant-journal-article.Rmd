@@ -38,7 +38,7 @@ knitr::opts_chunk$set(echo = FALSE, warning=FALSE, message=FALSE)
 setwd("..")
 
 
-source("R/main.R", FALSE)
+source("R/main-with-init.R", FALSE)
 PRINTING <- FALSE
 
 # Set to false for non-HTML (e.g. word, pdf) outputs
@@ -133,7 +133,7 @@ Our definition and analysis of digital capacities foregrounds two implications o
 
 The second implication draws upon the exogenous social factors that impact upon the development of digital capacities. Policy change, community orientations, geographic proximity to centres of technology, and economic investment, particularly in infrastructure and innovation, act as spurs to the production of new capacities. It is a truism, bourn out in recent STS qualitative analyses of households, communities and workplaces, that technology skills not develop in isolation of their social context. Yet this relational dimension is underplayed in recent quantitative studies of skills and competencies in particular. In our own survey instrument, we seek to draw out the importance of various aspects of this relationality.
 
-We elaborate upon both of these implications in our account of digital capacities below. We then discuss a pilot study that operationalises that account through a pilot survey of 2,000 Australian individuals. We present in some detail our procedure for arriving at a set of four themes, or what we term "critical issues", and associate variables or indicators of capacities. We then present the results of the study, highlighting significant findings by demographic variables and relationships. We conclude with observations on what these results say about digital capacities of Australians in 2016, and on the methodological prospects for adapting the instrument to measure capacities in other times and places.
+We elaborate upon both of these implications in our account of digital capacities below. We then discuss a study that operationalises that account, as part of a larger research project, through a survey of 2,000 Australian individuals. We present in some detail our procedure for arriving at a set of four themes, or what we term "critical issues", and associate variables or indicators of capacities. We then present the results of the survey, highlighting significant findings by demographic variables and relationships. We conclude with observations on what these results say about digital capacities of Australians in 2016, and on the methodological prospects for adapting the instrument to measure capacities in other times and places.
 
 
 <!--
@@ -155,15 +155,80 @@ https://www.githubarchive.org/
 
 
 
-## Towards a Definition of Digital Capacity
+## Towards an Approach for Defining Digital Capacity
+
+
+Acknowledging the dynamic nature of digital capacities, we argue defining digital capacity is a necessarily unstable task. Instead we have sought to develop an approach that withstands the temporariness of specific measures and indicators. That approach draws from the substantive literature on indicators developed in recent community and social sustainability studies. In spite of the distinct difference in domain, this literature seeks to address many of the concerns we raise in our _Introduction__ above. First, it recognises that meanings of sustainability are highly fluid and contested across geographical and temporal boundaries. Significant issues for one community or social group may be minor for another, and with the passing of time, these issues may become more or less relevant even for the same community. As much as there are strong demands for standardisation and comparability in sustainability measurement, indicators must also eveolve in line with the issues that matter [@magee2012issues]. Seccond, and in keeping with the fluid definitions of sustainability, this literature has argued that the procedures for selecting, weighting and applying indicators ought to include diverse community and expert stakeholders - they must, in other words, support "bottom-up" as much as "top-down" processes of deliberation. Third, the choice of measures should be open to frequent iteration and revision; indicators that fail to communicate to communities must be revised for those that do.
+
+In the very different context of digital capacity, these affordances still hold considerable weight, and we argue some degree of context sensitivity is equally important to measurement in this field. Of the numerous methods for indicator development, we adopted 'Circles of Sustainability' [@james2014urban] on the basis of some of the authors' familiarity the approach in prior urban fieldwork. Used by the United Nations Global Compact Cities Programme, the World Association of Major Metropolises, World Vision, and a number of local governments to support their engagement in cities, the approach treats social life as made up of four key domains of economy, ecology, politics and culture. It also proposes a sequential, iterative and consultative process for selecting and refining measures.
+
+Within that scheme, the approach further suggests two lower order constructs of _issues_ and _indicators_ be developed through two related consultative sessions during a design phase of measurement tools. The purpose of the first session, termed an "Issue Selection" workshop, is to brainstorm and solicit the key areas of concern - and related objectives to be pursued - for the community of interest. The second session, termed an "Indicator Ratification" workshop, selects and decides upon a series of specific indicators to measure progress towards those objectives. Between and after those two events, the project team collates, drafts and finalises the indicators. Both issues and indicators can be developed organically, through community consultation; through reference to existing literature; or through some combination of these two activities.
+
+The end product of this process is one or more measurement instruments. These can be both qualitative and quantitative; administered to people, in the case of subjective or person-centric measures, or applied to objects, in the case of objective or environment-centric measures; and developed through secondary as much as primary sources, in the case of existing official, academic or publicly available data. Results from these measurements chart a series that indicates variation over time.
+
+In outlining our application of this approach in our 'Methods' section below, we make several adaptations that reflect both the theoretical distinctions between sustainability and digital capacities, and the specific conditions of our study. In particular we adapt and extend recent literature on measures of digital competencies, safety, inclusion and engagement, as we discuss further in the "Methods" section below. We identify and align relevant indicators against each of the four domains, to produce a series of economic, ecological, political and cultural indicators that at the same time correspond, where possible, to prior studies of relevant capacities.
+
+Given our unit of analysis - families across the continent of Australia - we also did not include community representatives in our issues and indicator workshops. Instead we conducted a series of household visits and interviews with a diverse group of eight families; results of these studies informed both our own workshops and the subsequent survey design and pilotting. Given our view that sensitivity to technological, cultural and geographic contexts are critical to any measurement of digital capacitiy, in addition to the direct findings of our study part of our concluding observations also reflect upon these adaptations, and particularly upon the feasibility of a reusable and repeatable process - rather than instrument - for the ongoing measurement of digital capacity.
+
+
+
+## Measuring the Digital Capacity of Australian Families
+
+
+### Selecting Issues
+
+In line with other studies of digital measurement, our central device for measuring digital capacities is a survey administered to a representative sample of Australian individuals. We recruited an online panel provider to recruit participants. The panel provider was asked to ensure the sample was weighted by age, gender and location - the latter represented by postcode. We also requested a boosted sample of young people aged 12-17, so we could undertake further specific analysis of how digital capacities are developing among Australian youth.
+
+Data collection took place in February 2016. Prior to this, we conducted a series of activities in line with the recommendations of the _Circles_ approach. First we conducted a general scan of literature relating to digital capacities and a broad range of cognitively associated terms commonly attached to the _digital_: accessability, divide, inclusion / exclusion, experience, safety, competencies, literacy, "nativivty", regulatory environments, and comparative digital development. As the latter term suggests, we sought to incorporate non-social measures of digitality, such as the market and technological availability of capacities. We then conducted an initial "issues" workshop with six members of the project team [check this - Emma, Paul, Amanda, Pip, Liam, Delphine?] to develop key areas or dimensions of digital capacities. This produced a set of ten quite abstract areas or issues that could be used to group more specific variables and measures. We outline each of these, with brief descriptions, in the list below:
+
+ - Situational: demographic details about individuals, including their access to digital technology.
+ - Interests: what motivates individuals to use digital technologies.
+ - Competencies: what skills and abilities individuals possess for using digital technologies.
+ - Resilience: what risks and harms individuals experience when using digital technologies, and how they manage these.
+ - Social Connectedness: how individuals interact with others - both online and offline - to develop and use their capacities.
+ - Engagement: how individuals engage both with digital technologies, and with other - economic, political, cultural or environmental - issues through those technologies.
+ - Inclusion: how well individuals and social groups are able to access and participate in forms of digital activity.
+ - Policy Environment: the state of legal frameworks supporting access, skill development and other forms of digital participation.
+ - Infrastructure: the level and quality of development of digital technology (including the cost, availability and speed of broadband and Wifi connectivity, and the availability of routers, modems, cabling, devices and software)
+ - Consequence: the impacts of using digital technology, including generation of e-waste and pollution, costs of technology change, and increased surveillance and invasion of privacy.
+
+These issues emcompassed, in our view, a wide range of what we mean by "digital capacities" in Australia in 2016. They cover both positive and negative aspects of technology use; individual and social dimensions; and both human and non-human types of capacities. However this effort at comprehensiveness proved too large for instrumentation into a survey that could be administered in an online environment. Certain issues - particularly _Policy Environment_ and _Infrastructure_ - were also not amenable to measurement through a survey, due to varying levels of awareness.
+
+We reduced this set to shorter set of five issues: _Situational_, _Interests_, _Competencies_, _Resilience_ and _Social Connectedness_. To refine the original list of issues, and to help identify particular measures might be relevant in the current Australian context, we leant upon the findings drawn from our interviews with eight families. These interviews highlighted the strong interdependence of capacities within the household. Family members shared devices, helped eachother with connectivity and other technical issues, and spent considerable time - contrary to some arguments about the isolating effects of technology - in communal living areas engaging with their devices. This suggested that what we term 'connectedness', which extends to neighbourly, communitarian and online social interactions, plays a vital role in the development of digital dispositions. Further, our preliminary literature scan suggested that the ways people support each other in the development of their capacities has been comparatively neglected. This reliance upon others in physical or digital proximity warranted particular attention in our own study.
+
+For other issues, the process of selection was more straightforward. _Situational_ characteristics allowed for analysis of capacities by demographic and financial wellbeing. _Interests_ and _Competencies_ were motivated by our desire to understand why, and how well, individuals interact with digital technologies. Our interest in _Resilience_ reflected a topical interest in both the risks individuals - particularly young people - are exposed to through their online activities, as well as their capacities to cope with and manage these risks.
+
+
+### Selecting Indicators
+
+With the exception of _Connectedness_, indicators of our selected categories are well developed in the literature. As a further step in preparing the survey, we conducted a more detailed search of other quantitative studies that developed and applied measures of these particular capacities.  In particular we drew from 'Kids Online' [@livingstone2010risks], Helsper's [-@helsper2012corresponding] 'Corresponding fields model', a study by Humphry [-@humphry2014importance] of mobile use among homeless populations, and indicators compiled by the [Young and Well CRC](http://www.youngandwellcrc.org.au/) [-@crc2013standardmeasures], a large Australian-based research initiative that has explored how digital technologies can better support young people's wellbeing. Other indicators were developed by the *Digital Capacities Index* team. These indicators were compiled into a database of approximately 430 indicators ^[Note: should link to an online open access version. Would need clearance from various authors].
+
+This database formed the basic input to a follow-up all day workshop to select indicators. A number of indicators were flagged as duplicates; those remaining were scored on a simple three-point scale for relevance to our five nominated issues and the Australian context. Some measures of _Engagement_, _Inclusion_ and _Consequences_, taken from other surveys, were integrated into _Connectedness_. Time constraints on the length of the survey - approximately 25 minutes for completion, including consent forms and demographic variables - seveely limited the number that could be included. The workshop nominated approximately 60 'candidate' indicators to carry forward to pilotting; these were eventually limited to a subset of 26 questions; 11 relating to demographic and other situational characteristics, and the remaining 15 spread across the other 4 issues (see _Appendex 1_ ). All but two of these questions contained varying number of statements, scaled according to (a) frequency of various online behaviour, (b) levels of agreement with statements about digital capacities, (c) perceived importance of online activities and (d) ease of use of digital technologies. The remaining two, relating to support given or received, included 'yes/no' responses.
+
+
+### Survey Administration
+
+In the latter months of 2015, the survey was pilotted with approximately 20 test respondents. Feedback from the pilot was incorporated into the final draft administered to the sample in early 2016. The survey included a total of `r format(sampleSize(), big.mark   = ",")` participants. We requested the survey provider provide a panel in terms of age groups, gender and geographic regions. As the panel provider recruited participants online, our sample is expected to be skewed towards Australian citizens and families with comparatively high digital capacities. This caveat is signficant to the interpretation of our results below.
+
+[Further Details - Delphine]
+
+
+### Theorisation of Indicator relationships
+
+A potential weakness of our consultative and syncretic approach to indicator develoment is that theorisation of relationships between both higher-order issues (_Interests_, _Connectedness_ etc) can need to be reconstructed _post facto_. We use two approaches to dealing with this risk. First, we draw upon several of the relationships developed in the studies that have been sources of our indicators, and supplement these with our own additional hypotheses. Second, we employ exploratory factor analysis and principal component analysis. The latter analysis helps determine whether specific indicators adequately.
+
+[Discussion with Delphine on "top-down" theories].
+
+
+[Discussion on "bottom-up" theories].
+
 
 <!--
-This account attempts to work in two ways: through an integration of the fast growing literature that discusses measurement of various types of what we have here
--->
 
-## Methodology
+### Old Methods discussion.
 
-The development of the Digital Capacity Index uses a mixed-methods approach:
+The development of the Digital Capacity Index uses a mixed methods approach.
+
 
 1.  Data collected from international consultations, literature scans and interviews with Australian stakeholders have been used to build the database of relevant capacity definitions, metrics and indicators.
 2.  Eight in-depth qualitative case studies has been conducted in parallel with other aspects of developing and evaluating the index and any associated instruments. These case studies illuminates the digital capacity challenges faced by particular communities and across three generations (children, their parents and their grandparents). This in-depth qualitative data is vital to communicating the diversity and complexity of the experience of digital capacity to policy makers, service providers and other vested parties. They identify specific aspects of capacity that warrant either adding new indicators, or weighting existing indicators. Data collected through these studies augment the quantitative evaluation.
@@ -171,7 +236,9 @@ The development of the Digital Capacity Index uses a mixed-methods approach:
 4.  The Index are being progressively and iteratively refined based on the qualitative and pilot survey data before being run online with a targeted sample of 16 – 25, 45 – 60 and 65 – 75 year olds.
 5.  Data has been analysed and compiled to produce a report on the digital capacity of Australian families.
 
-These methods are coordinated within an integrated and holistic theoretical approach. We adapt and extend recent work – for example on digital safety and digital inclusion, which we view as a prerequisites but not equivalent to the broader idea of “digital capacity”. To establish a framework for assessing different dimensions of digital capacity, we propose drawing upon the [Circles of Social Life approach](http://www.circlesofsustainability.org/). Used by the United Nations Global Compact Cities Programme, the World Association of Major Metropolises, World Vision, and a number of local governments to support their engagement in cities, the approach treats social life as made up of four domains of practice — the economic, the ecological, the political and the cultural. In the context of digital capacity, we would identify and align specific indicators against each of these fields. We list some strictly indicative examples below:
+
+
+Examples of indicators include:
 
 * Economic:   capacity to use digital resources to improve job readiness; use of technology to derive income; perceived significance of digital skills and competencies in future employment
 * Ecological:     levels of concern about online safety i.e. perceived safety and security operating in various online ‘spaces’; capacity to locate and deploy privacy and security tools; management of technology (both use and abuse) within the household; use of maps to understand local and global environments
@@ -193,15 +260,761 @@ We further distinguished questions into the following key thematic areas, or wha
 
 These four issues were distilled from a list of nine issues that also included *Engagement*, *Inclusion*, *Policy Environment*, *Infrastructure* and *Consequences*.
 
-Against these four issues, we selected items and scales from existing sources in the literature where possible. In particular we drew from 'Kids Online'
-[@livingstone2010risks], Helsper's [-@helsper2012corresponding] 'Corresponding fields model', a study by Humphry [-@humphry2014importance] of mobile use among homeless populations, and indicators compiled by the [Young and Well CRC](http://www.youngandwellcrc.org.au/) [-@crc2013standardmeasures]. Other indicators were developed by the *Digital Capacities Index* team.
 
 A large number of candidate scales were distilled down to the current list after two day-long workshops, and testing of the survey.
+-->
 
 
-## Results
+## Findings
 
-TBD
+We present our findings in three sections. In the first section, we present our descriptive data. Due to the number of indicators, 158 in all, we restrict presentation to those graphs that illustrate either interesting differences or similarities across key demographical variables of age, gender, education, occupation, location and minority group ^[Note: these need to be explicitly theorised in the method discussion above].
+In the second, we show both correlations obtained from direct tests of relationships, and the results of our factor and principal component analyses. In the third, we discuss an approach to composing a simple index that summarises responses to individual indicators, both under the four issue categories and for the instrument as a whole.
+
+
+### Descriptive Findings
+
+<!-- Insert histograms and choropleths here -->
+
+
+#### Age
+
+Participant ages ranged from `r min(data$age)` to `r max(data$age)`, with a median value of `r median(data$age)`.
+
+*`r cf("age.freq")`* provides more detailed age demographics:
+
+```{r ageFreq, echo=FALSE}
+
+(gg <- chartWrap(ageChart(data)))
+
+```
+
+**`r fig_nums("age.freq")`**
+
+These show participants' ages correspond approximately to Australia's adult demographic. `r top4AgesAsPercentage()` of participants were aged 35-54.
+
+
+
+#### Gender
+
+Participant gender is roughly evenly distributed. The survey included `r format(length(which(data$gender == "Female")), big.mark   = ",")` (`r format(100 * length(which(data$gender == "Female")) / length(data$gender), digits = 2)`%) women; `r format(length(which(data$gender == "Male")), big.mark   = ",")` (`r format(100 * length(which(data$gender == "Male")) / length(data$gender), digits = 2)`%) men; and `r format(length(which(data$gender == "Other")), big.mark   = ",")` (`r format(100 * length(which(data$gender == "Other")) / length(data$gender), digits = 2)`%) identifying as 'Other'.
+
+Gender demographics are distributed, as shown in `r cf("gender.freq")`:
+
+```{r genderFreq, echo=FALSE}
+
+(gg <- chartWrap(genderChart(data)))
+
+```
+
+**`r fig_nums("gender.freq")`**
+
+
+#### Combined Age and Gender
+
+
+Combined age and gender demographics are distributed as shown in *`r cf("gender.and.age.freq")`*:
+
+```{r genderAndAgeFreq, echo=FALSE}
+
+(gg <- chartWrap(genderAndAgeChart(data)))
+
+```
+
+**`r fig_nums("gender.and.age.freq")`**
+
+These figures approximate to Australia's adult age distribution, as reported by the ABS in 2014 in **`r cf("gender.and.age.freq.abs")`** below, though with a considerably higher skew towards younger women and older men.
+
+
+![Population Structure, Age and sex - Australia - 1994 and 2014](http://www.abs.gov.au/ausstats/abs@.nsf/0/1cd2b1952afc5e7aca257298000f2e76/Body/0.2A9C!OpenElement&FieldElemFormat=gif)
+
+**`r fig_nums("gender.and.age.freq.abs")`**
+
+
+#### State and Location
+
+Survey distribution by state broadly follows Australia's demographic distribution.
+
+The split of participants between urban and regional/rural is as follows:
+
+```{r locationFreq, fig.height = 2, echo=FALSE}
+
+(gg <- chartWrap(locationChart(data)))
+
+```
+**`r fig_nums("location.freq")`**
+
+The percentage of reported urban residents here is `r formatC(100 * length(data[data$location == "Urban", "location"]) / length(data[,"location"]))` - considerably less than [World Bank figures of 89%](http://data.worldbank.org/indicator/SP.URB.TOTL.IN.ZS).
+
+
+## Aggregated Results by Critical Issue
+
+
+
+### Competencies
+
+Our survey asked participants to respond to two questions about competencies:
+
+ - Frequency of online activity
+ - Perceived ease of conducting online activity
+
+
+#### General Results
+
+##### Frequency of online activity
+
+*Frequency of online activity* measures frequency of 15 different activities, ranging from highly common activities such as sending email through to less common activities (in 2016), such as writing blogs.
+
+`r cf("freq.74")` below shows the relative frequencies of each activity. Using the Internet generally (for work, study, and for personal use), sending email and social networking are the most common activities. Streaming music, playing games with others, sharing media and writing blogs or diaries are comparatively uncommon activities.
+
+```{r graphSubQuestion74, fig.width = 8, fig.height = 9.5, echo=FALSE}
+
+(gg <- chartWrap(graphSubQuestionFrequencies(
+  vars.competencies.online.activities.74,
+  "Frequency",
+  frequencyLabels,
+  "online-activities-74",
+  -6.0,
+  yawcrcPaletteFivePoints
+  )))
+
+```
+
+**`r fig_nums("freq.74")`**
+
+
+##### Perceived ease of conducting online activity
+
+Respondents were asked to rate the ease or difficulty of 27 online activities. Overall respondents report a high level of competency across all activities with bookmarking a website and connecting to a wifi network scoring the highest. Understanding the language that others use online and creating a blog were reported as more difficult activities. Despite the high level of competence reported by respondents in each of the 27 activities there were a small percentage of respondents who reported each of these activities as difficult or very difficult. Analysing the results according to age ranges provides a more illustrative breakdown of the results.
+
+```{r graphSubQuestion431, fig.width = 8, fig.height = 15.5, echo=FALSE}
+
+(gg <- chartWrap(graphSubQuestionFrequencies(
+    vars.competencies.431,
+    "Ease",
+    easeLabels,
+    "competencies-ease-of-tasks-431",
+    -7.5,
+    yawcrcPaletteFivePoints)))
+
+```
+
+**`r fig_nums("freq.431")`**
+
+
+#### Results by Age
+
+##### `r getLabel(2, vars.competencies.online.activities.74)`
+
+Across all age groups, a large majority of respondents reported using the internet for personal use almost daily or more often. The 18-34 age group are the heaviest users, with 58% using the internet for personal use several times a day.
+
+```{r ageQ74_2, fig.width = 8, fig.height = 2, echo=FALSE}
+generateSingleAgeFrequency(
+    2,
+    vars.competencies.online.activities.74,
+    frequencyLabels,
+    yawcrcPaletteFivePoints
+    )
+```
+
+**`r fig_nums("freq.74.2")`**
+
+
+##### `r getLabel(3, vars.competencies.online.activities.74)`
+
+Differences by age groups are more visible depending on specific uses of the internet. Watching video clips for example is an activity where there is a clear demarcation between the under 35s, who are more likely to do this on a daily basis or more often, and those aged 35 or over, who are more likely to do this on a weekly basis or less often.
+
+```{r ageQ74_3, fig.width = 8, fig.height = 2, echo=FALSE}
+generateSingleAgeFrequency(3,
+  vars.competencies.online.activities.74,
+  frequencyLabels,
+  yawcrcPaletteFivePoints)
+```
+
+**`r fig_nums("freq.74.3")`**
+
+
+##### `r getLabel(6, vars.competencies.online.activities.74)`
+
+In contrast, respondents over 18 overwhelmingly reported using email as a means of communication several times a day, compared to only a fifth of those aged 12 to 17.
+
+```{r ageQ74_6, fig.width = 8, fig.height = 2, echo=FALSE}
+generateSingleAgeFrequency(6,
+  vars.competencies.online.activities.74,
+  frequencyLabels,
+  yawcrcPaletteFivePoints)
+```
+
+**`r fig_nums("freq.74.6")`**
+
+
+##### `r getLabel(13, vars.competencies.431)`
+
+Although respondents in the older age groups were less likely than younger people to report specific digital tasks to be easy or very easy, it is worth noting that they did not necessarily report those to be especially difficult. Rather, much higher proportions of respondents in the older age groups answered "Don't know" or "Not applicable" to those specific tasks such as creating a blog, pointing to a difference in levels of need and interest more so than actual competencies.
+
+```{r ageQ431_28, fig.width = 8, fig.height = 2, echo=FALSE}
+generateSingleAgeFrequency(13,
+  vars.competencies.431,
+  easeLabels,
+  yawcrcPaletteFivePoints)
+```
+
+**`r fig_nums("freq.431.13")`**
+
+
+##### `r getLabel(14, vars.competencies.431)`
+
+When asked about more 'general' or overarching skills such as understanding the language that others use online, the age correlation by which the perceived ease of conducting specific tasks decreases as the age of respondents increases becomes more apparent.
+
+```{r ageQ431_29, fig.width = 8, fig.height = 2, echo=FALSE}
+generateSingleAgeFrequency(14,
+  vars.competencies.431,
+  easeLabels,
+  yawcrcPaletteFivePoints)
+```
+
+**`r fig_nums("freq.431.14")`**
+
+
+##### `r getLabel(19, vars.competencies.431)`
+
+There is, however, greater consistency across age groups for competencies such as blocking unwanted adverts or junk mail.
+
+```{r ageQ431_34, fig.width = 8, fig.height = 2, echo=FALSE}
+generateSingleAgeFrequency(19,
+  vars.competencies.431,
+  easeLabels,
+  yawcrcPaletteFivePoints)
+```
+
+**`r fig_nums("freq.431.19")`**
+
+
+### Interests
+
+
+#### General Results
+
+##### General Interests
+
+*Frequency of online activity* measures frequency of 11 different activities related to information seeking, ranging from highly common activities, such as looking for information about general interests on platforms such as Wikipedia, through to more specific activities (in 2016), such as national government services.
+
+*`r cf("freq.437")`* below shows the relative frequencies of each activity. Looking for information about a topic of general interest where answers were provided by Wikipedia, Quora or other informational sites, and searching for prices are the most common activities. Looking for information about concerts and events, and political or societal issues are comparatively uncommon activities.
+
+
+
+```{r graphSubQuestion437, fig.width = 8, fig.height = 7.5, echo=FALSE}
+
+(gg <- chartWrap(graphSubQuestionFrequencies(vars.interests.general.437, "Frequency", frequencyMonthLabels, "interests-general-437", -8.0)))
+
+```
+
+**`r fig_nums("freq.437")`**
+
+
+##### Interest in seeking difference
+
+This question measures frequency of 7 different online activities whose main purpose is to determine to what extent online information seeking helps people to find others who share their interests and to learn about or understand social and cultural difference.
+
+*`r cf("freq.341")`* below shows the relative frequencies of each activity. Finding people of a similar age who share my interests is the most frequent and most commonly reported activity, followed by learning new things about people with mental illnesses or physical disabilities and learning new things about other ethnic groups. Learning things about participant's own ethnic group and feeling more connected to spiritual or religious beliefs are less common. This suggests that for Australians, online information seeking is more directed towards questions of interest, gender and health, rather than ethnicity and religion.
+
+
+```{r graphSubQuestion341, fig.width = 8, fig.height = 6.0, echo=FALSE}
+
+(gg <- chartWrap(graphSubQuestionFrequencies(vars.interests.difference.seeking.341,
+  "Agreement",
+  agreementLabels,
+  "interests-difference-seeking-341",
+  -7.5,
+  yawcrcPaletteFivePoints)))
+
+```
+
+**`r fig_nums("freq.341")`**
+
+
+##### Interest in fitness and health improvement
+
+This question measures frequency of 10 different online activities whose main purpose is to determine to what extent online technologies assist people to manage their health and fitness.
+
+*`r cf("freq.352")`* below shows the relative frequencies of each activity. Looking up information or asking others about a training program is the most frequent and commonly reported activity, followed by looking up information or asking advice on a medical condition. The least common activities reported are participating in an online health or fitness community and filling out questionnaires about fitness. There are not large differences reported between any of the activities, and less than 40% of participants reported engaging in any of the activities on more than a monthly basis.
+
+
+```{r graphSubQuestion352, fig.width = 8, fig.height = 7, echo=FALSE}
+
+(gg <- chartWrap(graphSubQuestionFrequencies(vars.interests.fitness.352, "Frequency", frequencyMonthLabels, "interests-fitness-352", -5.0)))
+
+```
+
+**`r fig_nums("freq.352")`**
+
+We asked a series of subsidiary statements about use of digital capacities to improve health. More participants agreed than disagreed (32% to 17%) with the statement they made better decisions as a result of online advice. In terms of outcomes, responses were more evenly split: 25% agreed their health had improved, while 20% disagreed.
+
+```{r graphSubQuestion353, fig.width = 8, fig.height = 3.5, echo=FALSE}
+
+(gg <- chartWrap(graphSubQuestionFrequencies(
+  vars.interests.health.improvement.353,
+  "Agreement", agreementLabels, "interests-health-improvement-353", -7.5,
+  yawcrcPaletteFivePoints)))
+
+```
+
+**`r fig_nums("freq.353")`**
+
+
+##### Interest in keeping in touch
+
+The survey asked respondents to rate the importance of their motivations for using the internet for maintaining their general interests, along with their connections with others. Respondents were asked to rate 14 statements which ranged between extremely important and not important at all. All the statements were rated with a degree of  importance in over 50% of all responses. "Communicating with friends and family" was rated the highest, with over 90% of respondents rating this on the scale of importance. Opening up new worlds and fueling my imagination also scored highly.  Less common in the scale was providing continuity of connection in a changing world.  This suggests that the reasons that motivate people to use the internet are contingent upon their connections with others and their sense of self.
+
+
+```{r graphSubQuestion430, fig.width = 8, fig.height = 7.5, echo=FALSE}
+
+(gg <- chartWrap(graphSubQuestionFrequencies(vars.interests.keeping.in.touch.430, "Importance", importanceLabels, "keeping-in-touch-430", -5.0)))
+
+```
+
+**`r fig_nums("freq.430")`**
+
+
+#### Results by Age
+
+##### `r getLabel(1, vars.interests.general.437)`
+
+As previously mentioned, differences by age are more or less noticeable depending on the various uses of the internet, which directly relates to motivations, interests and the reasons why respondents go online. A commonly reported use such as going online to look for information about a topic of general interest (where answers are provided by informational sites like Wikipedia or Quora) is typically one where the relative frequency is consistent across all age groups.
+
+```{r ageQ437_43, fig.width = 8, fig.height = 2, echo=FALSE}
+generateSingleAgeFrequency(1, vars.interests.general.437, frequencyMonthLabels)
+```
+
+**`r fig_nums("freq.437.1")`**
+
+
+##### `r getLabel(9, vars.interests.general.437)`
+
+Comparatively, much lower relative frequencies were reported for going online to look for information about a political or societal issue.
+
+```{r ageQ437_51, fig.width = 8, fig.height = 2, echo=FALSE}
+generateSingleAgeFrequency(9, vars.interests.general.437, frequencyMonthLabels)
+```
+
+**`r fig_nums("freq.437.9")`**
+
+
+##### `r getLabel(4, vars.interests.fitness.352)`
+
+Nearly half (46%) of younger respondents (under 18) reported not looking up information about health or medical care in the last 12 months. The proportion of those who did so at least once in the last 12 months increase with age, although the relative frequencies remain low.
+
+```{r ageQ352_65, fig.width = 8, fig.height = 2, echo=FALSE}
+generateSingleAgeFrequency(4, vars.interests.fitness.352, frequencyMonthLabels)
+```
+
+**`r fig_nums("freq.352.4")`**
+
+
+### Resilience
+
+Our survey asked participants to respond to three questions about potential risks and harms of online activity, and how they prepare themselves for dealing with them.
+
+ - Experience of potential risks and harms of online activity in the last 12 months
+ - Level of agreement with statements about potential risks and harms
+ - Level of agreement with statements about engaging with others online
+
+
+#### General Results
+
+##### Frequency of harmful events
+
+*Frequency of harmful events* measures frequency of 11 risks of online activity. These include getting a virus on one's device or seeing upsetting content online, or actions taken as a protection measure against those risks, such as reporting an issue online, deleting data or blocking further contacts from an individual.
+
+**_`r cf("freq.434")`_ below shows the relative frequencies of experiencing a risk, or taking a specific action in response to a risk, in the last 12 months.
+**
+
+On average, more than half of respondents (51%) reported having never experienced these risks or potentially harmful events. The event that was most commonly experienced was 'Seeing or experiencing something on the internet that had bothered them in some way' with 55% of respondents experiencing this at least once in the last 12 months, and 14% reporting experiencing this on a weekly basis or more often.
+
+Half of respondents reported taking protective measures, such as blocking further contacts from an individual or deleting data in response to security and privacy concerns, at least once in the last 12 months.
+
+Although respondents reported experiencing potentially harmful events online, the frequency of such events remains generally low. The most frequently reported action in response to online risks is to use extra security measures to protect privacy.
+
+```{r graphSubQuestion434, fig.width = 8, fig.height = 8,  echo=FALSE}
+
+(gg <- chartWrap(graphSubQuestionFrequencies(vars.resilience.harm.events.434, "Frequency", frequencyMonthLabels, "resilience-harm-events-434", -8.5)))
+
+```
+
+**`r fig_nums("freq.434")`**
+
+
+##### Responses to statements about online harms
+
+*`r cf("freq.435")`* below shows the level of agreement with a number of statements relating to online harms.
+
+Despite reporting having experienced some potentially harmful events in the last 12 months, the level of agreement with statements about online harms of a more general nature show an overall positive attitude towards those risks. The majority of respondents agree or strongly agree that the opportunities of online activities outweigh its risks and that some level of online risk is inevitable but also provides an important learning opportunity.
+
+Online security and safety remains a pressing concern for just over a third of respondents but there appears to be both an increased level of acceptance and the development of coping mechanisms to better manage the risks.
+
+
+```{r graphSubQuestion435, fig.width = 8, fig.height = 5.5, echo=FALSE}
+
+(gg <- chartWrap(graphSubQuestionFrequencies(
+  vars.resilience.harms.agreement.435,
+  "Agreement", agreementLabels, "resilience-harms-agreement-435", -6.5,
+  yawcrcPaletteFivePoints)))
+
+```
+
+**`r fig_nums("freq.435")`**
+
+
+##### Willingness to engage with others
+
+Thinking about how they feel when they engage with others online, respondents were asked to what extent they agree with several statements relating to their willingness to engage with others.
+
+For each of these statements, a large proportion of respondents neither agree nor disagree. People tend to disagree that it is easier to be oneself online than face to face or that they talk about private things online that they do not share face to face. Similar proportions agree or disagree that going online makes them feel better when they are going through a difficult time.
+
+```{r graphSubQuestion428, fig.width = 8, fig.height = 5.5, echo=FALSE}
+
+(gg <- chartWrap(graphSubQuestionFrequencies(vars.resilience.engage.with.others.428,
+  "Agreement", agreementLabels, "resilience-engage-with-others-428", -7.0,
+  yawcrcPaletteFivePoints)))
+
+```
+
+**`r fig_nums("freq.428")`**
+
+
+
+#### Results by Age
+
+##### `r getLabel(4, vars.resilience.harm.events.434)`
+
+Respondents under the age of 35 were more likely to report higher frequency of seeing something on the internet that had bothered them in some way.
+
+```{r ageQ434_91, fig.width = 8, fig.height = 2, echo=FALSE}
+generateSingleAgeFrequency(4, vars.resilience.harm.events.434, frequencyMonthLabels)
+```
+
+**`r fig_nums("freq.434.4")`**
+
+
+##### `r getLabel(10, vars.resilience.harm.events.434)`
+
+
+There are no differences by age in the reported frequency of deleting data in response to privacy concerns.
+
+```{r ageQ434_97, fig.width = 8, fig.height = 2, echo=FALSE}
+generateSingleAgeFrequency(10, vars.resilience.harm.events.434, frequencyMonthLabels)
+```
+
+**`r fig_nums("freq.434.10")`**
+
+
+##### `r getLabel(6, vars.resilience.harms.agreement.435)`
+
+Over a third (35%) of respondents agree or strongly agree that online security and safety is generally a pressing concern. Interestingly, there were no noticeable differences by age groups.
+
+```{r ageQ435_104, fig.width = 8, fig.height = 2, echo=FALSE}
+generateSingleAgeFrequency(6, vars.resilience.harms.agreement.435, agreementLabels,
+  yawcrcPaletteFivePoints)
+```
+
+**`r fig_nums("freq.435.6")`**
+
+
+
+##### `r getLabel(7, vars.resilience.harms.agreement.435)`
+
+Having said that, respondents also overwhelmingly agree that the opportunities of online activity outweigh its risks, with half agreeing or strongly agreeing with that statement. Again, there are no noticeable differences by age groups.
+
+```{r ageQ435_105, fig.width = 8, fig.height = 2, echo=FALSE}
+generateSingleAgeFrequency(7, vars.resilience.harms.agreement.435, agreementLabels,
+  yawcrcPaletteFivePoints)
+```
+
+**`r fig_nums("freq.435.7")`**
+
+
+
+### Social Connectedness
+
+Our survey asked participants to respond to questions about social connectedness and the role technology plays in their interactions with other people. Key topics include:
+
+  * Frequency of online activity to maintain connections
+  * Importance of online life to maintaining relationships
+  * Level of agreement with statements about broader issues concerning technology
+
+
+#### General Results
+
+##### Maintaining connections
+
+This question measures frequency of 8 different online activities whose main purpose, or direct consequence, is to interact with others and/or to maintain connections.
+
+*`r cf("freq.343")`* below shows the relative frequencies of each activity. Reading updates from friends or family via email or social media is the most frequent and most commonly reported activity, followed by making comments on those updates. Making new friends, meeting people or looking at websites that help meet new people are less common. This suggests that online activity is primarily used to strengthen connection with offline networks rather than as a distinct circle of connections.
+
+```{r graphSubQuestion343, fig.width = 8, fig.height = 6, echo=FALSE}
+
+(gg <- chartWrap(graphSubQuestionFrequencies(vars.connectedness.events.343, "Frequency", frequencyMonthLabels, "connectedness-events-343")))
+
+```
+
+**`r fig_nums("freq.343")`**
+
+
+
+##### Importance of online life in maintaining relationships
+
+When asked how important online life is in maintaining relationships with various groups within a broader social network, friends and family were the two groups with the highest level of importance. Online is also considered important in maintaining relationships with other networks of interest and work or school peers, but comparatively not as important to the maintenance of relationships with neighbours.
+
+```{r graphSubQuestion287, fig.width = 8, fig.height = 5, echo=FALSE}
+
+(gg <- chartWrap(graphSubQuestionFrequencies(vars.connectedness.maintenance.287, "Importance", importanceLabels, "maintaining-connections-287", -4.8)))
+
+```
+
+**`r fig_nums("freq.287")`**
+
+
+
+##### Attitudes towards Technology
+
+The survey asked respondents to what extent they agree or disagree with a number of statements with regards to attitudes towards broader issues concerning technology.
+
+Similar to our findings on the more general statements about online risks and harms, the attitudes of respondents towards technology is especially positive with over 60% reporting being optimistic about the future of technology. Nearly three quarters (74%) agree or strongly agree that technology is part of everyday life. Nearly half (49%) believe that technology can not only make participants more effective members of their community or nation, but can also foster social inclusion.
+
+The positive attitude is nevertheless counterbalanced with concerns about the use of online information by governments or companies, the impact on the environment or the growing divide between technology experts and the rest of society.
+
+```{r graphSubQuestion429, fig.width = 8, fig.height = 6.5, echo=FALSE}
+
+(gg <- chartWrap(graphSubQuestionFrequencies(vars.connectedness.tech.attitudes.429, "Agreement", agreementLabels, "connectedness-tech-attitudes-429", -7.0,
+  yawcrcPaletteFivePoints)))
+
+```
+
+**`r fig_nums("freq.429")`**
+
+
+#### Results by Age
+
+##### `r getLabel(1, vars.connectedness.maintenance.287)`
+
+Across all age groups, a large proportion of respondents reported that their online life was extremely important in maintaining relationships with family members.
+
+```{r ageQ287_137, fig.width = 8, fig.height = 2, echo=FALSE}
+generateSingleAgeFrequency(1, vars.connectedness.maintenance.287, importanceLabels)
+```
+
+**`r fig_nums("freq.287.1")`**
+
+
+##### `r getLabel(4, vars.connectedness.events.343)`
+
+The ways in which people maintain connections with others online, however, differ depending on the people's age. The likelihood of sharing pictures of oneself with family or friends decreases with age, with half of 12-17 year olds doing so weekly or more often compared to less than a fifth of those aged 65 or over.
+
+```{r ageQ343_146, fig.width = 8, fig.height = 2, echo=FALSE}
+generateSingleAgeFrequency(4, vars.connectedness.events.343, frequencyMonthLabels)
+```
+
+**`r fig_nums("freq.343.4")`**
+
+
+##### `r getLabel(2, vars.connectedness.tech.attitudes.429)`
+
+Overall, respondents largely agreed to being concerned about how companies, governments or others might use their online information, and results are consistent across all age groups.
+
+```{r ageQ429_152, fig.width = 8, fig.height = 2, echo=FALSE}
+generateSingleAgeFrequency(2, vars.connectedness.tech.attitudes.429, agreementLabels,
+  yawcrcPaletteFivePoints)
+```
+
+**`r fig_nums("freq.429.2")`**
+
+
+
+### Correlations, Factor and Principal Component Analysis
+
+<!-- Insert correlations here -->
+
+
+
+#### Demographics
+
+_To what extent does education correlates with competencies and interests?_
+
+ - Skills (Q431) by education level (Q436)
+
+```{r correlation-skills-educations, fig.width = 8, fig.height = 6, echo=FALSE}
+generateCorrelation("total.431", "Q436", "skills-education")
+```
+
+ - Interest (Q437) by education level (Q436)
+
+
+_Relationship between occupation and aspects of digital capacities_
+
+ - Reasons for using internet (Q430) by occupation (Q8)
+ - Interests: what type of info look for online (Q437) by occupation (Q8)
+ - Connectedness: Providing help (Q277) or seeking help (Q280) by occupation (Q8)
+
+_Relationship between financial pressure and aspects of digital capacities_
+
+ - Financial pressure generally (Q45)
+ - Financial pressure from digital access (Q425)
+ - Low income (Q9_214)
+
+
+_By competencies and interests: uses of the internet (Q74), what you look for (Q437), reasons for use (430)_
+
+_By resilience: attitude twds harm/risk (Q435)_
+
+_By connectedness: relationships (Q287), frequency of connecting (Q343)_
+
+_Minority groups_
+
+ - Interests: what type of info look for online (Q437) by minority grps (Q9)
+ - Seeking help (Q280) by minority grp (Q9)
+ - Minority groups (Q9) by current location (Q427)
+ - Are gender differences more pronounced in some grps?
+
+_Families_
+
+ - Does gender have an effect for different types of families?
+ - 'families': analyse by size of household (Q24), sole parents (Q9_215), households with children (CH1) (look at 5-17 especially?)
+ - Household with children + CALD(Q9_212)/Indigenous(Q9_218)
+
+
+#### Competencies / Interests
+
+_To what extent various levels of competencies (use + skills) translate into knowledge sharing?
+Higher level of competencies into providing help and/or lower level into seeking help_
+
+ - Helping others (Q277) by skills (Q431), use (Q74)
+ - Seeking help (Q280) by skills (Q431), use (Q74)
+ - At statement level, social media:
+    - 74_7 use social media
+    - 431_23 update status
+    - 431_24 upload onto social media
+    - 277_113 help set up social media account
+    - 280_125 sought help to set up social media account
+ - At statement level, safety
+    - 431_32 find info on how to use internet safely
+    - 431_38 restrict access to adult content
+    - 431_42 anonymise
+    - 277_120 help on how to stay safe
+    - 280_132 been shown how to stay safe
+
+_Can different uses of the internet (Q74), different interests (Q437) or reasons for use (Q430) help identifying profiles or types of engagement?
+How do different uses/interest (types of engagement) correlate to different types, or level, of resilience and connectedness?
+_
+
+#### Resilience/safety
+
+_Does higher level of use lead to increased exposure to risk? Does lower level of skills mean increased exposure to risk?_
+
+ - Correlation between use (Q74) and resilience (Q435)
+ - Correlation between use (Q74) and risks (Q434)
+ - Between skills (Q431) and resilience (Q435)
+ - Find information on using the internet safely (431_32) by attitude twds harm/risk (Q435)
+
+_How does risk exposure impact on attitude towards risks/harms?_
+
+ - exposure to potential harm (Q434_91, 92, 93) by attitude twds harm/risk (Q435)
+
+
+#### Connectedness
+
+Exploring technology as an enabler of social connectedness.
+
+Can digital technology facilitate settling into new location and/or establish social/community network?
+ - current location (Q427). Combine 179+180+181 into <6 months to get a sample of 218
+   - made new friends/met new people online (Q343_149)
+   - info on gvt serv (Q437_51)
+ - 280_126 help to find info and resources
+
+_How/to what extent does tech support social connectedness of minority grps?_
+
+ - learn new things about my ethnic grp (341_57)
+   - by CALD (Q9_212), Indigenous (Q9_218), Refugees (Q9_213), Homeless? (Q9_220)
+ - 	Find people of similar age/interests online (Q341_55)
+   - by gender (check sig)
+   - by age (correlates, but 35+ do not disagree more rather N/A increases: check with 35+ with higher competency/use?)
+   - by minority groups
+
+_focus on social media as a very specific online activity to explore connectedness and resilience_
+
+ - Use of soc media (74_7) in relation to connectedness, and to resilience (428, 434_92, 277_122)
+ - Interacting using text or IM (431_25) in relation to connectedness
+
+#### Notes
+
+Best to not use hypotheses at high level (4 critical issues): very likely to find that more competencies correlates with more interested, more connected, better support, more resilient...
+But at a lower level: are there diff types of resilience, do types of competencies lead to better/more supportive networks?
+within those 4 areas: need to classify types of skills, types of support networks etc.
+
+In a previous conversation, we had discussed the different uses of the internet: from a more informational/technical use to a more emotional/social involvement, with the overarching question/hypothesis: does the emotional/social use lead to increased connectedness, and in turn to increased resilience?
+
+Those two ‘types’, informational and social, can be applied across the 4 critical issues and many of the survey questions. Within each questions, below are the variables that I think best outline one or the other.
+
+#### Correlations - Exploratory
+
+
+The exploratory correlation matrix depicts the directions and intensities of all individual variables
+correlated with eachother, in the order questions associated with these variables were asked in the survey.
+
+```{r correlation-exploratory, fig.width = 8, fig.height = 8, echo=FALSE}
+generateCorrelationsExploratory()
+```
+
+**`r fig_nums("corrections.exploratory")`**
+
+As `r fig_nums("corrections.exploratory")`
+
+
+#### Principal Component Analysis
+
+
+### Composing an Index of Digital Capacities
+
+<!-- Insert indexes here -->
+
+#### Aggregates by Critical Issue
+
+To gain an overall picture of our results, we generated a series of stacked graphs in *`r fig_nums("agg.results")`*. These aggregate responses to each critical issue (*Competencies*, *Interests*, *Resilience* and *Competencies*), and the combined total.
+
+These results are indicative only, and have several evident limitations we discuss further below. The procedure to generate scores for each of the issues is as follows:
+
+1. Interpret each question as having either a *positive* or *negative* influence of the score of the critical issue. For example, "Frequency of harmful events" has a *negative influence* on the issue of Resilience (and indeed, on overall "Digital Capacities").
+2. Determine the *direction* of the scale coding. For example, in all of our "Agreement" questions, "Strongly Agree" was coded **1**.
+3. For each question, calculate a question score based on both its interpretation and direction, by adding responses to individual items.
+4. For each respondent, add each of their question scores to produce a respondent critical issue score. This value is converted to a percentile, where '100%' would indicate maximum responses to each item for each question in that critical issue.
+5. A combined score is taken by averaging the four critical issue scores.
+
+`r cf("agg.results")` then displays the relative frequencies of these scores, similar to the preceding individual question graphs. Because values are continuous (anywhere on a scale between 0 and 100 per cent), the graphs show a spectrum from blue (indicating a low score) to bright yellow (indicating a high score).
+
+The *Resilience* score is calculated in the same way as the other issue scores, with the exception that only the first two items under *Question 428*, "Willingness to engage with others", are included in the scoring procedure. We have intepreted these items ("When I am going through a difficult time, I go online less often"; "When I am going through a difficult time, going online makes me feel better") as having some influence (the first negative, the second positive) on *Resilience*.
+
+
+
+Bearing in mind the method of deriving these aggregate scores, we make only minimal observations at this stage. *`r cf("agg.results")`* shows that results for *Compentencies* and *Connectedness* are evenly distributed, with respondents' scores spread across the 100-point scale. These are also similar to the spread of *Combined* scores. *Resilience* scores tend high, with most respondents reporting little exposure to harms, and familiarity with methods for responding to those harms.
+
+On the other hand, *Interest* scores tend low. This may be explained by our limiting interests to areas of social difference, fitness, health and family, which will not effectively poll the range or extent of participants' interests.
+
+```{r indexChart, echo=FALSE}
+
+(gg <- chartWrap(generateIndexChart()))
+
+```
+
+#### Limitations
+
+The above procedure has several limitations. First, it is questionable whether complex concepts such as digital resilience and social connectedness, in particular, are reducible to a quantitative value, regardless of the procedure used to derive it. Further, for reasons of space, our characterisation of Digital Capacities includes a total of nine critical issues, only four of which are included in the survey. We recommend comparing these scores with our qualitative findings, which illustrate the more nuanced and sometimes contradictory character of these qualities in Australian families.
+
+Second, the procedure treats, at the moment, each of the scales as numerically regular. For example, on the *Agreement* scale it assumes *Strongly agree* warrants 1 more score point than *Agree*, which in turn warrants 1 more point than *Neither Agree nor Disagree*. In other words, ordinal scales are treated as *ratio* variables, with regular intervals.
+
+Third, the procedure assumes all questions and individual items have equal influence on the critical issue they have been aligned to.
+
+**[REVIEW NOTE: The latter two of these issues can be addressed partially by a more sophisticated scaling and weighting approach. We are considering holding a workshop for this purpose in preparation of the complete draft meeting in May 2016.]**
+
+
+
 
 
 ## Discussion
@@ -212,6 +1025,10 @@ TBD
 ## Conclusion
 
 TBD
+
+
+## Appendix 1 - _Digital Capacities Index_ Survey
+
 
 
 ## References

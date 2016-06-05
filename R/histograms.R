@@ -783,6 +783,60 @@ generateOccupationFrequencies <- function(vars, func) {
 	sapply(seq(1:length(vars)), generateSingleOccupationFrequency, vars, func)
 }
 
+generateSingleMinorityFrequency <- function(x, vars, func, palette = yawcrcPalette) {
+  minority.groups <- c("culturally.and.linguistically.diverse",
+                        "refugees.and.asylum.seekers",
+                        "low.income.households",
+                        "sole.parent.families",
+                        "indigenous.communities")
+
+  # Not included: "seniors", "unemployed.or.underemployed", "people.in.remote.communities", "homeless"
+  # Justification:
+  # 216: Seniors
+  # Already analysed by age groups
+  # 217: The unemployed or under-employed
+  # Should be covered to some extent with analysis by Occupation variable
+  # 219: People in remote communities
+  # Partially covered under Location (+ Indigenous)
+  # 220: Homeless
+  # Small sample
+
+  for (i in 1:length(minority.groups)) {
+    minority.group <- minority.groups[i]
+    if (x > 0) {
+  		ind.names <- obtainIndicatorNames(vars)
+  		var.name <- vars[x]
+  		ind.name <- ind.names[x]
+
+  		freqs <- table(augmented.data[,var.name], augmented.data[,minority.group])
+  		metadata <- expandedIndicators[which(ind.name == expandedIndicators$DCI.ID),]
+  	}
+  	else {
+  		var.name <- vars[1]
+  		ind.name <- gsub("Q", "", var.name)
+
+  		freqs <- table(augmented.data[,var.name], augmented.data[,minority.group])
+  		metadata <- indicators[which(ind.name == indicators$DCI.ID),]
+  		# For consistency
+  		metadata$Name <- as.character(metadata$Indicator...Variable)
+  	}
+    mg.file <- gsub("\\.", "_", minority.group)
+    mg.label <- gsub("\\.", " ", minority.group)
+  	chartFrequencies(freqs,
+  							paste("minority/", mg.file, "/", var.name, "_freqs", sep = ""),
+  							metadata,
+  							func,
+  							paste("by Minority: ", mg.label, sep=""),
+  							paste("Minority: ", mg.label, sep=""),
+  							palette,
+  							FALSE)
+  }
+}
+
+generateMinorityFrequencies <- function(vars, func) {
+	sapply(seq(1:length(vars)), generateSingleMinorityFrequency, vars, func)
+}
+
 
 
 sumVariable <- function() {
