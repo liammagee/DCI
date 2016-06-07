@@ -39,9 +39,13 @@ generateCorrelationsExploratory <- function() {
   return (g)
 }
 
+generateFactorAnalysis <- function() {
+
+}
+
 generateCorrelations_test <- function() {
 
-  cors.totals <- cor(data.totals.scaled[,vars.totals], method = "spearman")
+  cors.totals <- cor(data.scaled[,vars.totals], method = "spearman")
   rownames(cors.totals) <- paste(sapply(rownames(cors.totals), questionCategory), ", [", rownames(cors.totals), "]")
   colnames(cors.totals) <- paste(sapply(colnames(cors.totals), questionCategory), ", [", colnames(cors.totals), "]")
   write.table(cors.totals, "output/cors-totals.csv", col.names=NA, sep = ",")
@@ -95,7 +99,7 @@ generateCorrelations_test <- function() {
 	## PCA
   ## http://www.r-bloggers.com/computing-and-visualizing-pca-in-r/
 
-	dt.pca <- prcomp(data.totals.scaled[,vars.totals], center = TRUE, scale. = TRUE)
+	dt.pca <- prcomp(data.scaled[,vars.totals], center = TRUE, scale. = TRUE)
 	# d.pca <- prcomp(data.scaled[,vars.index])
 	print(dt.pca)
 
@@ -110,7 +114,7 @@ generateCorrelations_test <- function() {
 	n <- length(comp1)
 	stack(comp1[order(stack(comp1)$values)])
 
-	printMeanAndSdByGroup(data.totals.scaled,data.scaled[224])
+	printMeanAndSdByGroup(data.scaled,data.scaled[224])
 
 	library("MASS")
 	d.lda <- lda(data$age.breaks ~
