@@ -2,7 +2,7 @@
 
 # http://stackoverflow.com/questions/31337922/adding-italicised-r-with-correlation-coefficient-to-a-scatter-plot-chart-in-ggpl
 corrEqn <- function(x,y, digits = 2) {
-  corr_coef <- round(cor(x, y), digits = digits)
+  corr_coef <- round(cor(x, y, method = "spearman"), digits = digits)
   paste("italic(r) == ", corr_coef)
 }
 
@@ -14,14 +14,14 @@ generateCorrelation <- function(var1, var2, label) {
             label = corrEqn(data.scaled[,var1],
                              data.scaled[,var2]), parse = TRUE)
 
-   if (PRINTING) {
+  if (PRINTING) {
  		ggsave(file = paste("./figs/correlation/", label, ".png", sep = ""),
  		  width = png.width,
  		  height = png.height
  		)
  	}
-
-  return (g)
+  correlation.test <- cor.test(data.scaled[,var1], data.scaled[,var2])
+  return (correlation.test)
 }
 
 generateCorrelationsExploratory <- function() {

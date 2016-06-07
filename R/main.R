@@ -664,6 +664,13 @@ generateAllScatterMaps <- function() {
 }
 
 
+
+generateAllMaps <- function() {
+	generateAllSA4Maps()
+	generateAllScatterMaps()
+}
+
+
 # Generate all subquestion charts
 generateSubQuestionCharts <- function() {
 	graphSubQuestionFrequencies(vars.competencies.online.activities.74, "Frequency", frequencyLabels, "online-activities-74")
@@ -686,12 +693,27 @@ generateSubQuestionCharts <- function() {
 
 generatePrebuiltCorrelations <- function() {
   generateCorrelation("total.431", "Q436", "skills-education")
+	generateCorrelation("total.437", "Q436", "interests-education")
+	# Need t-tests instead
+	generateCorrelation("total.277", "total.431", "helping-others-skills")
+	generateCorrelation("total.277", "total.74", "helping-others-use")
+	generateCorrelation("total.280", "total.431", "seeking-help-skills")
+	generateCorrelation("total.280", "total.74", "seeking-help-use")
+	generateCorrelation("total.437", "total.74", "helping-others-use")
+
+	generateCorrelation("total.74", "total.435", "use-resilience")
+	generateCorrelation("total.74", "total.434", "use-harms")
+	generateCorrelation("total.431", "total.435", "skills-resilience")
+	generateCorrelation("Q431_32", "total.435", "information-resilience")
+	generateCorrelation("Q434_91", "total.435", "attitude-harm-1-resilience")
+	generateCorrelation("Q434_92", "total.435", "attitude-harm-2-resilience")
+	generateCorrelation("Q434_93", "total.435", "attitude-harm-3-resilience")
+
 
 }
 
-generateAllMaps <- function() {
-	generateAllSA4Maps()
-	generateAllScatterMaps()
+generateAllIndividualCorrelations <- function() {
+	generateCorrelationsExploratory()
 }
 
 runAll <- function() {
@@ -699,7 +721,8 @@ runAll <- function() {
 	generateFrequencies()
 	generateAggregateFrequences()
 	generateSubQuestionCharts()
-	generatePrebuiltCorrelations()
 	generateAllMaps()
+	generatePrebuiltCorrelations()
+	generateAllIndividualCorrelations()
 
 }
