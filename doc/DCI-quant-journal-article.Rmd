@@ -220,7 +220,7 @@ In terms of analysing our results, one limitation of our consultative and syncre
 
 ## Surveying Digital Capacities
 
-We present our survey findings in three sections. In the first section, we present our descriptive data. Due to the number of indicators, 158 in all, we restrict presentation to those graphs that illustrate either interesting differences or similarities across key demographical variables of age, gender, education, occupation, location and minority group ^[Note: these need to be explicitly theorised in the method discussion above]. In the second, we show both correlations obtained from direct tests of relationships, and the results of our factor and principal component analyses. In the third, we discuss an approach to composing a simple index that summarises responses to individual indicators, both under the four issue categories and for the instrument as a whole.
+We present our survey findings in three sections. In the first section, we present our descriptive data. In the second section, we show both correlations obtained from direct tests of relationships, and the results of our factor and principal component analyses. In the third section, we discuss how these results are used to compose a simple index that summarises responses to the individual indicators, both under the four issue categories and for the instrument as a whole.
 
 
 ### Descriptive Findings
@@ -245,7 +245,7 @@ Our articipants' ages ranged from `r min(data$age)` to `r max(data$age)`, with a
 These show participants' ages correspond approximately to Australia's adult demographic. `r top4AgesAsPercentage()` of participants were aged 35-54.
 
 
-Participant gender is roughly evenly distributed. The survey included `r format(length(which(data$gender == "Female")), big.mark   = ",")` (`r format(100 * length(which(data$gender == "Female")) / length(data$gender), digits = 2)`%) women; `r format(length(which(data$gender == "Male")), big.mark   = ",")` (`r format(100 * length(which(data$gender == "Male")) / length(data$gender), digits = 2)`%) men; and `r format(length(which(data$gender == "Other")), big.mark   = ",")` (`r format(100 * length(which(data$gender == "Other")) / length(data$gender), digits = 2)`%) identifying as 'Other'.
+Participant gender is fairly evenly distributed across the sample. The survey included `r format(length(which(data$gender == "Female")), big.mark   = ",")` (`r format(100 * length(which(data$gender == "Female")) / length(data$gender), digits = 2)`%) women; `r format(length(which(data$gender == "Male")), big.mark   = ",")` (`r format(100 * length(which(data$gender == "Male")) / length(data$gender), digits = 2)`%) men; and `r format(length(which(data$gender == "Other")), big.mark   = ",")` (`r format(100 * length(which(data$gender == "Other")) / length(data$gender), digits = 2)`%) identifying as 'Other'.
 
 `r cf("gender.freq")` illustrates the gender distrubtion of the sample:
 
@@ -288,20 +288,17 @@ Survey distribution by state follows Australia's demographic distribution more c
 The percentage of reported urban residents here is `r formatC(100 * length(data[data$location == "Urban", "location"]) / length(data[,"location"]))` - considerably less than [World Bank figures of 89%](http://data.worldbank.org/indicator/SP.URB.TOTL.IN.ZS).
 
 
-#### Aggregated Results by Critical Issue
+#### Competencies
 
-Next we discuss distributions by what we defined as our four critical issues.
-
-##### Competencies
-
-Participants were asked to respond to two questions about competencies:
+In relation to competencies, participants were asked to respond to two questions:
 
  - Frequency of online activity
  - Perceived ease of conducting online activity
 
 *Frequency of online activity* measures frequency of 15 different activities, ranging from highly common activities such as sending email through to less common activities (in 2016), such as writing blogs.
 
-`r cf("freq.74")` below shows the relative frequencies of each activity. Using the Internet generally (for work, study, and for personal use), sending email and social networking are the most common activities. Streaming music, playing games with others, sharing media and writing blogs or diaries are comparatively uncommon activities.
+`r cf("freq.74")` below shows the relative frequencies of each activity. Using the Internet generally (for work, study, and for personal use), sending email and social networking are the most common activities. Streaming music, playing games with others, sharing media, and writing blogs or diaries are comparatively uncommon activities.
+
 
 ```{r graphSubQuestion74, fig.width = 8, fig.height = 9.5, echo=FALSE}
 
@@ -336,100 +333,16 @@ Respondents were also asked to rate the ease or difficulty of 27 online activiti
 **`r fig_nums("freq.431")`**
 
 
-#### Results by Age
 
-##### `r getLabel(2, vars.competencies.online.activities.74)`
-
-Across all age groups, a large majority of respondents reported using the internet for personal use almost daily or more often. The 18-34 age group are the heaviest users, with 58% using the internet for personal use several times a day.
-
-```{r ageQ74_2, fig.width = 8, fig.height = 2, echo=FALSE}
-generateSingleAgeFrequency(
-    2,
-    vars.competencies.online.activities.74,
-    frequencyLabels,
-    yawcrcPaletteFivePoints
-    )
-```
-
-**`r fig_nums("freq.74.2")`**
-
-
-##### `r getLabel(3, vars.competencies.online.activities.74)`
-
-Differences by age groups are more visible depending on specific uses of the internet. Watching video clips for example is an activity where there is a clear demarcation between the under 35s, who are more likely to do this on a daily basis or more often, and those aged 35 or over, who are more likely to do this on a weekly basis or less often.
-
-```{r ageQ74_3, fig.width = 8, fig.height = 2, echo=FALSE}
-generateSingleAgeFrequency(3,
-  vars.competencies.online.activities.74,
-  frequencyLabels,
-  yawcrcPaletteFivePoints)
-```
-
-**`r fig_nums("freq.74.3")`**
-
-
-##### `r getLabel(6, vars.competencies.online.activities.74)`
-
-In contrast, respondents over 18 overwhelmingly reported using email as a means of communication several times a day, compared to only a fifth of those aged 12 to 17.
-
-```{r ageQ74_6, fig.width = 8, fig.height = 2, echo=FALSE}
-generateSingleAgeFrequency(6,
-  vars.competencies.online.activities.74,
-  frequencyLabels,
-  yawcrcPaletteFivePoints)
-```
-
-**`r fig_nums("freq.74.6")`**
-
-
-##### `r getLabel(13, vars.competencies.431)`
-
-Although respondents in the older age groups were less likely than younger people to report specific digital tasks to be easy or very easy, it is worth noting that they did not necessarily report those to be especially difficult. Rather, much higher proportions of respondents in the older age groups answered "Don't know" or "Not applicable" to those specific tasks such as creating a blog, pointing to a difference in levels of need and interest more so than actual competencies.
-
-```{r ageQ431_28, fig.width = 8, fig.height = 2, echo=FALSE}
-generateSingleAgeFrequency(13,
-  vars.competencies.431,
-  easeLabels,
-  yawcrcPaletteFivePoints)
-```
-
-**`r fig_nums("freq.431.13")`**
-
-
-##### `r getLabel(14, vars.competencies.431)`
-
-When asked about more 'general' or overarching skills such as understanding the language that others use online, the age correlation by which the perceived ease of conducting specific tasks decreases as the age of respondents increases becomes more apparent.
-
-```{r ageQ431_29, fig.width = 8, fig.height = 2, echo=FALSE}
-generateSingleAgeFrequency(14,
-  vars.competencies.431,
-  easeLabels,
-  yawcrcPaletteFivePoints)
-```
-
-**`r fig_nums("freq.431.14")`**
-
-
-##### `r getLabel(19, vars.competencies.431)`
-
-There is, however, greater consistency across age groups for competencies such as blocking unwanted adverts or junk mail.
-
-```{r ageQ431_34, fig.width = 8, fig.height = 2, echo=FALSE}
-generateSingleAgeFrequency(19,
-  vars.competencies.431,
-  easeLabels,
-  yawcrcPaletteFivePoints)
-```
-
-**`r fig_nums("freq.431.19")`**
-
-
-##### Interests
+#### Interests
 
 We asked five questions on the critical issue of *Interests*:
 
  - Frequency of online activity
- -
+ - Interest in seeking difference
+ - Interest in fitness
+ - Interest in health improvement
+ - Interest in keeping in touch
 
 *Frequency of online activity* measures frequency of 11 different activities related to information seeking, ranging from highly common activities, such as looking for information about general interests on platforms such as Wikipedia, through to more specific activities (in 2016), such as national government services.
 
@@ -493,8 +406,6 @@ We asked a series of subsidiary statements about use of digital capacities to im
 **`r fig_nums("freq.353")`**
 
 
-##### Interest in keeping in touch
-
 The survey asked respondents to rate the importance of their motivations for using the internet for maintaining their general interests, along with their connections with others. Respondents were asked to rate 14 statements which ranged between extremely important and not important at all. All the statements were rated with a degree of  importance in over 50% of all responses. "Communicating with friends and family" was rated the highest, with over 90% of respondents rating this on the scale of importance. Opening up new worlds and fueling my imagination also scored highly.  Less common in the scale was providing continuity of connection in a changing world.  This suggests that the reasons that motivate people to use the internet are contingent upon their connections with others and their sense of self.
 
 
@@ -507,53 +418,15 @@ The survey asked respondents to rate the importance of their motivations for usi
 **`r fig_nums("freq.430")`**
 
 
-#### Results by Age
 
-##### `r getLabel(1, vars.interests.general.437)`
+#### Resilience
 
-As previously mentioned, differences by age are more or less noticeable depending on the various uses of the internet, which directly relates to motivations, interests and the reasons why respondents go online. A commonly reported use such as going online to look for information about a topic of general interest (where answers are provided by informational sites like Wikipedia or Quora) is typically one where the relative frequency is consistent across all age groups.
-
-```{r ageQ437_43, fig.width = 8, fig.height = 2, echo=FALSE}
-generateSingleAgeFrequency(1, vars.interests.general.437, frequencyMonthLabels)
-```
-
-**`r fig_nums("freq.437.1")`**
-
-
-##### `r getLabel(9, vars.interests.general.437)`
-
-Comparatively, much lower relative frequencies were reported for going online to look for information about a political or societal issue.
-
-```{r ageQ437_51, fig.width = 8, fig.height = 2, echo=FALSE}
-generateSingleAgeFrequency(9, vars.interests.general.437, frequencyMonthLabels)
-```
-
-**`r fig_nums("freq.437.9")`**
-
-
-##### `r getLabel(4, vars.interests.fitness.352)`
-
-Nearly half (46%) of younger respondents (under 18) reported not looking up information about health or medical care in the last 12 months. The proportion of those who did so at least once in the last 12 months increase with age, although the relative frequencies remain low.
-
-```{r ageQ352_65, fig.width = 8, fig.height = 2, echo=FALSE}
-generateSingleAgeFrequency(4, vars.interests.fitness.352, frequencyMonthLabels)
-```
-
-**`r fig_nums("freq.352.4")`**
-
-
-### Resilience
-
-Our survey asked participants to respond to three questions about potential risks and harms of online activity, and how they prepare themselves for dealing with them.
+Our survey asked participants to respond to three questions about potential risks and harms of online activity, and how they prepare themselves for dealing with them:
 
  - Experience of potential risks and harms of online activity in the last 12 months
  - Level of agreement with statements about potential risks and harms
  - Level of agreement with statements about engaging with others online
 
-
-#### General Results
-
-##### Frequency of harmful events
 
 *Frequency of harmful events* measures frequency of 11 risks of online activity. These include getting a virus on one's device or seeing upsetting content online, or actions taken as a protection measure against those risks, such as reporting an issue online, deleting data or blocking further contacts from an individual.
 
@@ -575,8 +448,6 @@ Although respondents reported experiencing potentially harmful events online, th
 **`r fig_nums("freq.434")`**
 
 
-##### Responses to statements about online harms
-
 *`r cf("freq.435")`* below shows the level of agreement with a number of statements relating to online harms.
 
 Despite reporting having experienced some potentially harmful events in the last 12 months, the level of agreement with statements about online harms of a more general nature show an overall positive attitude towards those risks. The majority of respondents agree or strongly agree that the opportunities of online activities outweigh its risks and that some level of online risk is inevitable but also provides an important learning opportunity.
@@ -596,8 +467,6 @@ Online security and safety remains a pressing concern for just over a third of r
 **`r fig_nums("freq.435")`**
 
 
-##### Willingness to engage with others
-
 Thinking about how they feel when they engage with others online, respondents were asked to what extent they agree with several statements relating to their willingness to engage with others.
 
 For each of these statements, a large proportion of respondents neither agree nor disagree. People tend to disagree that it is easier to be oneself online than face to face or that they talk about private things online that they do not share face to face. Similar proportions agree or disagree that going online makes them feel better when they are going through a difficult time.
@@ -614,58 +483,8 @@ For each of these statements, a large proportion of respondents neither agree no
 
 
 
-#### Results by Age
 
-##### `r getLabel(4, vars.resilience.harm.events.434)`
-
-Respondents under the age of 35 were more likely to report higher frequency of seeing something on the internet that had bothered them in some way.
-
-```{r ageQ434_91, fig.width = 8, fig.height = 2, echo=FALSE}
-generateSingleAgeFrequency(4, vars.resilience.harm.events.434, frequencyMonthLabels)
-```
-
-**`r fig_nums("freq.434.4")`**
-
-
-##### `r getLabel(10, vars.resilience.harm.events.434)`
-
-
-There are no differences by age in the reported frequency of deleting data in response to privacy concerns.
-
-```{r ageQ434_97, fig.width = 8, fig.height = 2, echo=FALSE}
-generateSingleAgeFrequency(10, vars.resilience.harm.events.434, frequencyMonthLabels)
-```
-
-**`r fig_nums("freq.434.10")`**
-
-
-##### `r getLabel(6, vars.resilience.harms.agreement.435)`
-
-Over a third (35%) of respondents agree or strongly agree that online security and safety is generally a pressing concern. Interestingly, there were no noticeable differences by age groups.
-
-```{r ageQ435_104, fig.width = 8, fig.height = 2, echo=FALSE}
-generateSingleAgeFrequency(6, vars.resilience.harms.agreement.435, agreementLabels,
-  yawcrcPaletteFivePoints)
-```
-
-**`r fig_nums("freq.435.6")`**
-
-
-
-##### `r getLabel(7, vars.resilience.harms.agreement.435)`
-
-Having said that, respondents also overwhelmingly agree that the opportunities of online activity outweigh its risks, with half agreeing or strongly agreeing with that statement. Again, there are no noticeable differences by age groups.
-
-```{r ageQ435_105, fig.width = 8, fig.height = 2, echo=FALSE}
-generateSingleAgeFrequency(7, vars.resilience.harms.agreement.435, agreementLabels,
-  yawcrcPaletteFivePoints)
-```
-
-**`r fig_nums("freq.435.7")`**
-
-
-
-### Social Connectedness
+#### Social Connectedness
 
 Our survey asked participants to respond to questions about social connectedness and the role technology plays in their interactions with other people. Key topics include:
 
@@ -674,11 +493,7 @@ Our survey asked participants to respond to questions about social connectedness
   * Level of agreement with statements about broader issues concerning technology
 
 
-#### General Results
-
-##### Maintaining connections
-
-This question measures frequency of 8 different online activities whose main purpose, or direct consequence, is to interact with others and/or to maintain connections.
+The first question measures frequency of 8 different online activities whose main purpose, or direct consequence, is to interact with others or to maintain connections.
 
 *`r cf("freq.343")`* below shows the relative frequencies of each activity. Reading updates from friends or family via email or social media is the most frequent and most commonly reported activity, followed by making comments on those updates. Making new friends, meeting people or looking at websites that help meet new people are less common. This suggests that online activity is primarily used to strengthen connection with offline networks rather than as a distinct circle of connections.
 
@@ -692,8 +507,6 @@ This question measures frequency of 8 different online activities whose main pur
 
 
 
-##### Importance of online life in maintaining relationships
-
 When asked how important online life is in maintaining relationships with various groups within a broader social network, friends and family were the two groups with the highest level of importance. Online is also considered important in maintaining relationships with other networks of interest and work or school peers, but comparatively not as important to the maintenance of relationships with neighbours.
 
 ```{r graphSubQuestion287, fig.width = 8, fig.height = 5, echo=FALSE}
@@ -706,9 +519,7 @@ When asked how important online life is in maintaining relationships with variou
 
 
 
-##### Attitudes towards Technology
-
-The survey asked respondents to what extent they agree or disagree with a number of statements with regards to attitudes towards broader issues concerning technology.
+The survey also asked respondents to what extent they agree or disagree with a number of statements with regards to attitudes towards broader issues concerning technology.
 
 Similar to our findings on the more general statements about online risks and harms, the attitudes of respondents towards technology is especially positive with over 60% reporting being optimistic about the future of technology. Nearly three quarters (74%) agree or strongly agree that technology is part of everyday life. Nearly half (49%) believe that technology can not only make participants more effective members of their community or nation, but can also foster social inclusion.
 
