@@ -106,6 +106,9 @@ vars.index <- c(
 )
 
 
+vars.index.quals <- vars.index[(c(grep("Q277_*", vars.index), grep("Q280_*", vars.index)))]
+vars.index.no.quals <- setdiff(vars.index, vars.index.quals)
+
 # Group variables by type
 vars.frequency <- c(
 	vars.competencies.online.activities.74
@@ -465,6 +468,7 @@ generateAgeFrequenciesForAggregate <- function() {
 }
 
 generateGenderFrequenciesForAggregate <- function() {
+
 	generateSingleGenderFrequency(0, c("Q74"), frequencyLabels)
 	generateSingleGenderFrequency(0, c("Q287"), importanceLabels)
 	generateSingleGenderFrequency(0, c("Q341"), agreementLabels)
@@ -478,9 +482,11 @@ generateGenderFrequenciesForAggregate <- function() {
 	generateSingleGenderFrequency(0, c("Q434"), frequencyMonthLabels)
 	generateSingleGenderFrequency(0, c("Q435"), agreementLabels)
 	generateSingleGenderFrequency(0, c("Q437"), frequencyMonthLabels)
+
 }
 
 generateStateFrequenciesForAggregate <- function() {
+
 	generateSingleStateFrequency(0, c("Q74"), frequencyLabels)
 	generateSingleStateFrequency(0, c("Q287"), importanceLabels)
 	generateSingleStateFrequency(0, c("Q341"), agreementLabels)
@@ -493,9 +499,12 @@ generateStateFrequenciesForAggregate <- function() {
 	generateSingleStateFrequency(0, c("Q434"), frequencyMonthLabels)
 	generateSingleStateFrequency(0, c("Q435"), agreementLabels)
 	generateSingleStateFrequency(0, c("Q437"), frequencyMonthLabels)
+
 }
 
+
 generateLocationFrequenciesForAggregate <- function() {
+
 	generateSingleLocationFrequency(0, c("Q74"), frequencyLabels)
 	generateSingleLocationFrequency(0, c("Q287"), importanceLabels)
 	generateSingleLocationFrequency(0, c("Q341"), agreementLabels)
@@ -509,9 +518,12 @@ generateLocationFrequenciesForAggregate <- function() {
 	generateSingleLocationFrequency(0, c("Q434"), frequencyMonthLabels)
 	generateSingleLocationFrequency(0, c("Q435"), agreementLabels)
 	generateSingleLocationFrequency(0, c("Q437"), frequencyMonthLabels)
+
 }
 
+
 generateEducationFrequenciesForAggregate <- function() {
+
 	generateSingleEducationFrequency(0, c("Q74"), frequencyLabels)
 	generateSingleEducationFrequency(0, c("Q287"), importanceLabels)
 	generateSingleEducationFrequency(0, c("Q341"), agreementLabels)
@@ -525,9 +537,12 @@ generateEducationFrequenciesForAggregate <- function() {
 	generateSingleEducationFrequency(0, c("Q434"), frequencyMonthLabels)
 	generateSingleEducationFrequency(0, c("Q435"), agreementLabels)
 	generateSingleEducationFrequency(0, c("Q437"), frequencyMonthLabels)
+
 }
 
+
 generateOccupationFrequenciesForAggregate <- function() {
+
 	generateSingleOccupationFrequency(0, c("Q74"), frequencyLabels)
 	generateSingleOccupationFrequency(0, c("Q287"), importanceLabels)
 	generateSingleOccupationFrequency(0, c("Q341"), agreementLabels)
@@ -541,9 +556,12 @@ generateOccupationFrequenciesForAggregate <- function() {
 	generateSingleOccupationFrequency(0, c("Q434"), frequencyMonthLabels)
 	generateSingleOccupationFrequency(0, c("Q435"), agreementLabels)
 	generateSingleOccupationFrequency(0, c("Q437"), frequencyMonthLabels)
+
 }
 
+
 generateMinorityFrequenciesForAggregate <- function() {
+
 	generateSingleMinorityFrequency(0, c("Q74"), frequencyLabels)
 	generateSingleMinorityFrequency(0, c("Q287"), importanceLabels)
 	generateSingleMinorityFrequency(0, c("Q341"), agreementLabels)
@@ -557,6 +575,7 @@ generateMinorityFrequenciesForAggregate <- function() {
 	generateSingleMinorityFrequency(0, c("Q434"), frequencyMonthLabels)
 	generateSingleMinorityFrequency(0, c("Q435"), agreementLabels)
 	generateSingleMinorityFrequency(0, c("Q437"), frequencyMonthLabels)
+
 }
 
 
@@ -616,7 +635,9 @@ generateAllSA4Maps <- function() {
 	print("generateSA4Map(0, c(Q435), agreementLabels)")
 	generateSA4Map(0, c("Q437"), frequencyMonthLabels)
 	print("generateSA4Map(0, c(Q437), frequencyMonthLabels)")
+
 }
+
 
 generateAllScatterMaps <- function() {
 
@@ -661,18 +682,22 @@ generateAllScatterMaps <- function() {
 	print("generateScatterMap(0, c(Q435), agreementLabels)")
 	generateScatterMap(0, c("Q437"), frequencyMonthLabels)
 	print("generateScatterMap(0, c(Q437), frequencyMonthLabels)")
+
 }
 
 
 
 generateAllMaps <- function() {
+
 	generateAllSA4Maps()
 	generateAllScatterMaps()
+
 }
 
 
 # Generate all subquestion charts
 generateSubQuestionCharts <- function() {
+
 	graphSubQuestionFrequencies(vars.competencies.online.activities.74, "Frequency", frequencyLabels, "online-activities-74")
 	graphSubQuestionFrequencies(vars.competencies.431, "Ease", easeLabels, "competencies-ease-of-tasks-431")
 
@@ -689,9 +714,12 @@ generateSubQuestionCharts <- function() {
 	graphSubQuestionFrequencies(vars.connectedness.tech.attitudes.429, "Agreement", agreementLabels, "connectedness-tech-attitudes-429")
 	graphSubQuestionFrequencies(vars.connectedness.maintenance.287, "Importance", importanceLabels, "maintaining-connections-287")
 	graphSubQuestionFrequencies(vars.connectedness.events.343, "Frequency", frequencyMonthLabels, "connectedness-events-343")
+
 }
 
+
 generatePrebuiltCorrelations <- function() {
+
   generateCorrelation("total.431", "Q436", "skills-education")
 	generateCorrelation("total.437", "Q436", "interests-education")
 	# Need t-tests instead
@@ -709,12 +737,15 @@ generatePrebuiltCorrelations <- function() {
 	generateCorrelation("Q434_92", "total.435", "attitude-harm-2-resilience")
 	generateCorrelation("Q434_93", "total.435", "attitude-harm-3-resilience")
 
-
 }
+
 
 generateAllIndividualCorrelations <- function() {
+
 	generateCorrelationsExploratory()
+
 }
+
 
 runAll <- function() {
 

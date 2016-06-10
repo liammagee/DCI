@@ -137,7 +137,7 @@ generateCorrelations_test <- function() {
 	plot(d.lda.values$x[,1],d.lda.values$x[,2]) # make a scatterplot
 	text(d.lda.values$x[,1],d.lda.values$x[,2],data$age.breaks,cex=0.4,pos=4,col="red") # add labels
 
-	d.pca <- prcomp(data.scaled[,vars.index], center = TRUE, scale. = TRUE)
+	d.pca <- prcomp(data.scaled[,vars.index.no.quals], center = TRUE, scale. = TRUE)
 	# d.pca <- prcomp(data.scaled[,vars.index])
 	print(d.pca)
 
@@ -154,11 +154,21 @@ generateCorrelations_test <- function() {
 	d.pca$x
 
 	comp1 <- d.pca$rotation[,1]
+  comp2 <- d.pca$rotation[,2]
+  comp3 <- d.pca$rotation[,3]
+  comp4 <- d.pca$rotation[,4]
 	n <- length(comp1)
 	stack(comp1[order(stack(comp1)$values)])
+  stack(comp2[order(stack(comp2)$values)])
+  stack(comp3[order(stack(comp3)$values)])
+  stack(comp4[order(stack(comp4)$values)])
+
 
 	plot(d.pca$x[,1], d.pca$x[,2]) # make a scatterplot
 	text(d.pca$x[,1], d.pca$x[,2], data$gender, cex=0.4, pos=4, col="red") # add labels
+
+  plot(comp1, comp2)
+  text(comp1, comp2, stack(comp1)$ind, cex=0.4, pos=4, col="red")
 
 	library(devtools)
 	install_github("ggbiplot", "vqv")
@@ -175,7 +185,7 @@ generateCorrelations_test <- function() {
 	## http://www.statmethods.net/advstats/factor.html
 	fit <- princomp(data.scaled[,vars.index], cor=TRUE)
 	summary(fit) # print variance accounted for
-	loadings(fit) # pc loadings
+	lds <- loadings(fit) # pc loadings
 	plot(fit,type="lines") # scree plot
 	fit$scores # the principal components
 	biplot(fit)

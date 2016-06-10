@@ -115,11 +115,16 @@ fig_nums("agg.results", "Aggregated Results by Critical Issue")
 
 ## Introduction
 
-Much has been made of the transition, in 2008, of more than half the world's population to urban settlements. Far more dramatic, in terms of time and acceleration, has been the 'onboarding' of more than half the world's population to some kind of digital life - predominantly through the extraordinary rise of low cost smart phones in Asia, and to lesser degrees, Africa and Latin America. Young people in slums and informal settlements in Bangladesh are likely to play the same games - Candy Crush or Clash of Clans - and use the same social networking apps - WhatsApp, Facebook Messenger - as their peers in traditional centres of technological innovation, San Francisco, London or Tokyo.
+Much has been made of the transition, in 2008, of more than half the world's population to urban settlements. Far more dramatic, in terms of time and acceleration, has been the rate to which more than half the world's population have become immersed in some form of digital life. This rate has through the extraordinary rise of low cost smart phones and cheap WiFi in Asia, Africa and Latin America in the new millennium. In the decade 2005-2015, International Telecommunications Union estimates that while global mobile subscriptions grew by more than 300%, in Asia and Africa these rates were considerably higher - 448% and 785% respectively ^[http://www.itu.int/en/ITU-D/Statistics/Pages/stat/default.aspx - ref properly]. In March 2016, Ericsson reports global mobile subscriptions stand at 7.4 billion, equivalent to one for each person on the planet ^[http://www.ericsson.com/mobility-report/mobile-subscriptions ; http://www.worldometers.info/world-population/ - ref properly]. Nearly half of these, 3.2 billion, are so-called 'smartphone' subscriptions, and provide their owners with some level of access to digital content and data ^[http://www.ericsson.com/mobility-report/mobile-subscriptions]. More people still access the Internet through household or shared devices, fixed line subscriptions, or communal terminals in libraries and Internet cafes.
 
-This phenomenal growth has been matched by an interest in measuring different facets of what is unquestionably now a globalised digital society. Since the 2000s, the measurement of digital life has developed markedly. Studies of digital connectivity [cite], access [cite], inclusion [cite], use [cite], competencies [cite], skills [cite], engagement [cite], and risk and resilience [cite] illustrate the growing complexity of patterns of digital behaviour among diverse communities, countries and regions. At the same time, this complexity risks obscuring broader patterns of digital life amid studies that focus on measurement of highly particular dimensions. This risk becomes acute as the forms of use of digital technologies have themselves become more pervasive as well as more diverse. Use of devices, platforms, apps and methods of interaction expand and, periodically, contract around new products, services and standards. Home, work and in-transit digital technologies - from mobile devices to virtual reality sets, CCTV surveillance cameras, in-flight entertainment systems, public sensors, 'smart' fitness devices and home automation systems - increasingly blur categories of explicit 'use' and 'non-uses'. As Bratton [cite] has argued, we are all 'users' now.
+This rate of digitisation can be considered a second and largely invisible wave of globalisation. A thematic cornerstone of much sociological inquiry in the 1980s and 1990s, the era of globalisation and its various discontents has more recently been thought to have subsided against the giddying reemergence of neo-nationalist, economic protectionist and securitisation discourses ^[Paul to rephrase and reference]. The proliferation of digital devices and their associated carrying capacity, well testified to in recent infrastructural studies ^[ref. e.g. Rossiter, Nielsen, Notley, Lisa Parks, Nicole Starosielski, many others], does not of course imply the erasure of frictions, bumps or discontinuities that Friedman ^[cite The World is Flat], Fukuyama ^[cite The End of History] and other global enthusiasts once predicted. Yet it is not without its universalising effects. Young people in slums and informal settlements in Bangladesh are likely to communicate with the same social networking apps - _WhatsApp_, _Facebook Messenger_ - and play the same games - _Candy Crush_ or _Clash of Clans_ - as their peers in traditional centres of technological innovation, in San Francisco, London or Tokyo. In the technology industries, increasingly indissociable from other professional fields, patterns of outsourcing, consultation and collaboration build upon these collective and formative digital capacities and dispositions.
 
-How then might a general empirical social analysis of the digital proceed? We argue that the preoccupation with specifically measurable qualities of digital infrastructural availability and individual interactions need to regrouped and reframed within a more comprehensive theoretical rubric. The rubric we suggest here employs the vocabulary of 'capacities'. Capacities capture something of the wide and open conntations of human capabilities, developed by Amartya Sen and Martha Nussbaum [cite]. At the same time, the term also captures the technical quantitiatve capacities inherent in the digital world. Bandwidth, hard drives, memory and telecommunication networks all can be readily described in terms of capacity, meaning simply the quantitiative expansion possible within digital infrastructure. Capability, for all its resonance in the development literature, acquires more specific meaning in relation to digital equipment, and even then not universally: while complex networks have capabilities, raw qualities such as bandwidth instead express at best *single* capability. As we discuss further in *Methodology* below, this feature of translatability is an important for devices which seek to measure a varied, multidimensional and diverse set of sociotechnical variables. *Capacities* is the term which best seems to meet this demand. We stress however that, applied at societal and individual units of analysis, our use of 'capacity' has similar associations to Sen's *Capabilities Approach*.
+This epochal shift in communicative and informational access has been matched by an interest in assessing different facets of what is unquestionably now a globalised digital society. Since the 2000s, the measurement of digital life has developed markedly. Studies of digital connectivity [cite], access [cite], inclusion [cite], use [cite], competencies [cite], skills [cite], engagement [cite], and risk and resilience [cite] illustrate the growing complexity of patterns of digital behaviour among diverse communities, countries and regions. At the same time, amid the plethora of studies that focus on measurement of highly particular dimensions, such complexity risks obscuring broader patterns of digital life. This risk becomes acute as the forms of use of digital technologies have themselves become more pervasive and diverse. Use of devices, platforms, apps and methods of interaction expand and, periodically, contract around new products, services and standards, in rhythm with the regularised and syncopated release cycles of major vendors. Home, work and in-transit digital technologies - from mobile devices to virtual reality sets, CCTV surveillance cameras, in-flight entertainment systems, public sensors, 'smart' fitness devices and home automation systems - increasingly blur categories of explicit 'use' and 'non-uses'. As Bratton ^[cite _The Stack_] has argued, we are all 'users' now.
+
+How then might a general empirical social analysis of the digital proceed? We argue here the preoccupation with specifically measurable qualities of digital infrastructural availability and individual interactions need to regrouped and reframed within a more comprehensive theoretical rubric. The rubric we suggest is oriented around the key concept of 'capacities', selected because of its ability to connote qualities both of technical objects, and their human makers, users and critics. Capacities capture something of the wide and open conntations of human capabilities, developed by Amartya Sen and Martha Nussbaum [cite]. At the same time, capacities also reference the technical quantities inherent in the digital world. Bandwidth, hard drives, memory and telecommunication networks, for instance, are frequently referenced and measured in terms of capacity. The related term 'capability', with its obvious associations to Sen and Nussbaum's work, translates less adequately. It acquires more specific meaning in relation to digital equipment, and even then not universally: while complex networks have capabilities, raw qualities such as bandwidth instead express at best a *single* capability. As we discuss further in *Methodology* below, this feature of translatability is an important for devices which seek to measure a varied, multidimensional and diverse set of sociotechnical variables. *Capacities* is the term which best seems to meet this demand. The close semantic and etymological proximity of 'capacity' to 'capability' does at the same time allow for a point of concordance to broader societal measures such as the _Human Development Index_, informed by Sen's *Capabilities Approach*.
+
+
+## Digital Capacities: Universal but in Constant Flux
 
 In this article we propose a general theoretical account of digital capacities. This account is however complicated by its goal of generality. Both the direct speed of technological change, and varied or differential pace of that change, mean that methodological instrumentation of theories are subject to considerable revision across time and space. At least some of our collective digital capacities alternate at the rate of hardware developments and software releases - that is, at the rate of days, weeks or months, rather than across years or decades. This contrasts with other forms of social capacities, such as language use, mathematical competency or political engagement, which vary in line with the slower pace of education diffusion, policy reform and economic development.
 
@@ -276,9 +281,9 @@ In the second, we show both correlations obtained from direct tests of relations
 <!-- Insert histograms and choropleths here -->
 
 
-#### Age
+#### Demographic Distributions
 
-Participant ages ranged from `r min(data$age)` to `r max(data$age)`, with a median value of `r median(data$age)`.
+Our articipants' ages ranged from `r min(data$age)` to `r max(data$age)`, with a median value of `r median(data$age)`.
 
 *`r cf("age.freq")`* provides more detailed age demographics:
 
@@ -293,12 +298,9 @@ Participant ages ranged from `r min(data$age)` to `r max(data$age)`, with a medi
 These show participants' ages correspond approximately to Australia's adult demographic. `r top4AgesAsPercentage()` of participants were aged 35-54.
 
 
-
-#### Gender
-
 Participant gender is roughly evenly distributed. The survey included `r format(length(which(data$gender == "Female")), big.mark   = ",")` (`r format(100 * length(which(data$gender == "Female")) / length(data$gender), digits = 2)`%) women; `r format(length(which(data$gender == "Male")), big.mark   = ",")` (`r format(100 * length(which(data$gender == "Male")) / length(data$gender), digits = 2)`%) men; and `r format(length(which(data$gender == "Other")), big.mark   = ",")` (`r format(100 * length(which(data$gender == "Other")) / length(data$gender), digits = 2)`%) identifying as 'Other'.
 
-Gender demographics are distributed, as shown in `r cf("gender.freq")`:
+`r cf("gender.freq")` illustrates the gender distrubtion of the sample:
 
 ```{r genderFreq, echo=FALSE}
 
@@ -309,10 +311,7 @@ Gender demographics are distributed, as shown in `r cf("gender.freq")`:
 **`r fig_nums("gender.freq")`**
 
 
-#### Combined Age and Gender
-
-
-Combined age and gender demographics are distributed as shown in *`r cf("gender.and.age.freq")`*:
+We also combined age and gender frequences, as shown in *`r cf("gender.and.age.freq")`*:
 
 ```{r genderAndAgeFreq, echo=FALSE}
 
@@ -330,11 +329,7 @@ These figures approximate to Australia's adult age distribution, as reported by 
 **`r fig_nums("gender.and.age.freq.abs")`**
 
 
-#### State and Location
-
-Survey distribution by state broadly follows Australia's demographic distribution.
-
-The split of participants between urban and regional/rural is as follows:
+Survey distribution by state follows Australia's demographic distribution more closely. The split of participants between urban and regional/rural is as follows:
 
 ```{r locationFreq, fig.height = 2, echo=FALSE}
 
@@ -346,21 +341,16 @@ The split of participants between urban and regional/rural is as follows:
 The percentage of reported urban residents here is `r formatC(100 * length(data[data$location == "Urban", "location"]) / length(data[,"location"]))` - considerably less than [World Bank figures of 89%](http://data.worldbank.org/indicator/SP.URB.TOTL.IN.ZS).
 
 
-## Aggregated Results by Critical Issue
+#### Aggregated Results by Critical Issue
 
+Next we discuss distributions by what we defined as our four critical issues.
 
+##### Competencies
 
-### Competencies
-
-Our survey asked participants to respond to two questions about competencies:
+Participants were asked to respond to two questions about competencies:
 
  - Frequency of online activity
  - Perceived ease of conducting online activity
-
-
-#### General Results
-
-##### Frequency of online activity
 
 *Frequency of online activity* measures frequency of 15 different activities, ranging from highly common activities such as sending email through to less common activities (in 2016), such as writing blogs.
 
@@ -382,9 +372,7 @@ Our survey asked participants to respond to two questions about competencies:
 **`r fig_nums("freq.74")`**
 
 
-##### Perceived ease of conducting online activity
-
-Respondents were asked to rate the ease or difficulty of 27 online activities. Overall respondents report a high level of competency across all activities with bookmarking a website and connecting to a wifi network scoring the highest. Understanding the language that others use online and creating a blog were reported as more difficult activities. Despite the high level of competence reported by respondents in each of the 27 activities there were a small percentage of respondents who reported each of these activities as difficult or very difficult. Analysing the results according to age ranges provides a more illustrative breakdown of the results.
+Respondents were also asked to rate the ease or difficulty of 27 online activities. Overall respondents report a high level of competency across all activities with bookmarking a website and connecting to a wifi network scoring the highest. Understanding the language that others use online and creating a blog were reported as more difficult activities. Despite the high level of competence reported by respondents in each of the 27 activities there were a small percentage of respondents who reported each of these activities as difficult or very difficult. Analysing the results according to age ranges provides a more illustrative breakdown of the results.
 
 ```{r graphSubQuestion431, fig.width = 8, fig.height = 15.5, echo=FALSE}
 
@@ -489,12 +477,12 @@ generateSingleAgeFrequency(19,
 **`r fig_nums("freq.431.19")`**
 
 
-### Interests
+##### Interests
 
+We asked five questions on the critical issue of *Interests*:
 
-#### General Results
-
-##### General Interests
+ - Frequency of online activity
+ -
 
 *Frequency of online activity* measures frequency of 11 different activities related to information seeking, ranging from highly common activities, such as looking for information about general interests on platforms such as Wikipedia, through to more specific activities (in 2016), such as national government services.
 
@@ -511,9 +499,8 @@ generateSingleAgeFrequency(19,
 **`r fig_nums("freq.437")`**
 
 
-##### Interest in seeking difference
 
-This question measures frequency of 7 different online activities whose main purpose is to determine to what extent online information seeking helps people to find others who share their interests and to learn about or understand social and cultural difference.
+The question about *Interest in seeking difference*  measured frequency of 7 different online activities whose main purpose is to determine to what extent online information seeking helps people to find others who share their interests and to learn about or understand social and cultural difference.
 
 *`r cf("freq.341")`* below shows the relative frequencies of each activity. Finding people of a similar age who share my interests is the most frequent and most commonly reported activity, followed by learning new things about people with mental illnesses or physical disabilities and learning new things about other ethnic groups. Learning things about participant's own ethnic group and feeling more connected to spiritual or religious beliefs are less common. This suggests that for Australians, online information seeking is more directed towards questions of interest, gender and health, rather than ethnicity and religion.
 
@@ -532,9 +519,7 @@ This question measures frequency of 7 different online activities whose main pur
 **`r fig_nums("freq.341")`**
 
 
-##### Interest in fitness and health improvement
-
-This question measures frequency of 10 different online activities whose main purpose is to determine to what extent online technologies assist people to manage their health and fitness.
+The question on *Interest in fitness and health improvement* measured frequency of 10 different online activities whose main purpose is to determine to what extent online technologies assist people to manage their health and fitness.
 
 *`r cf("freq.352")`* below shows the relative frequencies of each activity. Looking up information or asking others about a training program is the most frequent and commonly reported activity, followed by looking up information or asking advice on a medical condition. The least common activities reported are participating in an online health or fitness community and filling out questionnaires about fitness. There are not large differences reported between any of the activities, and less than 40% of participants reported engaging in any of the activities on more than a monthly basis.
 
@@ -792,40 +777,7 @@ The positive attitude is nevertheless counterbalanced with concerns about the us
 **`r fig_nums("freq.429")`**
 
 
-#### Results by Age
 
-##### `r getLabel(1, vars.connectedness.maintenance.287)`
-
-Across all age groups, a large proportion of respondents reported that their online life was extremely important in maintaining relationships with family members.
-
-```{r ageQ287_137, fig.width = 8, fig.height = 2, echo=FALSE}
-generateSingleAgeFrequency(1, vars.connectedness.maintenance.287, importanceLabels)
-```
-
-**`r fig_nums("freq.287.1")`**
-
-
-##### `r getLabel(4, vars.connectedness.events.343)`
-
-The ways in which people maintain connections with others online, however, differ depending on the people's age. The likelihood of sharing pictures of oneself with family or friends decreases with age, with half of 12-17 year olds doing so weekly or more often compared to less than a fifth of those aged 65 or over.
-
-```{r ageQ343_146, fig.width = 8, fig.height = 2, echo=FALSE}
-generateSingleAgeFrequency(4, vars.connectedness.events.343, frequencyMonthLabels)
-```
-
-**`r fig_nums("freq.343.4")`**
-
-
-##### `r getLabel(2, vars.connectedness.tech.attitudes.429)`
-
-Overall, respondents largely agreed to being concerned about how companies, governments or others might use their online information, and results are consistent across all age groups.
-
-```{r ageQ429_152, fig.width = 8, fig.height = 2, echo=FALSE}
-generateSingleAgeFrequency(2, vars.connectedness.tech.attitudes.429, agreementLabels,
-  yawcrcPaletteFivePoints)
-```
-
-**`r fig_nums("freq.429.2")`**
 
 
 
@@ -844,6 +796,9 @@ _To what extent does education correlates with competencies and interests?_
 ```{r correlation-skills-educations, fig.width = 8, fig.height = 6, echo=FALSE}
 generateCorrelation("total.431", "Q436", "skills-education")
 ```
+
+
+<!--
 
  - Interest (Q437) by education level (Q436)
 
@@ -953,6 +908,8 @@ In a previous conversation, we had discussed the different uses of the internet:
 
 Those two ‘types’, informational and social, can be applied across the 4 critical issues and many of the survey questions. Within each questions, below are the variables that I think best outline one or the other.
 
+-->
+
 #### Correlations - Exploratory
 
 
@@ -968,7 +925,14 @@ generateCorrelationsExploratory()
 As `r fig_nums("corrections.exploratory")`
 
 
+
+
 #### Principal Component Analysis
+
+We conducted a principal component analyses of question responses.
+
+
+
 
 
 ### Composing an Index of Digital Capacities
