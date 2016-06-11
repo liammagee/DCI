@@ -22,9 +22,11 @@ generateCorrelation <- function(var1, var2, label) {
  	}
   correlation.test <- cor.test(data.scaled[,var1], data.scaled[,var2])
   return (correlation.test)
+
 }
 
 generateCorrelationsExploratory <- function() {
+
   cors.index <- cor(data.scaled[,vars.index.no.quals], method = "spearman")
   # cors.index <- cor(data.scaled[,vars.index], method = "spearman")
   g <- qplot(x=Var1, y=Var2, data=melt(cors.index), fill=value, geom="tile") +
@@ -38,6 +40,7 @@ generateCorrelationsExploratory <- function() {
 	}
 
   return (g)
+
 }
 
 generateTheme <- function(g) {
@@ -77,7 +80,7 @@ generateGraphForPCA <- function(fit) {
   library(ggbiplot)
 
   g <- ggbiplot(fit, obs.scale = 1, var.scale = 1,
-                groups = data$gender,
+                groups = data$state,
 	              ellipse = TRUE,
 	              circle = TRUE,
                 labels = )

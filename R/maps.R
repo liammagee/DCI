@@ -59,6 +59,8 @@ initAugmentedDataWithCoords <- function() {
 
 
 
+
+
 # Generates a set of maps by SA4 for a given variable
 generateSA4Map <- function(x, vars, func, palette = yawcrcPalette) {
 	if (x > 0) {
