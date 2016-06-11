@@ -179,6 +179,8 @@ vars.totals <- c(
 	vars.resilience.totals,
 	vars.connectedness.totals
 )
+vars.totals.quals <- vars.totals[(c(grep(".277", vars.totals), grep(".280", vars.totals)))]
+vars.totals.no.quals <- setdiff(vars.totals, vars.totals.quals)
 
 
 

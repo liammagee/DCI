@@ -25,7 +25,8 @@ generateCorrelation <- function(var1, var2, label) {
 }
 
 generateCorrelationsExploratory <- function() {
-  cors.index <- cor(data.scaled[,vars.index], method = "spearman")
+  cors.index <- cor(data.scaled[,vars.index.no.quals], method = "spearman")
+  # cors.index <- cor(data.scaled[,vars.index], method = "spearman")
   g <- qplot(x=Var1, y=Var2, data=melt(cors.index), fill=value, geom="tile") +
     scale_fill_gradient2(limits=c(-1, 1))
 
@@ -39,9 +40,69 @@ generateCorrelationsExploratory <- function() {
   return (g)
 }
 
-generateFactorAnalysis <- function() {
+generateTheme <- function(g) {
+  return (theme(
+                  # GRID
+                  panel.grid.minor.y = element_blank(),
+                  # panel.grid.major.y = element_blank(),
+                  panel.grid.major.y = element_line(colour = foreground.color),
+                  panel.grid.minor.x = element_blank(),
+                  panel.grid.major.x = element_blank(),
+
+                  # BACKGROUND
+                  panel.background = element_rect(fill = background.color, colour = foreground.color),
+
+                  # TITLE
+                  # plot.title = element_text(colour = title.color, lineheight=1.0, face="bold", size=graph.title.size),
+                  axis.title = element_text(color=title.color, lineheight=1.0, size = axis.title.size),
+                  # axis.title = element_text(lineheight=1.0, size = axis.title.size),
+                  axis.title.x = element_text(size = axis.title.size, vjust = x.axis.vjust),
+                  axis.title.y = element_text(size = axis.title.size, vjust = y.axis.vjust),
+
+                  # LINE
+                  axis.line = element_line(colour = "black"),
+
+                  # TEXT
+                  axis.text.x = element_text(color=text.color, angle=45, vjust=1.0, hjust=1.0, size = axis.text.size),
+                  axis.text.y = element_text(color=text.color, angle=45, size = axis.text.size)
+                  # axis.text.x = element_text(angle=45, vjust=1.0, hjust=1.0, size = axis.text.size),
+                  # axis.text.y = element_text(angle=45, size = axis.text.size)
+                  , legend.direction = 'horizontal',
+                  legend.position = 'bottom'
+              ))
+}
+
+generateGraphForPCA <- function(fit) {
+
+  library(ggbiplot)
+
+  g <- ggbiplot(fit, obs.scale = 1, var.scale = 1,
+                groups = data$gender,
+	              ellipse = TRUE,
+	              circle = TRUE,
+                labels = )
+  g <- g + generateTheme()
+  g <- g + scale_color_discrete(name = '')
+
+	return (g)
 
 }
+
+generateScreeForPCA <- function(fit) {
+
+  # Variances of principal components
+  sum.variances <- length(fit$sdev)
+  variances <- data.frame(variances=fit$relative.variance, pcomp=1:sum.variances)
+  # **2 means ^2
+
+  #Plot of variances
+  g <- ggplot(variances, aes(pcomp, variances)) + geom_bar(stat="identity", fill="gray") + geom_line()
+  g <- g + generateTheme()
+
+  return (g)
+
+}
+
 
 generateCorrelations_test <- function() {
 
@@ -164,6 +225,9 @@ generateCorrelations_test <- function() {
   stack(comp4[order(stack(comp4)$values)])
 
 
+  cs1 <- stack(comp1[order(stack(comp1)$values)])
+  cs2 <- stack(comp2[order(stack(comp2)$values)])
+
 	plot(d.pca$x[,1], d.pca$x[,2]) # make a scatterplot
 	text(d.pca$x[,1], d.pca$x[,2], data$gender, cex=0.4, pos=4, col="red") # add labels
 
@@ -175,7 +239,8 @@ generateCorrelations_test <- function() {
 
 	library(ggbiplot)
 	g <- ggbiplot(d.pca, obs.scale = 1, var.scale = 1,
-	              groups = data$age.breaks, ellipse = TRUE,
+	              groups = data$age.breaks,
+                ellipse = TRUE,
 	              circle = TRUE)
 	g <- g + scale_color_discrete(name = '')
 	g <- g + theme(legend.direction = 'horizontal',

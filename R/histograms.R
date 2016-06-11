@@ -1053,6 +1053,28 @@ questionCategory <- function(var.name) {
 	return (category)
 }
 
+questionIssue <- function(var.name) {
+
+	# Remove 'Q' from name
+	ind.name <- gsub("Q", "", var.name)
+
+	# Remove 'total.' from name
+	ind.name <- gsub("total.", "", ind.name)
+
+	# Replace underscores for lookups
+	ind.name <- gsub("_", ".", ind.name)
+
+	metadata <- indicators[which(ind.name == indicators$DCI.ID),c("Critical.Issue")]
+	# For consistency
+	issue <- as.character(unlist(metadata))
+	if (length(issue) == 0) {
+		metadata <- expandedIndicators[which(ind.name == expandedIndicators$DCI.ID),c("Label")]
+		issue <- as.character(unlist(metadata))
+	}
+
+	return (issue)
+}
+
 questionText <- function(var.name) {
 	ind.name <- gsub("Q", "", var.name)
 
