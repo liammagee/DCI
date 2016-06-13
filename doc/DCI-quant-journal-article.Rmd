@@ -1,5 +1,5 @@
 ---
-title: "How to measure a volatile object? Towards a digital capacities index"
+title: "How to measure a changing subject? Towards a digital capacities index"
 author: |
   | Liam Magee^1^, Delphine Bellerose^1^, Anjali Sharma^1^, Emma Kearney^1^, Louise Crabtree^1^, Philippa Collin^1^, Justine Humphry^1^, Paul James^1^, Tanya Notley^1^, Amanda Third^1^, Samantha Yorke^2^
   | 1. Western Sydney University
@@ -121,7 +121,7 @@ fig_nums("agg.results", "Aggregated Results by Critical Issue")
 
 
 
-# How to measure a volatile object? Towards a digital capacities index
+# How to measure a changing subject? Towards a digital capacities index
 
 ## Abstract
 
