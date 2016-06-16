@@ -29,8 +29,30 @@ generateCorrelationsExploratory <- function() {
 
   cors.index <- cor(data.scaled[,vars.index.no.quals], method = "spearman")
   # cors.index <- cor(data.scaled[,vars.index], method = "spearman")
+  var.breaks <- colnames(cors.index)[seq(1, length(colnames(cors.index)), 6)]
   g <- qplot(x=Var1, y=Var2, data=melt(cors.index), fill=value, geom="tile") +
-    scale_fill_gradient2(limits=c(-1, 1))
+      scale_fill_gradient2(limits=c(-1, 1), low = "#EA3568", mid = "white", high = "#139DEA") +
+      labs(x = "All 133 scalar variables", y = "", fill = "Correlations") +
+      scale_x_discrete(breaks = var.breaks) +
+      scale_y_discrete(breaks = var.breaks) +
+      theme(
+            # GRID
+            # TITLE
+            # plot.title = element_text(colour = title.color, lineheight=1.0, face="bold", size=graph.title.size),
+            # axis.title = element_text(lineheight=1.0, size = axis.title.size),
+            axis.title.x = element_text(size = axis.title.size, vjust = x.axis.vjust),
+            axis.title.y = element_text(size = axis.title.size, vjust = y.axis.vjust),
+
+            # LINE
+            axis.line = element_line(colour = "black"),
+#            axis.ticks = element_blank(),
+
+            # TEXT
+            axis.text.x = element_text(color=text.color, angle=45, vjust=1.0, hjust=1.0, size = 6),
+            axis.text.y = element_text(color=text.color, angle=45, size = 6),
+            axis.title = element_text(color=title.color, lineheight=1.0, size = axis.title.size)
+      )
+
 
   if (PRINTING) {
 		ggsave(file = "figs/correlation/exploratory-matrix.png",
@@ -80,7 +102,7 @@ generateGraphForPCA <- function(fit) {
   library(ggbiplot)
 
   g <- ggbiplot(fit, obs.scale = 1, var.scale = 1,
-                groups = data$state,
+                groups = data$gender,
 	              ellipse = TRUE,
 	              circle = TRUE,
                 labels = )

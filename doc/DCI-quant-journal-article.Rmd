@@ -108,8 +108,9 @@ fig_nums("freq.429.2", getLabel(2, vars.connectedness.tech.attitudes.429))
 # Multivariate analysis
 fig_nums("pca.variable.scree", "PCA by Variable - Variances")
 fig_nums("pca.variable", "PCA by Variable - First 2 Components")
+fig_nums("corrections.exploratory", "Exploratory Correlations - By Variable")
 fig_nums("pca.questions.scree", "PCA by Question - Variances")
-fig_nums("pca.variable", "PCA by Question - First 2 Components")
+fig_nums("pca.questions", "PCA by Question - First 2 Components")
 fig_nums("corrections.exploratory.totals", "Exploratory Correlations - By Question")
 
 
@@ -609,6 +610,7 @@ generateScreeForPCA(d.pca)
 generateGraphForPCA(d.pca)
 
 ```
+
 **`r fig_nums("pca.variable")`**
 
 
@@ -636,28 +638,31 @@ Second, the exploratory correlation matrix illustrates that strong correlations 
 
 Third, individual statements correlate strongly with other statements under the same question, and to a lesser degree, with other statements under the same issue. This implies the survey design appropriately groups statements and questions under issues, and lends some weak support to the conceptual coherence of the issues themselves. Together with the lack of evident decomposition of variables to clearly identifiable components, this also lends support to the conclusion that the four digital capacities are both positively interrelated in complex ways, and that their indicators are easily reducible to latent alternatives.
 
-<!--s
+<!--
+
 #### PCA by Question
 
 
 
-```{r pca-questions-scree, fig.width = 8, fig.height = 8, echo=FALSE}
+``{r pca-questions-scree, fig.width = 8, fig.height = 8, echo=FALSE}
 
 generateScreeForPCA(dt.pca)
 
-```
+``
 
-**`r fig_nums("pca.questions.scree")`**
+**r fig_nums("pca.questions.scree")**
 
 
-```{r pca-questions, fig.width = 8, fig.height = 8, echo=FALSE}
+`{r pca-questions, fig.width = 8, fig.height = 8, echo=FALSE}
 
 generateGraphForPCA(dt.pca)
 
-```
+`
+
+-->
 
 **`r fig_nums("pca.questions")`**
--->
+
 
 ### Composing an Index of Digital Capacities
 
