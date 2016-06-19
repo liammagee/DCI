@@ -659,9 +659,10 @@ generateGraphForPCA(dt.pca)
 
 `
 
+**r fig_nums("pca.questions")**
+
 -->
 
-**`r fig_nums("pca.questions")`**
 
 
 ### Composing an Index of Digital Capacities

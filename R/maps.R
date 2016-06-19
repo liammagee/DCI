@@ -47,6 +47,7 @@ if (INIT_MAPS) {
 initAugmentedDataWithCoords <- function() {
   location = read.csv("data/LocationData.csv")
   location$postcode = as.character(location$postcode)
+  location[nchar(location$postcode)==3,]$postcode <- paste("0",location[nchar(location$postcode)==3,]$postcode, sep="")
   df = left_join(augmented.data, location, by = c("postcode" = "postcode"))
 
   # Wrong coordinates for resp 812, userid 2389477443
@@ -172,7 +173,7 @@ generateScatterMap <- function(x, vars, func, palette = yawcrcPalette) {
   #   coord_equal(xlim = c(110, 155), ylim = c(-45, -10)) +
   #   scale_colour_gradient( high = "#132B43", low = "#56B1F7")
 
-  p =
+  p <-
     ggplot() +
 
     ###The Background Map###
@@ -203,7 +204,7 @@ generateScatterMap <- function(x, vars, func, palette = yawcrcPalette) {
     geom_point(data = df,
                aes(lon, lat, colour = var.name),
                position = position_jitter(00.004, 00.004),
-               alpha = 0.05) +
+               alpha = 0.25) +
     coord_equal(xlim = c(110, 155),
                 ylim = c(-45, -10)) +
     scale_colour_manual(values = palette) +
