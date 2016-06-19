@@ -110,9 +110,9 @@ generateSA4Map <- function(x, vars, func, palette = yawcrcPalette) {
     break.labels <- as.character(seq(1, 99, 2))
     break.points <- seq(1, 99, 2)
   }
-  
+
   # Plotting with merged data
-  g <- ggplot(data = aus.df, aes(x = long, y = lat, group = group, fill = mean)) +
+  g <- ggplot(data = aus.df, aes(x = long, y = lat, group = group, fill = median)) +
     geom_polygon()  +
     scale_fill_gradientn(breaks = break.points, labels = break.labels, colors = palette) +
     #for some reason it maps too much ocean so limit coords (EDIT: due to Christmas Island)
@@ -130,7 +130,7 @@ generateSA4Map <- function(x, vars, func, palette = yawcrcPalette) {
       #, legend.title = element_blank()
     ) + ggtitle(unlist(metadata$Name)) +
     labs(title = "", fill = "Median Score")
-  
+
 
 
   full.file <- paste("./figs/maps/", var.name, "_clusters.png", sep="")

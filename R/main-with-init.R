@@ -373,13 +373,15 @@ augmented.data$Q434 <- round(rowMeans(augmented.data[,vars.resilience.harm.event
 augmented.data$Q435 <- round(rowMeans(augmented.data[,vars.resilience.harms.agreement.435]))
 augmented.data$Q437 <- round(rowMeans(augmented.data[,vars.interests.general.437]))
 
+## Generate totals
+sumIndex()
+
+## Add coordinates
+
 # Make sure initMaps() is called first. Turn off when debugging
 # initMaps()
 augmented.data$SA4_NAME_2011 <- unlist(sapply(augmented.data$postcode, obtainSA4))
 augmented.data.with.coords <- initAugmentedDataWithCoords()
-
-## Generate totals
-sumIndex()
 
 # Shorthand
 data <- augmented.data

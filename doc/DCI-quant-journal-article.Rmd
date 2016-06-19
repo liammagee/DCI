@@ -114,9 +114,9 @@ fig_nums("pca.questions", "PCA by Question - First 2 Components")
 fig_nums("corrections.exploratory.totals", "Exploratory Correlations - By Question")
 
 # Index charts
-fig_nums("index.chart", "Aggregated Results by Critical Issue")
-fig_nums("index.cluster.chart", "Aggregated Results by region (SA4) medians")
-fig_nums("index.scatter.chart", "Aggregated Results by individual")
+fig_nums("index.chart", "Aggregated results by critical issue")
+fig_nums("index.cluster.chart", "Aggregated results by region (SA4) median scores")
+fig_nums("index.scatter.chart", "Aggregated results by location of individual response")
 
 
 # Aggregated
@@ -701,7 +701,7 @@ The *Resilience* score is calculated in the same way as the other issue scores, 
 **`r fig_nums("index.chart")`**
 
 
-Figures *`r cf("index.cluster.chart")`* and *`r cf("index.scatter.chart")`* illustrate the combined scores, respectively by regional median, and by location of individual responses. While these inherit the same limitations as above, together they also reflect the unsurprising clustering of capacities along the eastern seaboard of Australia, and other urban centres. The higher median responses in rural South Australia and New South Wales is skewed by comparatively high responses of very small samples in those areas, as `r fig_nums("index.scatter.chart")` suggests.
+Figures *`r cf("index.cluster.chart")`* and *`r cf("index.scatter.chart")`* illustrate the combined scores, respectively by regional medians and by location of individual responses. Together they reflect the unsurprising clustering of capacities along the eastern seaboard of Australia, and other urban centres. The higher median responses in rural South Australia and New South Wales is skewed by comparatively high responses of very small samples in those areas, as `r fig_nums("index.scatter.chart")` suggests.
 
 
 ```{r indexClusterChart, echo=FALSE}
@@ -718,14 +718,15 @@ generateSA4Map(0, c("combined.index"), NA, yawcrcPalette5)
 generateScatterMap(0, c("combined.index"), NA, yawcrcPalette5)
 
 ```
+
+**`r fig_nums("index.scatter.chart")`**
+
 <!--
 Double check results:
 table(augmented.data$SA4_NAME_2011)
 a <- aggregate(augmented.data$combined.index, by = list(augmented.data$SA4_NAME_2011), median)
 a[order(a$x),]
 -->
-
-**`r fig_nums("index.scatter.chart")`**
 
 
 This procedure was designed to communicate a sense of capacities to a broad constituency, and as such has several limitations. First, the procedure treats each of the scales as numerically regular, as ratio rather than as ordinal scales. For example, on the *Agreement* scale it assumes *Strongly agree* warrants 1 more score point than *Agree*, which in turn warrants 1 more point than *Neither Agree nor Disagree*. Second, the procedure assumes all questions and individual items have equal influence on the critical issue they have been aligned to. A refinement would incorporate a weighting on key indicators; a step we have not undertaken in this case. Finally, the output itself suffers from being necessarily reductive, and we offer similar cautions to those voiced often in the literature on urban indicators [e.g. by @kitchin2015knowing] - without adequate sensitivity to their assumptions, methods and uses, summarised metrics impart a sense of scientificity that obscures the nuance and complexity that, in this case, attends an understanding of the dynamic fields in which digital capaciities are exercised.
