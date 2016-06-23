@@ -104,10 +104,13 @@ generateGraphForPCA <- function(fit) {
   g <- ggbiplot(fit, obs.scale = 1, var.scale = 1,
                 groups = data$gender,
 	              ellipse = TRUE,
-	              circle = TRUE,
-                labels = )
+	              circle = TRUE, 
+                alpha = 0.5,
+                var.axes = F,
+                varname.size = 6)
   g <- g + generateTheme()
-  g <- g + scale_color_discrete(name = '')
+  # g <- g + scale_color_discrete(name = '')
+  g <- g + scale_color_manual(name = '', values = yawcrcPalette9)
 
 	return (g)
 
