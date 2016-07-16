@@ -8,6 +8,7 @@ INIT_MAPS <- FALSE
 source("R/maps.R", FALSE)
 source("R/indexFunctions.R", FALSE)
 source("R/multivariateAnalysis.R", FALSE)
+source("R/weighting.R", FALSE)
 
 # Install dependencies, if they are not available
 installDeps()
@@ -357,6 +358,10 @@ augmented.data$household.size <- rowSums(subset(augmented.data, select = househo
 augmented.data <- augmented.data[augmented.data$household.size <= 10,]
 augmented.data$household.with.children.5.to.17 <- ifelse(augmented.data$Q5_2 == 1 | augmented.data$Q5_3 == 1, 1, 0)
 # sum(augmented.data$household.with.children.5.to.17, na.rm = TRUE)
+
+# Generate weighted values
+raked.data <- loadWeightedData()
+augmented.data$weights <- weights(raked.data)
 
 # Create sums
 augmented.data$Q74 <- round(rowMeans(augmented.data[,vars.competencies.online.activities.74])	)

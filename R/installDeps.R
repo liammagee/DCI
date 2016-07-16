@@ -20,7 +20,8 @@ installDeps <- function() {
   			"corrplot",
   			"rgdal",
   			"maptools",
-  			"rgeos")
+  			"rgeos",
+  			"survey")
 
   # Install required packages from CRAN (if not)
   .inst <- .pkgs %in% installed.packages()

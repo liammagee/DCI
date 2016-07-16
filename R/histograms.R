@@ -884,11 +884,16 @@ graphSubQuestionFrequencies  <- function(vars, legend.name, legendBreakFunc, fil
 	m <- melt(data[,vars], id.vars = c(), na.rm = TRUE)
 	# Generate counts of the item data
 	cm <- plyr::count(m, c("variable", "value"))
+  # Relative frequencies (Q10_159 is age)
+	cm$rel.freq <- cm$freq / length(data$Q10_159)
+
+  # ALTERNATIVE - USE WEIGHTED VALUES
+  vars <- vars[vars != "dummy"]
+  cm <- do.call("rbind", lapply(vars, stackColumns))
+
 	# Recode, to solve problem with ggplotly and scale_fill_manual
 	cm$value.coded <- mapvalues(cm$value, from = 1:length(legendBreakFunc()), to = legendBreakFunc())
 	cm$value.coded.f <- factor(cm$value.coded, levels = legendBreakFunc())
-	# Relative frequencies (Q10_159 is age)
-	cm$rel.freq <- cm$freq / length(data$Q10_159)
 	# Rename for simplicity - TODO: push up to the global variable
 	ex <- expandedIndicators
 	# Complicated code that loads truncated item names into the melted data
